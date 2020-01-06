@@ -1,0 +1,82 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage{float}
+\usepackage{verbatim}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{amsmath}
+\usepackage{amsbsy}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage[left=2cm,right=2cm,top=2cm,bottom=2cm]{geometry}
+\usepackage{xcolor}
+\usepackage{amsthm}
+\usepackage{mhchem}
+\usepackage{hyperref}
+\usepackage{nameref}
+\usepackage{multicol}
+
+\hypersetup{
+    pdftitle={title},
+    pdfsubject={subject},
+    pdfauthor={author},
+}
+
+% comandi richiamati
+\newcommand{\numberset}{\mathbb}
+\newcommand{\Q}{\numberset{Q}}
+\newcommand{\I}{\numberset{I}}
+\renewcommand\thepart{\arabic{part}}
+\renewcommand\thesection{\alph{section}}
+\renewcommand\thesubsection{\thepart.\thesection.\arabic{subsection}}
+
+\author{Edoardo Gabrielli}
+\title{Checklist per l'esame di Fisica 3}
+
+\begin{document}
+
+\maketitle
+\clearpage
+
+\begin{multicols}{2}
+	\tableofcontents
+\end{multicols}
+
+\listoffigures
+\clearpage
+
+
+\pagenumbering{arabic}
+\part{Prerequisiti}
+\section{Domande a}
+\input{domande/prerequisiti.tex} % risposto
+
+
+\part{Indagine della materia tramite collisioni e decadimenti}
+\setcounter{section}{0}
+\renewcommand*{\theHsection}{chX.\the\value{section}}
+\section{Domande a}
+\input{domande/indagine_collisioni-decadimenti_a.tex} % risposto 
+\section{Domande b}
+\input{domande/indagine_collisioni-decadimenti_b.tex} % da fare
+
+
+\part{Elettromagnetismo classico e acceleratori di particelle}
+% azzerare i contatori delle sezioni (a,b,c...) 
+\setcounter{section}{0}
+\renewcommand*{\theHsection}{chX.\the\value{section}}
+\section{Domande a}
+\input{domande/Elettromagnetismo-acceleratori_a.tex} % da fare
+\section{Domande b}
+%\input{domande/Elettromagnetismo-acceleratori_b.tex} % da aggiustare e fare
+
+
+
+\section{Interazione radiazione-materia}
+\setcounter{section}{0}
+\renewcommand*{\theHsection}{chX.\the\value{section}}
+
+
+\section{Domande a scelta}
+ 
+\end{document}
