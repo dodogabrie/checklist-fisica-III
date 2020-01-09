@@ -191,6 +191,7 @@ Date due specie con densità volumica $n_a$ e  $n_b$ che si scontrano e con dens
 Tipicamente la $f\left( V_{rel} \right)$ è gaussiana. 
 
 \subsection[]{ Calcolare l'attenuazione di un fascio di particelle incidenti su un materiale omogeneo e composto da atomi di una sola specie in funzione della profondità [dati: sezione d'urto del processo su ogni atomo del bersaglio, densità di massa del mezzo, numero atomico del mezzo].}
+\label{sec:2.b.5}
 \paragraph{Lamina sottile}
 Data una lastra di materiale omogeneo definiamo alcune (tante, forse troppe) quantità utili: spessore $\Delta x$, densità $\rho$, area $\Delta S$, volume di lastra considerato $V$ , sezione d'urto su ogni atomo bersaglio (totale) $ \sigma_{\text{tot}}$, $n_b$ la concentrazione di besagli nel materiale e $n_a$ la concentrazione di particelle incidenti. Possiamo riscrivere queste in funzione delle quantità date dal testo e sfruttare qualche utile relazione.\\ 
 Partiamo da $n_b$: definendo $M_{\text{tot}}$ la massa totale di lastra nel volume, $M_A$ la massa di una mole della sostanza del materiale in grammi, $N_a$ il numero di avogadro si ha:
@@ -771,8 +772,8 @@ e sfruttare questo risultato per semplificare la scrittura dell’elemento infin
 .\] 
 Da inserire opportunamente nella espressione a sinistra dell'uguale nella richiesta: dobbiamo ricordare che $P$ è in realtà un quadrivettore.
 \begin{align*}
-	d^{4}P \delta\left( P^2-m^2 \right) \theta\left( P_0 \right) =& d^4P \delta\left(\boldsymbol{P}^2 - P_0^2 - m^2 \right) \theta\left( P_0 \right)  = \\
-	=& d^4P \theta\left( P_0 \right) \left[ \frac{\delta\left( P_0 - E \right) }{\left| \left[ 2P_0 \right]_{P_0 = E} \right| } + 
+	d^{4}P \cdot \delta\left( P^2-m^2 \right) \theta\left( P_0 \right) =& d^4P\cdot  \delta\left(\boldsymbol{P}^2 - P_0^2 - m^2 \right) \theta\left( P_0 \right)  = \\
+	=& d^4 P \cdot  \theta\left( P_0 \right) \left[ \frac{\delta\left( P_0 - E \right) }{\left| \left[ 2P_0 \right]_{P_0 = E} \right| } + 
 		\frac{\delta\left( P_0 + E \right) }{\left| \left[ 2P_0 \right]_{P_0 = -E}  \right| } \right] =\\
 		=& d^4P \frac{\delta\left( P_0 - E \right)}{2E} = \frac{d^3 \boldsymbol{P}}{2E}   
 .\end{align*}
@@ -781,30 +782,346 @@ Stiamo parlando di distribuzioni, la notazione leggera utilizzata nasconde signi
 
 % 2.b.28
 \subsection[]{Dimostrare che nel centro di massa l’elemento infinitesimo dello spazio dei 4-impulsi, nel caso di 2 sole particelle nello stato finale, si scrive come $\frac{|\boldsymbol{p_{cm}}}{4\sqrt{s}} d\Omega_{cm}.$}
+Ricordiamo la forma dell'elemento infinitesimo dello spazio delle fasi:
+\[
+	dL_p = \left[ d^4P_1 \cdot \delta\left( P_{0,1}^2 - \boldsymbol{P}_1^2 - m_1^2 \right) \cdot \theta\left( P_{0,1} \right) \right] \cdot \ldots 
+	\left[ \cdot d^4P_n \cdot \delta\left( P_{0,n}^2 - \boldsymbol{P}_n^2 - m_n^2 \right) \cdot \theta\left( P_{0,n} \right) \right] \cdot 
+	\delta^4\left(  P_{in}-\sum_{i}P_i  \right) 
+.\]
+Che utilizzando la risposta alla domanda precedente si riscrive come:
+\[
+dL_p = \frac{\mbox{d}^3 \boldsymbol{P}_1}{2E_1} \ldots \frac{\mbox{d}^3 \boldsymbol{P}_n}{2E_n} \delta^4\left( P_{in}-\sum_{i}P_i \right) 
+.\] 
+Decisamente più carino.\\
+Se si hanno due prodotti definiamo le loro masse come $m_1$ e  $m_2$, l'energia del centro di massa $\sqrt{s}$ e ricordiamo che il 3-impulso totale nel centro di massa è nullo. L'elemento infinitesimo $dL_p$ si scrive come:
+\begin{align*}
+	dL_p =& \frac{d^3 \boldsymbol{P}_1}{2E_1} \frac{d^3 \boldsymbol{P}_2}{2E_2} \cdot \delta^4\left(P_{\text{in}} - P_1 - P_2 \right) = \\ 
+	= & \frac{d^3 \boldsymbol{P}_1}{2E_1} \frac{d^3 \boldsymbol{P}_2}{2E_2} \cdot \delta\left( \sqrt{s}-E_1-E_2\right) \cdot 
+	\delta^3\left( \boldsymbol{0} + \boldsymbol{P}_1 + \boldsymbol{P}_2 \right) = \\
+	= & \frac{ d \boldsymbol{P}_1 }{4E_1E_2} \cdot \delta\left( \sqrt{s}-E_1-E_2\right)   
+\end{align*}
+Passando in cordinate spefiche:
+\[
+	dL_p = \frac{P_1^2 dP_1 d \Omega_1 }{4E_1E_2} \cdot \delta\left( \sqrt{s} -E_1-E_2  \right) 
+.\]
+Possiamo adesso sfruttare il fatto che nel centro di massa l'impulso totale è nullo, chiamiamo $P_{\text{cm}}$ l'impulso della particella singola (le due particelle hanno in modulo lo stesso impulso in questo sistema $\left| \boldsymbol{P}_1 \right| = \left| \boldsymbol{P}_2 \right| = P_{\text{cm}}$):
+\[
+	\sqrt{s}= \sqrt{P_{\text{cm}}^2 + m_1^2} + \sqrt{ P_{\text{cm}}^2 + m_2^2} 
+.\] 
+Che può essere risolta ( Hint: servono due elevazioni al quadrato) per $P_{\text{cm}}$ :
+\[
+	P_{\text{cm}} = \sqrt{\frac{\left( s - \left( m_1+m_2 \right)^2 \right) \left( s - \left( m_1 - m_2 \right)^2 \right)}{4s}} 
+.\]
+Non esplicitiamo $P_{\text{cm}}$ nei calcoli a seguire, è bene però sappere che può essere scritto in funzione di variabili più "comuni". La relazione sopra sarà sfruttata al secondo passaggio del seguente calcolo.
+\begin{align*}
+	dL_p =& \frac{P_1^2 dP_1 d \Omega_1}{4E_1E_2} \cdot \delta\left( \sqrt{s} - \sqrt{P_1^2 + m_1^2} - \sqrt{P_2^2 + m_2^2}  \right) \\
+	=& \frac{P_1^2 dP_1 d \Omega_1}{4E_1E_2} \cdot 
+	\frac{\delta\left(P_1-P_{\text{cm}}\right)}{\left|\left[\frac{\mbox{d}}{\mbox{d}P_1}\left(\sqrt{s}-\sqrt{P_1^2+m_1^2}-\sqrt{P_1^2+m_2^2}\right)\right]_{P_1=P_{\text{cm}}}\right|} = \\
+	=& \frac{P_1^2 dP_1 d \Omega_1}{4E_1E_2} \cdot \frac{ \delta \left( P_1-P_{\text{cm}} \right) }{ \left| \left[ \frac{P_1}{E_1}+\frac{P_1}{E_2} \right]_{P_1=P_{\text{cm}}} \right|}=\\
+	=& \frac{P_1^2 dP_1 d \Omega_1}{4E_1E_2} \cdot \frac{\delta\left(P_1-P_{\text{cm}}\right)}{P_{\text{cm}} \frac{E_1 + E_2}{E_1E_2}} = \\
+	=& \frac{P_{\text{cm}} }{4\sqrt{s}} d\Omega_{1}
+\end{align*}
+Noto l'impulso delle particelle nel centro di massa (o, se si vuole, $\sqrt{s}, m_1, m_2$) si ha che l'elemento infinitesimo dello spazio delle fasi dei due prodotti dipende solo dall'angolo solido di un prodotto (che in caso di isotropia spaziale come qua è l'opposto di $\Omega_2$). Questo è molto utile per la sezione d'urto differenziale ad esempio.
+\[
+	\frac{\mbox{d} \sigma}{\mbox{d} \Omega_1} = f_{\text{urto}}\left( \Omega_1 \right) \frac{P_{\text{cm}}}{4\sqrt{s} }
+.\] 
 
-
-% 2.b.28
+% 2.b.29
 \subsection[]{Nel caso di 3 particelle nello stato finale di una reazione, dimostrare che fra il quadrato della massa invariante di due di esse e l'energia della terza (nel centro di massa) sussite una relazione lineare.}
+Prendiamo la massa invariante citata $\sqrt{s_{12}}$ e l'energia della restante paticella come $E_3$, con ovvio significato dei simboli si ha (definizione di massa invariante):
+\[
+	s_{12} = \left( P_1 + P_2 \right)^2
+.\] 
+Che per la conservazione dell'energia e dell'impulso si può scrivere come:
+\[
+	s_{12} = \left( P_{\text{in}} - P_3 \right)^2 = P_{\text{in}}^2 + P_3^2 - 2 P_{\text{in}}P_3 =s + m_3^2 - 2 \sqrt{s}E_3 
+.\] 
+Ecco la relazione lineare.
 
-\subsection[]{ Come si trasforma una funzione di distribuzione del 3-impulso $f\left( \boldsymbol{p} \right)d^3 \boldsymbol{p}$ di una
-particella per una trasformazione di Lorentz?}
+% 2.b.30
+\subsection[]{Come si trasforma una funzione di distribuzione del 3-impulso 
+\[
+	f\left( \boldsymbol{p} \right)d^3 \boldsymbol{p}
+\]
+di una particella per una trasformazione di Lorentz?}
+Premessa: misurare in un sistema la funzione di distribuzione del 3-impulso significa misurare il numero di eventi dn nell'elemento di volume nello spazio degli impulsi $dn = f\left( \boldsymbol{P} \right) d^3 \boldsymbol{P}$. È inoltre naturale che il numero di eventi registrati deve essere lo stesso in ogni sistema di riferimento 
+\[
+dn = f\left( \boldsymbol{P} \right) d^3 \boldsymbol{P} =  f\left( \boldsymbol{P}' \right) d^3 \boldsymbol{P}' = dn'
+\]
+Abbiamo dimostrato anche che 
+\[
+\frac{d^3 \boldsymbol{P}}{2E} 
+.\] 
+è un invariante relativistico, quindi si può concludere:
+\[
+	\frac{E}{E} f\left( \boldsymbol{P} \right) d^3 \boldsymbol{P} = \frac{E'}{E'} f\left( \boldsymbol{P}' \right) d^3 \boldsymbol{P}' \quad \implies \quad 
+	f\left( \boldsymbol{P}' \right) = \frac{E}{E'} f\left( \boldsymbol{P} \right) 
+.\] 
 
-\subsection[]{ Come si trasforma una funzione di distribuzione nello spazio delle fasi 
+% 2.b.31
+\subsection[]{Come si trasforma una funzione di distribuzione nello spazio delle fasi 
 \[
 	f\left(\boldsymbol{p},\boldsymbol{r}\right)d^3 \boldsymbol{p} \ d^3 \boldsymbol{r} 
 \]
 di una particella per una trasformazione di Lorentz?}
+È necessario notare che anche qua il numero di eventi $dn$ nel volume infinitesimo dello spazio delle fasi si deve conservare come sopra, ragionando quindi allo stesso modo si trova la legge di trasformazione richiesta.\\
+Mettiamoci per utilità nel sistema in cui la particella è a riposo e consideriamo un boost lungo uno dei 3 assi di riferimento, possiamo sfruttare la contrazione delle lunghezze
+\[
+\text{d}^3 \boldsymbol{r}' =\frac{\text{d}^3\boldsymbol{r}}{\gamma} =  \frac{\text{d}^3\boldsymbol{r}}{E'} mc^2 = \frac{\text{d}^3\boldsymbol{r}}{E'} E
+.\] 
+Quindi $Ed^3 \boldsymbol{r}$ è un invariante relativistico. Avendo trovato che anche $d^3 \boldsymbol{P} / E$ è invariante si ha che
+\begin{align*}
+	dn = f\left( \boldsymbol{P}, \boldsymbol{r} \right) \text{d}^3 \boldsymbol{P} \text{d}^3 \boldsymbol{r} =  f\left( \boldsymbol{P}', \boldsymbol{r}' \right) 
+	\text{d}^3 \boldsymbol{P}' \text{d}^3 \boldsymbol{r}' = dn' & \quad \quad
+	\text{Invarianza del numero di eventi} \\
+	\frac{\text{d}^3 \boldsymbol{P}}{E} E \text{d}^3 \boldsymbol{r} =
+	\frac{\text{d}^3 \boldsymbol{P}'}{E'} E' \text{d}^3 \boldsymbol{r}' & \quad \quad 
+	\text{Invarianti trovati sopra}
+.\end{align*}
+Dalle quali deriva l'invarianza di $f\left( \boldsymbol{P}, \boldsymbol{r} \right)$.
 
-\subsection[]{ Dimostrare che se la probabilità di decadimento di una particella per unità di tempo non dipende dal tempo, la probabilità di trovare la particella non decaduta al tempo t segue una legge esponenziale.}
+% 2.b.32
+\subsection[]{Dimostrare che se la probabilità di decadimento di una particella per unità di tempo non dipende dal tempo, la probabilità di trovare la particella non decaduta al tempo t segue una legge esponenziale.}
+Sia $S\left( t \right) $ la probabilità di trovare la particella al tempo $t$, considerando la invece la probabilità $P\left( t \right)$ di decadere dopo l'unità di tempo $dt$ si ha (per ipotesi):
+ \[
+	 \frac{P\left( dt \right)}{dt}= \frac{1}{\tau} \text{ (costante)} \implies  S\left( dt \right) = 1 - \frac{dt}{\tau}
+.\] 
+Quindi all'istante $t + dt$ si ha (per le regole delle probabilità combinate):
+\[
+	S\left( t + dt \right) = S\left( t \right) S\left( dt \right) = S\left( t \right) \left( 1 - \frac{dt}{\tau} \right) 
+.\] 
+Che ha come soluzione proprio un esponenziale (vedi \hyperref[sec:2.b.5]{Domanda 2.b.5}):
+\[
+	S\left( t \right) = e^{- t / \tau}
+.\] 
 
+% 2.b.33
 \subsection[]{ Dire quali fra le seguenti particelle sono soggette ad interazioni forti: $ p, \overline{p} $, $\pi^{+}, \pi^{-}, \mu^{+}, \mu^{-}, e^{+}$, $e^{-}$, $\alpha,$ Nucleo di Azoto, $\nu, \overline{\nu}$ }
+\label{sec:2.b.33}
+Solo gli adroni (composti da Quark) possono fare interazione forte, quindi la risposta è: $p$ , $\overline{p}$ , $\pi^{+}$ , $\pi^{-}$ , $\alpha$ , Nucleo di Azoto.
 
-\subsection[]{ Pioni neutri, di energia E nel sistema del laboratorio, decadono in due fotoni. La distribuzione è isotropa ne centro di massa. Si calcoli la distribuzione dell’energia di uno dei due fotoni nel laboratorio e gli angoli, rispetto alla direzione di volo del pione, dei due fotoni nel sistema del laboratorio in funzione dell’angolo nel sistema del centro di massa.}
+\subsection[]{Pioni neutri, di energia E nel sistema del laboratorio, decadono in due fotoni. La distribuzione è isotropa ne centro di massa. Si calcoli la distribuzione dell’energia di uno dei due fotoni nel laboratorio e gli angoli, rispetto alla direzione di volo del pione, dei due fotoni nel sistema del laboratorio in funzione dell’angolo nel sistema del centro di massa.}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.35\textwidth]{immagini/decadimento-pi1.png}
+	\includegraphics[width=0.35\textwidth]{immagini/decadimento-pi2.png}
+	\caption{Decadimento del $\pi^0$ in due fotoni: a sinistra nel centro di massa e a destra nel sistema del laboratorio.}
+	\label{fig:Decadimento del Pione in fotoni.}
+\end{figure}
+Fissando idee e notazione come in Figura \ref{fig:Decadimento del Pione in fotoni.} procediamo al calcolo richiesto.
+\[
+	\ce{\ce{\pi} -> \ce{\gamma} + \ce{\gamma}}
+.\] 
+La massa del $\pi^0$ è 134.96 MeV, assumiamo che nel laboratorio questo si muova con velocità $\beta$ nell'istante precedente al decadimento. Nel sistema del $\pi^0$ si ha:
+ \[
+P_1' = \frac{m}{2} \cdot 
+\begin{pmatrix}
+	1 \\
+	\cos\left( \theta_{\text{cm}} \right) \\
+	\sin\left( \theta_{\text{cm}} \right) \\
+	0
+\end{pmatrix} \quad \quad \quad 
+P_2' = \frac{m}{2}\cdot 
+\begin{pmatrix} 
+	1 \\
+	-\cos\left( \theta_{\text{cm}}\right) \\
+	- \sin\left( \theta_{\text{cm}} \right) \\
+	0
+\end{pmatrix} 
+.\] 
+Essendo inoltre la distrubuzione di prodotti isotropa nel centro di massa possiamo scrivere:
+\[
+	\frac{\text{d} \Gamma}{\text{d}\Omega_{\text{cm}}} = \frac{\Gamma}{4 \pi} \quad \quad \implies \quad \quad 
+	\frac{\text{d} \Gamma}{\text{d}\cos\left( \theta_{\text{cm}} \right) } = \frac{\Gamma}{2}
+.\] \label{eq:isotropia}
+Nel laboratorio si ha invece:
+\[
+P_1 = E_1 \cdot 
+\begin{pmatrix}
+	1 \\
+	\cos\left( \theta_1 \right) \\
+	\sin\left( \theta_1 \right) \\
+	0
+\end{pmatrix} \quad \quad \quad 
+P_2 = E_2\cdot
+\begin{pmatrix} 
+	1 \\
+	\cos\left( \theta_2 \right) \\
+	 \sin\left( \theta_2 \right) \\
+	0
+\end{pmatrix} 
+.\] 
+È possibile limitare le energie dei prodotti nel laboratorio tramite una trasformazione di Lorentz:
+\begin{align*}
+	E_1=&\gamma\frac{m}{2}\left(1+\beta\cos\left(\theta_{\text{cm}}\right)\right)&
+		\quad E_2=&\gamma\frac{m}{2}\left(1-\beta\cos\left(\theta_{\text{cm}}\right)\right)\\
+	P_{1,x} = E_1 \cos\left( \theta_{1} \right) =& \gamma \frac{m}{2} \left( \beta + \cos \left(\theta_{\text{cm}} \right) \right)   &
+		\quad P_{2,x} = E_2 \cos\left( \theta_2 \right) =& \gamma \frac{m}{2} \left( \beta - \cos\left( \theta_{\text{cm}} \right)  \right) \\ 
+	P_{1,y} = E_1 \sin\left( \theta_1 \right) =& \frac{m}{2}\sin\left( \theta_{\text{cm}}\right) &
+		\quad P_{2, y} =E_2\sin\left( \theta_2 \right) =& - \frac{m}{2} \sin\left( \theta_{\text{cm}}\right) 
+.\end{align*}
+Guardando alla prima colonna facendo variare il $\cos\left( \theta_{\text{cm}} \right) $ con la fantasia è facile vedere che:
+\[
+	\gamma \frac{m}{2}\left( 1 - \beta \right) \le E_1 \le \gamma \frac{m}{2} \left( 1 + \beta \right) 
+.\] 
+Possiamo adesso calcolarci come è distribuita l'energia $E_1$ (della particella 1 nel laboratorio):
+\[
+	\frac{\mbox{d} \Gamma}{\mbox{d} E_1} = 
+	\frac{\mbox{d} \Gamma}{\mbox{d} \cos\left( \theta_{\text{cm}} \right) } \frac{\mbox{d} \cos\left( \theta_{\text{cm}} \right) }{\mbox{d} E_1} =
+	\frac{\Gamma}{2} \frac{2}{m \gamma \beta} = \frac{\Gamma}{m \gamma \beta}
+.\] 
+La distribuzione è quindi piatta (non dipende da $E_1$) e ben normalizzata se integrata nei limiti di $E_1$.\\
+Per quanto riguarda la seconda richiesta procediamo calcolando la distribuzione angolare di uno dei fotoni.
+Per farlo possiamo sfruttare ancora le trasformazioni di Lorentz di cui sopra isolando gli angoli nel laboratorio (essenzialmente la risposta al quesito è questa):
+\begin{align*}
+	\cos\left(\theta_1\right)=&\frac{P_{1,x}}{E_1}=\frac{\beta+\cos\left(\theta_{\text{cm}}\right)}{1+\beta\cos\left(\theta_{\text{cm}}\right)}\quad&  
+	\cos\left(\theta_2\right)=&\frac{P_{2,x}}{E_2}=\frac{\beta-\cos\left(\theta_{\text{cm}}\right)}{1-\beta\cos\left(\theta_{\text{cm}}\right)} \\  
+	\sin\left(\theta_1\right)=&\frac{P_{1,y}}{E_1}=\frac{\sin\left(\theta_{\text{cm}}\right)}{\gamma\left(1+\beta\cos\left(\theta_{\text{cm}}\right)\right)}\quad&
+	\sin\left(\theta_2\right)=&\frac{P_{1,y}}{E_2}=\frac{-\sin\left(\theta_{\text{cm}}\right)}{\gamma\left(1-\beta\cos\left(\theta_{\text{cm}}\right)\right)}
+.\end{align*}
+Dalla prima in alto si ricava la cosa che ci serve: $\cos\left( \theta_{\text{cm}} \right)$ in funzione di $\cos\left( \theta_1 \right)$:
+\[
+	\cos\left( \theta_{\text{cm}} \right) = \frac{-\beta + \cos\left( \theta_1 \right) }{1 - \beta\cos\left( \theta_1 \right) }
+.\] 
+Sfruttiamo adesso l'isotropia nel centro di massa:
+\begin{align*}
+	\frac{\text{d}\Gamma}{\text{d}\cos\left( \theta_{1} \right) } =&
+	\frac{\mbox{d}\Gamma}{\mbox{d}\cos\left(\theta_{\text{cm}}\right)}\frac{\mbox{d}\cos\left(\theta_{\text{cm}}\right)}{\mbox{d}\cos\left(\theta_1\right)}=\\
+	=&\frac{\Gamma}{2}\frac{1-\beta\cos\left(\theta_1\right)-(-\beta)(-\beta+\cos(\theta_1))}{\left(1-\beta\cos(\theta_1)\right)^2} =\\
+	=& \frac{\Gamma}{2}\frac{1-\beta^2}{\left( 1-\beta\cos\left(\theta_1\right)\right)^2}=\\
+	=&\frac{\Gamma}{2\gamma^2}\frac{1}{\left(1-\beta\cos(\theta_1)\right)^2}
+.\end{align*}
+Nell'ultima equazione si evidenzia come siano prediletti angoli piccoli (funzione crescente al tendere di $\ce{\ce{\theta_1} -> 0 }$).\\
+Infine possiamo dire qualcosa in più sulla differenza degli angoli nel laboratorio, nonchè "l'apertura" del cono formato dalla direzione dei due fotoni nel lab:
+\[
+	\sin\left( \theta_1-\theta_2 \right) = \sin\left( \theta_1 \right) \cos\left( \theta_2 \right) -\sin\left( \theta_2 \right) \cos\left( \theta_1 \right) =
+	\frac{2 \beta\sin\left( \theta_{\text{cm}} \right) }{\gamma\left( 1-\beta^2\cos^2\left(\theta_{\text{cm}}\right)\right) }
+.\]
+Questa funzione vista la dipendenza da $\beta$ fa cose diverse a seconda della velocità del $\pi^0$. 
 
+%2.b.35
 \subsection[]{ Calcolare la funzione di distribuzione in energia ed in angolo nel sistema del laboratorio di un fascio di neutrini o di muoni prodotto nel decadimento di pioni carichi di energia 14 GeV.}
+\[
+	\ce{\ce{\pi^+} -> \ce{\mu^+} + \ce{\nu_{\mu}}}
+.\] 
+Con  $m_{\pi^+} = 139.57$, $m_{\mu}=105.66$ e $m_{\nu}=0$. Se il pione ha energia 14 GeV allora avrà
+\[
+\gamma = \frac{E}{mc^2} = 100 \implies \beta \approx 0.99994
+.\] 
+Mettiamoci nel sistema del $\pi^+$, i 4-vettori energia-impulso dei prodotti sono:
+\[
+P'_{\mu} =  
+\begin{pmatrix}
+	\sqrt{P_{\text{cm}}^2+m_{\mu}^2}  \\
+	P_{\text{cm}}\cos\left( \theta_{\text{cm}} \right) \\
+	P_{\text{cm}}\sin\left( \theta_{\text{cm}} \right) \\
+	0
+\end{pmatrix} \quad \quad \quad 
+P'_{\nu} = 
+\begin{pmatrix} 
+	P_{\text{cm}} \\
+	-P_{\text{cm}}\cos\left( \theta_{\text{cm}} \right) \\
+	-P_{\text{cm}}\sin\left( \theta_{\text{cm}} \right) \\
+	0
+\end{pmatrix} 
+.\] 
+Applichiamo la conservazione dell'energia nel centro di massa per esprimere $P_{\text{cm}}$ in funzione delle sole masse invarianti:
+\[
+	m_{\pi} = E'_{\mu} + E'_{\nu} =
+	\sqrt{P_{\text{cm}}^2 + m_{\mu}^2} + P_{\text{cm}} \quad \implies
+	\quad P_{\text{cm}} = \frac{m_{\pi}^2 - m_{\mu}^2}{2m_{\pi}} \approx 30\text{ Mev}
+.\]
+Visto che il pione ha spin nullo si ha anche qua l'isotropia dei prodott, quindi il \hyperref[eq:isotropia]{risultato} della domanda precedente su $\frac{\text{d}\Gamma}{\text{d}\Omega}$.
+Trasformiamo allora per l'energia del neutrino nel laboratorio:
+\[
+	E_{\nu}^{\text{lab}}=\gamma P_{\text{cm}} \left(1-\beta\cos\left( \theta_{\text{cm}}\right)\right) 
+.\] 
+In cui si trovano di nuovo limiti inferiori essendoci $\cos\left( \theta_{\text{cm}} \right) $ di mezzo:
+\[
+	0 \approx \gamma P_{\text{cm}}\left( 1-\beta \right) \le E_{\nu}^{\text{lab}}\le \gamma P_{\text{cm}}\left( 1+\beta \right) \approx 6.2 \text{ GeV}
+.\] 
+Abbiamo tutte le carte per calcolare la distribuzione del neutrino:
+\[
+	\frac{\mbox{d} \Gamma}{\mbox{d} E_{\nu}^{lab}} = 
+	\frac{\mbox{d} \Gamma}{\text{d}\cos\left( \theta_{\text{cm}} \right) } \frac{\text{d}\cos\left( \theta_{\text{cm}} \right) }{\mbox{d} E_{\nu}^{lab}} =
+	= \frac{\Gamma}{2}\frac{1}{P_{\text{cm}}\beta \gamma}
+.\] 
+Analogamente si può fare per il $\mu$:
+\[
+	E_{\mu}^{\text{lab}}=\gamma\left( \sqrt{P_{\text{cm}}^2+m_{\mu}} + \beta P_{\text{cm}}\cos\left( \theta_{\text{cm}}\right)\right)
+.\] 
+\[
+	7.8 \text{ GeV} \approx \gamma\left( \sqrt{P_{\text{cm}}^2 + m_{cm}^2} - \beta P_{\text{cm}} \right) \le E_{\mu}^{\text{lab}} \le 
+	\gamma\left( \sqrt{P_{\text{cm}}^2 + m_{cm}^2} + \beta P_{\text{cm}} \right)  \approx 14 \text{ GeV}
+.\] 
+\[
+\frac{\mbox{d} \Gamma}{\mbox{d} E_{\mu}^{\text{lab}}} = \frac{\Gamma}{2}\frac{1}{P_{\text{cm}}\beta \gamma}
+.\] 
 
+%2.b.36
 \subsection[]{ Qual e' l'andamento delle masse nucleari a parità di A in funzione di Z?}
+I nuclei isobari (a parità di A) hanno una massa con andamento quadratico in Z:
+\begin{align*}
+	M_{A,Z}^{\text{atomo}} =& ZM_H^{\text{atomo}} + Nm_n - B_{A,Z} =\\
+	=&ZM_H^{\text{atomo}}+\left(A-Z\right)m_u-\text{cost}\left(A\right)-a_s\frac{Z^2}{A^{1/3}}-a_{\text{sym}}\frac{\left(Z-N\right)^2}{A}-\delta_{\text{pair}}
+.\end{align*}
 
+% 2.b.37
 \subsection[]{ Dimostrare che in un tipico decadimento $\alpha$, la particella $\alpha$ emerge con circa il 98\% dell'energia disponibile.}
+In un decadimento $\alpha$ si ha:
+\[
+\ce{\ce{^{A}_{Z}X_{N}} -> \ce{^{A-4}_{Z-2}Y_{N-2}} + \alpha}
+.\] 
+In decadimento tipico di questi si ha anche che $A\gg 4$, ,$Z\gg 2$. Inoltre $B\left( 4,2 \right) = 28.3$ MeV. Forti di queste informazioni immagineremo un piano $A,Z$ pensando queste come variabili indipendenti per poter fare alcune approssimazioni in seguito. Calcoliamo intanto il Q-valore.\\
+Nel calcolo del $Q$-valore del processo utilizziamo la massa dell'atomo scritta come:
+\[
+M_{A,Z} = ZM_H + N m_n - B_{A,Z} 
+.\] 
+Notiamo che, conservandosi il numero di protoni e neutroni il $Q$-valore si riduce alla differenza delle Biniding Energy $B$ con particolare attenzione ad i segni nella \hyperref[eq:Q-valore]{Definizione di $Q$}:
+ \[
+	 Q_{\alpha} = B\left( A-4,Z-2 \right) + B\left( 4,2 \right) - B\left( A,Z \right) 
+.\] 
+Ragionando sempre in termini di $A,Z$ generigi sfruttiamo le ipotesi $A\gg 4$ e $Z\gg 2$ per sviluppare il termine $B\left( A-4,Z-2 \right) $ attorno al punto $\left[ A , Z \right]$:
+\[
+	B\left( A-4,Z-2 \right) \approx B\left( A, Z \right) - 4 \frac{\partial B\left( A,Z \right)}{\partial A}-2\frac{\partial B\left( A,Z \right) }{\partial Z}   
+.\] 
+Quindi reinserendo nella formula per $Q_{\alpha}$ ed utilizzando anche la \hyperref[eq:B-energy]{Definizione di B}:
+\begin{align*}
+	Q_{\alpha} \approx& - 4 \frac{\partial B\left( A,Z \right)}{\partial A}-2\frac{\partial B\left( A,Z \right) }{\partial Z} + 28.3 \text{ MeV} =\\
+	=& -4a_V + \frac{8}{3} a_S A^{-1 /3} +4 a_C \frac{Z}{A^{1 /3}}\left( 1- \frac{Z}{3A} \right) - 4a_{sym} \frac{\left( A-2Z \right)^2 }{A^2} + 28.3 \text{ MeV} 
+.\end{align*}
+Quest'ultima ci permette di notare che i valori tipici del $Q$ del decadimento non si discotano dai pochi MeV (tipicamente 5 MeV), niente di relativistico insomma.\\
+Se ci mettiamo adesso in un sistema solidale alla particella che decade si ha che le due particelle finiali hanno impulsi di modulo uguale ed opposta direzione (ipotesi di spin nullo), quindi:
+\[
+m_{\alpha}^2 \left| \boldsymbol{v_{\alpha}} \right|^2 = m_{y}^2 \left| \boldsymbol{v_{y}} \right|^2 \implies m_{\alpha} T_{\alpha} = m_{y}T_{y}
+.\]
+E visto che il $Q$-valore è definito anche come  $Q = T_{\alpha} + T_{y}$ se ne conclude che:
+\[
+	T_{\alpha} = \frac{Q}{1 + \frac{m_{\alpha}}{m_{y}}} \approx Q\left( 1-\frac{m_{\alpha}}{m_y} \right) \approx Q\left( 1-\frac{4}{A-4} \right) 
+.\] 
+Basta avere $A = 200$ per  $T_{\alpha} = 0.98\cdot Q$
 
 \subsection[]{ Dimostrare che in un decadimento $\beta$ la somma delle energie dell'elettrone e dell'antineutrino emessi é praticamente uguale al Q-valore della reazione.}
+Ricordando il decadimento $\beta^-$ :
+\[
+\ce{\ce{^{A}_{Z}X_{N}} -> \ce{^{A}_{Z+1}Y^+_{N-1}} + e^- + \overline{\nu}_e}
+.\]
+Mettiamoci in un sistema in cui $X$ decade a riposo. In questo sistema le energie dei 3 prodotti sono tutte minori del $Q$-valore poichè:
+\[
+T_Y + T_{e^-} + T_{\overline{\nu}_e} = Q
+.\] 
+Questo pone dei limiti anche agli impulsi dei 3 prodotti:
+\[
+	\left| \boldsymbol{p_{e^-}} \right| = \sqrt{E_e^2 - m_e^2}  = \sqrt{\left( T_e + m_e \right)^2 - m_e^2 } < \sqrt{Q^2+2m_eQ}  
+.\] 
+\[
+	\left| \boldsymbol{p_{\overline{\nu}_e}} \right| < Q 
+.\]
+\[
+\left| \boldsymbol{p}_Y \right| <  \left| \boldsymbol{p_{\overline{\nu}_e}} \right| + \left| \boldsymbol{p_{e^-}} \right| < Q + \sqrt{Q^2+2m_eQ} 
+.\] 
+Come nel caso precedente si può dimostrare che $Q \sim \text{ MeV}$, quindi l'energia del nucleo uscente (la cui massa è almeno tre ordini superiori a Q) nel sistema del centro di massa:
+\[
+	T_{Y} = \frac{\left| \boldsymbol{p}_Y \right|^2 }{2m_Y} < \frac{\left( Q + \sqrt{Q^2+2m_e Q}  \right) }{2m_Y}  \sim \frac{Q}{1000} \quad \implies
+	\quad Q \approx T_{e^-} + T_{\overline{\nu}_e} 
+.\] 

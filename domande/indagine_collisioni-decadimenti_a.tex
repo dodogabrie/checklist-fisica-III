@@ -209,7 +209,10 @@ Diamo adesso esempi di reazioni:
 	\item \textbf{numero barionico.} Si conserva.
 	\item \textbf{numero leptonico elettronico.} Si conserva. 
 	\item \textbf{numero leptonico muonico.} Si conserva.
-	\item \textbf{numero di elettroni.} Si conserva.
+	\item \textbf{numero di elettroni.} Non si conserva: Formazione di coppie.
+		\[
+			\ce{ \ce{\gamma} -> \ce{e^+} + \ce{e^-}}
+		.\]  
 	\item \textbf{differenza fra il numero di elettroni ed il numero di positroni.} Si conserva.
 	\item \textbf{numero di protoni.} Si conserva.
 	\item \textbf{differenza fra il numero di protoni ed il numero di antiprotoni.} Si conserva.
@@ -220,15 +223,12 @@ Diamo adesso esempi di reazioni:
 \begin{enumerate}
 	\item \textbf{carica elettrica.} Si conserva.
 	\item \textbf{numero barionico.} Si conserva.
-	\item \textbf{numero leptonico elettronico.} Non si conserva:
-	\[
-		e^+ \ + \ e^- \implies \pi^+ \ + \ \pi^-
-	\]
-	\item \textbf{numero leptonico muonico.} Non si conserva: stessa di sopra.
-	\item \textbf{numero di elettroni.} Non si conserva: sempre quella.
-	\item \textbf{differenza fra il numero di elettroni ed il numero di positroni.} Si conserva. (sicuro?) 
-	\item \textbf{numero di protoni.} Non si conserva.
-	\item \textbf{differenza fra il numero di protoni ed il numero di antiprotoni.} Ma che ne so\ldots
+	\item \textbf{numero leptonico elettronico.} Si conserva.
+	\item \textbf{numero leptonico muonico.} Si conserva.
+	\item \textbf{numero di elettroni.} Si conserva.
+	\item \textbf{differenza fra il numero di elettroni ed il numero di positroni.} Si conserva.  
+	\item \textbf{numero di protoni.} Si conserva.
+	\item \textbf{differenza fra il numero di protoni ed il numero di antiprotoni.} Si conserva.
 \end{enumerate}
 
 
@@ -261,7 +261,7 @@ Un processo si dice esclusivo se in esso viene misurato il 4-impulso di tutti i 
 Il Q-valore di un processo è definito come: 
 \[
 	Q = \left( m_{i} - m_{f} \right) c^2 = T_f - T_i
-\]
+\] \label{eq:Q-valore}
 Un processo è esotermico se $Q > 0$, endoterimco altrimenti.
 
 \subsection[]{ Definire la sezione d’urto nei seguenti tre casi, e dimostrare come da ognuno di essi si possano dedurre gli altri due: 
@@ -481,7 +481,7 @@ Poi possiamo aggiungere una ulteriore correzione per tener conto della repulsion
 Si hanno infine altri termini correttivi che tengono di conto di effetti quantistici e del principio di Pauli:
 \[
 	B\left( A,Z \right) = a_{V}A - a_{S}A^{2/3} - a_{C} \frac{Z^2 }{A^{1/3}} + a_{sym}\frac{\left( Z - N \right)^2}{A} + \delta_{pair} 
-.\]
+.\] \label{eq:B-energy}
 Il modello in considerazione è quello "A Goccia", l'ipotesi di questo è che il nucleo di numero atomico Z e peso atomico A occupi un volume sferico di raggio:
 \[
 	R = r_0 A^{1/3} + r_{skin} \approx \left( 1.25 A^{1/3} + 2.0  \right) fm
