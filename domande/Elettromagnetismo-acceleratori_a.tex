@@ -1,51 +1,237 @@
-\subsection*{3.a.1 Dare la definizione di quadri-corrente e di quadri-potenziale del campo elettromagnetico.}
-
-\subsection*{3.a.2 Dare la definizione del tensore del campo elettromagnetico e scriverne le componenti.}
-
-\subsection*{3.a.3 Dare la definizione della "densità di energia" del campo elettromagnetico, del "vettore di Poynting" e del "tensore degli sforzi di Maxwell"}
-
-\subsection*{3.a.4 Scrivere le equazioni di Maxwell (sia quelle non omogenee che quelle omogenee) in forma covariante.}
-
-\subsection*{3.a.5 Scrivere l'equazione di continuità per la quadri-corrente in forma covariante (e verificarne la consistenza con le equazioni di Maxwell)}
-
-\subsection*{3.a.6 Dare la definizione di "gauge di Lorenz" e di "gauge di Coulomb".}
-
-\subsection*{3.a.7 Scrivere la legge di trasformazione di Lorentz del campo elettrico e del campo magnetico (distinguendo fra componenti parallele e componenti perpendicolari al "boost").}
-
-\subsection*{3.a.8 Dare la definizione del quadri-vettore "densità di forza di Lorentz" .}
-
-\subsection*{3.a.9 Ricavare le espressioni dell’effetto Doppler relativistico (calcolo della frequenza e dell’angolo misurati dal rivelatore nel caso di moto relativo fra sorgente e rivelatore stesso).}
-
-\subsection*{3.a.10 Scrivere l’espressione per i potenziali ritardati ( $\phi$ ed $A$ ) per una qualunque distribuzione di cariche ( $\rho$ ) e correnti ( $j$ ).}
-vai giu
-\subsection*{3.a.11 Spiegare tutti i termini dell’espressione 
+\subsection[]{Dare la definizione di quadri-corrente e di quadri-potenziale del campo elettromagnetico.}
+\label{sec:3.a.1}
 \[
+	j^{\mu}=\left( c \rho, \boldsymbol{j} \right) \quad \quad 
+	A^{\mu}=\left( \varphi, \boldsymbol{A}\right) 
+.\] 
+
+\subsection[]{Dare la definizione del tensore del campo elettromagnetico e scriverne le componenti.}
+\label{seq:3.a.2}
+Il tensore discusso è il tensore antisimmetrico di rango 2
+\[
+F^{\mu \nu} = \partial^{\mu}A^{\nu} - \partial^{\nu}A^{\mu}  
+.\] 
+avente componenti:
+\[
+F^{\mu \nu}=
+\left(
+\begin{array}{c|ccc}
+	0 & -Ex & -E_y & -E_z \\
+	\hline
+	Ex & 0 & -B_z & B_y \\
+	E_y & B_z & 0 & -B_x \\
+	E_z  & -B_y & B_x & 0 \\
+\end{array}
+\right)
+.\] 
+
+\subsection[]{Dare la definizione della "densità di energia" del campo elettromagnetico, del "vettore di Poynting" e del "tensore degli sforzi di Maxwell"}
+Trattiamo qua di leggi di conservazione provenienti da equazioni di continuità:
+\label{sec:3.a.3}
+\[
+	\frac{\partial}{\partial t} \left(\text{dentità di energia}\right) + \nabla \cdot \left( \text{vettore} \right) = \left( \text{densità di potenza} \right) 
+.\] 
+Si può dimostrare (vedi Fisica II, Teorema di Poynting) che la densità di energia nell'equazione nel caso di campo elettromagnetico è:
+\[
+\rho_{E}=\epsilon_0 \frac{E^2}{2}+\epsilon_0c^2 \frac{B^2}{2} 
+.\] 
+Mentre il vettore, detto Vettore di Poynting:
+\[
+\boldsymbol{S}= \frac{\boldsymbol{E}\times \boldsymbol{B}}{\mu_0}
+.\] 
+Il tensore di Maxwell deriva invece da un'altra legge di conservazione: quella dell'impulso del campo elettromagnetico. Tale tensore è così definito:
+\[
+	T_{i,j}=\left( \epsilon_0 \frac{E^2+c^2B^2}{2}\delta_{ij}-\epsilon_0\left( E_iE_j+c^2B_iB_j \right)  \right) 
+.\] 
+\subsection[]{Scrivere le equazioni di Maxwell (sia quelle non omogenee che quelle omogenee) in forma covariante.}
+\label{sec:3.a.4}
+\[
+	\partial_{\mu}F^{\mu \nu} = \frac{j^{\mu}}{\epsilon_0c} \quad \quad \text{Disomogenee}
+.\]  
+\[
+	\partial_{\mu} \tilde{F}^{\mu \nu}= \frac{1}{2} \epsilon^{\mu\nu\alpha\beta}F_{\alpha\beta} = 0 \quad \quad \text{Omogenee}
+.\]  
+
+\subsection[]{Scrivere l'equazione di continuità per la quadri-corrente in forma covariante (e verificarne la consistenza con le equazioni di Maxwell)}
+\label{sec:3.a.5}
+Prendiamo le equazioni di Maxwell disomogenee (in forma covariante) e sfruttiamo l'antisimmetricità del tensore elettromagnetico:
+\[
+	\partial_{\mu}\partial_{\nu}F^{\mu\nu}=0
+.\] 
+facendo la stesa operazione anche al di là dell'uguale si trova quindi l'equazione richiesta
+\[
+	\partial_{\mu}j^{\mu}= \frac{\partial \rho}{\partial t} + \nabla\cdot \boldsymbol{j}=0
+.\] 
+\subsection[]{Dare la definizione di "gauge di Lorenz" e di "gauge di Coulomb".}
+\label{sec:3.a.6}
+Nella Gauge di Lorenz è richiesto:
+\[
+	\partial_{\mu}A^{\mu}=0
+.\] 
+Mentre nella Gauge di Columb:
+\[
+	\nabla\cdot \boldsymbol{A}=0
+.\] 
+Le due condizioni si equivalgono nel caso elettrostatico.
+
+\subsection[]{Scrivere la legge di trasformazione di Lorentz del campo elettrico e del campo magnetico (distinguendo fra componenti parallele e componenti perpendicolari al "boost").}
+\label{sec:3.a.7}
+\begin{align*}
+	&\boldsymbol{E}'_{\|} = \boldsymbol{E}_{\|}\\
+	&\boldsymbol{E}'_{\bot}=\gamma\left( \boldsymbol{E}_{\bot}+ \boldsymbol{\beta} \wedge \boldsymbol{B} \right)\\
+	&\boldsymbol{B}'_{\|}=\boldsymbol{B}_{\|}\\
+	&\boldsymbol{B}'_{\bot}=\gamma\left( \boldsymbol{B}_{\bot}-\boldsymbol{\beta}\wedge \boldsymbol{E}  \right) 
+.\end{align*}
+
+\subsection[]{Dare la definizione del quadri-vettore "densità di forza di Lorentz" .}
+\label{sec:3.a.8}
+\[
+	f^{\mu}=\frac{\mbox{d} p^{\mu}}{\mbox{d} t \text{d}^3r} 
+.\] 
+Il fatto che questo sia un quadrivettore deriva dal fatto che il denominatore è un invariante relativistico, si ha inoltre che:
+\[
+	f^{\mu}=\frac{1}{c}F^{\mu\nu}j_{\nu}=\left(\frac{\boldsymbol{j}\cdot\boldsymbol{E}}{c},\rho\boldsymbol{E}+\frac{1}{c}\boldsymbol{j}\wedge\boldsymbol{B}\right)
+.\] 
+
+\subsection[]{Ricavare le espressioni dell’effetto Doppler relativistico (calcolo della frequenza e dell’angolo misurati dal rivelatore nel caso di moto relativo fra sorgente e rivelatore stesso).}
+\label{sec:3.a.9}
+Si sa che esiste il 4-vettore:
+\[
+	k^{\mu}=\left( \frac{\omega}{c}, \boldsymbol{k} \right) 
+.\]
+Consideriamo un moto bidimensionale e mettiamoci nel sistema di una sorgente di onde elettromagnetiche che si muove (la sorgente) a velocità $\boldsymbol{v} =c\beta \hat{x}$, in tale sistema il quadrivettore $k^{\mu}$ lo definiamo come:
+\[
+	k^{\mu}=\frac{\omega}{c}\left( 1, \ \cos\theta \cdot \hat{x}, \ \sin\theta\cdot  \hat{y} \right) 
+.\] 
+Invece nel sistema del rivelatore questo quadrivettore è:
+\[
+	k^{\mu}_{R} = \frac{\omega}{c}\left( 1, \ \cos\theta_{R}\cdot \hat{x}, \ \sin\theta_{R} \cdot \hat{y} \right) 
+.\] 
+Legati dalla trasformazione di Lorentz tra i due sistemi:
+\begin{align*}
+	\omega_{R}&=\gamma\omega\left( 1 +\beta\cos\theta \right)\\ 
+	\tan\theta_{R}&=\frac{\sin\theta}{\gamma\left( \cos\theta+\beta \right) }
+.\end{align*}
+
+\subsection[]{Scrivere l’espressione per i potenziali ritardati ( $\phi$ ed $A$ ) per una qualunque distribuzione di cariche ( $\rho$ ) e correnti ( $j$ ).}
+\label{sec:3.b.10}
+Potenziale scalare:
+\[
+	\varphi\left( \boldsymbol{r},t \right) = \int 
+	\frac{\rho\left( \boldsymbol{r}', t-\left| \boldsymbol{r}-\boldsymbol{r}' \right| /c  \right) }{\left| \boldsymbol{r}-\boldsymbol{r}' \right| } d^3r'
+.\] 
+Potenziale vettore:
+\[
+	\boldsymbol{A}\left( \boldsymbol{r},t \right) =\frac{1}{c}\int 
+	\frac{\boldsymbol{j}\left( \boldsymbol{r}', t-\left| \boldsymbol{r}-\boldsymbol{r}' \right| /c  \right) }{\left| \boldsymbol{r}-\boldsymbol{r}' \right| }d^3r'
+.\] 
+
+\subsection[]{Spiegare tutti i termini dell’espressione 
+\label{sec:3.a.11}
+	\[
 	\boldsymbol{E} = \left[ \frac{q}{R^2}\frac{\hat{n}- \boldsymbol{\beta}}{\gamma^2 \left( 1 - \hat{n} \cdot \boldsymbol{\beta} \right)^3 } + \frac{q}{Rc} \frac{\hat{n} \wedge \left[ \left( \hat{n} -\boldsymbol{\beta}  \right) \wedge \dot{\boldsymbol{\beta}} \right] }{\left( 1 - \hat{n} \boldsymbol{\beta}\right)^3 } \right]_{t' = t - R/c}  
 \] 
 per il campo elettrico generato da una carica puntiforme in moto arbitrario.}
+Sia $\boldsymbol{s}\left( t \right) $ la legge oraria della carica q e sia $\boldsymbol{r}$ la posizione dell'osservatore, allora possiamo definire le quantità dell'espressione:
+\[
+	\boldsymbol{R}=\boldsymbol{r}-\boldsymbol{s}\left( t' \right) \quad \quad \hat{n}=\boldsymbol{R}/R
+.\] 
+Il primo termine della equazione nella richiesta è il campo generato da una carica che si muove in moto rettilineo uniforme e non è un termine radiativo (va giu come $R^{-2}$), il secondo termine è invece radiativo e dipende dalla accelerazione della carica.
+\subsection[]{Dare la definizione di “solido di radiazione” e di “diagramma di radiazione” per una carica accelerata.}
+\label{sec:3.a.12}
+\paragraph{Solido di radiazione}
+\label{par:Solido di radiazione.}
+Preso un oggetto che irraggia si dice solido di radiazione la figura tridimensiona costruita posizionando nell'origine la sorgente di radiazione e nelle diverse direzioni spaziali frecce di lunghezza proporzionale all'intensità del campo elettrico nella direzione indicata dalla freccia stessa.
 
-\subsection*{3.a.12 Dare la definizione di “solido di radiazione” e di “diagramma di radiazione” per una carica accelerata.}
+\paragraph{Diagramma di radiazione.}%
+\label{par:Diagramma di radiazione.}
+Sezione planare del solido di radiazione in direzioni opportune a comprenderne la forma. 
 
-\subsection*{3.a.13 Quanto vale il campo magnetico generato da una carica puntiforme in moto arbitrario se è noto il campo elettrico?}
-
-\subsection*{3.a.14 Spiegare tutti i termi della espressione 
+\subsection[]{Quanto vale il campo magnetico generato da una carica puntiforme in moto arbitrario se è noto il campo elettrico?}
+\label{sec:3.a.13}
+\[
+	\boldsymbol{B}= \frac{n}{c} \hat{n} \wedge \boldsymbol{E} 	
+.\] 
+Con n indice di rifrazione del mezzo, $\hat{n}$ direzione dell'onda elettromagnetica, nel vuoto si ha $n=1$.
+\subsection[]{Spiegare tutti i termi della espressione 
 \[
 	\frac{\mbox{d} I_{\omega}}{\mbox{d} \Omega} = \frac{q^2}{4 \pi^2 c} \left| \int{ \frac{\hat{n} \wedge \left[ \left( \hat{n}-\boldsymbol{\beta}\right) \wedge \dot{\boldsymbol{\beta}} \right]]}{\left( 1- \hat{n} \boldsymbol{\beta}\right)^2} e^{i\omega \left( t' - \frac{\boldsymbol{r'} \cdot \hat{n}}{c} \right) }  }  \right|^2
 \] 
 }
+\label{sec:3.a.14}
+Parliamo della famigerata Radiazione di sincrotrone.
+Quella scritta sopra è la distribuzione angolare dell'energia irraggiata per unità di frequenza $I_{\omega}$ di una carica $q$ in moto con velocità  $\boldsymbol{\beta}$. Inoltre $\hat{n}$ è la direzione di osservazione e il sistema usato è il CGS. 
+Anche se non richiesto possiamo dimostrarla a partire dalla formula del campo di radiazione della \hyperref[sec:3.a.11]{Domanda 3.a.11}.:
+\[
+	\boldsymbol{E}= \left. \frac{q}{cr}
+	\frac{\hat{n}\wedge\left[\left(\hat{n}-\boldsymbol{\beta}\right)\wedge\dot{\boldsymbol{\beta}}\right]}
+	{\left(1-\hat{n}\cdot \boldsymbol{\beta}\right)^3} \right|_{t=t_{\text{rit}}}
+\]
+ricordiamo che $\boldsymbol{B}=\hat{n}\wedge \boldsymbol{E}$, e che come conseguenza la densità di energia irraggiatà $\varepsilon$ è proporzionale a $\left| \boldsymbol{E} \right| ^2$, quindi l'energia irraggiata per unità di angolo solido si esprime come:
+\begin{align*}
+	\frac{\mbox{d} \varepsilon}{\mbox{d} \Omega} =& \int_{-\infty}^{\infty}r^2 \left[ \boldsymbol{S}\cdot\hat{n}\right] dt =\\
+	=& \int r^2 \frac{c}{4\pi}\left| \boldsymbol{E} \right|^2 dt = \\
+	=& \frac{q^2}{4\pi c} \int \left[ \left. \frac{ \hat{n} \wedge \left( \left( \hat{n}-\boldsymbol{\beta} \right)\wedge\dot{\boldsymbol{\beta}}\right)}
+		{\left( 1- \hat{n}\cdot \boldsymbol{\beta} \right)^3 } \right|_{t = t_{\text{rit}}} \right]^2 dt
+.\end{align*}
+È utile adesso avvalersi dell'itentità di parseval sulla trasformata di Fourier (attenzione che a quella su Wikipedia gli manca il fattore $2\pi$):
+\[
+	\int_{-\infty}^{\infty} \left| x\left( t \right)  \right|^2 dt = \frac{1}{2\pi} \int_{-\infty}^{\infty} \left| \hat{x}\left( \omega \right)\right|^2d\omega 
+.\] 
+Portiamo allora l'integranda nel dominio delle frequenze:
+\[
+	\frac{\mbox{d} \varepsilon}{\mbox{d} \Omega} = \frac{1}{2\pi}  \frac{q^2}{4\pi c} 2 \cdot\int_0^{\infty} \left| \hat{f}\left( \omega \right) \right|^2 d \omega 
+.\] 
+con $\hat{f}\left( \omega \right) $ trasformata dell'integranda nell'equazione sopra, l'integrale va solo sulle frequenze positive perchè la funzione che trasformiamo è reale ($\hat{f}\left( -\omega \right) = \hat{f}^*\left( \omega \right) $), da questo viene il fattore 2.\\
+Adesso la funzione integranda si avvicina molto all'oggetto che stavamo cercando (un oggetto definito per unità di frequenza), infatti:
+\[
+	\frac{\mbox{d} I_{\omega}}{\mbox{d} \Omega} = \frac{q^2}{4\pi^2 c} \left| \hat{f}\left( \omega \right)  \right|^2 =  \frac{q^2}{4\pi^2 c} 
+	\left| \int_{-\infty}^{\infty} \left. \frac{ \hat{n} \wedge \left( \left( \hat{n}-\boldsymbol{\beta} \right)\wedge\dot{\boldsymbol{\beta}}\right)}
+		{\left( 1- \hat{n}\cdot \boldsymbol{\beta} \right)^3 } \right|_{t = t_{\text{rit}}} e^{-i\omega t} dt \right|^2 
+.\]
+Basta adesso cambiare variabili: 
+\[
+	\ce{\ce{dt} -> \ce{dt_{\text{rit}}}} = dt' = d \left(t - \frac{R\left( t' \right) }{c} \right)
+.\] 
+con $R\left( t \right)$ distanza tra particella e punto di osservazione, è bene ricordare che per distanze "grandi" come quelle dei campi di radiazione si ha:
+\[
+	R\left( t' \right) \approx x - \hat{n}\cdot \boldsymbol{r}\left( t' \right)  
+.\] 
+Con $x$ distanza del punto di osservazione dall'origine e $\boldsymbol{r}\left( t \right)$ traiettoria della particella. In questo modo è evidente che lo Jacobiano del cambio di variabili sia:
+\[
+	\frac{dt}{dt'}= 1-\hat{n} \cdot \boldsymbol{\beta}
+.\] 
+rimettendo tutto dentro si ottiene l'espressione nella richiesta.
 
-\subsection*{3.a.15 Una carica elettrica Q si muove con velocità costante (relativistica) di modulo V su una retta, a distanza b da tale retta si trova un osservatore che misura il campo elettrico e magnetico generato dalla carica. Quanto è l'ordine di grandezza del tempo in cui l'osservatore misura un campo elettrico che sia almeno la metà del campo elettrico massimo misurato?}
 
-\subsection*{3.a.16 Enunciare il principio di Babinet.}
+\subsection[]{Una carica elettrica Q si muove con velocità costante (relativistica) di modulo V su una retta, a distanza b da tale retta si trova un osservatore che misura il campo elettrico e magnetico generato dalla carica. Quanto è l'ordine di grandezza del tempo in cui l'osservatore misura un campo elettrico che sia almeno la metà del campo elettrico massimo misurato?}
+È evidentemente necessario per rispondere alla domanda parametrizzare il campo elettrico in funzione del tempo nel riferimento dell'osservatore. Per far questo ci mettiamo da prima nel riferimento della carica (O') e poi con una trasformazione di Lorentz dei campi andiamo nel sistema dell'osservatore:
+\begin{align*}
+	&\boldsymbol{E}'= e \frac{\boldsymbol{R}'}{R'^3}	&&					&\boldsymbol{E}_{\|}=&\boldsymbol{E}'_{\|} \\
+	& 	 						&\ce{->[\quad \text{Lorentz}\quad]}&	&\boldsymbol{E}_{\bot}=&\gamma \boldsymbol{E}'_{\bot}\\ 
+	&\boldsymbol{B}'= \ 0					&&					&\boldsymbol{B}\ =&\boldsymbol{\beta}\wedge \boldsymbol{E} 
+.\end{align*}
+Tuttavia come è ben noto i campi sono espressi ancora in funzione delle variabili del sistema solidale alla carica (t',x',y',z'), sarà necessario un altro boost per cambiare parametrizzazione.
+\begin{align*}
+	&x\left( t \right) = v\cdot t	&&					&x'=&\gamma\left( x-vt \right) \\
+	&y\left( t \right) = 0		&\ce{ ->[\quad \text{Lorentz}] \quad}&	&y'=&y \\
+	&z\left( t \right) = 0		&&					&z'=&z
+.\end{align*}
+Rimane la dipendenza del campo elettrico dalla distanza dalla carica anche dopo la trasformazione di Lorentz, tale distanza è tuttavia parametrizzata con le variabili primate: 
+\[
+	R' = \sqrt{x'^2 + y'^2 + z'^2} = \sqrt{\gamma^2\left( x-vt \right)^2 + y^2 + z^2} 
+.\] 
 
-\subsection*{3.a.17 Definire il fattore di forma per un'onda che incide su su sistema.}
+\subsection[]{Enunciare il principio di Babinet.}
 
-\subsection*{3.a.18 Spiegare qualitativamente il funzionamento di un acceleratore elettrostatico.}
+\subsection[]{Definire il fattore di forma per un'onda che incide su su sistema.}
 
-\subsection*{3.a.19 Quali sono, approssimativamente, le energie per unità di lunghezza che attualmente si ottengono nell’accelerazione di protoni con la tecnica dei "drift tube"? E delle cavità superconduttrici?}
-\subsection*{3.a.20 Spiegare qualitativamente il funzionamento di un acceleratore lineare, indicando le differenze importanti fra l’accelerazione di elettroni e di protoni.}
+\subsection[]{Spiegare qualitativamente il funzionamento di un acceleratore elettrostatico.}
 
-\subsection*{3.a.21 Spiegare qualitativamente il funzionamento di un acceleratore circolare, indicando le differenze importanti fra l’accelerazione di elettroni e di protoni.}
+\subsection[]{Quali sono, approssimativamente, le energie per unità di lunghezza che attualmente si ottengono nell’accelerazione di protoni con la tecnica dei "drift tube"? E delle cavità superconduttrici?}
+\subsection[]{Spiegare qualitativamente il funzionamento di un acceleratore lineare, indicando le differenze importanti fra l’accelerazione di elettroni e di protoni.}
 
-\subsection*{3.a.22 Effettuare un disegno, qualitativo, del solido di radiazione per una carica in un acceleratore lineare o circolare.}
+\subsection[]{Spiegare qualitativamente il funzionamento di un acceleratore circolare, indicando le differenze importanti fra l’accelerazione di elettroni e di protoni.}
+
+\subsection[]{Effettuare un disegno, qualitativo, del solido di radiazione per una carica in un acceleratore lineare o circolare.}
 
