@@ -205,11 +205,12 @@ rimettendo tutto dentro si ottiene l'espressione nella richiesta.
 
 
 \subsection[]{Una carica elettrica Q si muove con velocità costante (relativistica) di modulo V su una retta, a distanza b da tale retta si trova un osservatore che misura il campo elettrico e magnetico generato dalla carica. Quanto è l'ordine di grandezza del tempo in cui l'osservatore misura un campo elettrico che sia almeno la metà del campo elettrico massimo misurato?}
+\label{sec:3.a.15}
 È evidentemente necessario per rispondere alla domanda parametrizzare il campo elettrico in funzione del tempo nel riferimento dell'osservatore. Per far questo ci mettiamo da prima nel riferimento della carica (O') e poi con una trasformazione di Lorentz dei campi andiamo nel sistema dell'osservatore:
 \begin{align*}
-	&\boldsymbol{E}'= e \frac{\boldsymbol{R}'}{R'^3}	&&					&\boldsymbol{E}_{\|}=&\boldsymbol{E}'_{\|} \\
-	& 	 						&\ce{->[\quad \text{Lorentz}\quad]}&	&\boldsymbol{E}_{\bot}=&\gamma \boldsymbol{E}'_{\bot}\\ 
-	&\boldsymbol{B}'= \ 0					&&					&\boldsymbol{B}\ =&\boldsymbol{\beta}\wedge \boldsymbol{E} 
+&									&&						&\boldsymbol{E}_{\|}=&\boldsymbol{E}'_{\|} \\
+& \bs{E}'= e \frac{\bs{R}'}{R'^3}, \quad \quad \quad \bs{B}'= \ 0	 &\ce{->[\quad \text{Lorentz}\quad]}&		&\bs{E}_{\bot}=&\gamma\bs{E}'_{\bot}\\ 
+&									&&						&\bs{B}\ =&\bs{\beta}\wedge \bs{E} 
 .\end{align*}
 Tuttavia come è ben noto i campi sono espressi ancora in funzione delle variabili del sistema solidale alla carica (t',x',y',z'), sarà necessario un altro boost per cambiare parametrizzazione.
 \begin{align*}
@@ -218,9 +219,22 @@ Tuttavia come è ben noto i campi sono espressi ancora in funzione delle variabi
 	&z\left( t \right) = 0		&&					&z'=&z
 .\end{align*}
 Rimane la dipendenza del campo elettrico dalla distanza dalla carica anche dopo la trasformazione di Lorentz, tale distanza è tuttavia parametrizzata con le variabili primate: 
+\begin{align*}
+	R'& = \sqrt{x'^2 + y'^2 + z'^2} =\\ 
+	&=\sqrt{\gamma^2\left( x-vt \right)^2 + y^2 + z^2} =\\ 
+	&=\gamma \sqrt{\left( x-vt \right)^2 + \left( 1-\beta^2 \right)\left( y^2+z^2 \right)}=\gamma R^{*} 
+.\end{align*}	
+Inseriamola nelle componenti dei campi: 
+\begin{align*}
+	&E_x = e \frac{\gamma\left( x-vt \right) }{\gamma^3\left(R^{*}\right)^3} = e \frac{x-vt}{\gamma^2 \left(R^*\right)^3}\\
+	&E_y = e \gamma \frac{y}{\gamma^3\left(R^*\right)^3} = e \frac{y}{\gamma^2\left(R^*\right)^3} \\ 
+	&E_y = e \gamma \frac{z}{\gamma^3\left(R^*\right)^3} = e \frac{z}{\gamma^2 \left(R^*\right)^3} 
+.\end{align*}
+In maniera più compatta si può scrivere:
 \[
-	R' = \sqrt{x'^2 + y'^2 + z'^2} = \sqrt{\gamma^2\left( x-vt \right)^2 + y^2 + z^2} 
+	\bs{E}=e \frac{\bs{R}_i}{\gamma^2 \left( R^* \right)^3}
 .\] 
+COn $\bs{R}_i$ defito dalle equazioni precedenti.
 
 \subsection[]{Enunciare il principio di Babinet.}
 
