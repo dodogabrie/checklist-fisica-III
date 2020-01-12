@@ -219,7 +219,12 @@ Tuttavia come è ben noto i campi sono espressi ancora in funzione delle variabi
 	&z\left( t \right) = 0		&&					&z'=&z
 .\end{align*}
 Rimane la dipendenza del campo elettrico dalla distanza dalla carica anche dopo la trasformazione di Lorentz, tale distanza è tuttavia parametrizzata con le variabili primate: 
-
+\begin{figure}[ht]
+    \centering
+    \incfig{moto-carica}
+    \caption{Carica in moto e punto di osservazione dei campi}
+    \label{fig:moto-carica}
+\end{figure}
 \begin{align*}
 	R'& = \sqrt{x'^2 + y'^2 + z'^2} =\\ 
 	&=\sqrt{\gamma^2\left( x-vt \right)^2 + y^2 + z^2} =\\ 
@@ -235,18 +240,93 @@ In maniera più compatta si può scrivere:
 \[
 	\bs{E}=e \frac{\bs{R}_i}{\gamma^2 \left( R^* \right)^3}
 .\] 
-Con $\bs{R}_i$ defito dalle equazioni precedenti.
-
+Con $\bs{R}_i$ defito dalle equazioni precedenti.\\
+Adesso con riferimento alla Figura \ref{fig:moto-carica} calcoliamo il campo visto dal punto $P=\left( 0,b,0 \right) $:
+\begin{align*}
+	&E_x = -e \frac{\gamma vt}{\left( \gamma^2v^2t^2 + b^2 \right)^{3 /2} }\\
+	&E_y = e \frac{b\gamma }{\left( \gamma^2v^2t^2 + b^2 \right)^{3 /2}}\\
+	&E_z = 0
+.\end{align*}
+Se si prova a graficare queste funzioni ci si rende conto che il contributo più significativo al campo misurato da $P$ è quello lungo $y$ (alternativamente si può dimostrare che il modulo del campo elettrico è massimo quando si annulla $E_x$ ovvero in  $t=0$), quindi per abbozzare l'ordine di grandezza richiesto senza perdersi in conti basta notare che $E_y$ ha un solo massimo: per $t=0$, quindi possiamo richiedere che il campo valga circa la metà rispetto a questo massimo. La richiesta si traduce nell'avere il denominatore che valga il doppio rispetto al massimo, ovvero:
+\[
+	\gamma^2v^2t^2 \sim b^2 \implies t \sim \frac{b}{\gamma v}
+.\] 
 \subsection[]{Enunciare il principio di Babinet.}
+\label{sec:3.a.16}
+La figura di diffrazione generata da un corpo opaco è la stessa che si ottiene con lo schermo complementare: ottenuto sostituendo il corpo con una apertura.
 
 \subsection[]{Definire il fattore di forma per un'onda che incide su su sistema.}
-
+\label{sec:3.a.17}
+Il fattore di forma per un sistema caratterizzato da una densità di carica $\rho$ è definito:
+\[
+	F\left(\bs{q} \right) = \frac{\int\rho\left( \bs{r} \right) e^{-i \bs{q}\cdot \bs{r}} d^3r}{\int\rho\left( \bs{r} \right) d^3r}
+.\] 
+Dove $\bs{q}$ rappresenta la differenza tra il vettore d'onda entrante e uscente.\\
+Tale quantità può essere definita anche per sistemi discreti facendo un attento uso delle $\delta$
 \subsection[]{Spiegare qualitativamente il funzionamento di un acceleratore elettrostatico.}
+\label{sec:3.a.18}
+In un acceleratore elettrostatico le particelle vengono accelerate da campi statici. Le particelle vengono fatte passare in un tubo a vuoto in cui è presente un campo elettrico costante.\\ 
+L'energia che viene fornita alla particella è modesta: 1-10 MeV. Questa energia è limitata dal fatto che le particelle passano nel tubo una sola volta. 
 
 \subsection[]{Quali sono, approssimativamente, le energie per unità di lunghezza che attualmente si ottengono nell’accelerazione di protoni con la tecnica dei "drift tube"? E delle cavità superconduttrici?}
-\subsection[]{Spiegare qualitativamente il funzionamento di un acceleratore lineare, indicando le differenze importanti fra l’accelerazione di elettroni e di protoni.}
+\label{sec:3.a.19}
+Con i drift tube si riesce a fare $ 100 \frac{kV}{m}$, mentre con le cavità superconduttrici si arriva a $ 50 \frac{MV}{m}$. 
 
+
+\subsection[]{Spiegare qualitativamente il funzionamento di un acceleratore lineare, indicando le differenze importanti fra l’accelerazione di elettroni e di protoni.}
+\label{sec:3.a.20}
+Un acceleratore lineare consiste in un tubo a vuoto in cui sono presenti degli elettroni in cascata tra i quali viene stabilita una d.d.p. oscillante. \\
+A differenza di un acceleratore elettrostatico si può sempre aggiungere uno stadio per accelerare le particelle. È quindi possibile raggiungere energie più elevate rispetto ai primi. \\
+Una differenza importante tra protoni ed elettroni è la forma che i drift tube devono avere per accelerare gli uni o gli altri essendo gli elettroni molto meno massivi dei protoni. 
+Un'altra grande differenza è la potenza irraggiata dai due: condideriamo l'accelerazione di una particella di carica q e massa m, visto che la traiettoria è rettilinea si ha:
+\[
+	qE=m \gamma^3a	
+.\]
+La potenza irraggiata è quindi (CGS):
+\[
+	P= \frac{2q^2}{3c^3}\gamma^{6}a^{6}=\frac{2q^4E^2}{3m^2c^3}	
+.\]
+In particolare la potenza irraggiata da un elettrone è circa $3 \cdot 10^{6} $ volte quella irraggiata da un protone.
 \subsection[]{Spiegare qualitativamente il funzionamento di un acceleratore circolare, indicando le differenze importanti fra l’accelerazione di elettroni e di protoni.}
+\label{sec:3.a.21}
+Un acceleratore circolare moderno è solitamente il sincrotrone, quest'ultimo consiste nel tenere le particelle in moto circolare mediante l'ausilio di magneti e cavità superconduttrici che si alternano tra loro. I campi generati da questi due ultimi sono regolati in modo da tenere le particelle lungo la traiettoria prestabilita.
+Qui la grande differenza tra l'accelerazione di protoni ed elettroni consiste nella energia persa nell'irraggiamento, per arrivarci è necessario avvalersi della Formula di Larmor relativistica (MKSA):
+\[
+	P=I= \frac{q^2}{6\pi \epsilon_0} \gamma^6\left[ \left| \dot{\bs{\beta}} \right|^2-\left| \bs{\beta}\wedge \dot{\bs{\beta}}  \right| ^2  \right] 
+.\] \label{eq:Larmor}
+Nel caso di un acceleratore lineare conta soltanto il primo termine, nel circolare invece pesa anche il secondo. Analizziamo proprio questo secondo caso, ipotizzando un raggio di curvatura R:
+\begin{align*}
+	I= &\frac{q^2}{6\pi \epsilon_0} \gamma^6 \left( a^2-a^2\beta^2  \right)=\\
+	=&\frac{q^2\gamma^4}{6\pi \epsilon_0}\left| \bs{a} \right|^2 =\\
+	=& \frac{q^2\gamma^4}{6\pi \epsilon_0c^3}\left( \frac{\beta^2c^2}{R} \right) ^2=\\
+	=&\frac{q^2\gamma^4\beta^2c}{6\pi \epsilon_0R^2}
+.\end{align*}
+Se la particella trascorre un tempo $T_B$ sotto l'effetto curvatore del campo magnetico $B$ per ogni giro e $R_B$ è il raggio della circonferenza formata dalle sole zone in cui vi è l'effeto di questo campo si ha:
+\[
+	T_B = \frac{2\pi R_B}{\beta c}
+.\] 
+In quanto sotto l'effetto di $B$ non vi è accelerazione tangenziale. Allora l'energia persa per irraggiamento è data da:
+\[
+	\Delta E = I\cdot T_B
+.\] 
+Che con un pò di algebra e sostituzioni si può anche esprimere come:
+\[
+	\Delta E = \frac{4\pi}{3}\left( \frac{r_e}{R_B} \right) m_ec^2\beta^3\gamma^4  	
+.\] 
+La perdita di energia per irraggiamento è sostanzialmente dovuta alla velocità della particella, essendo meno massosi gli elettroni (a parità di energia dei protoni) hanno $\beta$ e $\gamma$ molto maggiori dei protoni, il loro irraggiamento in curva è tale da avere un nome per la notevole potenza emessa: luce di sincrotrone.(da rivedere perchè secondo me è un pò stupido\ldots)\\
+L'energia persa per irraggiamento è quindi un fattore che limita molto le energie ottenibili in acceleratori circolari se si studiano collisioni di elettroni o positroni. Nel caso dei protoni il fattore limitante principale è l'intensità del campo magnetico che siamo in grado di produrre per far sterzare le particelle.
+
 
 \subsection[]{Effettuare un disegno, qualitativo, del solido di radiazione per una carica in un acceleratore lineare o circolare.}
+Per l'acceleratore circolare si ha la distribuzione angolare (CGS):
+\[
+	\frac{\mbox{d} I}{\mbox{d} \Omega} = \frac{q^2a^2}{4\pi c^3\left( 1-\beta\cos\theta \right) ^3} \left[ 1-\frac{\sin^2\theta\sin^2\varphi}{\gamma^2\left(1-\beta\cos\theta \right) ^2} \right] 	
+.\]
+Che è piccata in un doppio cono stondato attorno a $\beta$:
+\begin{figure}[H]
+    \centering
+    \incfig{distribuzione-sincrotrone}
+    \caption{Distribuzione Angolare della radiazione di sincrotrone}
+    \label{fig:distribuzione-sincrotrone}
+\end{figure}
 

@@ -15,6 +15,14 @@
 \usepackage[hypertexnames=false]{hyperref}
 \usepackage{nameref}
 \usepackage{multicol}
+% per le immagini
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+
+
+
 
 \hypersetup{
     pdftitle={title},
@@ -31,6 +39,11 @@
 \renewcommand\thesubsection{\thepart.\thesection.\arabic{subsection}}
 \newcommand{\parallelsum}{\mathbin{\|}}
 \newcommand{\bs}{\boldsymbol}
+
+\newcommand{\incfig}[1]{%
+    \def\svgwidth{\columnwidth}
+    \import{./figures/}{#1.pdf_tex}
+}
 
 \author{Edoardo Gabrielli}
 \title{Checklist per l'esame di Fisica 3}
