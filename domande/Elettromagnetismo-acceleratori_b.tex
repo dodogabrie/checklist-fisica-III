@@ -1,50 +1,207 @@
-\subsection*{3.b.1. Dimostrare l’espressione dt ' = 1− n̂ ⋅ β , dove t e t’ sono il tempo di osservazione ed il tempo ‘ritardato’, rispettivamente.}
+\subsection[]{Dimostrare l’espressione
+\[
+	\frac{dt}{dt'}=1-\hat{n}\bs{\beta}
+.\] 
+dove t e t’ sono il tempo di osservazione ed il tempo ‘ritardato’, rispettivamente.}
+\label{sec:3.a.1}
+Si prenda una carica che si muove con la legge oraria $\bs{s}\left( t \right) $ e velocità $\bs{\beta}$, sfruttando la definizione di tempo ritardato: \[
+	t=t_{\text{rit}} + \left| \bs{r}- \bs{s}\left( t_{\text{rit}} \right)  \right|/c 
+.\]
+Possiamo differenziare: \[
+	\frac{\mbox{d} t}{\mbox{d} t_{\text{rit}}} = 1- \frac{\bs{r}-\bs{s}\left( t_{\text{rit}} \right) \cdot \frac{\mbox{d} \bs{s}\left( t_{\text{rit}} \right) }{\mbox{d} t_{\text{rit}}} }{\left| \bs{r}-\bs{s}\left( t_{\text{rit}} \right)  \right|c }=\left.1-\hat{n}\cdot \bs{\beta}\right|_{\text{rit}}
+.\] 
+\subsection[]{Date le definizioni ‘standard’ delle variabili $\hat{n}, \bs{\beta}, \bs{R}, \bs{r}, \bs{r}', t, t'$ , dimostrare le seguenti relazioni:
+} \label{sec:3.b.2}
+\begin{align*}
+&1) \ \frac{\mbox{d} \bs{R}}{\mbox{d} t'} = -\bs{\beta}c 					&2)& \ \frac{\mbox{d}R}{\mbox{d}t'}=-\hat{n}\cdot\bs{\beta}c\\
+& & &\\
+&3) \ \frac{\mbox{d}\left(\bs{R}\cdot\bs{\beta}\right)}{\mbox{d}t'}=-\beta c+\bs{R}\cdot\bs{\beta}	&4)& \ \nabla\bs{R}=\frac{\hat{n}}{\left(1-\hat{n}\bs{\beta}\right)}\\
+& & &\\
+&5) \ \nabla t' = \frac{-\hat{n}/c}{1-\hat{n}\bs{\beta}}
+.\end{align*}
+Si ha che $\bs{r}$ e $t$ sono il punto e l'istante in cui si osservano i campi , $\bs{r}'$ la posizione delle sorgenti. $t'$ è il tempo ritardato definito da : \[
+	c\left( t-t' \right) =\left| \bs{r}- \bs{r}'\left( t' \right)  \right| 
+.\] 
+Si ha inoltre che \[
+	\bs{R}= \bs{r}-\bs{r}'\left( t' \right) 
+.\]
+Mentre $\hat{n} = \bs{R} /R$ e $\bs{\beta}=\dot{\bs{r}}' /c$. Possiamo inoltre derivare $\bs{R}$ rispetto al tempo ritardato per ottenere una delle relazioni: \[
+	\frac{\mbox{d} \bs{R}}{\mbox{d} t'} = -\dot{\bs{r}}'=-\bs{\beta}c
+.\] 
+Facciamo quindi lo stesso con $R$ : \[
+	\frac{\mbox{d} R}{\mbox{d} t'} = \frac{\mbox{d} \left| \bs{r}-\bs{r}' \right| }{\mbox{d} t'} = 
+	\frac{\bs{R}}{R}\cdot \frac{\mbox{d} \bs{R}}{\mbox{d} t'}= - \hat{n}\cdot \bs{\beta}c
+.\] 
+E con il prodotto $\bs{R}\cdot \bs{\beta}$ : \[
+	\frac{\mbox{d} \left( \bs{R}\cdot \bs{\beta} \right) }{\mbox{d} t'} = \bs{\beta}\cdot \frac{\mbox{d} \bs{R}}{\mbox{d} t'} + \bs{R}\frac{\mbox{d} \bs{\beta}}{\mbox{d} t'} = -\beta^2c + \bs{R}\cdot \dot{\bs{\beta}} 	
+.\]
+Dalla definizione di tempo ritardato si ha una utile relazione tra $\nabla t'$ e $\nabla R$ : \[
+	-c\nabla t' = \nabla R 
+.\] 
+È necessario calcolare solo $\nabla t'$ per avere anche l'altra quantità:
+\begin{align*}
+	-c\nabla t' &= \nabla \left| \bs{r}-\bs{r}'\left( t' \right)  \right| =\\
+		    &= \hat{x}_{i} \frac{\partial }{\partial x_{i} } \sqrt{\sum_{j=1}^{3} \left( r_{j}-r'_{j}\left( t' \right)  \right)^2 }=\\
+		    &= \frac{\hat{x}_{i}}{2R} \frac{\partial }{\partial x_{i}} \sum_{j=1}^{3} \left( r_{j}-r'_{j}\left( t' \right)  \right) ^2 = \\
+		    &= \frac{\hat{x}_{i}}{R} \sum_{j=1}^{3} \left( r_{j}-r'_{j}\left( t' \right)  \right)
+		    \left( \delta_{ij}-c \beta_{j}\left( t' \right) \frac{\partial t'}{\partial x_{i}}  \right) =\\
+		    &= \hat{n}- c \hat{n}\cdot \bs{\beta} \nabla t' 
+.\end{align*}
+Se ne conclude che : \[
+	\nabla t'=-\frac{\hat{n} /c}{1-\hat{n}\cdot \bs{\beta}}
+.\] 
 
-\subsection*{3.b.2. Date le definizioni ‘standard’ delle variabili n̂ , β , R, r, r ', t e t ' , dimostrare le seguenti relazioni:}
+\subsection[]{Calcolare la distribuzione in potenza in funzione dell’angolo di emissione per una carica accelerata in moto non relativistico.}
+\label{sec:3.b.3}
+Si parte dai potenziali di Lienard-Wiechert:
+\[
+	\bs{E}\left( \bs{x},t \right) = q \left[ \frac{\hat{n}-\bs{\beta}}{\gamma^2\left( 1-\hat{n}\cdot \bs{\beta} \right)^3 R^2 } \right]_{\text{rit}}+
+	\frac{q}{c} \left[ \frac{\hat{n}\wedge \left[ \left( \hat{n}-\bs{\beta} \right) \wedge \dot{\bs{\beta}}  \right] }
+	{\left( 1-\hat{n}\cdot \bs{\beta} \right) R}  \right]_{\text{rit}} 
+.\] \label{eq:L-W} 
+Dove le quantità sono quelle definite nella domanda precadente. Si trascura adesso il campo a decrescsenza rapida e si considera solo il campo di radiazione si ha un vettore di Poynting :
+\[
+	\bs{S}= \frac{c}{4 \pi} \left| \bs{E}_{\text{rad}} \right| ^2 \hat{n}=\frac{q^2}{4\pi c^3} 
+	\left| \frac{\hat{n}\wedge \left( \hat{n}\wedge  \dot{\bs{\beta}}\right)}{R} \right|^2
+.\] 
+Dove si è anche trascurato il termine $\bs{\beta}$ rispetto al ternine $\hat{n}$ perchè discutiamo il caso  non relativistico. Andando adesso in un sistema di riferimento in cui $\theta$ è l'angolo tra la accelerazione della particella e la direzione di osservazione si ha:
+\[
+	\bs{S}= \frac{q^2}{4\pi R^2 c^3}\sin^2\theta \left| \dot{\bs{v}} \right| ^2 \hat{n}
+.\] 
+In conclusione si trova la distribuzione angolare di potenza come:
+\[
+	\frac{\mbox{d} P}{\mbox{d} \Omega} = \frac{\mbox{d} P}{\mbox{d} \Sigma } \frac{\mbox{d} \Sigma}{\mbox{d} \Omega}=
+	\left| \bs{S} \right| R^2 = \frac{q^2}{4\pi c^3} a^2 \sin^2\theta
+.\] 
 
-\subsection*{3.b.3. Calcolare la distribuzione in potenza in funzione dell’angolo di emissione per una carica accelerata in moto non relativistico.}
+\subsection[]{Ricavare esplicitamente le leggi di trasformazione di Lorentz del campo elettrico e del campo magnetico. Discutere, in particolare, il caso in cui, in un certo sistema di riferimento inerziale, il campo magnetico è nullo e il caso in cui il campo elettrico è nullo.}
+\label{sec:3.b.4}
+Il modo migliore per vedere come trasformano i campi è vedere come trasforma il tensore dei campi. Per semplicità scegliamo un boost lungo l'asse $x$, tale tensore (antisimmetrico) trasforma come :
+\[
+	F'^{\alpha\beta}= \Lambda^{\mu}_{\alpha} \Lambda^{\nu}_{\beta} F^{\alpha\beta}
+.\] 
+Si può adesso procedere in due modi: calcolo indiciale o calcolo matriciale, si tratta qua la prima strada.Per completezza si aggiunge solo che brutalmente il conto con le matrici sarebbe:\[
+	F'=\Lambda F \Lambda^{t}
+.\] 
+Dove $\Lambda$ è:
+\[
+	\Lambda = 
+	\left( 
+	\begin{array}{cccc}
+		\gamma & -\beta\gamma & 0 & 0 \\   
+		-\beta\gamma & \gamma & 0 & 0 \\
+		0 & 0 & 1 & 0 \\
+		0 & 0 & 0 & 1 \\
+	\end{array}
+	\right) 
+.\]
+Mentre $F$ è:
+\[
+	F = 
+	\left( 
+	\begin{array}{c|ccc}
+		0 & -E_{x} & -E_{y} & -E_{z} \\   
+		\hline
+		E_{x} & 0 & -B_{z} & B_{y} \\
+		E_{y} & B_{z} & 0 & -B_{x} \\
+		E_{z} & -B_{y} & B_{x} & 0 \\
+	\end{array}
+	\right) 
+.\] 
+Se non vogliamo morire di conti bisogna essere astuti. Calcoliamo alcune componenti del tensore trasformato: \[
+	F'^{0i}=\Lambda^{0}_{\alpha}\Lambda^{i}_{\beta}F^{\alpha\beta}
+.\] 
+Quindi per la prima riga si ha : 
+\begin{align*}
+	F'^{01}=& -E'_{x}= \Lambda^{0}_{0}\Lambda^{1}_{0}F^{00} + \Lambda^{0}_{1}\Lambda^{1}_{1}F^{01} + 
+		\Lambda^{0}_{1}\Lambda^{1}_{0}F^{10} + \Lambda^{0}_{0}\Lambda^{1}_{1}F^{11}=\\
+		=&\gamma\cdot \left( -\beta\gamma \right) \cdot 0 + \gamma \cdot \gamma \cdot F_{01} +
+		\left( - \beta\gamma \right) \cdot \left( -\beta\gamma \right) F + 0 = \ldots = F^{01} = -E_{x}\\ 
+		 & \\
+	F'^{02}=&-E'_{y}= \Lambda^{0}_{0}\Lambda^2_2 F^{02} + \Lambda^0_1\Lambda^2_2 F^{22}=\\
+		=&\gamma\cdot 1\cdot F^{02}+\left(-\beta\gamma\right)\cdot 1\cdot F^{12}=\gamma\left(F^{02}-\beta F^{12}\right)=-\gamma\left(E_{y}-\beta B_{z}\right)\\
+		& \\
+	F'^{03}=&-E'_{z}=\Lambda^{0}_{0}\Lambda^{3}_{3}F^{03}+\Lambda^{0}_{1}\Lambda^{3}_{3}F^{13}= -\gamma\left( E_{z}+\beta B_{y} \right) 
+.\end{align*}
+Il calcolo faticoso ha dei vantaggi: il tensore rimmarrà antisimmetrico, quindi abbiamo già scritto la prima riga e la prima colonna. Per i rimanenti 3 elementi si trova:
+\begin{align*}
+	F'^{12}=& -B'_{z}= -\gamma\left(B_{z} -\beta E_{y} \right)\\ 
+	F'^{13}=& B'_{y}= \gamma\left( B_{y}+\beta E_{z} \right)\\ 
+	F'^{23}=& -B'_{x}= -B_{x}
+.\end{align*}
 
-\subsection*{3.b.4. Ricavare esplicitamente le leggi di trasformazione di Lorentz del campo elettrico e del campo magnetico. Discutere, in particolare, il caso in cui, in un certo sistema di riferimento inerziale, il campo magnetico è nullo e il caso in cui il campo elettrico è nullo.}
 
-\subsection*{3.b.5. Dire quali sono gli "invarianti di Lorentz" che si possono costruire con il tensore del campo elettromagnetico e ricavarne le espressioni esplicite in termini dei campi elettrico e magnetico. Ridiscutere, usando gli invarianti, il caso discusso nel punto precedente e discutere il caso in cui gli invarianti sono nulli.}
+\subsection{Dire quali sono gli "invarianti di Lorentz" che si possono costruire con il tensore del campo elettromagnetico e ricavarne le espressioni esplicite in termini dei campi elettrico e magnetico. Ridiscutere, usando gli invarianti, il caso discusso nel punto precedente e discutere il caso in cui gli invarianti sono nulli.}
+\label{sec:3.b.5}
+\subsection[]{Una carica elettrica Q si muove con velocità costante su una retta con velocità costante:
+\begin{align*}
+	 &x=Vt \\
+	 &y=b \\ 
+	 &z=0
+.\end{align*}
+Calcolare in funzione del tempo il campo elettrico ed il campo magnetico generato dalla carica nel punto O e produrre il grafico di ognuna delle 6 componenti trovate in funzione del tempo t.}
+\label{sec:3.b.6}
+\subsection[]{Scrivere in forma covariante l'equazione del moto di una carica in un campo elettromagnetico esterno ("quadri-forza di Lorentz").}
+\label{sec:3.b.7}
 
-\subsection*{3.b.6. Una carica elettrica Q si muove con velocità costante su una retta con velocità costante: x=Vt, y=b, z=0. Calcolare in funzione del tempo il campo elettrico ed il campo magnetico generato dalla carica nel punto O e produrre il grafico di ognuna delle 6 componenti trovate in funzione del tempo t.}
+\subsection[]{Dimostrare che la forza di reazione radiativa è: 
+\[
+	\bs{F}_{\text{rad}}=\frac{2q^2}{3c^3}\dot{\bs{a}}=z^2m_e \tau_e \dot{\bs{a}} \quad \quad \text{con } \tau_e=\frac{2r_{e}}{3c}=\left(6.2\cdot 10^{-24}\right)
+.\]
+Indicare inoltre il campo di applicazione di quest'ultima.
+}
+\label{sec:3.a.8}
+\subsection[]{Dare la definizione del "tensore energia-impulso" del campo elettromagnetico e scrivere la sua relazione con la "densità di forza di Lorentz".}
+\label{sec:3.b.9}
 
-\subsection*{3.b.7. Scrivere in forma covariante l'equazione del moto di una carica in un campo radiativa ed indicare il campo di applicazione di questa formula.}
+\subsection[]{Dire come si generalizzano i teoremi di conservazione dell'energia e dell'impulso a situazioni in cui sia presente un campo elettromagnetico.}
+\label{sec:3.b.10}
 
-\subsection*{3.b.9. Dare la definizione del "tensore energia-impulso" del campo elettromagnetico e scrivere la sua relazione con la "densità di forza di Lorentz".}
-
-\subsection*{3.b.10. Dire come si generalizzano i teoremi di conservazione dell'energia e dell'impulso a situazioni in cui sia presente un campo elettromagnetico.}
-
-\subsection*{3.b.11. Scrivere il tensore degli sforzi per un’onda e.m. piana che si propaga in una direzione n̂ .}
-
-\subsection*{3.b.12. Scrivere esplicitamente il 4-tensore impulso-energia per un’onda e.m. piana monocromatica che si propaga lungo l’asse x con densita’ di energia u em .}
-
-\subsection*{3.b.13. Ricavare l’espressione per i potenziali di Lienard-Wiechert ( φ ed A per una carica puntiforme in moto arbitrario) a partire dai potenziali ritardati.}
-
-\subsection*{3.b.14. Calcolare la potenza totale irraggiata da una carica accelerata in moto non relativistico. Esprimere i risultati in MKSA e nelle unità “naturali”.}
-
-\subsection*{3.b.15. Ricavare la formula di Larmor relativistica P = 3 c 3 γ a − a ∧ β a partire dalla formula non relativistica ed utilizzando argomenti di invarianza relativistica.}
-
-\subsection*{3.b.16. Dimostrare che la radiazione di sincrotrone ha uno spettro di emissione con una frequenza “critica” ω C ≈ ω o γ 3}
-
-\subsection*{3.b.17. Calcolare il fattore di forma elettromagnetico per una sfera uniformente carica di raggio a.}
-
-\subsection*{3.b.18. Calcolare il fattore di forma per una suprficie sferica uniformente carica di raggio a. [nota: l'interno è vuoto]}
-
-\subsection*{3.b.19. Calcolare la velocità di un elettrone [e successivamente di un protone] posto in una struttura acceleratrice che abbia: i) campo elettrico longitudinale costante ii) campo elettrico longitudinale oscillante. Inserendo valori numerici ragionevoli, calcolare il tempo affinché la particella, partendo da ferma, raggiunga una energia pari al doppio della sua massa a riposo.}
-
-\subsection*{3.b.20. A partire dai campi ritardati, dimostrare che è la potenza (MKSA) irraggiata da una carica accelerata in un moto rettilineo.}
-
-\subsection*{3.b.21. Calcolare l’energia persa in una rivoluzione per una carica in moto uniforme su una circonferenza (acceleratore circolare). Calcolare la frazione di energia persa
-in un giro rispetto alla sua energia cinetica, effettuando una valutazione numerica, nel caso di elettroni a LEP (energia 50 GeV, raggio ~4km) o protoni ad LHC (energia 7 TeV, raggio ~4km). Nota: utilizzare la formula di Larmor in GCS:}
-
-\subsection*{3.b.22. Calcolare la potenza emessa in funzione dell’angolo per una carica oscillante armonicamente in linea retta (termine di dipolo elettrico)}
-
-\subsection*{3.b.23. Calcolare, a partire dalla formula di Larmor relativistica, la potenza totale dissipata in un acceleratore lineare in funzione di (energia fornita per unita’ di lunghezza). Dimostrare che la frazione di energia persa nell’accelerazione e’ trascurabile, fornendo adeguati valori numerici nel caso di accelerazione di elettroni o protoni.}
-
-\subsection*{3.b.24. Calcolare la lunghezza d’onda critica della radiazione di sincrotrone (elettroni) nei casi seguenti: i) energia=50GeV, raggio=4km; ii) energia=5GeV, raggio=30m}
-
-\subsection*{3.b.25. Enunciare il teorema ottico e spiegarne il significato fisico nel caso di radiazione elettromagnetica su un ostacolo opaco.}
-
-\subsection*{3.b.26. Come si ricava la sezione d'urto differenziale Rayleigh a partire dalla sezione d'urto Thomson ?}
+\subsection[]{Scrivere il tensore degli sforzi per un’onda e.m. piana che si propaga in una direzione definita come $\hat{n}$.}
+\label{sec:3.b.11}
+\subsection[]{Scrivere esplicitamente il 4-tensore impulso-energia per un’onda e.m. piana monocromatica che si propaga lungo l’asse x con densita’ di energia $u_{\text{em}}$.}
+\label{sec:3.b.12}
+\subsection[]{Ricavare l’espressione per i potenziali di Lienard-Wiechert ( $\phi$ ed A per una carica puntiforme in moto arbitrario) a partire dai potenziali ritardati.}
+\label{sec:3.b.13}
+\subsection[]{Calcolare la potenza totale irraggiata da una carica accelerata in moto non relativistico. Esprimere i risultati in MKSA e nelle unità “naturali”.}
+\label{sec:3.b.14}
+\subsection[]{Ricavare la formula di Larmor relativistica 
+\[
+	P=\frac{2q^2}{3c^3}\gamma^{6}\left( \left| \bs{a} \right| ^2 - \left| \bs{a}\wedge \bs{\beta}  \right| ^2 \right) 
+.\] a partire dalla formula non relativistica ed utilizzando argomenti di invarianza relativistica.}
+\label{sec:3.b.15}
+\subsection[]{Dimostrare che la radiazione di sincrotrone ha uno spettro di emissione con una frequenza “critica”:$\omega_{u}\approx \omega_0\gamma^3$.}
+\label{sec:3.b.16}
+\subsection[]{Calcolare il fattore di forma elettromagnetico per una sfera uniformente carica di raggio a.}
+\label{sec:3.b.17}
+\subsection[]{Calcolare il fattore di forma per una suprficie sferica uniformente carica di raggio a. [nota: l'interno è vuoto]}
+\label{sec:3.b.18}
+\subsection[]{Calcolare la velocità di un elettrone [e successivamente di un protone] posto in una struttura acceleratrice che abbia: \\
+	1) Campo elettrico longitudinale costante.\\ 
+	2) Campo elettrico longitudinale oscillante.\\ 
+Inserendo valori numerici ragionevoli, calcolare il tempo affinché la particella, partendo da ferma, raggiunga una energia pari al doppio della sua massa a riposo.}
+\label{sec:3.b.19}
+iii
+\subsection[]{A partire dai campi ritardati, dimostrare che 
+\[
+	\frac{\mbox{d} P}{\mbox{d} \Omega} = \frac{q^2\left| \bs{a} \right|^2\sin^2\theta }{16\pi^2\epsilon_0c^3\left( 1-\beta\cos\theta \right)^2 }
+.\] è la potenza (MKSA) irraggiata da una carica accelerata in un moto rettilineo.}
+\label{sec:3.b.20}
+\subsection[]{Calcolare l’energia persa in una rivoluzione per una carica in moto uniforme su una circonferenza (acceleratore circolare). Calcolare la frazione di energia persa
+in un giro rispetto alla sua energia cinetica, effettuando una valutazione numerica, nel caso di elettroni a LEP (energia 50 GeV, raggio 4km) o protoni ad LHC (energia 7 TeV, raggio ~4km). Nota: utilizzare la formula di Larmor in GCS:
+\[
+	P=\frac{2q^2}{3c^3}\gamma^{6}\left( \left| \bs{a} \right| ^2 - \left| \bs{a}\wedge \bs{\beta}  \right| ^2 \right) 
+.\] }
+\label{sec:3.b.21}
+\subsection[]{Calcolare la potenza emessa in funzione dell’angolo per una carica oscillante armonicamente in linea retta (termine di dipolo elettrico)}
+\label{sec:3.b.22}
+\subsection[]{Calcolare, a partire dalla formula di Larmor relativistica, la potenza totale dissipata in un acceleratore lineare in funzione di $\frac{\mbox{d} \bs{p}}{\mbox{d} t}$ oppure di $\frac{\mbox{d} E}{\mbox{d} x}$ (energia fornita per unita’ di lunghezza). Dimostrare che la frazione di energia persa nell’accelerazione e’ trascurabile, fornendo adeguati valori numerici nel caso di accelerazione di elettroni o protoni.}
+\label{sec:3.b.23}
+\subsection[]{Calcolare la lunghezza d’onda critica della radiazione di sincrotrone (elettroni) nei casi seguenti: \\
+i) energia=50GeV, raggio=4km; \\
+ii) energia=5GeV, raggio=30m}
+\label{sec:3.b.24}
+\subsection[]{Enunciare il teorema ottico e spiegarne il significato fisico nel caso di radiazione elettromagnetica su un ostacolo opaco.}
+\label{sec:3.b.25}
+\subsection[]{Come si ricava la sezione d'urto differenziale Rayleigh a partire dalla sezione d'urto Thomson ?}
+\label{sec:3.b.26}
