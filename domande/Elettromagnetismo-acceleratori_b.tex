@@ -53,13 +53,18 @@ Se ne conclude che : \[
 
 \subsection[]{Calcolare la distribuzione in potenza in funzione dell’angolo di emissione per una carica accelerata in moto non relativistico.}
 \label{sec:3.b.3}
-Si parte dai potenziali di Lienard-Wiechert:
+Si parte dal campo generato da una carica in moto :
 \[
 	\bs{E}\left( \bs{x},t \right) = q \left[ \frac{\hat{n}-\bs{\beta}}{\gamma^2\left( 1-\hat{n}\cdot \bs{\beta} \right)^3 R^2 } \right]_{\text{rit}}+
 	\frac{q}{c} \left[ \frac{\hat{n}\wedge \left[ \left( \hat{n}-\bs{\beta} \right) \wedge \dot{\bs{\beta}}  \right] }
 	{\left( 1-\hat{n}\cdot \bs{\beta} \right) R}  \right]_{\text{rit}} 
 .\] \label{eq:L-W} 
-Dove le quantità sono quelle definite nella domanda precadente. Si trascura adesso il campo a decrescsenza rapida e si considera solo il campo di radiazione si ha un vettore di Poynting :
+Dove le quantità sono quelle definite nella domanda precedente. Si trascura adesso il campo a decrescsenza rapida e si considera solo il campo di radiazione approssimandolo al caso non relativistico:
+\[
+	\bs{E}_{\text{rad}}\left( \bs{x},t \right)= \frac{q}{c} \left[ \frac{\hat{n}\wedge \left[ \left( \hat{n}-\bs{\beta} \right) \wedge \dot{\bs{\beta}}  \right] }
+	{\left( 1-\hat{n}\cdot \bs{\beta} \right) R}  \right]_{\text{rit}}  \approx \frac{q}{c} \left[ \frac{\hat{n}\wedge \left( \hat{n}\wedge \dot{\bs{\beta}}\right)}{R} \right]_{\text{rit}} 
+.\] 
+L'approssimazione si ottiene raggruppando un $\hat{n}$ al numeratore. IL vettore di Poynting quindi è:
 \[
 	\bs{S}= \frac{c}{4 \pi} \left| \bs{E}_{\text{rad}} \right| ^2 \hat{n}=\frac{q^2}{4\pi c^3} 
 	\left| \frac{\hat{n}\wedge \left( \hat{n}\wedge  \dot{\bs{\beta}}\right)}{R} \right|^2
@@ -394,9 +399,26 @@ Analogamente possiamo ricavare il potenziale vettore:
 	\bs{A}\left( \bs{r}, t \right) =\left[\frac{q \bs{\beta\left( t \right) }}{\left| \bs{r}-\bs{s}\left( t \right)  \right| \left( 1-\bs{\beta}\left( t \right) \cdot \hat{n} \right) }\right]_{t=t'}
 .\] 
 
-
 \subsection[]{Calcolare la potenza totale irraggiata da una carica accelerata in moto non relativistico. Esprimere i risultati in MKSA e nelle unità “naturali”.}
 \label{sec:3.b.14}
+Il campo elettrico di una carica in zona di radiazione è (nell'approssimazione non relativistica):
+\[
+	\bs{E}_{\text{rad}}\left( \bs{x},t \right)= \frac{q}{c} \left[ \frac{\hat{n}\wedge \left[ \left( \hat{n}-\bs{\beta} \right) \wedge \dot{\bs{\beta}}  \right] }
+	{\left( 1-\hat{n}\cdot \bs{\beta} \right) R}  \right]_{\text{rit}}  \approx \frac{q}{c}\left[ \frac{\hat{n}\wedge \left(\hat{n}\wedge \dot{\bs{\beta}}\right)}{R}\right]_{\text{rit}} 
+\]
+Essendo il campo $\bs{B}=\hat{n}\wedge \bs{E}$ dal calcolo del vettore di Poynting si conclude che (conto affrontato nella domanda \hyperref[sec:3.b.3]{Domanda 3.b.3}):
+\[
+	\frac{\mbox{d} P}{\mbox{d} \Omega} = \frac{q^2\left| \hat{n}\wedge \dot{\bs{\beta}}\right|^2}{4\pi c}
+.\] 
+Integrando sull'angolo solido si ottiene che (sistema di riferimento con coordinate sferiche):
+\[
+	P = \frac{2q^2\left| \dot{\bs{\beta}} \right|^2}{3c}
+.\] 
+In MKSA si ottiene:
+\[
+	P = \frac{q^2\left| \dot{\bs{\beta}} \right|^2}{6\pi\epsilon_0c}
+.\] 
+
 \subsection[]{Ricavare la formula di Larmor relativistica 
 \[
 	P=\frac{2q^2}{3c^3}\gamma^{6}\left( \left| \bs{a} \right| ^2 - \left| \bs{a}\wedge \bs{\beta}  \right| ^2 \right) 
