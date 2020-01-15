@@ -129,10 +129,58 @@ Il calcolo faticoso ha dei vantaggi: il tensore rimmarrà antisimmetrico, quindi
 	F'^{13}=& B'_{y}= \gamma\left( B_{y}+\beta E_{z} \right)\\ 
 	F'^{23}=& -B'_{x}= -B_{x}
 .\end{align*}
+Quindi il tensore trasformato risulta :
+\[
+F'=
+\left( 
+\begin{array}{cccc}
+	0 				&	 -E_{x} 			& 	-\gamma ( E_{y}- \beta B_{z})  	&	 -\gamma (E_{z}+\beta B_{y}) \\   
+	E_{x} 				&	 0 				& 	-\gamma ( B_{z}-\beta E_{y} )  	& 	\gamma ( B_{y}+\beta E_{z} )  \\
+	\gamma ( E_{y}- \beta B_{z} )  	&	 \gamma ( B_{z}-\beta E_{y} )  	&	 0 				&	 -B_{x} \\
+	\gamma ( E_{z}+\beta B_{y} )  	& 	-\gamma ( B_{y}+\beta E_{z} )  	& 	B_{x} 				& 	0 \\
+	\end{array}
+	\right) 
+.\] 
+\paragraph{Sistema con campo magnetico nullo}%
+Un sistema di esempio è quello solidale ad una carica, un questo caso non essendoci moto di carica si ha $\bs{B}=0$ quindi il tensore dei campi è:
+\[
+F'_{B=0}=
+\left( 
+\begin{array}{cccc}
+	0 & -E_{x} & -\gamma E_{y} & -\gamma E_{z} \\   
+	E_{x} & 0 & \gamma\beta E_{y} & \gamma\beta E_{z} \\
+	\gamma E_{y} & -\gamma\beta E_{y} & 0 & 0 \\
+	\gamma E_{z} & -\gamma\beta E_{z} & 0 & 0 \\
+\end{array}
+\right) 
+.\]
+Da cui guardando le componenti se ne deduce la relazione: $ \bs{B}'=\bs{\beta}\wedge \bs{E}' $
+\paragraph{Sistema con campo elettrico nullo}%
+Un buon esempio qua è un plasma che si dispone sempre in modo da annullare il campo in questione, quindi :
+\[
+F'_{B=0}=
+\left( 
+\begin{array}{cccc}
+	0 & 0 & \gamma\beta B_{z} & -\gamma\beta B_{y} \\   
+	0 & 0 & -\gamma B_{z} & \gamma B_{y} \\
+	-\gamma\beta B_{z} & \gamma B_{z} & 0 & -B_{x} \\
+	\gamma\beta B_{y} & -\gamma E_{z} & B_{x} & 0 \\
+\end{array}
+\right) 
+.\] 
+Analogamente a sorpra se ne deduce che $\bs{E}'=-\bs{\beta}\wedge \bs{B}' $
 
-
-\subsection{Dire quali sono gli "invarianti di Lorentz" che si possono costruire con il tensore del campo elettromagnetico e ricavarne le espressioni esplicite in termini dei campi elettrico e magnetico. Ridiscutere, usando gli invarianti, il caso discusso nel punto precedente e discutere il caso in cui gli invarianti sono nulli.}
+\subsection[]{Dire quali sono gli "invarianti di Lorentz" che si possono costruire con il tensore del campo elettromagnetico e ricavarne le espressioni esplicite in termini dei campi elettrico e magnetico. Ridiscutere, usando gli invarianti, il caso discusso nel punto precedente e discutere il caso in cui gli invarianti sono nulli.}
 \label{sec:3.b.5}
+Possiamo costruire due invarianti indipendenti:
+\begin{align*}
+	F_{\mu\nu}F^{\mu\nu}=&A=F_{0i}F^{0i}+F_{i 0}F^{1 0} + F_{ij}F^{ij}=\\ 
+	=& E_{i}\cdot \left( -E_{i} \right)+\left( -E_{i}\right)\cdot E_{i} + \epsilon_{ijl}B_{l}\cdot \epsilon_{ijk}B_{k}=-2\left| E \right|^2 + 2\left|B\right|^2\\
+	F_{\mu\nu}\tilde{F}^{\mu\nu}=&B=\ldots=-4 \bs{E}\cdot \bs{B}
+.\end{align*}
+Nel caso di un sistema in cui $B=0$ si ha anche $A=0$ e $B>0$ per ogni sistema inerziale. Questo significa che i due campi sono sempre ortogonali e che il campo elettrico ha modulo maggiore del campo magnetico in ogni sistema inerziale.
+Nel caso di un sistema in cui $E=0$ si ha $A=0$ e $B<0$, da questo segue una discussione complementare a quella esposta sopra.
+
 \subsection[]{Una carica elettrica Q si muove con velocità costante su una retta con velocità costante:
 \begin{align*}
 	 &x=Vt \\
@@ -141,28 +189,212 @@ Il calcolo faticoso ha dei vantaggi: il tensore rimmarrà antisimmetrico, quindi
 .\end{align*}
 Calcolare in funzione del tempo il campo elettrico ed il campo magnetico generato dalla carica nel punto O e produrre il grafico di ognuna delle 6 componenti trovate in funzione del tempo t.}
 \label{sec:3.b.6}
+Il calcolo del campo elettrico è stato affrontato nella \hyperref[sec:3.a.15]{Domanda 3.a.15}, per sfruttarlo aggiungiamo che in quel caso era la carica a passare per l'origine, mentre l'osservatore a distanza b. Per simmetria inverteno osservatore e carica si ottiene lo stesso risultato della domanda citata, ovvero:
+\begin{align*}
+	&E_x = -e \frac{\gamma vt}{\left( \gamma^2v^2t^2 + b^2 \right)^{3 /2} }\\
+	&E_y = e \frac{b\gamma }{\left( \gamma^2v^2t^2 + b^2 \right)^{3 /2}}\\
+	&E_z = 0
+.\end{align*}
+Calcoliamo quindi il campo magnetico come $\bs{B}= \bs{\beta}\wedge \bs{E}=v/c \cdot E_{y} \hat{z}$ :
+\[
+	B_z = e \frac{b\gamma c}{c\left( \gamma^2v^2t^2 + b^2 \right)^{3 /2}}\\
+.\] 
+Per avere un quadro degli andamenti basta quindi plottare i campi elettrici. Al variare di $\beta$ nel seguente plot si riporta come questi ultimi si modificano (con la convenzione che la linea si assottiglia mano a mano che $\beta$ aumenta).
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{immagini/carica_in_moto.png}
+	\caption{Campi elettrici generati da una carica in moto}
+	\label{fig:campo_carica_moto}
+\end{figure}
+Da notare che il campo lungo $y$ diventa sempre più stretto e piccato all'aumentare di $\beta$ (di conseguenza anche il campo magnetico).
+
 \subsection[]{Scrivere in forma covariante l'equazione del moto di una carica in un campo elettromagnetico esterno ("quadri-forza di Lorentz").}
 \label{sec:3.b.7}
+Analizziamo il caso di una particella puntiforme, nel caso non relativistico avremmo: \[
+	\frac{\mbox{d} \bs{p}}{\mbox{d} t} = e\left( \bs{E}+ \frac{\bs{v}}{c}\wedge \bs{B} \right) 
+.\] 
+È quindi ragionevole pensare che si debba sfruttare il 4-impulso $p^{\mu}=m u^{\mu}$ con $u^{\mu}=\gamma\left( c, \bs{v} \right)$, ed il tensore dei campi gia introdotto nelle domande precedenti. Per procedere si cerca una equazione della forma:
+\[
+	\frac{\mbox{d} p^{\mu}}{\mbox{d} \tau}= N F^{\mu\nu} u_{\nu} 
+.\]
+Cercando una normalizzazione ragionando sulle dimensioni: per trarre una forza dall'espressione di destra ci serve una carica a moltiplicare ed una velocità a dividere, si prova ad utilizzare $\frac{e}{c}$. Si prova quindi componente per componente:
+\begin{align*}
+	F^{0i}u_{i}=& -E_{i}\cdot \left( -\gamma v_{i} \right) =\gamma \bs{E}\cdot \bs{v}\\
+	F^{i\alpha}u_{\alpha}=&F^{i 0}u_0+F^{ij}u_{j}=E_{i}c\gamma-\epsilon_{ijk}B_{k}\left( -\gamma v_{j} \right) =\\
+	=& c\gamma\left(\bs{E}+\frac{\bs{v}}{c}\wedge \bs{B}   \right) 
+.\end{align*}
+Considerando il fatto che 
+\[
+	dt= \gamma d\tau
+\]
+si ha che li componenti spaziali (le seconde calcolate) danno proprio l'equazione del moto.\\
+Considerando invece che $P^{\mu}=\left(\varepsilon /c, \bs{p} \right)$ si ha che la componente temporale rappresenta il teorema delle forze vive:
+\[
+	\frac{\mbox{d} \varepsilon}{\mbox{d} t} = e \bs{E}\cdot \bs{v}	
+.\] 
+
 
 \subsection[]{Dimostrare che la forza di reazione radiativa è: 
 \[
 	\bs{F}_{\text{rad}}=\frac{2q^2}{3c^3}\dot{\bs{a}}=z^2m_e \tau_e \dot{\bs{a}} \quad \quad \text{con } \tau_e=\frac{2r_{e}}{3c}=\left(6.2\cdot 10^{-24}\right)
 .\]
 Indicare inoltre il campo di applicazione di quest'ultima.
-}
-\label{sec:3.a.8}
+}\label{sec:3.b.8}
+La dimostrazione euristica e non relativistica è stata affrontata nella \hyperref[subsec: 2.a.15]{Domanda 2.a.15} insieme ai campi di applicazione (moto periodico). 
+
 \subsection[]{Dare la definizione del "tensore energia-impulso" del campo elettromagnetico e scrivere la sua relazione con la "densità di forza di Lorentz".}
 \label{sec:3.b.9}
+Il tensore energia impulso è definito come:
+\[
+	\Theta^{\mu\nu}=\frac{1}{4\pi}\left( F^{\mu\alpha}F^{\nu}_{\alpha}- \frac{1}{4}\eta^{\mu\nu}F^{\alpha\beta}F_{\alpha\beta} \right) 
+.\] 
+Dove $\eta^{\mu\nu}$ è il tensore metrico diag$\left( 1,-1,-1,-1 \right)$.\\
+Per inquadrarlo meglio lo si può vedere sotto forma di matrice: 
+\[
+	 \Theta= 
+	 \left(
+		 \begin{array}{c|ccc}
+			 u_{\text{em}} 	& 		&	\bs{S}  	&	\\   
+		 	\hline	 
+					&		&  			&	\\
+		 	\bs{S} 		&  		&  	-T_{\text{Maxwell}}		& 	\\
+		 	 		&  		&  			& 	\\
+		 \end{array}
+	 \right) 
+.\] 
 
+Tale tensore è legato alla densità di forza di Lorentz da:
+\[
+	\partial_{\mu}\Theta^{\mu\nu}+f^{\nu}=0
+.\] 
+Dove la densità di forza di Lorentz ricordiamo essere: \[
+	f^{\nu}=\frac{1}{c}F^{\mu\nu}j_{\nu}=\left( \frac{\bs{j}\bs{E}}{c}, \rho \bs{E}+\frac{1}{c} \bs{j}\wedge \bs{B}  \right) 
+.\] \label{eq:conservazioni-relativita} 
 \subsection[]{Dire come si generalizzano i teoremi di conservazione dell'energia e dell'impulso a situazioni in cui sia presente un campo elettromagnetico.}
 \label{sec:3.b.10}
+Nel caso dell'energia si ha (CGS):
+\[
+	\frac{1}{8\pi}\frac{\partial }{\partial t} \left( E^2+B^2 \right) + \frac{c}{4\pi}\nabla\left( \bs{E}\wedge \bs{B} \right) = - \bs{E}\cdot \bs{j}
+.\] 
+Nel caso dell'impulso invece: \[
+	\frac{1}{4\pi}\frac{\partial}{\partial t}\left(\bs{E}\wedge\bs{B}\right)+\nabla\cdot T=-\left(\rho\bs{E}+\frac{\bs{j}}{c}\wedge \bs{B}\right) 
+.\]
+Con T tensore degli stress di Maxwell.\\
+Entrambe le equazioni sono generaliate al caso relativistico dalla \hyperref[eq:conservazioni-relativita]{Equazione} che lega la densità di forza di Lorentz al tensore energia impulso.
 
 \subsection[]{Scrivere il tensore degli sforzi per un’onda e.m. piana che si propaga in una direzione definita come $\hat{n}$.}
 \label{sec:3.b.11}
-\subsection[]{Scrivere esplicitamente il 4-tensore impulso-energia per un’onda e.m. piana monocromatica che si propaga lungo l’asse x con densita’ di energia $u_{\text{em}}$.}
+Il tensore degli stress è definito come:
+\[
+	T= \I u_{\text{em}} - \frac{1}{4\pi} \left( E \otimes E + B \otimes B\right) 
+\]
+Oppure con gli indici:
+\[
+	T^{ij}= \delta^{ij}u_{\text{em}} - \frac{1}{4\pi}\left( E^{i}E^{j}+ B^{i}B^{j} \right) 
+\]
+Con 
+\[
+	u_{\text{em}}=\frac{1}{8\pi}\left( E^2 + B^2 \right) = \frac{1}{8\pi}\left( E_{i}E_{i}+ B_{j}B_{j} \right)
+.\]
+Quindi con un'onda piana polarizzata nella direzione $\hat{n}$ si ha sempre (con una opportuna rotazione del sistema di riferimento) che \[
+	T^{ij}=n^{i}n^{j}u_{\text{em}}
+.\] 
+Per verificarlo basta scegliere il sistema di riferimento in cui l'onda piana è polarizzata nella direzione $\hat{x}=\hat{n}$, in questo modo si ha:
+\begin{align*}
+	\bs{E}=&E_0 \hat{y} e^{ikx-i \omega t}\\
+	\bs{B}=&B_0 \hat{z} e^{ikx-i\omega t}
+.\end{align*}
+Da cui segue immediatamente che \[
+	T^{ij}= \delta^{ij} \frac{E_{i}E_{i}+B_{i}B_{i}}{8 pi} - \frac{1}{4\pi}\left(  E^{i}E^{j}+B^{i}B^{j}\right)= u_{\text{em}}n^{i}n^{j}
+\]
+In notazione matriciale questo significa:
+\[
+	T=
+	u_{\text{em}}
+	\left(
+	\begin{array}{ccc}
+		1 & 0 & 0 \\   
+		0 & 0 & 0 \\
+		0 & 0 & 0 \\
+	\end{array}
+	\right)
+.\] 
+\subsection[]{Scrivere esplicitamente il 4-tensore impulso-energia per un’onda elettromagnetica piana monocromatica che si propaga lungo l’asse x con densita’ di energia $u_{\text{em}}$.}
 \label{sec:3.b.12}
+Utilizzando i risultati della domanda 3.b.9 e 3.b.11 possiamo dire che:
+\[
+\Theta=
+\left(
+\begin{array}{cccc}
+	u_{\text{em}} & u_{\text{em}}  & 0 & 0 \\   
+	u_{\text{em}} & -u_{\text{em}} & 0 & 0 \\
+	0 & 0 & 0 & 0 \\
+	0 & 0 & 0 & 0 \\
+\end{array}
+\right)
+.\] 
+
+
 \subsection[]{Ricavare l’espressione per i potenziali di Lienard-Wiechert ( $\phi$ ed A per una carica puntiforme in moto arbitrario) a partire dai potenziali ritardati.}
 \label{sec:3.b.13}
+Ricordiamo l'espressione dei potenziali ritardati:
+\begin{align*}
+	\varphi\left( \bs{r},t \right)=	& \int \frac{\rho\left( \bs{r}', t-\left| \bs{r}-\bs{r}' \right|/c \right) }{\left| \bs{r}-\bs{r}' \right| }d^3r'\\
+					&\\
+	\bs{A}\left( \bs{r},t \right)=	& \frac{1}{c}\int \frac{\bs{j}\left( \bs{r}', t-\left| \bs{r}-\bs{r}' \right|/c \right)}{\left| \bs{r}- \bs{r}' \right|} d^3r'
+.\end{align*}
+Sia Q una carica che si muove con la legge oraria $\bs{s}\left( t \right) $, le densità di carica e di corrente ad essa assoiate sono:
+\begin{align*}
+	\rho\left( \bs{r},t \right) =&q\delta^3\left( \bs{r}-\bs{s}\left( t \right) \right)\\
+	\bs{j}\left( \bs{r},t \right) =&q \dot{\bs{s}}\left( t \right) \delta^3\left(\bs{r}-\bs{s}\left( t \right)   \right)
+.\end{align*}
+Il tempo ritardato è definito come al solito:
+\[
+	c\left( t- t' \right) = \left| \bs{r}-\bs{s}\left( t \right)  \right| 
+.\] 
+Si procede quindi al calcolo del potenziale scalare, il calcolo del potenziale vettore è del tutto analogo.
+\[	
+	\varphi\left( \bs{r},t \right)=	 q\int \frac{\delta^3\left( \bs{r}'-\bs{s}\left( t-\left| \bs{r}- \bs{r}' \right|/c \right)  \right)  }{\left| \bs{r}-\bs{r}' \right| }d^3r'\\
+.\] 
+Si può quindi utilizzare la prorietà della delta :
+\[
+	\int \delta\left( f\left( x \right)  \right) dx \ \stackrel{f\left( x \right) = y}{=} \ \int\delta\left( y \right) \frac{1}{\left| f' \right| }dy= \left. \frac{1}{\left| f' \right| }\right|_{f\left( x \right) =0}
+.\] 
+Ricordandoci che lo stiamo applicando ad un caso vettoriale, concentriamoci sul cambio di variabile (prima uguaglianza della relazione sopra) nel nostro integrale abbiamo:
+\[
+	f\left( \bs{r}' \right) = \bs{r}'- \bs{s}\left( t- \frac{\left| \bs{r}-\bs{r}' \right| }{c} \right) 
+.\]
+Nel calcolo della derivata consideriamo direttamente il fatto che, rimanendo una $\delta$ all'interno dell'integrale dopo il cambio di variabile, l'integrale verrà calcolato nei punti in cui la $\delta$ si annulla. Nel nostro caso si annulla in $\bs{r}' = \bs{s}\left( t' \right) $, quindi calcoleremo la derivata di $f$ direttamente nel punto di annullamento della $\delta$ rimanendo astratti nella formulazione dell'integrale. 
+E necessario anche notare che la parametrizzazione
+\[
+\hat{t}=t-\frac{\left| \bs{r}-\bs{r}' \right| }{c}
+\]
+è tanto valida quanto quella del tempo ritardato, deriveremo rispetto a questo tempo applicando le regole di derivazione di funzioni composte:
+\begin{align*}
+	\left. f'\left( \bs{r}' \right)\right|_{\bs{r}'=\bs{s\left( t' \right) }} =& \left[ 1 - \frac{\partial \bs{s}\left( t- \frac{\left| \bs{r}-\bs{r}' \right| }{c} \right) }{\partial \left( t - \frac{\left| \bs{r}-\bs{r}' \right| }{c} \right) } \cdot  
+			\frac{\partial}{\partial \bs{r}'} \left( t- \frac{\left| \bs{r}-\bs{r}' \right| }{c} \right) \right]_{\bs{r}'=\bs{s}\left( t' \right) } =\\
+			=&\left[ 1 - \frac{\bs{v}\left( t-\frac{\left| \bs{r}-\bs{r}' \right| }{c} \right) }{c}\cdot \frac{\left( \bs{r}-\bs{r}' \right) }{\left| \bs{r}-\bs{r}' \right| }\right]_{\bs{r}'=\bs{s}\left( t' \right) } =\\
+	=& 1-\bs{\beta}\cdot \hat{n}
+.\end{align*}
+
+Inoltre è necessario scrivere il denominatore dell'integranda in funzione della nuova variabile y, senza perdere di generalità possiamo scriverlo come :
+\[
+	\left| \bs{r}-\bs{r}' \right| = \left| \bs{r}-f^{-1}\left( y \right)  \right| 
+.\] 
+Detto ciò l'integrale diventa:
+\[
+	\varphi\left( \bs{r}, t \right) = q\int \frac{\delta\left( y \right)}{\left| \bs{r}-f^{-1}\left( y \right)  \right| } \frac{1}{\left| f'\left( y \right)  \right| }dy 
+.\]
+Applicando la $\delta$ esce dall'integrale un termine $f^{-1}\left( y=0 \right) $; non è necessario esplicitarlo, basta applicare nuovamente l'operatore di inversione per farlo tornare $\bs{r}'$ calcolato in $\bs{s}\left( t' \right) $. Si conclude quindi che:
+\[
+	\varphi\left( \bs{r}, t \right) = \left[\frac{q}{\left| \bs{r}-\bs{s}\left( t \right)  \right| \left( 1-\bs{\beta}\left( t \right) \cdot \hat{n} \right) }\right]_{t=t'}
+.\] 
+Analogamente possiamo ricavare il potenziale vettore:
+\[
+	\bs{A}\left( \bs{r}, t \right) =\left[\frac{q \bs{\beta\left( t \right) }}{\left| \bs{r}-\bs{s}\left( t \right)  \right| \left( 1-\bs{\beta}\left( t \right) \cdot \hat{n} \right) }\right]_{t=t'}
+.\] 
+
+
 \subsection[]{Calcolare la potenza totale irraggiata da una carica accelerata in moto non relativistico. Esprimere i risultati in MKSA e nelle unità “naturali”.}
 \label{sec:3.b.14}
 \subsection[]{Ricavare la formula di Larmor relativistica 
