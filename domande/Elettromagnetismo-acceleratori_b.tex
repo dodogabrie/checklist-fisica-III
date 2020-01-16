@@ -424,38 +424,203 @@ In MKSA si ottiene:
 	P=\frac{2q^2}{3c^3}\gamma^{6}\left( \left| \bs{a} \right| ^2 - \left| \bs{a}\wedge \bs{\beta}  \right| ^2 \right) 
 .\] a partire dalla formula non relativistica ed utilizzando argomenti di invarianza relativistica.}
 \label{sec:3.b.15}
-\subsection[]{Dimostrare che la radiazione di sincrotrone ha uno spettro di emissione con una frequenza “critica”:$\omega_{u}\approx \omega_0\gamma^3$.}
+La potenza deve essere un invariante relativistico. Infatti è definita dal rapporto tra un energia ed un tempo, entrambe prime componenenti di un quadrivettore e quindi entrambe trasformanti allo stesso modo (come un tempo).\\
+Conviene allora sfruttare l'invariante $a^{\mu}a_{\mu}$, con $a^{\mu}$ quadriaccelerazione definita da:
+\[
+	a^{\mu}=
+	\left( \quad
+	\begin{array}{c}
+		\gamma^{4}\bs{a}\cdot \bs{\beta}, \quad 
+		\gamma^2 \bs{a}+\gamma^{4} \left( \bs{a}\cdot \bs{\beta} \right) \bs{\beta}
+	\end{array}
+	\quad \right)
+.\] 
+Possiamo provare a vedere se la quantità giusta è: \[
+	P=-\frac{2}{3} \frac{q^2}{c^3}a^{\mu}a_{\mu}
+.\] 
+Che è un invariante di Lorentz e soprattutto coincide con la formula non relativistica. Proviamo a vedere se torna con il caso cercato:
+\begin{align*}
+	a^{\mu}a_{\mu}=&\gamma^{4}\left( \gamma^{4}\left( \bs{a}\cdot \bs{\beta} \right) ^2 - \left| \bs{a}+ \gamma^2\left( \bs{a}\cdot \bs{\beta} \right) \bs{\beta} \right| ^2 \right)=\\
+	=& \gamma^{4}\left( \gamma^{4}\left( \bs{a}\cdot \bs{\beta} \right)^2-\gamma^{4}\left| \bs{\beta} \right|^2 \left( \bs{a}\cdot \bs{\beta} \right)^2 - \left| \bs{a} \right| ^2 - 2\gamma^2\left( \bs{a}\cdot \bs{\beta} \right) ^2   \right) =\\
+	=& \gamma^{4}\left( -\gamma^2\left( \bs{a}\cdot \bs{\beta} \right)^2-\left| \bs{a} \right|^2 \right)=\\
+	=& \gamma^{6}\left( \left| \bs{\beta} \right|^2\cdot  \left| \bs{a} \right|^2 - \left( \bs{a}\cdot \bs{\beta} \right)^2 - \left| \bs{a} \right|^2\right)=\\
+	=& \gamma^{6}\left( \left| \bs{a}\wedge \bs{\beta}  \right|^2-\left| \bs{a} \right|^2 \right) 
+.\end{align*}
+Da cui se ne conclude che la quantità provata è quella giusta.
+
+\subsection[]{Dimostrare che la radiazione di sincrotrone ha uno spettro di emissione con una frequenza “critica” $\omega_{u}\approx \omega_0\gamma^3$.}
 \label{sec:3.b.16}
+Per arrivare al risultato costruiamo geometricamente la situazione di osservazione:
+\begin{figure}[ht]
+    \centering
+    \incfig{luce-sincrotrone}
+    \caption{Schema di rilevamento della Luce di Sincrotrone}
+    \label{fig:luce-sincrotrone}
+\end{figure}
+Alla posizione $R$ di Figura c'è un rilevatore di radiazione elettromagnetica, la circonferenza rappresentata è la traiettoria della particella nell'acceleratore. Si rappresentano gli istanti $t'_{1}$ e $t'_{2}$ in cui la radiazione (che può essere rilevata da $R$) viene emessa dalla sorgente. Se la radiazione emessa in tali istanti viene rilevata allora arriva al rivelatore rispettivamente agli istanti $t_{1}$ e $t_{2}$, questa notazione induce le relazioni:
+\begin{align*}
+	t_1 =& t'_{1}+ \frac{\Delta L + D}{c}\\
+	t_2=& t'_{2}+ \frac{D}{c}=t'_{1}+ \frac{\Delta L}{V}+ \frac{D}{c}
+.\end{align*}
+Possiamo allora dare una stima del tempo in cui si osserva la radiazione come:
+\begin{align*}
+	\Delta t =& t_2-t_1 =\\
+	=&\frac{\Delta L}{V}- \frac{\Delta L}{c}=\\
+	=& \Delta L \left( \frac{1}{\beta c} - \frac{1}{c} \right) 
+.\end{align*}
+Adesso dobbiamo sfruttare il fatto che per particelle che viaggiano a velocità relativistiche $1 /\gamma \approx 1$, quindi l'angolo in figura taglierà un arco di circonferenza piccolo rispetto alle dimensioni dell'apparato. Quindi:
+\begin{align*}
+	\Delta L \approx \frac{2 \rho}{\gamma} \quad \implies \quad  \Delta t \approx \frac{2\rho}{\gamma}\left( \frac{1-\beta}{\beta c} \right) 
+.\end{align*}
+Infine moltiplicando e dividendo per $1+\beta$:
+\[
+	\Delta t = \frac{2 \rho}{\gamma \beta c} \left( \frac{1-\beta^2}{1+\beta} \right)\approx \frac{\rho}{c \gamma^3} 
+.\] 
+Logicamente se l'impulso dura $\Delta t$ significa che lo spettro angolare di radiazione si estende fino ad una frequenza critica:
+\[
+	\omega_{c} \sim \frac{1}{\Delta t} = \frac{c\gamma^3}{\rho}= \omega_0\gamma^3
+.\] 
+
 \subsection[]{Calcolare il fattore di forma elettromagnetico per una sfera uniformente carica di raggio a.}
 \label{sec:3.b.17}
-\subsection[]{Calcolare il fattore di forma per una suprficie sferica uniformente carica di raggio a. [nota: l'interno è vuoto]}
+La sfera di raggio $a$ uniformemente carica avrà una distribusione di carica esprimibile come:
+\begin{align*}
+	\rho\left( \bs{r} \right) =
+	\begin{cases}
+	\ \frac{3Q}{4\pi a^3} \quad &\text{se} \quad \left| \bs{r} \right| < a  \\
+	\ 0  \quad  &\text{se} \quad \left| \bs{r} \right| > a \\
+	\end{cases} 
+.\end{align*}
+Per un dato valore di $q$ scegliamo delle coordinate polari aventi l'asse polare diretto lungo $q$ stesso, si calcola quindi il fattore di forma come:
+\begin{align*}
+	F\left( \bs{q} \right) 	&= \frac{\int \rho\left( \bs{r} \right) e^{-i \bs{q}\cdot \bs{r}}d^3r}{\int \rho\left( \bs{r} \right) d^3r} \\
+			       	&= \frac{1}{Q}\int_{0}^{a}dr\int_{0}^{\pi}d\theta \int_{0}^{2\pi} d\phi \rho\left( r \right) e^{-irq\cos\theta} r^2 \sin\theta \\
+			     	&=  \frac{2\pi}{Q}\int_0^a\int_{1}^{-1} \rho\left( r \right) e^{-irq\cos\theta} r^2 \left| d\cos\theta \right| dr=\\ 
+				&= \frac{4\pi}{Q} \int_0^{a} \rho\left( r \right) r^2 \frac{\sin\left( qr \right) }{qr}dr= \\
+				&= \frac{3}{a^3q}\int_0^{a} r \sin\left( qr \right) dr= \\
+				&= \frac{3}{a^3} \left(- \frac{1}{q} r\cos\left( qr \right) + \frac{1}{q^2} \sin \left( qr \right)  \right)_{0}^{a}= \\
+				&= 3\left( \frac{\sin\left( aq \right) }{\left( aq \right)^3 } -\frac{\cos\left( aq \right) }{\left( aq \right) ^2} \right)  
+.\end{align*}
+In quest'ultima si può notare che, grazie alla simmetria del sistema sotto rotazioni, $F\left( \bs{q} \right) = F\left( q \right) $
+\subsection[]{Calcolare il fattore di forma per una supeficie sferica uniformente carica di raggio a. [nota: l'interno è vuoto]}
 \label{sec:3.b.18}
+In tal caso la densità di carica si può esprimere come:
+\begin{align*}
+	\rho\left( \bs{r} \right) =
+	\begin{cases}
+		\ 0 \quad \text{se} \quad  \left| \bs{r} \right| < a\\
+		\ \frac{Q}{ 4 \pi a^2} \quad \text{se} \quad \left| \bs{r} \right| = a\\
+		\ 0 \quad \text{se} \quad \left| \bs{r} \right| > a
+	\end{cases}
+.\end{align*}
+Procedendo come sopra senza interare su $r$ si ottiene:
+\[
+	F\left( \bs{q} \right) = \frac{3\sin\left( aq \right) }{a^2q}
+.\] 
+
 \subsection[]{Calcolare la velocità di un elettrone [e successivamente di un protone] posto in una struttura acceleratrice che abbia: \\
 	1) Campo elettrico longitudinale costante.\\ 
 	2) Campo elettrico longitudinale oscillante.\\ 
 Inserendo valori numerici ragionevoli, calcolare il tempo affinché la particella, partendo da ferma, raggiunga una energia pari al doppio della sua massa a riposo.}
 \label{sec:3.b.19}
-iii
+Supponiamo la struttura lineare, l'equazione di moto di una particella nel campo dell'acceleratore è:
+\[
+	\frac{\mbox{d} }{\mbox{d} t} \left( p_{x} \right) = qE \implies	\frac{\mbox{d} }{\mbox{d} t}\left( \gamma \beta \right)  = \frac{qE}{mc}
+.\] 
+\paragraph{Campo elettrico costante}%
+
+Nel caso di campo costante l'equazione si risolve con:
+\[
+	\gamma \beta = \frac{qE}{mc}\cdot  t = \frac{t}{\tau}
+.\] 
+Per trovare la velocità (quindi $\beta$) dobbiamo esplicitare $\gamma$ nella precedente:
+\[
+	\frac{\beta^2}{1-\beta^2}= \frac{t^2}{\tau^2}\implies \beta=\frac{t}{\sqrt{t^2+\tau^2} }
+.\] 
+Da cui l'energia:
+\[
+	E= mc^2\gamma= mc^2\sqrt{1+\frac{t^2}{\tau^2}} 
+.\] 
+Ne segue che per avere una energia che sia il doppio di quella a riposo bisogna imporre:
+\begin{align*}
+	2=\sqrt{1+\frac{\Delta t^2}{\tau^2}} \implies \Delta t = \sqrt{3}\tau \approx 
+	\begin{cases}
+		10^{-11} & \text{per l'elettrone}\\
+		10^{-7} &  \text{per il protone}
+	\end{cases} 
+.\end{align*}
+Nella stima numerica è stato preso il valore tipico di campo elettrico per un acceleratore lineare di $50$ MeV/m.
+\paragraph{Campo elettrico oscillante}%
+Gli acceleratori costruiti con questo metodo accelerano le particelle solo nel semiperiodo in cui il campo elettrico è diretto nella direzione in cui è attesa la accelerazione, per far ciò si alternano zone in cui il campo è presente a zone in cui invece non lo è.
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{immagini/drift-tube.png}
+	\caption{}
+	\label{fig:}
+\end{figure}
+Prendiamo adesso un campo elettrico del tipo :
+\[
+	E= E_0\sin\left( \frac{\pi t}{\tau'} \right) 
+.\] 
+Non possiamo più applicare il metodo utilizzato sopra, potremmo in qualche modo cercare di discretizzare il problema mediando l'equazione del moto su un semiperiodo (per i motivi spiegati all'inizio), la variabile diventa allora il tempo impiegato a fare un semiperiodo $\tau'$:
+\[
+	\Delta \left( \beta\gamma \right) = \frac{qE_0}{mc}\int_0^{\tau'} \sin \left( \frac{\pi t}{\tau} \right) dt = \frac{2qE_0\tau'}{\pi mc}
+.\] 
+Quindi ogni volta che la particella attraversa un Drift tube subisce una variazione di $\gamma\beta$ come quella scritta sopra.
+Se parametrizziamo il modulo del campo elettrico iniziale come:
+\[
+	E_0 \rightarrow \frac{2E_0}{\pi} = E'_0
+.\] 
+ci si accorge che il risultato non è tanto differente da quello incontrato nel caso di campo costante (ipotizziamo sempre che la particella sia idealmente ferma nel momento dell'accenzione del campo).
+\[
+	\Delta \gamma\beta = \gamma_{\text{fin}}\beta_{\text{fin}}=\frac{qE'_0}{mc}\tau'=\frac{\tau'}{\hat{\tau}}
+.\] 
+con $\hat{\tau}=\frac{qE'_0}{mc}$.\\
+Notiamo che se vogliamo la quantità $\gamma\beta$ dopo che la particella ha attraversato $n$ Drift Tube basta sommare $n$ volte la quantità $\tau' /\hat{\tau}$.
+calcoliamo la velocità della particella all'uscita dell'ennesimo Drift Tube sfruttando il calcolo effettuato in precedenza:
+\[
+	\beta = \frac{n \tau'}{\sqrt{\hat{\tau}^2 + n^2 \tau'^2} }
+.\] 
+E in modo analogo l'energia:
+\[
+	E = mc^2\sqrt{1+\frac{n^2\tau'^2}{\hat{\tau}^2}} 
+.\] 
+La ricerca del tempo in cui la particella raggiunge il doppio dell'energia a riposo richiede questa volta una piccola considerazione aggiuntiva: per ogni semi periodo trascorso in presenza del campo elettrico ve ne è uno trascorso all'esterno dei Drift Tube. Dobbiamo quindi aggiungere al tempo necessario all'interno dei drift tube (sempre in termini di semi periodi) il tempo trascorso all'esterno senza campo elettrico ed a velocità costante.
+\[
+	n\tau' + n\tau' = \sqrt{3}\hat{\tau} \implies 2n\tau' = \sqrt{3} \hat{\tau}
+.\] 
+E chiamando $2\tau'= T$ il periodo di oscillazione si ha:
+\[
+	nT = \sqrt{3}\frac{2qE_0}{\pi mc}
+.\] 
+I tempi in cui si riesce a raddoppiare l'energia hanno la stessa espressione  (fattore $\frac{2}{\pi}$ a parte), visto che le tensioni che si riesce a raggiungere nei due casi sono simili anche il valore numerico di tali tempi non differisce di molto.
+
 \subsection[]{A partire dai campi ritardati, dimostrare che 
 \[
 	\frac{\mbox{d} P}{\mbox{d} \Omega} = \frac{q^2\left| \bs{a} \right|^2\sin^2\theta }{16\pi^2\epsilon_0c^3\left( 1-\beta\cos\theta \right)^2 }
 .\] è la potenza (MKSA) irraggiata da una carica accelerata in un moto rettilineo.}
 \label{sec:3.b.20}
+
 \subsection[]{Calcolare l’energia persa in una rivoluzione per una carica in moto uniforme su una circonferenza (acceleratore circolare). Calcolare la frazione di energia persa
 in un giro rispetto alla sua energia cinetica, effettuando una valutazione numerica, nel caso di elettroni a LEP (energia 50 GeV, raggio 4km) o protoni ad LHC (energia 7 TeV, raggio ~4km). Nota: utilizzare la formula di Larmor in GCS:
 \[
 	P=\frac{2q^2}{3c^3}\gamma^{6}\left( \left| \bs{a} \right| ^2 - \left| \bs{a}\wedge \bs{\beta}  \right| ^2 \right) 
 .\] }
 \label{sec:3.b.21}
+
 \subsection[]{Calcolare la potenza emessa in funzione dell’angolo per una carica oscillante armonicamente in linea retta (termine di dipolo elettrico)}
 \label{sec:3.b.22}
+
 \subsection[]{Calcolare, a partire dalla formula di Larmor relativistica, la potenza totale dissipata in un acceleratore lineare in funzione di $\frac{\mbox{d} \bs{p}}{\mbox{d} t}$ oppure di $\frac{\mbox{d} E}{\mbox{d} x}$ (energia fornita per unita’ di lunghezza). Dimostrare che la frazione di energia persa nell’accelerazione e’ trascurabile, fornendo adeguati valori numerici nel caso di accelerazione di elettroni o protoni.}
 \label{sec:3.b.23}
+
 \subsection[]{Calcolare la lunghezza d’onda critica della radiazione di sincrotrone (elettroni) nei casi seguenti: \\
 i) energia=50GeV, raggio=4km; \\
 ii) energia=5GeV, raggio=30m}
 \label{sec:3.b.24}
+
 \subsection[]{Enunciare il teorema ottico e spiegarne il significato fisico nel caso di radiazione elettromagnetica su un ostacolo opaco.}
 \label{sec:3.b.25}
+
 \subsection[]{Come si ricava la sezione d'urto differenziale Rayleigh a partire dalla sezione d'urto Thomson ?}
 \label{sec:3.b.26}
