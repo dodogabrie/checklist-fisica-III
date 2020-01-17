@@ -66,17 +66,17 @@ Dove le quantità sono quelle definite nella domanda precedente. Si trascura ade
 .\] 
 L'approssimazione si ottiene raggruppando un $\hat{n}$ al numeratore. IL vettore di Poynting quindi è:
 \[
-	\bs{S}= \frac{c}{4 \pi} \left| \bs{E}_{\text{rad}} \right| ^2 \hat{n}=\frac{q^2}{4\pi c^3} 
+	\bs{S}= \frac{c}{4 \pi} \left| \bs{E}_{\text{rad}} \right| ^2 \hat{n}=\frac{q^2}{4\pi c} 
 	\left| \frac{\hat{n}\wedge \left( \hat{n}\wedge  \dot{\bs{\beta}}\right)}{R} \right|^2
 .\] 
 Dove si è anche trascurato il termine $\bs{\beta}$ rispetto al ternine $\hat{n}$ perchè discutiamo il caso  non relativistico. Andando adesso in un sistema di riferimento in cui $\theta$ è l'angolo tra la accelerazione della particella e la direzione di osservazione si ha:
 \[
-	\bs{S}= \frac{q^2}{4\pi R^2 c^3}\sin^2\theta \left| \dot{\bs{v}} \right| ^2 \hat{n}
+	\bs{S}= \frac{q^2}{4\pi R^2 c}\sin^2\theta \left| \dot{\bs{v}} \right| ^2 \hat{n}
 .\] 
 In conclusione si trova la distribuzione angolare di potenza come:
 \[
 	\frac{\mbox{d} P}{\mbox{d} \Omega} = \frac{\mbox{d} P}{\mbox{d} \Sigma } \frac{\mbox{d} \Sigma}{\mbox{d} \Omega}=
-	\left| \bs{S} \right| R^2 = \frac{q^2}{4\pi c^3} a^2 \sin^2\theta
+	\left| \bs{S} \right| R^2 = \frac{q^2}{4\pi c} a^2 \sin^2\theta
 .\] 
 
 \subsection[]{Ricavare esplicitamente le leggi di trasformazione di Lorentz del campo elettrico e del campo magnetico. Discutere, in particolare, il caso in cui, in un certo sistema di riferimento inerziale, il campo magnetico è nullo e il caso in cui il campo elettrico è nullo.}
@@ -655,20 +655,177 @@ in un giro rispetto alla sua energia cinetica, effettuando una valutazione numer
 	P=\frac{2q^2}{3c^3}\gamma^{6}\left( \left| \bs{a} \right| ^2 - \left| \bs{a}\wedge \bs{\beta}  \right| ^2 \right) 
 .\] }
 \label{sec:3.b.21}
+Sia $a$ l'accelerazione radiale della particella nel suo moto, $R$ il raggio di curvatura totale e $R_{B}$ il raggio di curvatura nel tratto esclusivamemnte composto da zone con campo magnetico (quelle adibite a curvare).\\
+Nel caso di moto uniforme su una circonferenza abbiamo visto nella \hyperref[sec:3.a.21]{Domanda 3.a.21} che la formula di Larmor si può riscrivere come (CGS):
+\[
+	P = \frac{2\gamma^4\beta^4}{3}\frac{q^2c}{R_{B}^2}
+.\] 
+O anche, per effettuare stime numeriche, in MKSA:
+\[
+	P = \frac{\gamma^4\beta^4}{6\pi\epsilon_0}\frac{q^2c}{R_{B}^2}
+.\] 
+Per una stima della energia persa al giro in irraggiamento dobbiamo considerare solo le zone in cui vi è accelerazione di carica, quindi le zone di curvatura in cui vi è un campo magnetico. Tale tempo, se la particella viaggia a velocità costante è:
+\[
+	T_{B}= \frac{2\pi R_{B}}{\beta c}
+.\] 
+Quindi la variazione di energia sul giro (aggiungiamo e togliamo termini per renderla più interpretabile):
+\begin{align*}
+	\Delta E &= P\cdot T_{B}=\\
+	&=  \frac{\gamma^4\beta^4}{6\pi\epsilon_0}\frac{q^2c}{R_{B}^2}\frac{2\pi R_{B}}{\beta c}=\\
+	&=  \frac{4\pi }{3}\frac{q^2}{4\pi\epsilon_0m_e c^2} m_ec^2\frac{\beta^3\gamma^4}{R_B}\\
+	&= \frac{4\pi}{3}\left( \frac{r_e}{R_B} \right) m_e c^2\beta^3\gamma^4 \\
+\end{align*}	
+Possiamo quindi già fare una prima stima numerica lasciando liberi i parametri che variano nei due casi:
+\[
+\Delta E \approx 4 \cdot 2.8 \text{ [fm]}\cdot 0.51 \text{ [MeV]} \frac{\beta^3\gamma^4}{R_B} \approx 5.6 \text{ [fm]} \cdot \text{[MeV]} \frac{\beta^3\gamma^4}{R_B} 
+.\] 
+Con i dati del testo possiamo calcolare le quantità necessarie alla stima di $\gamma$ e $\beta$:
+\begin{align*}
+	&\gamma = \frac{E}{mc^2}  &\beta = \sqrt{1- \frac{1}{\gamma^2}} 
+.\end{align*}
+
+\paragraph{Acceleratore LEP}%
+In tal caso si ha $\gamma=(50 \cdot 10^{3}) / 0.51 \approx 10^5$, $\beta \approx 1$ quindi:
+\begin{align*}
+	& \Delta E \approx \frac{5.6 \cdot 10^{-15}}{4 \cdot 10^{3}} \cdot 10^{20}\text{ [MeV]}=1.4 \cdot 10^{2} \frac{\text{ [MeV]} }{\text{giro}} = 
+	0.14 \frac{\text{ [GeV]} }{\text{giro}}
+.\end{align*}
+Che da quindi una frazione di energia persa per giro di $\Delta E / E \approx 0.3 \%$
+\paragraph{Acceleratore LHC}%
+La massa del protone fa la differenza su $\gamma$ e su $\beta$ :
+\begin{align*}
+	&\gamma = \frac{7 \cdot 10^{6} \text{ [MeV]}}{9.383 \cdot 10^{2}  \text{ [MeV]}}\approx 7.5 \cdot 10^{3} \\
+	&\beta \approx \sqrt{1- 10^{-8}}\approx 1 
+.\end{align*}
+Per l'energia quindi:
+\begin{align*}
+	& \Delta E \approx \frac{5.6 \cdot 10^{-15} }{4 \cdot 10^{3} } \left( 7.5 \cdot 10^{3}  \right) ^4 \text{ [MeV]} \sim \text{ [eV]}  
+.\end{align*}
+Da cui si deduce che la frazione di energia persa per irraggiamento nel caso di protoni è pressochè nulla.
 
 \subsection[]{Calcolare la potenza emessa in funzione dell’angolo per una carica oscillante armonicamente in linea retta (termine di dipolo elettrico)}
 \label{sec:3.b.22}
+Potremmo riallacciarci al campo di radiazione del dipolo sempre passando per i campi di radiazione di Lineard-Wiechert nell'approssimazione non relativistica:
+\begin{align*}
+\bs{E}_{\text{rad}}\left(\bs{x},t\right) 	&\approx\frac{q}{c}\left[\frac{\hat{n}\wedge\left(\hat{n}\wedge\dot{\bs{\beta}}\right)}{R}\right]_{\text{rit}} \\
+						&= \frac{q}{c^2R} \left[ \left( \ddot{\bs{x}}\wedge \hat{n} \right)\wedge \hat{n}\right]_{\text{rit}}  \\
+						&= \frac{1}{c^2R} \left( \left[ \ddot{\bs{p}} \right]_{\text{rit}}\wedge \hat{n}\right)\wedge \hat{n}
+.\end{align*}
+Dove $\bs{p}$ è il momento di dipolo oscillante del tipo: $\bs{p} = qx_0e^{i \omega t}\hat{x}$, preso in questo caso (a titolo di esempio) nella direzione $\hat{x}$.\\
+Abbiamo visto in precedenza (\hyperref[sec:3.b.3]{Domanda 3.b.3}) che la potenza irraggiata per unità di angolo solido si può esprimere come:
+\[
+	\frac{\mbox{d} P}{\mbox{d} \Omega}  = R^2\left| \bs{S} \right| = R^2 \frac{c}{4\pi} \left| \bs{E}_{\text{rad}} \right|^2 
+.\] 
+Chiamando quindi $\theta$ l'angolo tra la direzione di oscillazione $\hat{x}$ e la direzione di osservazione $\hat{n}$ possiamo eesprimere i prodotti vettoriali in funzione di tale angolo, inoltre la doppia derivata fa scendere un fattore $\omega^2$, se ne conclude che: 
+\[
+	\frac{\mbox{d} P}{\mbox{d} \Omega} = \frac{\left| \bs{p} \right|^2 \omega^4}{4\pi c^3} \sin^2\theta
+.\] 
 
 \subsection[]{Calcolare, a partire dalla formula di Larmor relativistica, la potenza totale dissipata in un acceleratore lineare in funzione di $\frac{\mbox{d} \bs{p}}{\mbox{d} t}$ oppure di $\frac{\mbox{d} E}{\mbox{d} x}$ (energia fornita per unita’ di lunghezza). Dimostrare che la frazione di energia persa nell’accelerazione e’ trascurabile, fornendo adeguati valori numerici nel caso di accelerazione di elettroni o protoni.}
 \label{sec:3.b.23}
+Come visto nella \hyperref[sec:3.a.21]{Domanda 3.a.21} la potenza dissipata per irraggiamento in un acceleratore lineare è:
+\[
+	P = \frac{q^2\gamma^6}{6\pi\epsilon_0}\left| \bs{a} \right|^2=\frac{q^2}{6\pi\epsilon_0m^2}\left| \frac{\mbox{d} \bs{p}}{\mbox{d} t}  \right|^2
+.\] 
+Infatti per la componente spaziale del quadrimpulso si ha:
+\begin{align*}
+	\frac{\mbox{d} p}{\mbox{d} t} 	&= \frac{\mbox{d} mv\gamma}{\mbox{d} t} =\\
+				      	&= m a \gamma + m v \frac{\mbox{d} \gamma}{\mbox{d} t} =\\
+					&= ma\gamma + ma\beta^2\gamma^3=\\
+					&= ma\gamma^3 
+.\end{align*}
+Inoltre siamo andati subito in una dimensione essendo il moto unidimensionale.
+Se la volessimo in funzione della variazione lineare di energia potremmo sfruttare la relazione:
+\begin{align*}
+	c \frac{\mbox{d} p}{\mbox{d} t} &= \frac{\mbox{d} }{\mbox{d} t}\sqrt{E^2-m^2c^4} =\\
+	&= \frac{2E}{2\sqrt{E^2-m^2c^4} }\frac{\mbox{d} E}{\mbox{d} t}=  \\
+	&= \frac{E}{cp}\frac{\mbox{d} E}{\mbox{d} t} = \\
+	&= \frac{mc^2\gamma}{mv\gamma c}\frac{\mbox{d} E}{\mbox{d} t} = \\
+	&= \frac{1}{\beta}\frac{\mbox{d} E}{\mbox{d} t} = \\
+	&= c \frac{\mbox{d} E}{\mbox{d} x}  
+.\end{align*}
+Quindi si otterrebbe il medesimo risultato.\\
+L'uguaglianza tra le due variazioni ci è utile invece per calcolare $f_{\text{rad}}$: la frazione di energia persa rispetto all'incremento di energia:
+\begin{align*}
+	f_{\text{rad}}	&= \frac{P}{\frac{\mbox{d} E}{\mbox{d} t} }=\\
+		      	&= \frac{q^2}{6\pi\epsilon_0 c^3m^2}\left( \frac{\mbox{d} p}{\mbox{d} t} \right)^2 \frac{1}{v \frac{\mbox{d} E}{\mbox{d} x} }=  \\
+			&= \frac{2}{3\beta} \frac{r_e \left( \frac{\mbox{d} E}{\mbox{d} x}  \right) }{mc^2} 
+.\end{align*}
+Si vede che questa è trascurabile sempre, infatti in una distanza dell'ordine dei fm non si riescono ad ottenere variazioni di energia dell'ordine di  $mc^2$.\\
+La domanda del testo era invece la frazione di energia persa $\hat{f}$, la calcoliamo sempre a partire dalla formula di Larmor:
+\[
+	P= \frac{q^2}{6\epsilon_0c^3}\gamma^6 a^2= 
+	 \frac{q^2}{6\pi\epsilon_0c^3}\frac{1}{m^2}\left( \frac{\mbox{d} p}{\mbox{d} t}  \right)^2 
+\]
+sia $E_0$ il modulo del campo elettrico applicato,  si ha sempre dall'equazione di moto:
+\[
+	\frac{\mbox{d} p}{\mbox{d} t} = qE_0
+.\] 
+Introducendo questa nella potenza irraggiata:
+\[
+	P= \frac{q^4E^2_0}{6\pi\epsilon_0m^2c^3}
+.\] 
+Il calcolo da effettuare per ottenere $\hat{f}$ è:
+\[
+	\hat{f}= \frac{P\cdot t_f}{E_f}
+.\] 
+Dove $t_f$ è il tempo necessario a raggiungere l'energia finale $E_f$. Si risolve se $t_f$ è lineare in $E_f $, calcoliamo questo tempo seguendo la linea di quanto fatto nella \hyperref[sec:3.b.19]{Domanda 3.b.19}:
+\[
+	\gamma_f=\sqrt{1+\left( \frac{t_f}{\tau} \right)^2 } \implies t_f =
+	\tau\sqrt{\gamma^2_f-1} \approx \tau \cdot \gamma_f = \frac{mc}{qE_0}\cdot \frac{E_f}{mc^2}= \frac{E_f}{qE_0 c}
+.\] 
+Otteniamo quindi che:
+\[
+	\hat{f} = \frac{q^4}{6\pi \epsilon_0m^2c^2}\frac{E_0}{q}=\frac{E_0}{E_{\text{crit}}}
+.\] 
+Concentriamoci su $E_{\text{crit}}$, nel caso di elettroni:
+\[
+	E_{\text{crit}}=q \frac{6\pi\epsilon_0m^2c^4}{q^4}= \frac{3}{2}\frac{q}{4\pi\epsilon_0 r_e^2} \approx 2.7 \cdot 10^{20} \ \frac{\text{[V]}}{\text{[m]}}
+.\] 
+Quindi non c'è speranza, si raggiungono al massimo i MV/m: trascurabile.\\
+Nel caso di protoni invece non occorre nemmeno fare il conto: basta guardare l'espressione di $\hat{f}$, dipende inversamente dalla massa, se è trascurabile per gli elettroni lo è anche per i protoni.
+
 
 \subsection[]{Calcolare la lunghezza d’onda critica della radiazione di sincrotrone (elettroni) nei casi seguenti: \\
 i) energia=50GeV, raggio=4km; \\
 ii) energia=5GeV, raggio=30m}
 \label{sec:3.b.24}
+La frequenza critica è stata calcolata nella \hyperref[sec:3.b.16]{Domanda 3.b.16}, la lunghezza d'onda critica che ne deriva è:
+\[
+	\lambda_c = \frac{2\pi c}{\omega_c} = \frac{2\pi\rho}{\gamma^3} 
+.\] 
+con $\rho$ raggio dell'acceleratore.
+\paragraph{Caso i)}    $\gamma\approx 10^5 \implies \lambda_{c}\approx 2500 \text{ A}^o$
+\paragraph{Caso ii)}	$\gamma\approx 10^4 \implies \lambda_{c}\approx 1.8 \text{ A}^o $
+
 
 \subsection[]{Enunciare il teorema ottico e spiegarne il significato fisico nel caso di radiazione elettromagnetica su un ostacolo opaco.}
 \label{sec:3.b.25}
+Si consideri un'onda elettromagnetica $\bs{E}_{in}= \bs{E}_{0}e^{-i\left( \omega t - kz \right) }$ incidente su un bersaglio opaco ortogonalmente. Tale "interazione" produce una onda sferica rifratta che può essere scritta come:
+\[
+	\bs{E}_s= \frac{e^{-i\left( \omega t - kr \right) }}{r}\bs{f}\left( \bs{k} \right) 
+.\] 
+Dove $\bs{f}\left( \bs{k} \right) $ è l'ampiezza di scattering: racchiude tutta la dinamica del processo diffrattivo.\\
+Si ha che la potenza dissipata in tutto il processo di scattering è:
+\[
+	P_{\text{diss}}= \frac{c}{2k} \text{Im}\left[ \bs{E}^*_{0}\cdot \bs{f}\left( k \hat{z} \right)   \right] 
+.\] 
+Che è l'enunciato del teorema ottico.
 
 \subsection[]{Come si ricava la sezione d'urto differenziale Rayleigh a partire dalla sezione d'urto Thomson ?}
 \label{sec:3.b.26}
+Nello scattering Thompson si ha che, per un fotone che incide su un elettrone:
+\[
+	\left.\frac{\mbox{d} \sigma_{\text{el}}}{\mbox{d} \Omega}\right|_{\text{el}} =  \frac{r_e\omega^4}{\left( \omega^2_0-\omega^2 \right)^2 + \omega^2\Gamma^2_{\text{tot}}\left( \omega \right)} \sin^2\alpha
+.\] 
+Con $\alpha$ angolo tra la direzione di polarizzazione del campo e direzione di osservazione. Per il resto della notazione facciamo riferimento alle domande \hyperref[subsec: 2.a.15]{2.a.15} e \hyperref[subsec: 2.a.16]{2.a.16}. \\
+Lo scattering Rayleigh serve invece nel caso di più centri scatteranti, come ad esempio un'onda incidente su un atomo, in tal caso è necessario introdurre nel calcolo della potenza irraggiata l'effetto della possibile interferenza tra i campi generati dai vari elettroni.\\
+A questo scopo nasce il fattore di forma, tiene di conto di tali interferenze, in modo tale che se avessimo una distribuzione $\rho$ di carica con $\int \rho\left( \bs{r}\right)d^3r=Q$ il campo generato da questa non sarebbe altro che il campo di una carica puntiforme Q moltiplicato per $F\left( \bs{q} \right) $ della distribuzione.\\
+Risulta quindi chiaro che l'unica correzione da aggiungere allo scattering dell'elettrone singolo è proprio il modulo quadro di questo fattore moltiplicato per il numero di elettroni presenti nell'atomo: lo scattering Rayleigh risulta:
+\[
+	\frac{\mbox{d} \sigma}{\mbox{d} \Omega} = \left.\frac{\mbox{d} \sigma}{\mbox{d} \Omega}  \right|_{\text{el}}\left| ZF\left( \bs{q} \right)  \right| ^2
+.\] 
+
+
+
+
