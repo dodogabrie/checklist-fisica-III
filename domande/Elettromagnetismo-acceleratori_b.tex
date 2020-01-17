@@ -3,12 +3,12 @@
 	\frac{dt}{dt'}=1-\hat{n}\bs{\beta}
 .\] 
 dove t e t’ sono il tempo di osservazione ed il tempo ‘ritardato’, rispettivamente.}
-\label{sec:3.a.1}
+\label{sec:3.b.1}
 Si prenda una carica che si muove con la legge oraria $\bs{s}\left( t \right) $ e velocità $\bs{\beta}$, sfruttando la definizione di tempo ritardato: \[
 	t=t_{\text{rit}} + \left| \bs{r}- \bs{s}\left( t_{\text{rit}} \right)  \right|/c 
 .\]
 Possiamo differenziare: \[
-	\frac{\mbox{d} t}{\mbox{d} t_{\text{rit}}} = 1- \frac{\bs{r}-\bs{s}\left( t_{\text{rit}} \right) \cdot \frac{\mbox{d} \bs{s}\left( t_{\text{rit}} \right) }{\mbox{d} t_{\text{rit}}} }{\left| \bs{r}-\bs{s}\left( t_{\text{rit}} \right)  \right|c }=\left.1-\hat{n}\cdot \bs{\beta}\right|_{\text{rit}}
+	\frac{\mbox{d} t}{\mbox{d} t_{\text{rit}}} = 1- \frac{\left( \bs{r}-\bs{s}\left( t_{\text{rit}} \right) \right)\cdot \frac{\mbox{d} \bs{s}\left( t_{\text{rit}} \right) }{\mbox{d} t_{\text{rit}}} }{\left| \bs{r}-\bs{s}\left( t_{\text{rit}} \right)  \right|c }=\left.1-\hat{n}\cdot \bs{\beta}\right|_{\text{rit}}
 .\] 
 \subsection[]{Date le definizioni ‘standard’ delle variabili $\hat{n}, \bs{\beta}, \bs{R}, \bs{r}, \bs{r}', t, t'$ , dimostrare le seguenti relazioni:
 } \label{sec:3.b.2}
@@ -57,12 +57,12 @@ Si parte dal campo generato da una carica in moto :
 \[
 	\bs{E}\left( \bs{x},t \right) = q \left[ \frac{\hat{n}-\bs{\beta}}{\gamma^2\left( 1-\hat{n}\cdot \bs{\beta} \right)^3 R^2 } \right]_{\text{rit}}+
 	\frac{q}{c} \left[ \frac{\hat{n}\wedge \left[ \left( \hat{n}-\bs{\beta} \right) \wedge \dot{\bs{\beta}}  \right] }
-	{\left( 1-\hat{n}\cdot \bs{\beta} \right) R}  \right]_{\text{rit}} 
+	{\left( 1-\hat{n}\cdot \bs{\beta} \right)^3 R}  \right]_{\text{rit}} 
 .\] \label{eq:L-W} 
 Dove le quantità sono quelle definite nella domanda precedente. Si trascura adesso il campo a decrescsenza rapida e si considera solo il campo di radiazione approssimandolo al caso non relativistico:
 \[
 	\bs{E}_{\text{rad}}\left( \bs{x},t \right)= \frac{q}{c} \left[ \frac{\hat{n}\wedge \left[ \left( \hat{n}-\bs{\beta} \right) \wedge \dot{\bs{\beta}}  \right] }
-	{\left( 1-\hat{n}\cdot \bs{\beta} \right) R}  \right]_{\text{rit}}  \approx \frac{q}{c} \left[ \frac{\hat{n}\wedge \left( \hat{n}\wedge \dot{\bs{\beta}}\right)}{R} \right]_{\text{rit}} 
+	{\left( 1-\hat{n}\cdot \bs{\beta} \right)^3 R}  \right]_{\text{rit}}  \approx \frac{q}{c} \left[ \frac{\hat{n}\wedge \left( \hat{n}\wedge \dot{\bs{\beta}}\right)}{R} \right]_{\text{rit}} 
 .\] 
 L'approssimazione si ottiene raggruppando un $\hat{n}$ al numeratore. IL vettore di Poynting quindi è:
 \[
@@ -555,8 +555,8 @@ Gli acceleratori costruiti con questo metodo accelerano le particelle solo nel s
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.4\textwidth]{immagini/drift-tube.png}
-	\caption{}
-	\label{fig:}
+	\caption{Drift Tube in un acceleratore lineare}
+	\label{fig:Drift Tube}
 \end{figure}
 Prendiamo adesso un campo elettrico del tipo :
 \[
@@ -597,9 +597,57 @@ I tempi in cui si riesce a raddoppiare l'energia hanno la stessa espressione  (f
 
 \subsection[]{A partire dai campi ritardati, dimostrare che 
 \[
-	\frac{\mbox{d} P}{\mbox{d} \Omega} = \frac{q^2\left| \bs{a} \right|^2\sin^2\theta }{16\pi^2\epsilon_0c^3\left( 1-\beta\cos\theta \right)^2 }
+	\frac{\mbox{d} P}{\mbox{d} \Omega} = \frac{q^2\left| \bs{a} \right|^2\sin^2\theta }{16\pi^2\epsilon_0c^3\left( 1-\beta\cos\theta \right)^5 }
 .\] è la potenza (MKSA) irraggiata da una carica accelerata in un moto rettilineo.}
 \label{sec:3.b.20}
+I campi ritardati citati nel testo sono:
+\[
+	\bs{E}\left( \bs{x},t \right)= \frac{q}{c} \left[ \frac{\hat{n}\wedge \left[ \left( \hat{n}-\bs{\beta} \right) \wedge \dot{\bs{\beta}}  \right] }
+	{\left( 1-\hat{n}\cdot \bs{\beta} \right)^3 R}  \right]_{\text{rit}} 
+.\] 
+Nel caso affrontato essendo il moto rettilineo velocità ed accelerazione sono parallele, quindi:
+\[
+	\bs{E}\left( \bs{x},t \right)= \frac{q}{c} \left[ \frac{\hat{n}\wedge \left( \hat{n}  \wedge \dot{\bs{\beta}}  \right) }
+	{\left( 1-\hat{n}\cdot \bs{\beta} \right)^3 R}  \right]_{\text{rit}} 
+.\] 
+Come sempre si può ricavare il vettore di Poynting utilizzando il modulo quadro del campo elettrico:
+\[
+	\bs{S\left( t \right) }= \frac{c}{4 \pi }\left| \bs{E} \right|^2_{\text{rit}} \hat{n} = 
+	\frac{q^2}{4 \pi c}\left|  \frac{\hat{n}\wedge \left( \hat{n}  \wedge \dot{\bs{\beta}}  \right) }{\left( 1-\hat{n}\cdot \bs{\beta} \right)^3 R^2} \right|^2_{\text{rit}} \hat{n}
+.\] 
+In questo modo si ha il vettore di Poynting parametrizzato per unità di tempo, infatti con questo potremmo calcolare l'energia che attraversa l'elemento infinitesimo di area come:
+\[
+	W= \int_{-\infty}^{\infty} dt \bs{S}\left( t \right) \cdot \hat{n}
+.\] 
+Se nell'integrale facciamo il cambio di variabile
+\[
+	W= \int_{-\infty}^{\infty} dt' \frac{dt}{dt'} \bs{S}\left( t\left( t' \right)  \right) \cdot \hat{n}
+.\]
+Possiamo ridefinire l'integranda come la potenza irraggiata istantaneamente dalla particella
+\[
+	\frac{\mbox{d} W}{\mbox{d} t'}= \frac{dt}{dt'} \bs{S}\left( t\left( t' \right)  \right) \cdot \hat{n} 
+.\] 
+calcolata al tempo in cui la radiazione viene emessa e non al tempo ritardato, ovvero esattamente quella che vogliamo considerare. 
+Lo Jacobiano di questo cambio di variabile è (calcolato nella \hyperref[sec:3.b.1]{Domanda 3.b.1}):
+\[
+	\frac{dt}{dt_{\text{rit}}}= 1- \hat{n}\cdot \bs{\beta}
+.\] 
+Quindi la potenza irraggiata per unità di angolo solido tornando in MKSA è (come già visto nella \hyperref[sec:3.b.3]{Domanda 3.b.3}): 
+\begin{align*}
+	\frac{\mbox{d} P}{\mbox{d} \Omega} &= \left| \bs{S} \right| R^2 =\\
+	&=  \frac{q^2}{16\pi^2\epsilon_0 c} \left|  \frac{\hat{n}\wedge \left( \hat{n}  \wedge \dot{\bs{\beta}}  \right) }{\left( 1-\hat{n}\cdot \bs{\beta} \right)^3 } \right|^2\left( 1-\hat{n}\cdot \bs{\beta} \right) =\\
+	&=  \frac{q^2}{16\pi^2\epsilon_0 c} \frac{\left| \hat{n}\wedge \left( \hat{n}\wedge \dot{\bs{\beta}}  \right)   \right|^2 }{\left( 1-\hat{n}\cdot \bs{\beta} \right)^{5} }
+.\end{align*}
+Per concludere la dimostrazione manca adesso il sistema di riferimento in coordinate sferiche, facendo riferimento alla seguente figura
+\begin{figure}[H]
+    \centering
+    \incfig{sistema-potenza-relativistica}
+    \caption{Sistema di riferimento per una carica accelerata linearmente.}
+    \label{fig:sistema-potenza-relativistica}
+\end{figure}
+è facile concludere l'uguaglianza tra la formula trovata in forma vettoriale sopra e quella richesta nel testo.
+
+
 
 \subsection[]{Calcolare l’energia persa in una rivoluzione per una carica in moto uniforme su una circonferenza (acceleratore circolare). Calcolare la frazione di energia persa
 in un giro rispetto alla sua energia cinetica, effettuando una valutazione numerica, nel caso di elettroni a LEP (energia 50 GeV, raggio 4km) o protoni ad LHC (energia 7 TeV, raggio ~4km). Nota: utilizzare la formula di Larmor in GCS:
