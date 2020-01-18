@@ -325,9 +325,26 @@ Per verificarlo basta scegliere il sistema di riferimento in cui l'onda piana pr
 	\bs{B}=&B_0 \hat{z} e^{ikx-i\omega t}
 .\end{align*}
 Da cui segue immediatamente che \[
-	T^{ij}= \delta^{ij} \frac{E_{i}E_{i}+B_{i}B_{i}}{8 pi} - \frac{1}{4\pi}\left(  E^{i}E^{j}+B^{i}B^{j}\right)= u_{\text{em}}n^{i}n^{j}
+	T^{ij}= \delta^{ij} \frac{E_{i}E_{i}+B_{i}B_{i}}{8 pi} - \frac{1}{4\pi}\left(  E^{i}E^{j}+B^{i}B^{j}\right)
 \]
-In notazione matriciale questo significa:
+Non ci scordiamo che $E_i$ è diverso da zero solo con $i=1$ (ovvero per la componente $y$), allo stesso modo  $B_i$ è diverso da zero solo con $i=2$. Questo comporta che il secondo termine (quello con il segno meno nella espressione sopra) non si annulla solo per il secondo ed il terzo elemento diagonale (yy e zz) in cui vale $u_{\text{em}}$, tuttavia in entrambi i casi questi vengono annullati dalla presenza del primo termine (che è anche esso diagonale).\\
+Infatti, essendoci una $\delta$, il primo termine si collocherà nella matrice $T$ solo sugli elementi diagonali, portando in ognuno di essi lo stesso scalare $u_{\text{em}}$. \\
+Se ne conclude che:
+\[
+	T^{ij}=  u_{\text{em}}n^{i}n^{j}
+.\] 
+Dove il prodotto scalare tra $n^{i}$ e $n^{j}$ è solo un modo compatto per esprimere la matrice che scriveremo tra poco.
+\begin{align*}
+	\hat{n}=
+	\left( 
+	\begin{array}{c}
+		i=0 \implies 1\\
+		i=1 \implies 0\\
+		i=2 \implies 0
+	\end{array}
+	\right) 
+.\end{align*}
+Facendo scorrere gli indici e provando a combinarli si trova la forma matriciale di $T$ :
 \[
 	T=
 	u_{\text{em}}
