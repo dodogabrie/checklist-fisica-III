@@ -229,14 +229,15 @@ Da notare che il campo lungo $y$ diventa sempre più stretto e piccato all'aumen
 
 \subsection[]{Scrivere in forma covariante l'equazione del moto di una carica in un campo elettromagnetico esterno ("quadri-forza di Lorentz").}
 \label{sec:3.b.7}
-Analizziamo il caso di una particella puntiforme, nel caso non relativistico avremmo: \[
+Analizziamo il caso di una particella puntiforme, l'equazione relativistica (tridimensionale) del moto è: \[
 	\frac{\mbox{d} \bs{p}}{\mbox{d} t} = e\left( \bs{E}+ \frac{\bs{v}}{c}\wedge \bs{B} \right) 
 .\] 
-È quindi ragionevole pensare che si debba sfruttare il 4-impulso $p^{\mu}=m u^{\mu}$ con $u^{\mu}=\gamma\left( c, \bs{v} \right)$, ed il tensore dei campi gia introdotto nelle domande precedenti. Per procedere si cerca una equazione della forma:
+Nella quale l'impulso spaziale è $\bs{p}=m\gamma \bs{v}$.\\
+È quindi ragionevole pensare che si debba sfruttare il 4-impulso $p^{\mu}=m u^{\mu}$ con $u^{\mu}=\gamma\left( c, \bs{v} \right)$, ed il tensore dei campi gia introdotto nelle domande precedenti, ovvero l'entità che contiene tutte le informazioni necessarie dei campi e che viene da un formalismo covariante. Per procedere si cerca quindi una equazione della forma:
 \[
 	\frac{\mbox{d} p^{\mu}}{\mbox{d} \tau}= N F^{\mu\nu} u_{\nu} 
 .\]
-Cercando una normalizzazione ragionando sulle dimensioni: per trarre una forza dall'espressione di destra ci serve una carica a moltiplicare ed una velocità a dividere, si prova ad utilizzare $\frac{e}{c}$. Si prova quindi componente per componente:
+Cercando una normalizzazione $N$ ragionando sulle dimensioni: per trarre una forza dall'espressione di destra ci serve una carica a moltiplicare ed una velocità a dividere, si prova ad utilizzare $\frac{e}{c}$. Si prova quindi componente per componente:
 \begin{align*}
 	F^{0i}u_{i}=& -E_{i}\cdot \left( -\gamma v_{i} \right) =\gamma \bs{E}\cdot \bs{v}\\
 	F^{i\alpha}u_{\alpha}=&F^{i 0}u_0+F^{ij}u_{j}=E_{i}c\gamma-\epsilon_{ijk}B_{k}\left( -\gamma v_{j} \right) =\\
