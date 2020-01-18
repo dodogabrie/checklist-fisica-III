@@ -179,12 +179,26 @@ Analogamente a sorpra se ne deduce che $\bs{E}'=-\bs{\beta}\wedge \bs{B}' $
 \label{sec:3.b.5}
 Possiamo costruire due invarianti indipendenti:
 \begin{align*}
-	F_{\mu\nu}F^{\mu\nu}=&A=F_{0i}F^{0i}+F_{i 0}F^{i 0} + F_{ij}F^{ij}=\\ 
-	=& E_{i}\cdot \left( -E_{i} \right)+\left( -E_{i}\right)\cdot E_{i} + \epsilon_{ijl}B_{l}\cdot \epsilon_{ijk}B_{k}=-2\left| E \right|^2 + 2\left|B\right|^2\\
-	F_{\mu\nu}\tilde{F}^{\mu\nu}=&B=\ldots=-4 \bs{E}\cdot \bs{B}
+	I_{1}=F_{\mu\nu}F^{\mu\nu}&=F_{0i}F^{0i}+F_{i 0}F^{i 0} + F_{ij}F^{ij}=\\ 
+	&= E_{i}\cdot \left( -E_{i} \right)+\left( -E_{i}\right)\cdot E_{i} + \epsilon_{ijl}B_{l}\cdot \epsilon_{ijk}B_{k}=\\
+	&=-2\left| E \right|^2 + 2\left|B\right|^2\\
+	I_2=F_{\mu\nu}\tilde{F}^{\mu\nu}&=\ldots=-4 \bs{E}\cdot \bs{B}
 .\end{align*}
-Nel caso di un sistema in cui $B=0$ si ha anche $A=0$ e $B>0$ per ogni sistema inerziale. Questo significa che i due campi sono sempre ortogonali e che il campo elettrico ha modulo maggiore del campo magnetico in ogni sistema inerziale.
-Nel caso di un sistema in cui $E=0$ si ha $A=0$ e $B<0$, da questo segue una discussione complementare a quella esposta sopra.
+Quindi gli invarianti sono, riscritti in modo chiaro (notiamo che $I_1$ è invariante allora lo è anche $-I_1$):
+\begin{align*}
+	&I_1 =\left| \bs{E} \right|^2- \left| \bs{B} \right| ^2 
+	&I_2 = \bs{E}\cdot \bs{B}
+.\end{align*}
+Analizziamo con cura i casi specifici in cui tramite questi invarianti possiamo trarre immediate conclusioni sulla natura del campo elettrico e magnetico (si usa la notazione con cui sono stati chiamati sopra):
+\begin{itemize}
+	\item Se $\bs{B}=0$ oppure $\bs{E}=0$ si ha sicuramente che $I_2=0$ da cui $\bs{E} \bot \bs{B}$ in tutti i sistemi di riferimento.
+	\item Se $I_2\neq 0$ allora esiste un sistema di riferimento in cui $\bs{E}$ e $\bs{B}$ sono paralleli ed entrambi non nulli.
+	\item Se $I_1 > 0$ e $I_2 = 0$ allora esiste un sistema di riferimento in cui $\bs{B}=0$ (Esempio: carica puntiforme ferma). 
+	\item Se $I_1<0$ e $I_2=0$ allora esiste un sistema di riferimento in cui $\bs{E}=0$ (Esempio: Plasma).
+	\item Se $I_1=0$ e $I_2=0$ allora si ha per tutti i sistemi di riferimento che $\bs{E} \bot \bs{B}$ e $\left| \bs{E} \right| = \left| \bs{B} \right| $.
+\end{itemize}
+
+
 
 \subsection[]{Una carica elettrica Q si muove con velocità costante su una retta con velocità costante:
 \begin{align*}
