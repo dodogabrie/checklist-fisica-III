@@ -4,17 +4,80 @@ La relazione tra $X$ [cm] e $X'$ [g/cm$^2$] consiste in:
 \[
 	X\rho = X'
 .\] 
-Dove $\rho$ è la densità del mezzo, il vantaggio di esprimere uno spessore in g/cm $^2$
+Dove $\rho$ è la densità del mezzo, il vantaggio di esprimere uno spessore in g/cm$^2$ è che in questa unità lo spessore risulta indipendente dallo stato (solido, liquido, gassoso) del materiale che si usa (solitamente per rilevare le radiazioni di particelle che attraversanola materia).
 \subsection[]{Spiegare qualitativamente l’effetto fotoelettrico e lo scattering Compton, indicandone le differenti caratteristiche
 }
+L'effetto fotoelettrico constiste nella interazione:
+\[
+	\ce{\ce{\gamma} +  \text{atomo} -> \ce{e^-} + \text{atomo}+}
+.\] 
+In pratica un fotone con energia $E$ cede tutta la sua energia ad un elettrone atomico che viene espulso dall'atomo con energia $E-E_{\text{lev}}$ dove $E_{\text{lev}}$ è l'energia del livello a cui si trova l'elettrone. La soglia di energia per far avvenire il processo è quindi $E_{\text{lev}}$, mentre il range di energia in cui il processo è il prevalente è tra $E^{\text{min}}_{\text{lev}}$ e $E^{\text{max}}_{\text{lev}}$. Per il carbonio l'energia di livello massima è $10$ keV mentre per il piombo arriva anche a $500$ keV.\\
+L'effetto compton invece sussiste in un urto elastico tra un fotone ed un elettrone, considerato libero:
+\[
+	\ce{\ce{\gamma} + e- -> \ce{\gamma} + e- }
+.\] 
+In cui vi può essere uno scambio di energia tra il fotone e l'atomo. Questo è l'effetto prevalente per energie del fotone incidente dell'ordine dei MeV ed a differenza del Rayleigh la sua sezione d'urto va come $Z$.
 \subsection[]{Dare l'espressione ed il valore numerico della lunghezza d'onda Compton.
 }
+Visto che nell'effetto Compton vi è scambio di energia tra il fotone e l'elettrone allora la frequenza del fotone dopo lo scattering risulta cambiata, applicando la conservazione dell'energia e dell'impulso si ottiene che:
+\[
+	\omega-\omega'= \frac{\hbar \omega\omega'}{mc^2}\left( 1-\cos\theta \right) 
+.\]
+Dove $\omega$ è la frequenza del fotone prima dello scattering, $\omega'$ la frequenza dopo lo scattering, $\theta$ l'angolo di scattering.
+Esprimendo tale relazione in termini di $\lambda= 2\pi c/ \omega$ si ha che:
+\[
+	\lambda'-\lambda= \lambda_{c}\left( 1-\cos\theta \right) 
+.\] 
+Abbiamo quindi definito la lunghezza d'onda Compton dell'elettrone:
+\[
+	\lambda_{c}=\frac{h}{mc}
+.\] 
 \subsection[]{Spiegare qualitativamente lo scattering Rayleigh
 }
+Lo scattering Rayleigh corrisponde all'interazione elastica tra un fotone ed un atomo. È un effetto importante fino ad energie $\sim 1$ keV (sezione d'urto che va come $Z^2$), dopo la sua sezione d'urto decresce come il reciproco del quadrato dell'energia.
+
 \subsection[]{Spiegare qualitativamente il fenomeno della creazione di coppie  da parte di un raggio gamma che incide su un atomo.
 }
+La creazione di coppie 
+\[
+	\ce{\ce{\gamma} -> e+ + e-} 
+\]
+è cinematicamente proibita, infatti prima della reazione il sistema del centro di massa non esiste, dopo si, ma la velocità di tale sistema non cambia dopo l'urto (o più in generale, il centro di massa prima dell'urto non era definito, quindi non può essere scritta una legge di conservazione).
+C'è quindi bisogno di una particella spettatrice carica.
+Supponiamo che vi sia un atomo spettatore, si ha:
+\[	
+	\ce{\ce{\gamma} + \text{atomo} -> e+ + e- +\text{atomo}} 
+.\] 
+Se $M$ è la massa di tale atomo allora l'energia di soglia per il fotone è (conservazione del modulo del quadrimpulso):
+\begin{align*}
+	\left( E_{\gamma}+M \right)^2-E^2_{\gamma}=\left( 2m_e + M \right)^2
+.\end{align*}
+\[
+	E_{\gamma}\ge 2m_e\left( 1+ \frac{m_e}{M} \right) 
+.\] 
+In particolare $E_{\gamma}\ge 2m_e \approx 1$ MeV, da cui la necessità di avere un raggio $\gamma$.
+
+
 \subsection[]{Descrivere qualitativamente l’effetto Cherenkov e dimostrare tramite il principio di Huygens che la radiazione Cherenkov è emessa ad un solo angolo.
 }
+L'effetto Cherenkov consiste nella emissione di onde elettromagnetiche da parte di una particella carica che si muove a velocità $v$ superiore a quella della luce.
+\[
+	\beta c> \frac{c}{n}
+.\] 
+Con $n$ parte reale dell'indice di rifrazione. L'emissione è dovuta all'irraggiamento coerente di dipoli elettrici che sono messi in oscillazione dal campo elettromagnetico generato dalla particella nel suo passaggio.\\
+Analizziamo nel dettaglio la direzione di propagazione di quest'onda utilizzando il principio di Huygens.\\
+Ipotizziamo che al tempo $t'$ si propaghi dalla particella un'onda elettromagnetica con fronte d'onda sferico. Dopo un tempo $\Delta t$ tale fronte ha un raggio 
+\[
+	R = \frac{c}{n} \Delta t
+.\] 
+Tra il tempo in cui l'onda discussa ha iniziato a propagarsi ($t'$) ed il tempo in cui ha raggiunto il raggio $R$ ($t = t'+ \Delta t$) si propagano perturbazioni sferiche del tutto analoghe a quella sopra, che al tempo $t$ avranno un raggio intermedio tra $R$ e $0$.\\
+Di conseguenza la perturbazione elettromagnetica si sviluppa su un fronte che è la sovrapposizione di tutte le superfici sferiche di onde formatesi nel tempo $\Delta t$ (effetto motoscafo).
+Una superficie di questo tipo è una superficie conica con apertura $2\theta$ avente proporzionalità inversa da $\beta$ e da $n$.
+ \[
+	\cos\theta = \frac{1}{\beta n}
+.\] 
+
+
 \subsection[]{Descrivere la situazione in cui la legge 
 	, inerente la radiazione Cherenkov, è applicabile e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi indicata.
 }
