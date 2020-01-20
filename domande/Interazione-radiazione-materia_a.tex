@@ -303,7 +303,7 @@ Se questa ultima scritta non fosse rispettata allora non saremmo in screening at
 \begin{figure}[H]
     \centering
     \incfig{screening-bremsstrahlung}
-    \caption{Screening-Bremsstrahlung}
+    \caption{Tipi di screening per la Bremsstrahlung.}
     \label{fig:screening-bremsstrahlung}
 \end{figure}
 Nel nostro caso invece si ha una condizione su $\gamma$
@@ -381,16 +381,58 @@ Il termine $L'$ invece dipende dal tipo di materiale, tuttavia per i materiali c
 Ricordiamo che $A\left( g \right) $ è la massa atomica del materiale attraversato in grammi e $N_A = 6.022 \cdot 10^{23} $ è il numero di avogadro.
 \subsection[]{Descrivere qualitativamente il meccanismo della perdita di energia per collisioni da parte di una particella carica nella materia.
 }\label{sec:4.a.21}
+Una particella carica interagisce con gli elettroni atomici di un materiale cedendo loro energia tramite interazioni coulumbiane. Si ipotizza in queste interazioni che la variazione di impulso di ogni elettrone sia interamente ortogonale alla direzione di incidenza della particella facendo sostanzialmente uso di una approssimazione impulsiva. \\
+L'effetto che il passaggio della particella provoca sul materiale può essere di vari tipi:
+\begin{itemize}
+	\item Il materiale si ionizza producendo coppie elettrone-ione nei gas o elettrone-lacuna nei semiconduttori.
+	\item Il materiale emette fotoni di scintillazione (sostanzialmente dovuti al salto in alto e successivamente in basso in energia dell'elettrone partecipe dello scattering).
+	\item Riscaldamento del materiale per agitazione termica nel passaggio.
+\end{itemize}
+Tale processo trova applicazione nella misura simultanea della quantità di moto e della massa di una pariticella ed allo studio del percorso residuo di particelle cariche per uso medico (adroterapia) o protettivo per la schermatura di radiazione (degli acceleratori di particelle).
 
 \subsection[]{Spiegare il significato di ogni termine dell’espressione per la perdita di energia per collisioni (formula di Bethe-Bloch, non dimostrata):
+	\[
+		\frac{1}{\rho}\frac{\mbox{d} E_{\text{coll}}}{\mbox{d} x} = 
+		z^2 \frac{Z}{A\left( g \right) }4\pi \frac{m_e c^2}{\beta^2} N_A r^2_e 
+		\left( \frac{1}{2}\ln\left( \frac{2m_e c^2 \beta^2 \gamma^2}{I^2}T_{\text{Max}} \right) - \beta^2 + \frac{\delta}{2} \right) 
+	.\] 
 }\label{sec:4.a.22}
+Abbiamo alcune quantità già viste nella formula di Tsai, in più c'è $I$ che è l'energia potenziale media di ionizzazione, $T_{\text{max}}$ che è l'energia massima trasferibile dalla particella all'elettrone:
+\[
+	T_{\text{Max}}= \frac{2m_e c^2 \beta\gamma}{1+ \frac{2m_e \gamma}{M}+\left( \frac{m_e}{M} \right) ^2}
+.\] 
+ed il fattore $\delta /2$ è il fattore di correzione della densità dovuto a fermi, quest'ultimo dipende da $\beta$ e dal tipo di materiale attraversato.
+
 \subsection[]{Disegnare qualitativamente la funzione di Bethe-Bloch indicando i valori dei punti significativi.
 }\label{sec:4.a.23}
+\begin{figure}[H]
+    \centering
+    \incfig{bethe}
+    \caption{Andamento commentato della Bethe-Bloch.}
+    \label{fig:bethe}
+\end{figure}
+Sull'asse delle $x$ abbiamo $\beta\gamma = \frac{\left| \bs{p} \right| }{Mc}$.
+Si  aggiunge soltanto che il minimo della funzione si ottiene per:
+\[
+	\frac{1}{\rho}\left.\frac{\mbox{d} E_{\text{coll}} }{\mbox{d} x} \right|_{\text{min}} \sim 2 \frac{\text{MeV}}{g /\text{cm}^2} 
+.\] 
+Le particelle aventi impulso $\left| \bs{p} \right| \sim 3.5$ Mc si dicono al minimo di ionizzazione e sono importanti per l'effetto detto Picco di Brag.
+
 \subsection[]{Definire il "percorso residuo" ("range") per una particella carica in un materiale.
 }\label{sec:4.a.24}
+Il percorso residuo $R$ (anche chiamato Range) è il percorso dopo il quale una particella attraversando un materiale esaurisce la sua energia e si ferma.\[
+	R\left( E_0 \right) = \int_0^{R} dx = \int_0^{E_0} dE \cdot \frac{\mbox{d} x}{\mbox{d} E} =
+	\int_0^{E_0}\frac{1}{\frac{\mbox{d} E}{\mbox{d} x} } dE
+.\] 
+Il calcolo precedente viene fatto numericamente poichè l'espressione per $\frac{\mbox{d} x}{\mbox{d} E}$ detto Stopping Range è complicata e soprattutto tiene conto non solo della energia persa in collisioni coulombiane ma anche quella persa in irraggiamento e in interazioni nucleari forti.
 \subsection[]{Definire gli "stopping power" totale, collision, radiative e nuclear; indicare per quali particelle ognuno di essi sia o meno rilevante.
-dE
 }\label{sec:4.a.25}
+Partiamo dal totale:
+\[
+	\left( \frac{\mbox{d} x}{\mbox{d} E} \right)_{\text{tot}}= \left( \frac{\mbox{d} x}{\mbox{d} E} \right)_{\text{collision}}+\left( \frac{\mbox{d} x}{\mbox{d} E} \right)_{\text{radiative}}+\left( \frac{\mbox{d} x}{\mbox{d} E} \right)_{\text{nuclear}}
+.\] 
+Il primo termine è l'inverso della formula di Bethe-Block, il secondo è l'inverso della formula di Tsai mentre il terzo è rilevante solo per interazioni forti, ovvero interessa gli adroni.
+
 \subsection[]{Come si calcola il "percorso residuo" ("range"), nota la curva 
 	, in funzione dxdell'energia E della particella?
 }\label{sec:4.a.26}
