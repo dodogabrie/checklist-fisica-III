@@ -72,7 +72,7 @@ Ipotizziamo che al tempo $t'$ si propaghi dalla particella un'onda elettromagnet
 .\] 
 Tra il tempo in cui l'onda discussa ha iniziato a propagarsi ($t'$) ed il tempo in cui ha raggiunto il raggio $R$ ($t = t'+ \Delta t$) si propagano perturbazioni sferiche del tutto analoghe a quella sopra, che al tempo $t$ avranno un raggio intermedio tra $R$ e $0$.\\
 Di conseguenza la perturbazione elettromagnetica si sviluppa su un fronte che è la sovrapposizione di tutte le superfici sferiche di onde formatesi nel tempo $\Delta t$ (effetto motoscafo).
-Una superficie di questo tipo è una superficie conica con apertura $2\theta$ avente proporzionalità inversa da $\beta$ e da $n$.
+Chiamiamo la direzione di propagazione dell'onda $\theta$, ci aspettiamo che il coseno di quest'angolo abbia proporzionalità inversa da $\beta$ e da $n$. In questo modo all'aumentare di $n$ l'effetto risulta più evidente (luce "più lenta") mentre al diminuire di $\beta$ l'effetto tenda a svanire (si torna in situazioni in cui le cose vanno più lentamente della luce). 
  \[
 	\cos\theta = \frac{1}{\beta n}
 .\] 
@@ -94,7 +94,7 @@ Facendo il modulo quadro della relazione vettoriale si ottiene:
 .\] 
 Adesso dividiamo per $\rho^2$ questa espressione, ciò che si ottiene è una equazione di secondo grado nell'incognita $\frac{\Delta t}{\rho}$ con dei coefficenti interessanti:
 \[
-	c^2\left( \beta^2- \frac{1}{c^2} \right) \left( \frac{\Delta t^2}{\rho^2} \right) + 2\beta c \cos\alpha\left( \frac{\Delta t}{\rho} \right) +1=0
+	c^2\left( \beta^2- \frac{1}{n^2} \right) \left( \frac{\Delta t^2}{\rho^2} \right) + 2\beta c \cos\alpha\left( \frac{\Delta t}{\rho} \right) +1=0
 .\] 
 I coefficenti sono interessanti perchè, per ipotesi noi abbiamo assunto che la particella viaggia ad una velocità tale che $\beta>\frac{1}{n}$, condizione che ritroviamo espressa nel segno del primo coefficente. Quindi la soluzione della equazione esiste se:
 \[
@@ -129,35 +129,206 @@ Abbiamo quindi trovato l'angolo Cherenkov, indica la direzione dal quale l'osser
 
 
 \subsection[]{Descrivere la situazione in cui la legge 
-	, inerente la radiazione Cherenkov, è applicabile e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi indicata.
+\[
+	\frac{\mbox{d} N_{\gamma}}{\mbox{d} E_{\gamma}\text{d}x} = z^2 \frac{\alpha}{\hbar c} \sin^2\theta_{c}
+.\] 
+inerente la radiazione Cherenkov, è applicabile e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi indicata.
 }\label{sec:4.a.7}
+Quella espressa è detta la formula di Frank-Tamm, si applica quando una particella di carica $z$ (in unità di $e$) attraversa uno spessore $dx$ infinitesimo di materiale con indice di rifrazione $n\left( \omega \right)$ ed esprime il numero di fotoni emessi per unità di energia $E_{\gamma}= \hbar \omega$. 
+Questa equazione si riscrive in termini dell'indice di rifrazione sostituendo l'equivalente dell'angolo Cherenkov discusso nella domanda precedente:
+\[	
+	\frac{\mbox{d} N_{\gamma}}{\mbox{d} E_{\gamma}\text{d}x} = z^2 \frac{\alpha}{\hbar c} \left( 1- \frac{1}{\beta^2 n^2} \right)  
+.\] 
+Ricordiamo adesso alcuni valori delle costanti in gioco:
+\begin{align*}
+	&\alpha = \frac{e^2}{\hbar c}= \frac{1}{137}	&\hbar c = 197 \text{ MeV}\cdot \text{fm}
+.\end{align*}
+Quindi \[
+	\frac{\alpha}{\hbar c}= \frac{10^{-6}\cdot 10^{13}}{137\cdot 197} \left[ \frac{\text{fotoni}}{\text{eV}\cdot \text{cm}} \right] \approx 
+	370 \left[ \frac{\text{fotoni}}{\text{eV}\cdot \text{cm}} \right]
+.\] 
+Ricordiamo anche che l'indice di rifrazione è in realtà $n\left( \omega \right) $, da cui deriva la dipendenza della formula da $E_{\gamma}$.
+
 \subsection[]{Descrivere la situazione in cui la legge 
-	, inerente la radiazione Cherenkov, è applicabile e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi indicata.
+\[
+	N_{\gamma}= z^2 \frac{\alpha}{\hbar c}L \int_{E_1}^{E_2} \left[ 1 - \frac{1}{\beta^2 \epsilon_{r}\left( E \right)}\right]P_{\text{det}}dE 	
+.\] 
+inerente la radiazione Cherenkov, è applicabile e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi indicata.
 }\label{sec:4.a.8}
+Le quantità sono le stesse della domanda precedente, tuttavia questa esprime il numero di fotoni rilevati da un detector avente una efficienza $P_{\text{det}}$ nel range di energia tra $E_1$ ed $E_2$, il mezzo attraversato ha inoltre larghezza $L$.
 \subsection[]{Descrivere qualitativamente le cause e gli effetti del fenomeno della radiazione di frenamento da parte di una particella carica nella materia.
 }\label{sec:4.a.9}
+Una particella carica di massa $M$ e carica $q=ze$ che attravera un materiale subisce l'interazione coulombiana con i nuclei che lo compongono di carica $Ze$.\\
+Per ogni interazione la particella accelera (a causa della repulsione o attrazione) e quindi irraggia: Radiazione di frenamento o Bremsstrahlung.
+\begin{figure}[H]
+    \centering
+    \incfig{bremsstrahlung}
+    \caption{Schema dello scattering columbiano per la Bremsstrahlung}
+    \label{fig:bremsstrahlung}
+\end{figure}
+La perdita di energia dovuta a questo irraggiamento è importante per elettroni (aventi una certa energia critica $E_{c}$) ed è invece trascurabile per le altre particelle. Inoltre la radiazione di frenamento avviene in modo indipendente su ciascun nucleo del materiale attraversato, è allora facile immaginare che darà luogo a processi di emissione incoerenti.\\
+Nel sistema del laboratorio la radiazione può esssere rilevata in modi diversi a seconda della velocità del proiettile:
+\paragraph{Particella non relativistica}%
+La radiazione è proporzionale a $\sin^2\alpha$, con $\alpha$ angolo tra la media della accelerazione nel processo e la direzione di osservazione.
+\begin{figure}[H]
+    \centering
+    \incfig{bremsstrahlung-non-relativistica}
+    \caption{Emissione della radioazione nel caso di Bremsstrahlung non relativistica}
+    \label{fig:bremsstrahlung-non-relativistica}
+\end{figure}
+\paragraph{Particella ultrarelativistica}%
+La radiazione viene rilevata in avanti, con angolo di $\frac{1}{\gamma}$ rispetto alla direzione di $\bs{\beta}$ (si dimostra con una trasformazione dal sistema in cui la particella è ferma a quello del laboratorio).
+\begin{figure}[ht]
+    \centering
+    \incfig{bremsstrahlung-relativistica}
+    \caption{Emissione della radioazione nel caso di Bremsstrahlung relativistica}
+    \label{fig:bremsstrahlung-relativistica}
+\end{figure}
+
 \subsection[]{Spiegare perchè la perdita di energia per irraggiamento è significativa per elettroni e non per le altre particelle cariche.
 }\label{sec:4.a.10}
+La forza di Coulomb dipende dalla carica elettrica e non dalla massa della particella, quindi dall'equazione del moto si ottiene che:
+\[
+	a \sim \frac{1}{M}
+.\]
+Visto che l'irraggiamento dipende dall'accelerazione al quadrato si ha anche che:
+\[
+	I\sim \frac{1}{M^2}
+.\] 
+e banalmente questo è l'unico motivo per cui gli elettroni irraggiano maggiormente di Bremsstrahlung.
+
 \subsection[]{Descrivere la situazione in cui la legge
-applicabile e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi
+\[
+	\frac{\mbox{d}I_{\omega}}{\mbox{d}\Omega}=
+	\frac{q^2}{4\pi^2c}\left|\int\frac{\hat{n}\wedge\left[\left(\hat{n}-\bs{\beta}\right)\wedge\dot{\bs{\beta}}\right]}{\left(1-\hat{n}\cdot\bs{\beta}\right)^2}
+	e^{i\omega\left(t'-\frac{\bs{r}'\cdot\hat{n}}{c}\right)}dt'\right|^2 
+.\] 
+è applicabile e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi
 indicata.
 }\label{sec:4.a.11}
+L'equazione descrive l'energia irraggiata per unità di frequenza ed angolo solido, deriva dalla più generale 
+\[
+	\frac{\mbox{d} I_{\omega}}{\mbox{d} \Omega} = \frac{\epsilon_0 c r^2}{\pi} \left| \bs{E}\left( \bs{r}, \omega \right)  \right| ^2
+.\] 
+Dove $\bs{E}\left( \bs{r}, \omega \right)$ è la trasformata del campo elettrico di radiazione (valida per ogni tipo di irraggiamento).
+Nel caso in questione è quello di una carica puntiforme accelerata in moto relativistico, tale equazione è stata dimostrata nella \hyperref[sec:3.a.14]{Domanda 3.a.14}.
 \subsection[]{Descrivere la situazione in cui la legge
-applicabile e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi
-indicata.
+\[
+	I_{\omega}\left( b \right) = 
+	\begin{cases}
+		\frac{8z^4Z^2 \alpha \hbar c^2}{3\pi} \left( \frac{m_e}{M} \right) ^2 \frac{r^2_e}{V^2} \frac{1}{b ^2}  & \text{per } \omega<\frac{V}{b}\\
+		0 & \text{per } \omega> \frac{V}{b}
+	\end{cases}
+.\] 
+applicabile e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi indicata.
 }\label{sec:4.a.12}
+$I_{\omega}\left( b \right) $ indica l'energia irraggiata per unità di frequenza in funzione del parametro di impatto (J$\cdot$s). Tutte le altre quantità sono state ampliamente preserntate nel corso della lettura ma facciamo un ripassino su quelle che non vediamo da un pò:
+\begin{align*}
+	&r_e = k_0 \frac{e^2}{m_e c^2} \approx 2.82 \text{ fm}\\
+	&m_e = 0.511 \text{MeV/c}^2 = 9.12 \cdot 10^{-31} \text{kg}
+.\end{align*}
+Detto questo la formula rappresenta $I_{\omega}$ per una Bremstrahlung nel caso non relativistico nella approssimazione che il moto complessivo della carica possa essere assunto come rettilineo, quindi angoli di scattering piccoli. In tal modo viene assunta la variazione di quantità di moto nella sola direzione ortogonale alla direzione di incidenza del proiettile ed i conti per la dimostrazione diventano pochi.
+
 \subsection[]{Definire la sezione d'urto di irraggiamento e spiegare il suo significato fisico.
 }\label{sec:4.a.13}
+La sezione d'urto di irraggiamento è definita come
+\[
+	\chi_{\omega}= \int_{b_{min}}^{b_{max}} 2\pi I_{\omega}b db \quad \left[ \frac{\text{J}}{\text{Hz}}\cdot \text{m}^2 \right] 
+.\] 
+ed è la grandezza che moltiplicata per il numero di nuclei per unità di superficie fornisce l'energia irraggiata per intervallo di frequenza $I_{\omega}$.
+
 \subsection[]{Descrivere la situazione in cui la legge
+	\[
+		\chi_{\omega}=\frac{16 z^4 Z^2 \alpha \hbar c^2}{3} \left( \frac{m_e}{M} \right)^2 \frac{r_e^2}{V^2} \ln\left( \frac{MV^2}{\hbar \omega} \right) 
+	.\] 
 e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi indicata.
 }\label{sec:4.a.14}
+Questa sezione d'urto di irraggiamento è quella derivante dalla equazione della domanda precedente integrata sul parametro di impatto. Questa è applicabile nel caso in cui $\omega$ dello scattering rispetti la relazione (stime dovute a considerazioni quantistiche) \[
+	\frac{V}{a}< \omega < \frac{E_{c}}{\hbar}
+.\] 
+Ovvero in termini di $b$ :
+\[
+	\frac{\hbar}{M V} < b < \frac{V}{\omega}
+.\] 
+Con $a$ raggio atomico dell'atomo su cui si incide, $E_{c}$ energia critica di irraggiamento e $M$ la massa della particella incidente.\\
+La prima disuguaglianza deriva dal fatto che la particella deve avere energia necessaria a produrre un fotone, abbiamo visto nella \hyperref[sec:3.a.15]{Domanda 3.a.15} che i campi di una particella in moto hanno tempi di interazione dell'ordine di ($\gamma \approx 1$)\[
+	\Delta t \approx \frac{b}{V} 
+.\] 
+quindi la trasformata del campo sarà definita in una ampiezza spettrale di: \[
+	\omega = \frac{1}{\Delta t} \approx \frac{V}{b}
+.\] 
+Questa da il limite inferiore alla prima relazione (su $\omega$) e ci aiuta per il limite inferiore della seconda (su $b$): l'energia cinetica della particella in arrivo avrà come limite inferiore l'energia quantistica definita con la frequenza sopra: \[
+	MV^2>\hbar \omega \implies \frac{MV^2}{\hbar}>\omega \implies \frac{MV}{\hbar} > \frac{1}{b}
+.\] 
+e come limite superiore proprio la relazione che lega $b$ alla frequenza che non può oltrepassare per motivi di tempi di interazione.\\
+Nel caso di elettroni relativistici il parametro di impatto inferiore è proprio la lunghezza d'onda Compton.
+
 \subsection[]{Descrivere la situazione in cui la legge
-applicabile e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi
-indicata.
+\[
+	\frac{\mbox{d}E^{\text{irr}}}{\mbox{d}x}=
+	n_{\text{nuclei}}\frac{16}{3}z^4Z^2\alpha\left(\frac{m_e}{M}\right)^2r_e^2\ln\left(\frac{192}{Z^{1 /3}}\frac{M}{m_e}\right) E
+.\] 
+applicabile e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi indicata.
 }\label{sec:4.a.15}
+La formula descrive l'energia irraggiata per unità di lunghezza da una particella ultrarelativistica ($V \sim c$) con energia iniziale $E$ e massa $M$, questa espressione si ottiene integrando la sezione d'urto di irraggiamento di tale particella nel dominio detto di Screening attivo, ricaviamo intanto tale sezione d'urto. Nel sistema $\Sigma'$ in cui la particella è a riposo si ha che durante lo Scattering (in cui il nucleo va incontro alla particella) $M$ irraggia in manera non relativistica, quindi la formula per la $\chi'_{\omega}$ è:
+\[
+	\chi'_{\omega}=\frac{16}{3}z^4Z^2\alpha\hbar c^2 \left( \frac{m_e}{M} \right)^2  \frac{r^2_e}{V^2}\ln\left( \frac{b_{\text{MAX}}}{b_{\text{min}}} \right) 
+.\] 
+È bene ricordare che per questa interazione avremo una larghezza spettrale di \[
+	\omega'< \gamma \frac{c}{b}
+\] e che le frequenze hanno limite superiore dettato dal fatto che la particella non può irraggiare di più della sua energia a riposo:
+\[
+	\omega'< \frac{M c^2}{\hbar}
+.\] 
+Utiilizziamo nel nostro modello un equivalente della lunghezza d'onda Compton per la nostra particella come il minimo parametro di impatto (motivo abbozzato nella domanda precedente)
+\[
+	b_{\text{min}}= \frac{\hbar}{Mc}
+.\] 
+Come limite superiore possiamo mettere il raggio atomico, ovvero il limite oltre il quale non vi è più nessuna interazione coulombiana con il nucleo a causa dello schermaggio degli elettroni:
+\[
+	b_{\text{MAX}}=a= 1.4 \frac{a_0}{Z^{1 /3}}
+.\] 
+con $a_0$ raggio classico di Bhor:
+ \[
+	 a_0 = \frac{\hbar}{m_e c \alpha}
+.\] 
+Lo screening attivo citato sopra entra in gioco prorpio qui, infatti il limite superiore utilizzato vale soltanto se è vera la disuguaglianza che lega l'energia della particella a riposo alla energia che può emettere alla estremità dell'atomo \[
+	Mc^2 < \hbar \omega'\left( a \right)  \implies \frac{M c^2}{\hbar} < \gamma \frac{c}{a}
+.\] 
+Se questa non fosse rispettata allora non saremmo in screening attivo e dovremmo mettere limite massimo \[b_{\text{MAX}} = \gamma \frac{c}{\omega'}\]
+Nel nostro caso invece si ha una condizione su $\gamma$
+\[
+	\gamma > \frac{M c^2 a}{\hbar c} = \frac{M c^2 \cdot 1.4}{\hbar c}\cdot \frac{\hbar}{c m_e \alpha}\cdot \frac{1}{Z^{1 /3}} = \frac{192.5 \cdot M}{Z^{1 /3}m_e}
+.\] 
+Inserendo tutto nella sezione d'urto si ottiene l'espressione:
+\[
+	\chi'_{\omega}=\frac{16}{3}z^4Z^2\alpha\hbar c^2 \left( \frac{m_e}{M} \right)^2  \frac{r^2_e}{V^2}\ln\left( \frac{192\cdot M}{Z^{1 /3}\cdot m_e} \right) 
+.\] 
+Adesso basta notare che, avendo $\omega = \gamma \omega'$ sarà $\chi_{\omega}= \chi'_{\omega}$ perchè la sezione trovata è indipendente da $\omega'$, se ne conclude che:
+\[
+	\frac{\mbox{d} E^{\text{irr}}}{\mbox{d} x} = n_{\text{nuclei}} \int_{0}^{\omega_{\text{max}}} \chi_{\omega} d\omega = 
+	n_{\text{nuclei}} \int_{0}^{E /\hbar} d\omega \chi_{\omega} 
+	= n_{\text{nuclei}} \frac{E}{\hbar} \chi_{\omega}
+.\] 
+Che è proprio l'espressione cercata.
 \subsection[]{Descrivere la situazione in cui la legge
+\[
+	\chi_{\omega} = \hbar \omega \frac{\text{d}\sigma_{y}}{\text{d}\omega}
+.\] 
  è applicabile e spiegare il significato e l'unità di misura di ogni grandezza fisica ivi indicata.
 }\label{sec:4.a.16}
+La formula è una manipolazione algebrica della definizione di $\chi_{\omega}$:
+\[
+	\chi_{\omega}= \frac{1}{n} \frac{\mbox{d} E_{\text{irr}}}{\mbox{d} x \text{d}\omega} 
+.\] 
+Con $n$ densità dei centri scatteranti. Proviamo a manipolare l'espressione:
+\[
+	\chi_{\omega} = \hbar \omega\frac{\mbox{d}}{\mbox{d} \omega} \left( \frac{\mbox{d}E_{\text{irr}}}{\mbox{d}t}\frac{1}{n\cdot \hbar \omega \frac{\mbox{d} x}{\mbox{d} t} } \right)  
+.\] 
+Possiamo allora definire una corrente di particelle proiettili (l'inverso del secondo termine in parentesi) a moltiplicare la potenza irraggiata mediata (è mediata perchè $E_{\text{irr}}$ è l'energia irraggiata totale), questa altro non è che la sezione d'urto del processo di irraggiamento (definita come una superficie, non come quella finta sezione d'urto $\chi_{\omega}$).
+\[
+	\chi_{\omega}= \hbar \omega \frac{\mbox{d} }{\mbox{d} \omega} \left( \sigma_{y} \right) 
+.\] 
 \subsection[]{Dare la definizione di lunghezza di radiazione.
 }\label{sec:4.a.17}
 \subsection[]{Dare la definizione di "Energia critica"
