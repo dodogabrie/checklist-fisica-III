@@ -1,0 +1,370 @@
+\subsection[]{Dimostrare che all’interno del cono della radiazione Cherenkov vi sono due soluzioni per 
+\[
+	t'=t-\frac{nR}{c}
+,\] 
+nessuna soluzione all’esterno, ed una sola sul fronte d’onda.
+}\label{sec:4.b.1}
+Il problema è stato ampliamente discusso nella spiegazione del fenomeno alla domanda \hyperref[sec:4.a.6]{Domanda 4.a.6}.
+
+\subsection[]{A partire dalla espressione
+\[
+	\frac{\mbox{d}^2 N_{\gamma}}{\mbox{d}E_{\gamma}\text{d}x} = z^2 \frac{\alpha}{\hbar c}\sin^2\theta_{c}
+.\] 
+valida per la radiazione Cherenkov, dimostrare che
+\[
+	N_{\gamma}=z^2 \frac{\alpha}{\hbar c} \int_{E_1}^{E_2}\left[ 1- \frac{1}{\beta^2 \epsilon_{r}\left( E \right)}\right]P_{\text{det}}\left(E\right) dE
+.\] 
+}\label{sec:4.b.2}
+È necessario ricordare, dall'espressione dell'angolo Cherenkov che:
+\[
+	\sin^2\theta_{c}=1- \frac{c^2}{n^2\left(E\right)v^2}= 1- \frac{1}{\beta^2 \epsilon_{r}\left( E \right) }
+.\] 
+Successivamente integrando su $x$ si ottiene il fattore $L$ che è la lunghezza del tratto preso in considerazione, integrando anche nell'energia si ottiene anche il fattore $P\left( E \right)$ che è l'efficienza del fotorivelatore.
+
+\subsection[]{Calcolare il numero di fotoni osservati da un fotorivelatore sensibile con efficienza del 30\% a luce fra 300nm e 600nm, al passaggio di un elettrone nei due casi seguenti: \\
+	i) n=1.005 (gas), $\beta$=0.999, lunghezza=1m; \\
+	ii) n=1.5 (solido trasparente), $\beta$=0.99, lunghezza=1cm.
+}\label{sec:4.b.3}
+Il conto da fare è l'integrale della espressione nella domanda precedente, il coefficiente di diffrazione è in questo caso indipentente dall'energia, mentre gli estremi di integrazione sono:
+\begin{align*}
+	&E_1= \hbar \omega_1= \hbar \frac{2\pi c}{\lambda_1} 	&E_2=\hbar \frac{2\pi c}{\lambda_2}
+.\end{align*}
+Ogni termine può uscire dall'integrale, ne risulta che:
+\[
+	N_{\gamma}=2\pi \alpha L \left( \frac{1}{\lambda_2}-\frac{1}{\lambda_1} \right) \left( 1- \frac{1}{\beta^2 n^2} \right) P_{\text{det}}
+.\] 
+Nel primo caso si rilevano 189 fotoni, nel secondo invece se ne rilevano 12533.
+
+\subsection[]{Calcolare l’angolo di emissione della radiazione Cherenkov in funzione dell’impulso (e della massa) della particella e dell’indice di rifrazione.
+}
+\label{sec:4.b.4}
+L'angolo Cherenkov vale \[
+	\sin^2\theta_{c}= \frac{1}{n \beta}
+.\] 
+Sfruttiamo la definizione di $\gamma$ e del'impulso:
+\begin{align*}
+	&\gamma^2 = \frac{1}{1-\beta^2}		&p = m\gamma v
+.\end{align*}
+Manipolando le due espressioni si arriva all'equazione:
+\[
+	\frac{1}{1-\beta^2} = \frac{p^2}{m^2c^2\beta^2}  \implies \beta = \sqrt{\frac{p^2}{p^2+m^2c^2}} 
+.\] 
+Abbiamo quindi $\beta$ in funzione delle quantità richieste, basta adesso inserire nella prima equazione per concludere:
+\[
+	\sin^2\theta_{c}=\frac{1}{n} \sqrt{1+\left( \frac{mc}{p} \right)^2} 
+.\] 
+
+\subsection[]{Descrivere qualitativamente il principio di funzionamento dei rivelatori Cherenkov: \\
+	i) a soglia\\
+	ii) RICH\\ 
+	iii) DIRC
+}
+\label{sec:4.b.5}
+\paragraph{Rivelatori a soglia.}%
+Questi rivelatori sono in grado di rilevare il numero di fotoni emessi ma non l'angolo di emissione.
+\begin{figure}[H]
+    \centering
+    \incfig{rivelatori-checklist-a-soglia}
+    \caption{Rivelatori Cherenkov a soglia}
+    \label{fig:rivelatori-checklist-a-soglia}
+\end{figure}
+Il mezzo utilizzato nella camera è un gas ad alta pressione con $n \sim 1.001 - 1.01$, particolarmente adatto a particelle ultrarelativistiche. Questo rilevatore fornisce quindi risposta binaria a seconda che la particella superi o no la velocità della luce nel mezzo:
+\begin{itemize}
+	\item 0) Se $\beta < 1 /n$
+	\item 1) se $\beta > 1 /n$
+\end{itemize}
+\paragraph{Rivelatore RICH}%
+A differenza dei primi questi rivelatori sono in grado di misurare l'angolo di emissione $\theta_{c}$, l'indice di rifrazione del mezzo radiatore è tale da avere solitamente $n < 1.1$, la luce subisce quindi una rifrazione che gli permette comunque di uscire nella stessa direzione della particella (non superando quindi l'angolo limite di riflessione). Tale luce viaggia su superfici coniche e viene osservata su un piano contenente i fotorilevatori, quello che si osserva sono degli anelli: anelli Cherenkov. 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=1\textwidth]{immagini/RICH.png}
+	\caption{Rilevatore Cherenkov RICH.}
+	\label{fig:immagini-RICH-png}
+\end{figure}
+
+\paragraph{Rilevatori DIRCH}%
+Questo tipo di rivelatore funziona come il Rich: misura l'angolo $\theta_{c}$. L'indice di rifrazione del materiale è solitamente $n\sim 1.4$, per questo la luce viene riflessa internamente fino a raggiungere i lati del radiatore. Per evitare che non esca neanche al lato in cui vorremmo rilevare la radiazione si inserisce un distillato con $n \sim 1.33$ tra radiatore e fotorilevatori.
+\begin{figure}[ht]
+    \centering
+    \incfig{rilevatori-cherenkov-dirch}
+    \caption{Rilevatori Cherenkov DIRCH.}
+    \label{fig:rilevatori-cherenkov-dirch}
+\end{figure}
+
+\subsection[]{Partendo dalla espressione\[
+	\frac{\mbox{d} I_{\omega}}{\mbox{d} \Omega} = \frac{q^2}{4\pi^2 c}
+	\left|\int\frac{\hat{n}\wedge\left[\left(\hat{n}-\bs{\beta}\right)\wedge\dot{\bs{\beta}}\right]}{\left(1-\hat{n}\cdot\bs{\beta}\right)^2}
+	e^{i\omega\left(t'-\frac{\bs{r}'\cdot\hat{n}}{c}\right)}dt'\right|^2.\] 
+dimostrare che l’energia persa per unità di frequenza nel caso non relativistico e’ approssimabile con \[
+	I_{\omega}=
+	\begin{cases}
+		\frac{2q^2}{3\pi^2 c}\left| \Delta \bs{\beta} \right|^2  &\text{per } \omega< 1 /\tau\\  
+		0 & \text{per } \omega > 1 /\tau
+	\end{cases}.\] }
+\label{sec:4.b.6}
+Nel caso non relativistico la formula di partenza si scrive come :
+\[
+	\frac{\mbox{d} I_{\omega}}{\mbox{d} \Omega} \approx \frac{q^2}{4\pi^2 c}
+	\left|\int\hat{n}\wedge\left[\hat{n}\wedge\dot{\bs{\beta}}\right]
+	e^{i\omega t'}dt'\right|^2
+.\] 
+Se applichiamo questa formula ad una carica non relativistica che si avvicina ad un centro scatterante (nucleo) allora possiamo stimare il tempo di interazione \[
+	\tau \approx \frac{b}{v}
+.\] 
+Con $v$ velocità della particella e $b$ parametro di impatto. Da questo tempo si ricava l'ampiezza di spettro di frequenza ottenibile in trasformata: \[
+	\Delta \omega \approx \frac{1}{\tau}
+.\] 
+Sappiamo quindi che per $\omega\gg \frac{1}{\tau}$ la funzione $\frac{\mbox{d} I_{\omega}}{\mbox{d} \Omega}$ tenderà a zero (lemma di Rieman-Lebesgue), mentre per $\omega\ll \frac{1}{\tau}$ sarà l'espressione scritta sopra integrata nel dominio temporale della intera interazione:\[
+	\frac{\mbox{d} I_{\omega}}{\mbox{d} \Omega} \approx 
+	\begin{cases}
+		\frac{q^2}{4\pi^2 c}
+		\left|\int_{- \tau /2}^{\tau /2}\hat{n}\wedge\left[\hat{n}\wedge\dot{\bs{\beta}}\right]
+		e^{i\omega t'}dt'\right|^2 		& \text{con } \omega \ll \frac{1}{\tau}\\
+		0					& \text{con } \omega \gg \frac{1}{\tau}
+	\end{cases}
+.\] 
+Il modello sussiste quindi nell'approssimare questa funzione con uno scalino "centrato" in $\frac{1}{\tau}$ , sostituiamo l'integrale già svolto:
+\[
+	\frac{\mbox{d} I_{\omega}}{\mbox{d} \Omega} \approx 
+	\begin{cases}
+		\frac{q^2}{4\pi^2 c^3} \left| \Delta v \right|^2\sin^2\theta			& \text{con } \omega < \frac{1}{\tau}\\
+		0										& \text{con } \omega > \frac{1}{\tau}
+	\end{cases}
+.\] 
+Dove è stato preso un sistema di riferimento in cui $\theta$ è l'angolo tra $\bs{v}$ ed il versore di osservazione del campo $\hat{n}$. \\
+Integrando sull'angolo solido si ottiene in fine:
+\[
+	I_{\omega}=\frac{8}{3}\pi\frac{q^2}{4\pi^2c^3}\left|\Delta v\right|^2\left(1-\theta\left(\omega-\frac{1}{\tau}\right)\right)\theta\left(\omega\right)
+.\] 
+Che semplificando è l'espressione cercata (in cui si è fatto uso di distribuzioni).
+
+\subsection[]{Partendo dalla espressione \[ 
+	\frac{\mbox{d} I_{\omega}}{\mbox{d} \Omega} = \frac{q^2}{4\pi^2 c}
+	\left|\int\frac{\hat{n}\wedge\left[\left(\hat{n}-\bs{\beta}\right)\wedge\dot{\bs{\beta}}\right]}{\left(1-\hat{n}\cdot\bs{\beta}\right)^2}
+	e^{i\omega\left(t'-\frac{\bs{r}'\cdot\hat{n}}{c}\right)}dt'\right|^2.\] 
+dimostrare che l’energia persa per unità di frequenza nel caso non relativistico ad un dato parametro di impatto b è approssimabile con
+\[
+	I_{\omega}=
+	\begin{cases}
+		\frac{8z^2Z^2\alpha \hbar c^2}{3\pi}\left( \frac{m_e}{M} \right) ^2 \frac{r^2_e}{V^2}\frac{1}{b ^2} & \text{con } \omega< \frac{V}{b}\\
+		0 & \text{con } \omega > \frac{V}{b}
+	\end{cases}
+.\] 
+}
+\label{sec:4.b.7}
+Si parte in realtà dalla espressione ottenuta nella domanda precedente (all'esame se beccate questa avete già fatto ambo):
+\[
+	I_{\omega}=
+	\begin{cases}
+		\frac{2q^2}{3\pi^2 c}\left| \Delta \bs{\beta} \right|  &\text{per } \omega< 1 /\tau\\  
+		0 & \text{per } \omega > 1 /\tau
+	\end{cases}.
+\]
+Il prossimo passo è calcolare $\left| \Delta \bs{v} \right| $ in funzione del parametro di impatto $b$, per farlo possiamo approssimare la traiettoria della particella scatterata ad una retta (approssimazione di angoli di scattering piccoli), sempre rispettata sperimentalmente in caso di Bremsstralhung. In questo modo la variazione di quantità di moto è solo perpendicolare alla direzione di incidenza della particella ed il suo modulo è dato da:
+\[
+	\left| \Delta \bs{p} \right| \approx \left| \int_{\infty}^{\infty} ze \bs{E}_{\bot} dt \right| 
+.\] 
+Nella approssimazione in cui la velocità della particella risulti invariata:
+\[
+	\left| \Delta \bs{p} \right| \approx \frac{ze}{v} \left| \int \bs{E}_{\bot} dx\right|= 
+	\frac{ze}{2\pi b v} \left| \int 2\pi \bs{E}_{\bot}dx \right|= \frac{ze}{2\pi b v } 4\pi Ze
+.\] 
+Dove nell'ultimo passaggio si è applicato Gauss in CGS.\\
+Quindi $\left| \Delta \bs{v} \right| = \left| \Delta \bs{p} \right| /M$, inserendo questo nella espressione di $I_{\omega}$ :
+\[
+	I_{\omega}=
+	\begin{cases}
+		\frac{2q^2}{3\pi^2 c^3}\frac{z^2q^2}{4 \pi^2b^2v ^2M^2}16 \pi^2 Z^2 e^2  &\text{per } \omega< 1 /\tau\\  
+		0 & \text{per } \omega > 1 /\tau
+	\end{cases}
+.\] 
+Inserendo il raggio classico dell'elettrone $r_e = q^2 / m_e c^2$ e la costante di struttura fine $\alpha=e^2 / \hbar c$ semplificando si ottiene l'espressione cercata.
+
+\subsection[]{Dimostrare, a partire dalla espressione
+\[
+	\chi_{\omega} = \frac{16 z^4 Z^2 \alpha \hbar c^2}{3} \left( \frac{m_e}{M} \right)^2 \frac{r_e^2}{V^2}\ln\left[ \frac{MV^2}{\hbar \omega} \right] 
+.\] 
+non relativistica, che nel caso relativistico la sezione d’urto di irraggiamento per elettroni è approssimabile, in un modello, con 
+\[
+	\chi_{\omega} = \frac{16}{3}z^4 Z^2\alpha\hbar r_e^2\ln\left( \frac{195.5}{Z^{1 /3}} \right) 
+.\] 
+}
+\label{sec:4.b.8}
+Questo, e molto altro, è stato fatto nella \hyperref[sec:4.a.15]{Domanda 4.a.15}.
+
+\subsection[]{Dimostrare che nel caso relativistico la perdita di energia per irraggiamento è approssimabile con 
+\[
+	\frac{\mbox{d} E_{\text{irr}}}{\mbox{d} x} = n_{\text{nuclei}} \frac{16}{3}z^2Z^2\alpha\left( \frac{m_e}{M} \right) ^2r_e^2\ln\left[ \frac{192}{Z^{1 /3}}\frac{M}{m_e} \right] 
+.\] 
+e quindi l'espressione approssimata per la lunghezza di radiazione per elettroni
+\[
+	X_0= \left( n_{\text{nuclei}} \frac{16}{3}\rho \frac{N_{A}}{A}  Z^2\alpha ^2r_e^2\ln\left[ \frac{192}{Z^{1 /3}}\right] \right)^{-1} 
+.\] 
+}
+\label{sec:4.b.9}
+Anche questa è stata ricavata nella \hyperref[sec:4.a.15]{Domanda 4.a.15}, si aggiunge solo che la lunghezza di radiazione, ottenuta la formula di cui sopra si deduce dal fatto che:
+\[
+	\frac{\mbox{d} E_{\text{irr}}}{\mbox{d} x} = \frac{E}{X_0}
+.\] 
+\paragraph{Nota}%
+ È per l'energia persa che, nella equazione precedente, va il segno negativo al secondo termine.
+
+\subsection[]{Valutare la lunghezza di radiazione del Piombo e del Silicio con il modello spiegato a lezione ed effettuare un confronto con i valori sperimentali reperibili su internet.
+}
+\label{sec:4.b.10}
+Si applica la formula di Tsai semplificata:
+\[
+	\rho X_0 = \frac{1}{\frac{16}{3} \frac{N_{A}}{M_A}Z^2\alpha r_e^2 \ln \left(\frac{184}{Z^{1 /3}}\right)}
+.\] 
+\paragraph{Piombo: $Z=82$, $A=207$} Modello: $\rho X_0= 4.4$ g/cm$^2$ ; Dati: $\rho X_0= 6.37$ g/cm$^2$ 
+\paragraph{Silicio: $Z=14$, $A=28$} Modello: $\rho X_0=17.5$ g/cm$^3$ ; Dati: $\rho X_0= 21.8$ g/cm$^2$
+
+\subsection[]{Calcolare l'energia irraggiata da un elettrone di 60MeV che attraversi 5.6mm di Pb e calcolare il numero medio di fotoni emessi di energia fra 1eV e 1MeV
+}
+\label{sec:4.b.11}
+La distanza percorsa è proprio la lunghezza di radiazione, quindi l'energia irraggiata dall'elettrone è: 
+\[
+	E_{\text{irr}}= E_{\text{in}}-E_{\text{lost}}= E\left( 1-\frac{1}{e} \right) \approx 38 \text{ MeV}
+.\] 
+Per il numero di fotoni in quel range di energia possiamo sfruttare le due formule:
+\begin{align*}
+	&\frac{\mbox{d} N_{\gamma}}{\mbox{d} \omega} = \frac{1}{\hbar \omega}\frac{\mbox{d} E_{\text{irr}}}{\mbox{d} \omega} = n_s \frac{\chi_{\omega}}{\hbar \omega}=
+	\frac{1}{\omega X_0}\\
+	&n \chi_{\omega}\frac{E}{\hbar} = n \frac{16}{3}Z^2\alpha r_e^2\left( \ln \frac{192}{Z^{1 /3}}  \right)E= \frac{E}{X_0}
+.\end{align*}
+scrivendo $n_s = n\cdot dx$ si ha:
+ \[
+	\frac{\mbox{d} N_{\gamma}}{\mbox{d}x \text{d}\omega}=n \frac{\chi_{\omega}}{\hbar \omega}=\frac{1}{\omega X_0} 
+.\] 
+Partiamo dall'integrare in $\omega$, dobbiamo dapprima collegarla prima all'energia dei fotoni emessi tramite:
+\[
+	\omega = \frac{E}{\hbar}
+.\] 
+Quindi:
+\[
+	\frac{\mbox{d} N_{\gamma}}{\mbox{d} x} = \frac{1}{X_0} \int_{E_1 /\hbar}^{E_2/\hbar} \frac{1}{E} dE   
+.\] 
+Dobbiamo prestare attenzione al fatto che qui E è dello stesso ordine di $X_0$, se cercassimo il numero di fotoni totali allora dovremmo tener di conto che l'energia sta diminuendo. Nel nostro caso invece i fotoni emessi a queste energie non risentono dell'effetto dell'ingresso in profondità perchè la particella ha sempre sufficiente energia per emettere tali frequnze in tutto il percorso (fantasticando), quindi:
+\[
+	N_{\gamma}= \frac{L}{X_0 } \ln\left( \frac{E_2}{E_1} \right) \approx 15
+.\] 
+
+
+
+\subsection[]{Calcolare il numero medio di fotoni emessi di energia fra 10 e 100 MeV per un elettrone di 1 GeV che attraversi 300 $\mu$m di Silicio o 1 mm di Piombo. Calcolare poi la probabilità che uno di questi fotoni effettui una interazione prima di uscire dal materiale.
+}
+\label{sec:4.b.12}
+Si applica la formula dell'esercizio precedente ricordando che, per il silicio $X_0 = 9.36$ cm.
+\begin{itemize}
+	\item Si: $N_{\gamma}= 0.5$
+	\item Pb: $N_{\gamma}\approx 2.9$
+\end{itemize}
+La probabilità che un fotone effettui interazione prima di uscire dal materiale può essere calcolata utilizzando l'equivalenza tra i processi fondamentali di formazione di coppie $e^+, e^-$ ed i processi come la Bremsstralhung in cui invece vengono rilasciati fotoni.
+Quindi la lunghezza di irraggiamento $X_0$ può esser associata anche alla distanza in volo media di un fotone prima di produrre una coppia, da cui:
+ \[
+	P_{\text{int}}\approx \frac{\Delta l}{X_0}\cdot N_{\gamma} =
+	\begin{cases}
+		1.6 \cdot 10^{-3} & \text{Per il Silicio}\\
+		50\% &\text{Per il Piombo}
+	\end{cases}
+.\] 
+Sulla precisione di questa stima (ed il calcolo che invece andrebbe effettuato) vedi la domanda successiva.
+
+\subsection[]{Utilizzando le tabelle che forniscono le sezioni d'urto di fotoni su atomi, calcolare la probabilità che un fotone da 10 MeV produca una coppia $e^+e^-$ in uno spessore di Piombo pari ad una lunghezza di radiazione.
+}\label{sec:4.b.13}
+Per fotoni incidenti con tale energia la sezione d'urto è $\sim 40$ b, quindi la probabilità di interazione è:
+\[
+	P = n \sigma \Delta l = \frac{\rho N_A}{M_A}\sigma \Delta l \approx \frac{\Delta l}{0.76 \text{ cm}} \approx 75 \%
+.\] 
+Quindi nella domanda precedente la probabilità ha un errore di stima di circa il $25 \%$.
+
+\subsection[]{Calcolare l’energia minima e l'energia massima trasferibile in un singola collisione da una particella carica, di massa molto maggiore di quella dell'elettrone, in moto veloce attraverso la materia ad un singolo elettrone atomico.
+}
+\label{sec:4.b.14}
+Nell'ipotesi di piccoli angoli di scattering la variazione di impulso dell'elettrone è interamente ortogonale alla direzione di incidenza del proiettile, quindi:
+\begin{align*}
+	\Delta \bs{p}&= \int_{-\infty}^{\infty} \bs{F}_{\bot} dt =\\
+	&=  \int_{-\infty}^{\infty}-e \bs{E}_{\bot}dt =\\
+	&= \frac{1}{v}\int_{-\infty}^{\infty}-e \bs{E}dx=\\
+	&= \frac{-e}{2\pi b v} \frac{Ze}{\epsilon_0} \hat{n} 
+.\end{align*}
+I passaggi sono analoghi a quelli della \hyperref[sec:4.b.7]{Domanda 4.b.7}, $\hat{n}$ è il versore ortogonale a $v$.\\
+L'energia trasferita ad un elettrone in funzione del parametro di impatto la si può calcolare come:
+\[
+	T\left( b \right)= \frac{\left| \Delta \bs{p} \right|^2 }{2m}= \frac{Z^2e^4}{4\pi^2\epsilon_0 v^2 \bs{r}}\frac{1}{2m}= 
+	2z^2 \frac{m_e c^2}{\beta^2} \frac{r_e^2}{b ^2}
+.\] 
+Se si segue la logica del modello di Bohr per l'energia minima si ha che la durata dell'urto coulombiano è $\tau \sim \frac{b}{\gamma V}$, la richiesta di Bohr è che questo tempo sia minore del periodo di rotazione dell'elettrone atomico: $\tau< T_{e} \sim \frac{1}{\omega_{e}}$.\\
+Da questa ultima relazione se ne ricava un $b_{\text{max}}$ che sostituito nella energia ci da:
+\[
+	T_{\text{min}}= 2Z^2 \frac{m_e r_e^2 \omega_e^2}{\beta^4 \gamma^4}
+.\] 
+Per l'energia massima trasferita invece si ha che $T_{\text{max}}=2m_ec^2\beta^2\gamma^2$ (conservazione di impulso ed energia con $M\gg m_e$)
+
+
+\subsection[]{Indicare le ipotesi effettuate e dimostrare la seguente espressione approssimata
+\[
+	\frac{1}{\rho}\frac{\mbox{d} E_{\text{coll}}}{\mbox{d} x} = z^2 \frac{Z}{A\left( g \right) } 4 \pi \frac{m_e c^2}{\beta^2}N_A r_e^2\left( \ln \frac{c^2\beta^3\gamma^2}{z \omega_e r_e} \right) 
+.\] 
+ per la perdita di energia per collisioni (formula di Bohr)
+}
+\label{sec:4.b.15}
+Consideriamo un tratto $\Delta x$ di materia e cerchiamo di calcolare l'energia media trasmessa in collisioni elettroniche in questo tratto, ci serve la concentrazione degli elettroni:
+\[
+	n_e =\rho \frac{Z}{M_A}N_A = \rho \frac{Z}{A\cdot 1\text{g}}N_A
+.\] 
+Integriamo sul volume cilindrico attorno gli scattering al variare di $b$ :
+\[
+	\Delta T_{\text{coll}} =T\left( b \right) 2 \pi b n_e \Delta x db
+.\] 
+Perciò in un tratto infinitesimo e mediando sui possibili parametri di impatto troviamo l'espressione della Stopping Power:
+\[
+	\left< \frac{\mbox{d} E_{\text{coll}}}{\mbox{d} x} \right> = n_e \int_{b_{\text{min}}}^{b_{\text{MAX}}} 2 \pi T\left( b \right) b db = 
+	4 \pi n_e z^2 \frac{m_e c^2}{\beta^2} r_e^2 \ln\left( \frac{b_{\text{MAX}}}{b_{\text{min}}} \right) 
+.\] 
+Nel caso di Bhor le approssimazioni sono state spiegate nella domanda precedente, manca di ricavare il $b_{min}$ a partire dalla espressione (sopra) di $T_{\text{MAX}}$ :
+\[
+	b_{\text{min}}= \sqrt{2z^2 \frac{m_e c^2}{\beta^2}r_e^2 \ln\left( \frac{\beta^3\gamma^2c}{zr_e\omega_e} \right) } =
+	\frac{zr_e}{\beta^2 \gamma}
+.\] 	
+Sostituendo i due parametri di impatto limite si ha la soluzione.
+
+\subsection[]{Utilizzando la modellizzazione I = ( 16eV ) Z 0.9 , valutare il valore minimo dell’energia persa per collisioni, in MeV/g/cm2, per i seguenti materiali: i) Piombo, ii) Silicio; iii) aria a TPN.
+}prova
+\label{sec:4.b.16}
+\subsection[]{Nell'approssimazione di piccoli angoli e distribuzione gaussiana di varianza nota, calcolare il valor medio, il valore quadratico medio e la sigma per: i) l'angolo di multiplo scattering rispetto alla direzione iniziale della particella, e ii) la sua proiezione su un piano che contenga la direzione iniziale della particella.
+}prova
+\label{sec:4.b.17}
+\subsection[]{Dimostrare l'espressione approssimata per l’angolo quadratico medio di multiplo costante L scattering (proiezione su un piano): e confrontare il valore dela costante ottenuta con la formula contenuta nel PDG.
+}prova\label{sec:4.b.18}
+\subsection[]{Utilizzando le opportune tabelle, anche reperibili su web, per le seguenti particelle: i) elettrone 3.5MeV, ii) elettrone 100MeV, iii) pione di 1GeV, iv) muone di 45 GeV, v) protone da 7 TeV, che attraversino: a) 2 mmPb, b) 2 mm scintillatore, iii) 0.3 mm Silicio, iv) 1 m Aria; indicare se siano rilevanti e, in caso affermativo, calcolare le seguenti quantità: a) energia persa per irraggiamento, b) l’energia persa per collisioni, c) probabilita' di interazione forte con i nuclei, d) angolo quadratico medio di multiplo scattering.
+}prova
+\label{sec:4.b.19}
+\subsection[]{Per un muone che attraversi, incidendo perpendicolarmente, una lastra di Ferro di 5cm di spessore in cui e' presente un campo magnetico di intensita' nota, calcolare il valore numerico del rapporto fra la deflessione angolare dovuta al campo magnetico e la dispersione quadratica media dovuta al multiplo scattering. Come sara’ la funzione di distribuzione dell’angolo in uscita? Quale e’ la dipendenza dall’energia del muone incidente?
+}prova
+\label{sec:4.b.20}
+\subsection[]{Cercando i dati nelle apposite figure o tabelle si calcolino il valore (o i limiti) dell'energia degli elettroni emessi nello stato finale della reazione $\gamma$+C per energie del fotone incidente pari a: 1keV, 10keV, 100keV, 1MeV, 10MeV.
+}prova
+\label{sec:4.b.21}
+\subsection[]{Ricavare la relazione tra angolo di scattering e cambio di frequenza nell'effetto Compton
+}prova
+\label{sec:4.b.22}
+\subsection[]{Cercando i dati delle sezioni d’urto totali nelle apposite figure o tabelle (reperibili anche nella compilazione Particle Data Group http://pdg.lbl.gov ) si calcoli la probabilità di interazione di:
+• un fotone da 100 eV che incida su 1 $\mu$m di grafite
+• un fotone da 1 MeV che incida su 1 mm di grafite
+• un fotone da 10 MeV che incida su 1 mm di Piombo
+• un fotone da 50 KeV che incida su 1 $\mu$m di Piombo
+• un neutrino da 100 GeV che incida su 1 km di grafite
+• un protone da 100 GeV che incida su 1 cm di grafite
+}prova
+\label{sec:4.b.23}
+\subsection[]{Esprimere la sezione d'urto Rayleigh in funzione della sezione d'urto differenziale Thomson e del fattore di forma atomico F($\theta$).
+}prova
+\label{sec:4.b.24}
+\subsection[]{Dimostrare, utilizzando il materiale distribuito, perchè nell’esperimento di Anderson sulla scoperta del positrone alcune tracce positive osservate non
+possono essere nessuna delle particelle positive conosciute nel 1932.
+}prova
+\label{sec:4.b.25}
+\subsection[]{Calcolare la velocità media dei pioni e antiprotoni nell'esperimento di Segrè (quantità di moto 1.19 Gev/c) dopo che hanno attraversato il contatore Cherenkov a quarzo (spessore 2.5", densità relativa 2.2).
+}prova
+\label{sec:4.b.26}
