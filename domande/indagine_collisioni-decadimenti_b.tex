@@ -327,7 +327,7 @@ Possiamo ipotizzare una bassa probabilità di interazione per il neutrino, è qu
 \[
 P_{\text{int}} = n \sigma d \approx 4.2 \cdot 10^{-5} 
 .\] 
-Con $d \approx 12.76 \cdot 10^{3} \text{ km}$ raggio terrestre e $n \approx \frac{\rho_{\text{T}N_A}}{M_{\text{Si}}} \approx 3.3 \cdot 10^{-24} \text{cm}^{-3}$ densità media della terra (composta principalmente da Silicio).
+Con $d \approx 12.76 \cdot 10^{3} \text{ km}$ raggio terrestre e $n \approx \rho_{\text{T}}\cdot N_A\cdot A / M_{\text{Si}} = \rho\cdot N_{\text{A}} / 1 \text{[g]} \approx 5.5\cdot 6 \cdot 10^{23} \text{cm}^{-3}$ densità media della terra (composta principalmente da Silicio).
 
 \subsection[]{ Dimostrare che un elettrone (non relativistico) soggetto ad una forza elastica di richiamo, ad una forza di attrito viscoso ed alla forza di reazione radiativa, nel campo di un’onda e.m. piana polarizzata linearmente oscilla con la legge:
 \[
@@ -1071,7 +1071,9 @@ I nuclei isobari (a parità di A) hanno una massa con andamento quadratico in Z:
 In un decadimento $\alpha$ si ha:
 \[
 \ce{\ce{^{A}_{Z}X_{N}} -> \ce{^{A-4}_{Z-2}Y_{N-2}} + \alpha}
-.\] 
+.\]
+\paragraph{Metodo Complicato}%
+
 In decadimento tipico di questi si ha anche che $A\gg 4$, ,$Z\gg 2$. Inoltre $B\left( 4,2 \right) = 28.3$ MeV. Forti di queste informazioni immagineremo un piano $A,Z$ pensando queste come variabili indipendenti per poter fare alcune approssimazioni in seguito. Calcoliamo intanto il Q-valore.\\
 Nel calcolo del $Q$-valore del processo utilizziamo la massa dell'atomo scritta come:
 \[
@@ -1099,7 +1101,32 @@ E visto che il $Q$-valore è definito anche come  $Q = T_{\alpha} + T_{y}$ se ne
 \[
 	T_{\alpha} = \frac{Q}{1 + \frac{m_{\alpha}}{m_{y}}} \approx Q\left( 1-\frac{m_{\alpha}}{m_y} \right) \approx Q\left( 1-\frac{4}{A-4} \right) 
 .\] 
-Basta avere $A = 200$ per  $T_{\alpha} = 0.98\cdot Q$
+Basta avere $A = 200$ per  $T_{\alpha} = 0.98\cdot Q$. \\
+\paragraph{Metodo Semplice}%
+Alle stesse conclusioni si arriva con molta meno sofferenza utilizzando il fatto che i prodotti di decadimento sono limitati da funzioni del Q-value e stimando il Q-Value con i difetti di massa:
+\[
+	Q = \Delta_{A,Z} - \Delta_{A-4,Z-2} -\Delta_{4,2} \quad \left( \sim \text{ MeV} \right) 
+.\]
+Andando nel sistema del centro di massa in cui X decade a riposo l'energia cinetica di ogni singolo prodotto è limitata superiormente dal Q-value essendo $Q = T_{\alpha}+ T_{y}$.\\
+Questo pone dei limiti anche all'impulso dei prodotti, per la particella $\alpha$ si ha:
+\[
+	p_{\alpha}= \sqrt{E_{\alpha}^2-m_{\alpha}}= \sqrt{\left( T_{\alpha}+m_{\alpha}\right)^2- m_{\alpha}^2 } < \sqrt{Q^2+2Qm_{\alpha}} 
+.\] 
+Nel centro di massa naturalmente si ha $\left| \bs{p}_{\alpha} \right| = \left| \bs{p}_{y} \right| $. Quindi esprimiamo l'energia cinetica dei prodotti in  funzione dell'impulso come:
+\begin{align*}
+	&T_{\alpha} = \frac{\left| \bs{p}_{\alpha} \right|^2 }{2m_{\alpha}}< \frac{Q^2+2Qm_{\alpha}}{2m_{\alpha}} 
+	&T_{y} =  \frac{\left| \bs{p}_{y} \right|^2 }{2M_{y}}< \frac{Q^2+2Qm_{\alpha}}{2M_{y}} 
+.\end{align*}
+In realtà a noi interessa che:
+\[
+	\frac{T_{y}}{T_{\alpha}}= \frac{m_{\alpha}}{M_{y}}
+.\] 
+E visto che $m_{\alpha} = 4 m_{u} + \Delta_{4.2} ]\sim$ 4 GeV e $M_{y}=\left(A-4\right)m_{u}+ \Delta_{A-4, Z-2}\sim$ 200 GeV si ha:
+\[
+	T_{y} \approx 0.02 T_{\alpha}
+.\] 
+Da cui si conclude come sopra.
+
 
 \subsection[]{ Dimostrare che in un decadimento $\beta$ la somma delle energie dell'elettrone e dell'antineutrino emessi é praticamente uguale al Q-valore della reazione.}
 Ricordando il decadimento $\beta^-$ :
