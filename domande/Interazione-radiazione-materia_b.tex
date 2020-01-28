@@ -329,20 +329,195 @@ Nel caso di Bhor le approssimazioni sono state spiegate nella domanda precedente
 .\] 	
 Sostituendo i due parametri di impatto limite si ha la soluzione.
 
-\subsection[]{Utilizzando la modellizzazione I = ( 16eV ) Z 0.9 , valutare il valore minimo dell’energia persa per collisioni, in MeV/g/cm2, per i seguenti materiali: i) Piombo, ii) Silicio; iii) aria a TPN.
-}prova
+\subsection[]{Utilizzando la modellizzazione $I = ( 16 \text{ eV} )\cdot  Z^{0.9}$ , valutare il valore minimo dell’energia persa per collisioni, in MeV/g/cm$^2$, per i seguenti materiali:\\
+i) Piombo \\
+ii) Silicio \\
+iii) aria a TPN.
+}
 \label{sec:4.b.16}
-\subsection[]{Nell'approssimazione di piccoli angoli e distribuzione gaussiana di varianza nota, calcolare il valor medio, il valore quadratico medio e la sigma per: i) l'angolo di multiplo scattering rispetto alla direzione iniziale della particella, e ii) la sua proiezione su un piano che contenga la direzione iniziale della particella.
-}prova
+Dobbiamo applicare la formula di Bethe-Block nei pressi del minimo di energia persa per collisioni: $\gamma\beta \approx 3.5$.\\
+Dalla correlazione tra $\gamma$ e $\beta$ questo significa che $\beta\approx 0.96$, quindi lo approssimeremo all'unità commettendo un errore del $4 \%$.\\
+Inoltre si trascureranno anche i termini correttivi della formula e si lavorerà nella approssimazione $\gamma\ll M/m_e$:
+ \[
+	\left< \frac{1}{\rho} \frac{\mbox{d} E_{\text{coll}}}{\mbox{d} x}  \right> =
+	z^2 \frac{Z}{A} \frac{K}{\beta^2} \left( \ln \frac{\left( 2 m_e c^2 \beta^2\gamma^2 \right)}{I} - \beta^2 - \frac{\delta}{2}  \right) 
+.\] 
+Dove $K$ vale:
+\[
+	K = N_A \frac{4\pi m_e c^2 r_e^2}{1 \text{ g}}= 0.307 \frac{\text{MeV}\cdot \text{cm}^2}{\text{g}}
+.\] 
+Nel nostro caso si considerano gli urti su elettroni $z=1$. Possiamo inoltre trascurare il termine di fermi, infatti questo è rilevante per alti valori di $\gamma\beta$ e non nei pressi del minimo. Quindi ci si riduce a :
+\[
+	\left< \frac{1}{\rho} \frac{\mbox{d} E_{\text{coll}}}{\mbox{d} x}  \right> =
+	0.307 \frac{\text{MeV}\cdot \text{cm}^2}{\text{g}} \frac{Z}{A} \left( \ln\left( 7.5 \cdot 10^{5} \frac{1}{Z^{0.9}} \right) -1 \right) 
+.\] 
+\begin{table}[H]
+	\centering
+	\begin{tabular}{c|ccc}
+				&	Z		& 		A		&	$E_{coll}$ $\frac{\text{MeV}\cdot \text{cm}^2}{\text{g}}$	\\
+	\hline
+	Piombo			&	82		&		207		&	1.04								\\
+	Silicio			&	14		&		28		&	1.56								\\
+	Aria a TPN (azoto)	&	7		&		14		&	1.66		
+	\end{tabular}
+\end{table}
+
+\subsection[]{Nell'approssimazione di piccoli angoli e distribuzione gaussiana di varianza nota, calcolare il valor medio, il valore quadratico medio e la sigma per:\\
+i) l'angolo di multiplo scattering rispetto alla direzione iniziale della particella\\
+ii) la sua proiezione su un piano che contenga la direzione iniziale della particella.
+}
 \label{sec:4.b.17}
-\subsection[]{Dimostrare l'espressione approssimata per l’angolo quadratico medio di multiplo costante L scattering (proiezione su un piano): e confrontare il valore dela costante ottenuta con la formula contenuta nel PDG.
-}prova\label{sec:4.b.18}
-\subsection[]{Utilizzando le opportune tabelle, anche reperibili su web, per le seguenti particelle: i) elettrone 3.5MeV, ii) elettrone 100MeV, iii) pione di 1GeV, iv) muone di 45 GeV, v) protone da 7 TeV, che attraversino: a) 2 mmPb, b) 2 mm scintillatore, iii) 0.3 mm Silicio, iv) 1 m Aria; indicare se siano rilevanti e, in caso affermativo, calcolare le seguenti quantità: a) energia persa per irraggiamento, b) l’energia persa per collisioni, c) probabilita' di interazione forte con i nuclei, d) angolo quadratico medio di multiplo scattering.
-}prova
+Assumiamo che la particella si muova inizialmente lungo l'asse $\hat{z}$. Sia $\theta$ l'angolo di multiplo scattering rispetto alla direzione $\hat{z}$ e $\theta_{x}$, $\theta_{y}$ le sue proiezioni sui piani $xz$ e $yz$ rispettivamente.\\
+Se si assume che gli ultimi due angoli siano distribuiti gaussianamente per simmetria devono avere anche la stessa deviazione standard e media nulla:
+\[
+	P\left( \theta_{x} \right) = \frac{1}{\theta_0 \sqrt{2\pi} } e^{- \theta^2_{x} / 2\theta_0^2}
+.\] 
+Analogamente per $\theta_{y}$. Di questa distribuzione sappiamo che:
+\[
+	\left<\theta_{x} \right> = \left<\theta_{y} \right> = 0
+.\] 
+\[
+	\left<\theta_{x}^2 \right> = \left< \theta_{y}^2 \right> = \theta_0^2
+.\] 
+\[
+	\sigma_{\theta_{x}} = \sigma_{\theta_{y}} = \theta_0
+.\] 
+Considerando che geometricamente $\theta^2 = \theta_{x}^2+\theta_{y}^2$ possiamo cercare la distribuzione di $\theta$, la si trova imponendo la normalizzazione sulle due proiezioni:
+\begin{align*}
+	1 &= \int_{-\infty}^{\infty}d\theta_{x} \int_{-\infty}^{\infty}d\theta_{y} P\left( \theta_{x} \right) P\left( \theta_{y} \right) =\\
+	  &=  \int_{-\infty}^{\infty}d\theta_{x} \int_{-\infty}^{\infty}d\theta_{y}  \frac{1}{2\pi \theta_0} \exp\left( - \frac{\theta_{x}^2+\theta_{y}^2}{2\theta_0^2} \right) \\
+	  &= \int_{0}^{\infty} \frac{\theta}{\theta_0^2} e^{- \theta^2 /2\theta_0^2} d\theta
+.\end{align*}
+Abbiamo quindi la funzione di distribuzione su $\theta$ :
+\[
+	P\left( \theta \right) = \frac{\theta}{\theta_0^2} e^{- \theta^2 /2\theta_0^2}
+.\] 
+Possiamo quindi calcolare i valori richiesti anche per quest'ultima:
+\begin{align*}
+	& \left<\theta \right> = \int_{0}^{\infty} \frac{\theta^2}{\theta_0^2} e^{- \theta^2 /2\theta_0^2} d\theta = \theta_0 \sqrt{\frac{\pi}{2}}\\
+	& \left<\theta^2 \right> = \int_{0}^{\infty}\frac{\theta^3}{\theta_0^2} e^{- \theta^2 /2\theta_0^2} d\theta = 2 \theta_0^2 \\
+	& \sigma_\theta = \sqrt{\left<\theta^2 \right>- \left< \theta \right>^2} =\theta_0 \sqrt{ \frac{4-\pi}{2}} 
+.\end{align*}
+Inoltre il massimo di $P\left( \theta \right)$ è prorpio $\theta_0$
+
+\subsection[]{Dimostrare l'espressione approssimata per l’angolo quadratico medio di multiplo scattering (proiezione su un piano):
+\[
+	\theta_0 = z \frac{\text{costante}}{P \beta c} \sqrt{\frac{L}{X_0}} 
+.\] 
+e confrontare il valore della costante ottenuta con la formula contenuta nel PDG.
+}\label{sec:4.b.18}
+Per effettuare il conto è necessario prima calcolare lo scarto quadratico medio sul singolo urto e successivamente sommare su tutti i centri scatteranti tenendo conto della composizione del materiale.\\
+Partiamo dalla sezione d'urto Mott per il singolo urto e approssimiamola nel caso di angoli di scattering piccoli:
+\[
+	\frac{\mbox{d} \sigma }{\mbox{d} \Omega} = \left( \frac{zZ \alpha \hbar c}{2PV} \right)^2 \frac{1-\beta^2\sin^2\frac{\theta}{2}}{\sin^4 \frac{\theta}{2}}=
+	\left( \frac{2zZ \alpha \hbar c}{PV} \right)^2 \frac{1}{\theta^4}
+.\] 
+Il termine d'innanzi alla frazione con $\theta$ deve avere le dimensioni di una distanza al quadrato, lo definiamo come:
+\[
+	l=\frac{2zZ \alpha \hbar c}{PV} \implies \frac{\mbox{d} \sigma}{\mbox{d} \Omega} = \frac{l^2}{\theta^4}
+.\] 
+Si può calcolare lo scarto quadratico medio su un urto conoscendo questa distribuzione approssimata:
+\[
+	\left< \theta^2_{\text{urto}} \right> = \frac{\int_{\theta_{\text{min}}}^{\theta_{\text{max}}} \theta^2\frac{\mbox{d} \sigma}{\mbox{d} \Omega} d\Omega }
+	{\int_{\theta_{\text{min}}}^{\theta_{\text{max}}} \frac{\mbox{d} \sigma}{\mbox{d} \Omega} d\Omega}=
+	\frac{\int_{\theta_{\text{min}}}^{\theta_{\text{max}}} \frac{l^2}{\theta^2} 2\pi \sin\theta d\theta}{\sigma_{\text{ms}}} \approx
+	\frac{2\pi l^2}{\sigma_{\text{ms}}} \ln \frac{\theta_{\text{max}}}{\theta_{\text{min}}}
+.\] 
+Cerchiamo di riscrivere quest'ultima utilizzando il parametro di impatto, è noto che, per questo scattering:
+\[
+	\tan \frac{\theta}{2} = \frac{zZ \alpha \hbar c}{PV} \frac{1}{b} \implies \theta \approx \frac{l}{b}
+.\]
+Il vantaggio di usare $b$ è che sappiamo bene $b_{\text{max}}$ e $b_{\text{min}}$ :
+\begin{align*}
+	&b_{\text{min}}= R_{\text{nucleo}} = r_0 A^{1 /3}\\
+	&b_{\text{max}}=R_{\text{atomo}}= 1.4 a_0 Z^{- 1/3} 
+.\end{align*}
+Si ha allora che:
+\[
+	\ln \frac{\theta_{\text{max}}}{\theta_{\text{min}}}= \ln \frac{b_{\text{max}}}{b_{\text{min}}}=
+	\ln \frac{1.4\cdot 0.53 \cdot 10^{5}\text{ fm} }{1.4\text{ fm}\left( AZ \right)^{1 /3} } \approx 
+	\ln \frac{5.3 \cdot 10^{4} }{\sqrt[3]{2}Z^{2 /3} }= 
+	2\ln \frac{205}{Z^{1 /3}}
+.\] 
+Dove si è sfruttata anche l'approssimazione $A \approx 2Z$.
+Quindi \[
+	\left<\theta_{\text{urto}} \right> \approx \frac{4\pi l^2}{\sigma_{\text{ms}}} \ln \frac{205}{Z^{1/3}}
+.\] 
+L'angolo quadratico medio totale si ottiene quindi sommando in quadratura su tutti gli urti:
+\[
+	\left< \theta^2 \right> = N_{\text{urti}} \left<\theta^2_{\text{urto}} \right> = 4\pi nL l^2 \ln \frac{205}{Z^{1 /3}} 
+.\] 
+Ricordando adesso che la lunghezza di radiazione dalla formula di Tsai approssimata è:
+\[
+	X_0 \approx \frac{1}{4Z^2 n \alpha \hbar r_e^2 \ln \frac{184}{Z^{1 /3}}}
+.\] 
+si può concludere che :
+\begin{align*}
+	\sqrt{\left<\theta^2 \right>} &= \sqrt{\frac{X_0}{X_0} 4\pi nL l^2 \ln \frac{205}{Z^{1 /3}}} =\\
+	&=  \sqrt{\frac{L}{X_0}} \sqrt{ \frac{4\pi n \ln \frac{205}{Z^{1 /3}} }{4Z^2 n \alpha \hbar r_e^2 \ln \frac{184}{Z^{1 /3}}} } \approx \\ 
+	&\approx l \sqrt{\frac{L}{X_0}} \sqrt{\frac{\pi}{Z^2\alpha r_e^2}}=\\
+	&= \frac{2zZ \alpha \hbar c}{PV}\frac{1}{r_e}\sqrt{\frac{L}{X_0}} \sqrt{\frac{\pi}{Z^2 \alpha}}=\\
+	&= \frac{\sqrt{2} z m_e c^2}{PV} \sqrt{\frac{L}{X_0}} \sqrt{\frac{2\pi}{\alpha}} \approx \\
+	&\approx z \sqrt{2} \frac{14.6 \text{ MeV}}{PV}\sqrt{\frac{L}{X_0}} 
+.\end{align*}
+Da confrontare con la costante del PDG che vale invece $13.6$ MeV.\\
+Per ottenere $\theta_0$ basta dividere la precedente per la radice di 2.
+
+\subsection[]{Utilizzando le opportune tabelle, anche reperibili su web, per le seguenti particelle: \\
+i) elettrone 3.5MeV \\
+ii) elettrone 100MeV \\
+iii) pione di 1GeV \\
+iv) muone di 45 GeV \\
+v) protone da 7 TeV\\
+Che attraversino:\\
+a) 2 mmPb\\
+b) 2 mm scintillatore\\
+iii) 0.3 mm Silicio\\
+iv) 1 m Aria\\
+Indicare se siano rilevanti e, in caso affermativo, calcolare le seguenti quantità: \\
+a) energia persa per irraggiamento \\
+b) l’energia persa per collisioni \\
+c) probabilita' di interazione forte con i nuclei\\
+d) angolo quadratico medio di multiplo scattering.
+}
 \label{sec:4.b.19}
+Alcune delle cose che ci serviranno sono nella seguente tabella:
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{immagini/materials.png}
+	\caption{Tabella con proprietà di alcuni materiali.}
+	\label{fig:}
+\end{figure}
+
+Dobbiamo ripassare, quantità per quantità, tutte le cose che ci serviranno sulle particelle:
+
+\paragraph{Energia persa per irraggiamento}%
+Questa è trascurabile per tutti tranne che per gli elettroni e vale:
+\[
+	E_{\text{irr}}= E_0 e^{- x /X_0}
+.\] 
+Anche per gli elettroni dobbiamo valutare se l'energia è al di sopra dell'energia critica:
+\[
+	E_{c} \approx 98 \frac{\text{MeV}}{Z^{1 /3}}
+.\] 
+nel primo caso dsfa+ìadsff
+ -rf-a.
+
+\paragraph{Energia persa per collisioni}%
+E necessario utilizzare \href{https://www.nist.gov/pml/stopping-power-range-tables-electrons-protons-and-helium-ions}{i dati ed i grafici} sullo stopping range dal PDG, una volta messi i parametri ed ottenuta la curva di Range si effettuano i seguenti passaggi:
+\begin{itemize}
+	\item Determinare il Range in ingresso $R\left( E_{\text{in}}\right)$ graficamente.
+	\item Calcolare il Range di uscita come $R\left( E_{\text{out}} \right)= R\left( E_{\text{in}} \right) - \Delta x$.
+	\item Determinare $E_{\text{out}}$ sulle $x$ in corrispondenza di $R\left( E_{\text{out}} \right)$,
+\end{itemize}
+
+
 \subsection[]{Per un muone che attraversi, incidendo perpendicolarmente, una lastra di Ferro di 5cm di spessore in cui e' presente un campo magnetico di intensita' nota, calcolare il valore numerico del rapporto fra la deflessione angolare dovuta al campo magnetico e la dispersione quadratica media dovuta al multiplo scattering. Come sara’ la funzione di distribuzione dell’angolo in uscita? Quale e’ la dipendenza dall’energia del muone incidente?
-}prova
+}
 \label{sec:4.b.20}
+Passo
+
 \subsection[]{Cercando i dati nelle apposite figure o tabelle si calcolino il valore (o i limiti) dell'energia degli elettroni emessi nello stato finale della reazione $\gamma$+C per energie del fotone incidente pari a: 1keV, 10keV, 100keV, 1MeV, 10MeV.
 }prova
 \label{sec:4.b.21}
