@@ -493,53 +493,163 @@ Alcune delle cose che ci serviranno sono nella seguente tabella:
 Dobbiamo ripassare, quantità per quantità, tutte le cose che ci serviranno sulle particelle:
 
 \paragraph{Energia persa per irraggiamento}%
-Questa è trascurabile per tutti tranne che per gli elettroni e vale:
-\[
-	E_{\text{irr}}= E_0 e^{- x /X_0}
-.\] 
-Anche per gli elettroni dobbiamo valutare se l'energia è al di sopra dell'energia critica:
+Questa è trascurabile per tutti tranne che per gli elettroni. Per questi ultimi dobbiamo distinguere tra elettroni aventi energia maggiore o minore dell'energia critica:
 \[
 	E_{c} \approx 98 \frac{\text{MeV}}{Z^{1 /3}}
 .\] 
-nel primo caso dsfa+ìadsff
- -rf-a.
+Se gli elettroni hanno una energia maggiore di quest'ultima allora si applica 
+\[
+	E_{\text{irr}}= E_0 e^{- x /X_0}
+.\]
+Altrimenti potremmo dare una stima dell'energia irraggiata mediante la formula per uno  schermaggio incompleto come spiegato sul Jackson, ma la risposta sarà comunque che questa energia è trascurabile rispetto a quella persa per collisioni.
 
 \paragraph{Energia persa per collisioni}%
-E necessario utilizzare \href{https://www.nist.gov/pml/stopping-power-range-tables-electrons-protons-and-helium-ions}{i dati ed i grafici} sullo stopping range dal PDG, una volta messi i parametri ed ottenuta la curva di Range si effettuano i seguenti passaggi:
+Se l'energia persa per irraggiamento è trascurabile è pratico vedere se l'energia con cui il proiettile incide è sufficiente ad attraversare il materiale.\\
+Per far questo è necessario utilizzare \href{https://www.nist.gov/pml/stopping-power-range-tables-electrons-protons-and-helium-ions}{i dati ed i grafici} sullo stopping range dal PDG, una volta messi i parametri ed ottenuta la curva di Range si effettuano i seguenti passaggi:
 \begin{itemize}
 	\item Determinare il Range in ingresso $R\left( E_{\text{in}}\right)$ graficamente.
 	\item Calcolare il Range di uscita come $R\left( E_{\text{out}} \right)= R\left( E_{\text{in}} \right) - \Delta x$.
 	\item Determinare $E_{\text{out}}$ sulle $x$ in corrispondenza di $R\left( E_{\text{out}} \right)$,
 \end{itemize}
-
+Se l'energia trovata risulta graficamente prossima allo zero allora l'energia persa per collisioni è tutta l'energia incidente.\\
+Se si ha invece una energia persa per irraggiamento non trascurabile rispetto all'energia in ingresso allora si applica la formula di Tsai approssimata come nella \hyperref[sec:4.b.16]{Domanda 4.b.16}.
+\paragraph{Probabilità di interazione forte}%
+Questa interazione avviene soltanto per adroni, quindi nel nostro caso il $\pi^{-}$ ed il $p$. Per queste particelle si calcola la sezione d'urto nucleare come l'area della circonferenza avente raggio la somma del raggio del proiettile e del raggio del nucleo bersagio:
+\[
+	\sigma=\pi\left( r_{p}+R \right)^2 = \pi\left( 1.25 + 1.25\cdot A^{1/3} + 2 \right)^2 \text{ fm}^2 
+.\] 
+successivamente il conto da fare è:
+\[
+	P_{\text{forte}}= \sigma \frac{\rho N_{A}}{A}x
+.\] 
+\paragraph{Angolo quadratico medio di multiplo scattering}%
+Se la particella riesce ad uscire il conto da effettuare è quello della \hyperref[sec:4.b.18]{Domanda 4.b.18}
 
 \subsection[]{Per un muone che attraversi, incidendo perpendicolarmente, una lastra di Ferro di 5cm di spessore in cui e' presente un campo magnetico di intensita' nota, calcolare il valore numerico del rapporto fra la deflessione angolare dovuta al campo magnetico e la dispersione quadratica media dovuta al multiplo scattering. Come sara’ la funzione di distribuzione dell’angolo in uscita? Quale e’ la dipendenza dall’energia del muone incidente?
 }
 \label{sec:4.b.20}
-Passo
+Ipotizziamo che l'energia del muone sia tale da garantire che oltrepasserà la lastra (possiamo tornarci dopo) e che la frazione di energia persa nella lastra sia molto inferiore dell'energia iniziale in modo da considerare la curvatura magnetica uniforme.\\
+Calcoliamo per prima cosa il raggio di curvatura dovuto al solo campo magnetico:
+\[
+	R= \frac{mv}{eB}= \frac{P}{e B} = \frac{3}{10} \frac{P  \text{ [GeV/c]}}{B \text{ [T]}}
+.\] 
+Dove si è utilizzato l'esoterica conversione della carica elementare in unità gaussiane. Con un pò di geometria si calcola il seno dell'angolo di deflessione magnetic:
+\[
+	\sin\theta_{\text{m}}= \frac{x}{R} = \frac{50}{3} \cdot 10^{-3}\text{ [m]}  \frac{B \text{ [T]}}{P  \text{ [GeV/c]}}
+.\] 
+Approssimando adesso angoli piccoli (è necessario che $ \frac{P \text{ [GeV/c]}}{B \text{ [T]}}>\sim 1$ ) si ottiene:
+\[
+	\theta_{\text{m}}= \frac{x}{R} \approx 15 \text{ mrad}  \frac{\text{ [m] } B \text{ [T]}}{P  \text{ [GeV/c]}}
+.\] 
+Per l'angolo quadratico medio di multiplo scattering si ha invece:
+\[
+	\theta_0= \frac{13.6 \text{ [MeV]}}{PV} \sqrt{ \frac{5 \text{ [mm]}}{X_0}} 
+.\] 
+Nel ferro si ha $X_0 = 1.76$ cm, inoltre possiamo assumere $\beta \sim 1$ per la nostra stima, quindi:
+\[
+	\theta_0 \approx \frac{13.6 \cdot 10^{-3} \text{ [eV]}}{P \text{ [GeV/c] [m/s]}} \sqrt{ \frac{5 \cdot 10^{-3}\text{ [m]} }{1.76 \cdot 10^{-2}\text{ [m]}}}
+	\approx 7.24 \text{ mrad} \cdot \frac{\text{[eV]}}{P\text{ [GeV/c] [m/s]} }
+.\] 
+Quindi il rapporto cercato (sempre per impulsi sufficienti a garantire l'uscita del muone e angoli di deflessione piccoli) è indipentente dall'impulso:
+\[
+	\frac{\theta_{m}}{\theta_0 \sqrt{2}} \approx 0.3\cdot B \text{ [T]}
+.\]
+La distribuzione angolare sarà in tal caso una Moliere centrata in $\theta_{m}$.
 
 \subsection[]{Cercando i dati nelle apposite figure o tabelle si calcolino il valore (o i limiti) dell'energia degli elettroni emessi nello stato finale della reazione $\gamma$+C per energie del fotone incidente pari a: 1keV, 10keV, 100keV, 1MeV, 10MeV.
-}prova
+}
 \label{sec:4.b.21}
+La sezione d'urto di un fotone sull'atomo di carbonio segue questi andamenti:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{immagini/cross-section-photon.png}
+	\caption{Sezione d'urto di fotone su carbonio.}
+	\label{fig:immagini-cross-section-photon-png}
+\end{figure}
+Ad 1 keV il processo dominante è il fotoelettrico. Per questo processo l'energia cinetica dell'elettrone prodotto è la stessa l'energia del fotone incidente (trascurando l'energia di legame dell'ordine di 1-10 eV). \\
+A 10 keV domina ancora il fotoelettrico ma iniziano ad essere importanti anche il Rayleigh ($\sigma_{coh}$ in figura) ed il compton ($\sigma_{incoh}$ in figura).
+Nel primo (che è uno scattering elastico) l'elettrone non acquista energia. Nel secondo invece l'energia dell'elettrone è compresa tra gli 0 ed i 10 keV a seconda dell'angolo di scattering.\\
+A 100 keV ed a 1 MeV il dominante è il Compton mentre a 10 MeV inizia ad essere importante la produzione di coppie con l'elettrone che viene prodotto con energia di circa 5 MeV.
+
 \subsection[]{Ricavare la relazione tra angolo di scattering e cambio di frequenza nell'effetto Compton
-}prova
+}
 \label{sec:4.b.22}
-\subsection[]{Cercando i dati delle sezioni d’urto totali nelle apposite figure o tabelle (reperibili anche nella compilazione Particle Data Group http://pdg.lbl.gov ) si calcoli la probabilità di interazione di:
-• un fotone da 100 eV che incida su 1 $\mu$m di grafite
-• un fotone da 1 MeV che incida su 1 mm di grafite
-• un fotone da 10 MeV che incida su 1 mm di Piombo
-• un fotone da 50 KeV che incida su 1 $\mu$m di Piombo
-• un neutrino da 100 GeV che incida su 1 km di grafite
-• un protone da 100 GeV che incida su 1 cm di grafite
-}prova
+Definiamo k e k' i vettori d'onda del fotone prima e dopo l'urto e p, p' il 4-impulso dell'elettrone prima e dopo l'urto. Dalla comservazione del quadrimpulso si deve avere che:
+\[
+	\hbar\left( k- k \right)= p'-p	
+.\] 
+Facendo la norma quadra a destra e sinistra e ricordando che l'elettrone è comsiderato inizialmente fermo si ottiene:
+\[
+	2\hbar\left( 0 + 0 - 2\left( \omega\omega'- kk'\cos\theta\right) \right) = m^2+m^2- 2mE'
+.\] 
+In cui $\theta$ è l'angolo di scattering. Adesso sfruttiamo la conservazione dell'energia ($E' = \hbar\omega + m - \hbar\omega'$) per ottenere:
+\[
+	\frac{2\hbar\omega\omega'}{c}\left( 1-\cos\theta \right) = 2m_{e}c^2\hbar\left( \omega-\omega' \right) 
+.\] 
+Se passiamo alle lunghezze d'onda otteniamo la relazione cercata:
+\[
+	\Delta \lambda = \lambda_{c}\left( 1-\cos\theta \right) 
+.\] 
+Dove $\lambda_{c}= \frac{h}{m_{e}c}$ 
+
+
+
+\subsection[]{Cercando i dati delle sezioni d’urto totali nelle apposite figure o tabelle (reperibili anche nella compilazione Particle Data Group http://pdg.lbl.gov ) si calcoli la probabilità di interazione di:\\
+• un fotone da 100 eV che incida su 1 $\mu$m di grafite\\
+• un fotone da 1 MeV che incida su 1 mm di grafite\\
+• un fotone da 10 MeV che incida su 1 mm di Piombo\\
+• un fotone da 50 KeV che incida su 1 $\mu$m di Piombo\\
+• un neutrino da 100 GeV che incida su 1 km di grafite\\
+• un protone da 100 GeV che incida su 1 cm di grafite\\
+}
 \label{sec:4.b.23}
+Partiamo dal metodo da adottare: la probabilità cercata è data da
+\[
+	P = n_{s}\sigma
+.\] Dove $n_{s}$ è la densità superficiale di bersagli. Questa quantità può essere espressa in funzione di variabili tipiche del materiale:
+\[
+	P = \frac{\rho}{A \text{[g]}}N_{A}L\sigma
+.\] 
 \subsection[]{Esprimere la sezione d'urto Rayleigh in funzione della sezione d'urto differenziale Thomson e del fattore di forma atomico F($\theta$).
-}prova
+}
 \label{sec:4.b.24}
+La sezione d'urto Rayleigh differenziale vale
+\[
+	\frac{\mbox{d} \sigma_{el}}{\mbox{d} \Omega}= \left.\frac{\mbox{d} \sigma_{el}}{\mbox{d} \Omega} \right|_{e} \left| Z F\left( \bs{q} \right)  \right|^2 \quad
+		\text{ con }
+	\quad
+	\left.\frac{\mbox{d} \sigma_{el }}{\mbox{d} \Omega} \right|_{e}= 
+		\frac{r_e^2\omega^4}{\left( \omega_0^2-\omega^2 \right)^2 + \omega^2\Gamma_{tot}^2\left( \omega \right)} \frac{1+\cos^2\theta}{2}
+.\] 
+
+Per ottenere quanto richiesto dal testo è necessario integrare sull'angolo solido e conoscere il fattore di forma dipendente dall'angolo di scattering $\theta$.
+
 \subsection[]{Dimostrare, utilizzando il materiale distribuito, perchè nell’esperimento di Anderson sulla scoperta del positrone alcune tracce positive osservate non
 possono essere nessuna delle particelle positive conosciute nel 1932.
-}prova
+}
 \label{sec:4.b.25}
+Riprendendo la trattazione della \hyperref[sec:4.a.34]{Domanda 4.a.34} l'impulso iniziale misurato da Anderson era $p_{i}= 63$ MeV/c, quello finale invece era $p_{f}=22.5$ MeV/c, se fosse stato un protone (unica particella con quella carica positiva conosciuta allora) sarebbe stato:
+\[
+	E_{i}= \frac{p^2}{2m_{p}}\approx 2.1 \text{ MeV}
+.\] 
+Se si incide su 5 mm di piombo con un protone di quella energia si ha che il range è circa 4 mm, per questo il protone non poteva attraversare il ferro.
+
 \subsection[]{Calcolare la velocità media dei pioni e antiprotoni nell'esperimento di Segrè (quantità di moto 1.19 Gev/c) dopo che hanno attraversato il contatore Cherenkov a quarzo (spessore 2.5", densità relativa 2.2).
-}prova
+}
 \label{sec:4.b.26}
+Per il calcolo possiamo utilizzare lo spessore relativo del materiale: 
+\[
+	\Delta x = x \text{ [pollici]}\cdot \rho_{rel}= (2.5 \ \cdot \ 2.54) \text{ [cm]} \ \cdot \ 2.2 \left[\text{g}/\text{cm}^3 \right] = 13.9\left[\text{g}/\text{cm}^2 \right]
+\]
+L'energia dell'antiprotone entrante è 
+\[
+	E_{\overline{p}} = \sqrt{ p_{in}^2+m_{p}^2} \approx 1.51 \text{ GeV}
+.\] 
+Lo stopping power per tale energia e per il diossido di silicio (quarzo) vale $dE /dx = 1.745$ MeV cm$^2$/g, da questo si ricava l'energia finale:
+\[
+	\Delta E = \frac{\mbox{d} E}{\mbox{d} x} \Delta x \approx 24.3 \text{ [MeV]} \implies E_{f} \approx 1.49 \text{ [GeV]}
+.\] 
+Quindi tornando indietro con le formule inverse si ricava facilmente che $\beta_{f}= 0.6$. Analogamente si può procedere per i pioni.
+
+
+
