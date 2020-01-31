@@ -1,4 +1,4 @@
-\subsection[]{ Calcolare la "resistenza di irraggiamento" di un circuito elettrico quadrato di lato L, piccolo rispetto alla lunghezza d'onda $\lambda$ della radiazione monocromatica incidente, se il circuito è puramente resistivo con resistenza R.\\
+\subsection[ Calcolo della resistenza di irraggiamento per spira investita da onda E.M.]{Calcolare la "resistenza di irraggiamento" di un circuito elettrico quadrato di lato L, piccolo rispetto alla lunghezza d'onda $\lambda$ della radiazione monocromatica incidente, se il circuito è puramente resistivo con resistenza R.\\
 Calcolare anche la sezione d'urto di assorbimento e la sezione d'urto elastica se l'onda incidente ha campo magnetico perpendicolare al piano del circuito e di modulo massimo $B_0$. }
 Nomi a parte il problema è schematizzato in Figura:
 \begin{figure}[H]
@@ -89,10 +89,10 @@ llora le sezioni d'urto sono:
 	\sigma_{irr} = \frac{4\pi^2}{\lambda^2}l^4Z_0 \frac{R_{irr}}{\left(R_{load} + R_{irr}\right)^2}
 .\]
 \[
-	\sigma_{tot} = \sigma_{irr} + \sigma_{load} = \frac{4\pi^2}{\lambda^2}l^4Z_0 \frac{Z_0}{\left(R_{load} + R_{irr}\right)^2}
+	\sigma_{tot} = \sigma_{irr} + \sigma_{load} = \frac{4\pi^2}{\lambda^2}l^4Z_0 \frac{1}{\left(R_{load} + R_{irr}\right)}
 .\] 
 
-\subsection[]{ Utilizzando le apposite tabelle che forniscono le masse dei nuclei, determinare il Q-valore o l'energia di soglia dei seguenti processi, valutando l'eventuale ruolo della interazione coulombiana nello stato iniziale:
+\subsection[ Q-valore ed energia di soglia considerando l'interazione Coulombiana]{Utilizzando le apposite tabelle che forniscono le masse dei nuclei, determinare il Q-valore o l'energia di soglia dei seguenti processi, valutando l'eventuale ruolo della interazione coulombiana nello stato iniziale:
 \begin{enumerate}	
 	\item	p + 40Ar $\implies$ p + 39Ar + n 
 	\item	p + 14N $\implies$ X + n
@@ -167,36 +167,63 @@ Quindi l'energia di soglia (calcolo numerico approssimato a mente\ldots):
 \[
 	E_{\text{soglia}} \approx 4 \text{ MeV} + 8 \text{ MeV} \approx 12 \text{ MeV}   
 .\] 
-Analogamente per le altre reazioni.
-
-\subsection[]{  Dimostrare la relazione fra la definizione della sezione d’urto elastica nel caso di fotoni incidenti su un unico bersaglio e la definizione di sezione d'urto elastica per un’onda e.m. monocromatica su un unico bersaglio.}
+\paragraph{Interazione 2.}%
+\[
+	\ce{p + 14N -> 14O + n}
+.\]
+\[
+	Q = -6.54 \text{ MeV} \quad \quad E_{\text{soglia}}=8.26 \text{ MeV}
+.\] 
+\paragraph{Interazione 3.}%
+\[
+	\ce{p + 160 -> 16F + n }
+.\] 
+\[
+	Q = -16.8 \text{ MeV} \quad \quad E_{\text{soglia}}=18.7 \text{ MeV}
+.\] 
+\paragraph{Interazione 4.}%
+\[
+	\ce{n + 14N -> 14C + p}
+.\] 
+\[
+	Q = -1.557 \text{ MeV} \quad \quad E_{\text{soglia}}=1.557 \text{ MeV}
+.\] 
+\paragraph{Interazione 5.}%
+\[
+	\ce{4He + 14N -> 17O + p}
+.\] 
+\[
+	Q =-4.432  \text{ MeV} \quad \quad E_{\text{soglia}}=4.432 \text{ Miv}
+.\] 
+eccetera eccetera\ldots
+\subsection[ Equivalenza tra sezione d'urto elastica con fotoni incidenti o onda monocromatica incidente]{Dimostrare la relazione fra la definizione della sezione d’urto elastica nel caso di fotoni incidenti su un unico bersaglio e la definizione di sezione d'urto elastica per un’onda e.m. monocromatica su un unico bersaglio.}
 Nel caso di onda monocromatica su un bersaglio si ha:
 \[
 	\sigma_{\text{el}} = \frac{\left< P_{el}\right>}{\left<\left| \boldsymbol{S}_{in} \right|  \right>}
 .\]
 Mentre per un fascio di fotoni incidenti:
 \[
-	\sigma_{\text{el}} = \frac{\frac{\mbox{d} N_{el}}{\mbox{d} t}}{\left| \boldsymbol{j}_{\gamma}\right|}
+	\sigma_{\text{el}} = \frac{1}{\left| \boldsymbol{j}_{\gamma}\right|}\frac{\mbox{d} N_{el}}{\mbox{d} t}
 .\] 
 L'equivalenza delle due deriva dal fatto che se si moltiplica e si divide la seconda per $ \hbar \omega$:
 \[
 	\sigma_{\text{el}} = \frac{\frac{\mbox{d} N_{el}}{\mbox{d} t}}{\left| \boldsymbol{j}_{\gamma}\right|} = \frac{\frac{\mbox{d} N_{el}}{\mbox{d} t}\hbar \omega }{\left| \boldsymbol{j}_{\gamma}\right|\hbar \omega} = \frac{\left< P_{el}\right>}{\left<\left| \boldsymbol{S}_{in} \right|  \right>}
 .\] 	
 
-\subsection[]{  Quale calcolo si deve effettuare per determinare il numero di eventi per unità di tempo e di volume che si producono negli urti fra particelle di due specie diverse e differenti concentrazioni le cui velocità relative sono distribuite con un funzione $f(V_{rel})$, normalizzata all'unità, e la cui sezione d'urto è $\sigma(V_{rel})$?}
+\subsection[ Numero di eventi su volume e tempo negli urti tra particelle con $v_{\text{rel}}$ distribuita con $f\left( v_{\text{rel}} \right) $]{Quale calcolo si deve effettuare per determinare il numero di eventi per unità di tempo e di volume che si producono negli urti fra particelle di due specie diverse e differenti concentrazioni le cui velocità relative sono distribuite con un funzione $f(V_{rel})$, normalizzata all'unità, e la cui sezione d'urto è $\sigma(V_{rel})$?}
 Date due specie con densità volumica $n_a$ e  $n_b$ che si scontrano e con densità di prodotti $n_f$, se la $ f\left( V_{\text{rel}} \right) $ è normalizzata allora si ha:
 \[
 	\frac{\mbox{d} n_{\text{f}}}{\mbox{d} t } = n_a n_b \int_0^{\infty} f\left( v_{rel} \right) \sigma_{\text{f}}\left( v_{rel} \right) v_{rel} dv_{rel}
 .\] 
 Tipicamente la $f\left( V_{rel} \right)$ è gaussiana. 
 
-\subsection[]{ Calcolare l'attenuazione di un fascio di particelle incidenti su un materiale omogeneo e composto da atomi di una sola specie in funzione della profondità [dati: sezione d'urto del processo su ogni atomo del bersaglio, densità di massa del mezzo, numero atomico del mezzo].}
+\subsection[ Attenuazione di fascio di particelle su materiale omogeneo con atomi di una specie]{Calcolare l'attenuazione di un fascio di particelle incidenti su un materiale omogeneo e composto da atomi di una sola specie in funzione della profondità [dati: sezione d'urto del processo su ogni atomo del bersaglio, densità di massa del mezzo, numero atomico del mezzo].}
 \label{sec:2.b.5}
 \paragraph{Lamina sottile}
 Data una lastra di materiale omogeneo definiamo alcune (tante, forse troppe) quantità utili: spessore $\Delta x$, densità $\rho$, area $\Delta S$, volume di lastra considerato $V$ , sezione d'urto su ogni atomo bersaglio (totale) $ \sigma_{\text{tot}}$, $n_b$ la concentrazione di besagli nel materiale e $n_a$ la concentrazione di particelle incidenti. Possiamo riscrivere queste in funzione delle quantità date dal testo e sfruttare qualche utile relazione.\\ 
 Partiamo da $n_b$: definendo $M_{\text{tot}}$ la massa totale di lastra nel volume, $M_A$ la massa di una mole della sostanza del materiale in grammi, $N_a$ il numero di avogadro si ha:
 \[
-	V \cdot n_b = N_{\text{tot}} = \frac{M_{\text{tot}}}{M_A} N_a \implies n_b =\frac{N_{\text{tot}}}{V} = \frac{\rho}{M_A} N_a
+	V \cdot n_b = N_{\text{tot}} = moli\cdot N_a= \frac{M_{\text{tot}}}{M_A} N_a \implies n_b =\frac{N_{\text{tot}}}{V} = \frac{\rho}{M_A} N_a
 .\]
 La probabilità di interazione nel volume considerato è definita da:
 \[
@@ -226,7 +253,7 @@ Facendo tentere $\Delta x$ a zero:
 	\text{Materiale generico}
 .\] 
 
-\subsection[]{  Calcolare l'attenuazione di un fascio di particelle incidenti su un materiale omogeneo e composto da atomi di diverse specie in funzione della profondità [dati: sezione d'urto del processo su ogni atomo del bersaglio, densità di massa del mezzo, numeri atomici, composizione chimica del mezzo]}
+\subsection[ Attenuazione di fascio di particelle su materiale omogeneo con atomi di più specie]{Calcolare l'attenuazione di un fascio di particelle incidenti su un materiale omogeneo e composto da atomi di diverse specie in funzione della profondità [dati: sezione d'urto del processo su ogni atomo del bersaglio, densità di massa del mezzo, numeri atomici, composizione chimica del mezzo]}
 \paragraph{Lamina sottile}
 Essendo nota la composizione chimica del mezzo è noto anche la percentuale di atomi che compongono il materiale:
 \[
@@ -246,7 +273,7 @@ Con passaggi del tutto analoghi alla domanda precedente si arriva alla conlcusio
 \[
 	A_{\text{tot}} =\frac{\sum_{n=1}^{N} e^{-x/\mathcal{L}_n}}{N} 
 .\] 
-\subsection[]{  Effettuare una stima numerica della sezione d'urto totale forte per i seguenti urti: 
+\subsection[ Stima numerica della sezione d'urto forte in alcuni processi]{Effettuare una stima numerica della sezione d'urto totale forte per i seguenti urti: 
 \begin{enumerate}
 	\item	p + 40Ar
 	\item	n + 14N
@@ -276,14 +303,14 @@ $\sigma_3 \approx 2.54 \text{b} $
 \paragraph{Interazione 4.}
 $\sigma_4 \approx 1.7 \text{b}$
 
-\subsection[]{  Calcolare l’energia che dovrebbe avere un protone che incide su un protone fermo per ottenere una energia nel centro di massa pari a quella di LHC (14TeV).}
+\subsection[ Protone con energia tipica di LHC su protone fermo per ottenere 14 TeV]{Calcolare l’energia che dovrebbe avere un protone che incide su un protone fermo per ottenere una energia nel centro di massa pari a quella di LHC (14TeV).}
 Sia $E$ l'energia del protone nel laboratorio, si ha:
 \[
 	E^2_{\text{cm}} = \left( E_{lab} \right)^{2} -  \boldsymbol{P}_{\text{lab}}^{2} = \left( E + m_p \right)^{2} - \left(E^2 - m_p^2\right) = 2m_p^2 + 2m_pE 
 .\]
 Quindi l'energia necessaria è circa $E = 10^{6} $ TeV
 
-\subsection[]{ Calcolare l'energia di degli elettroni/positroni per innescare la reazione:
+\subsection[ Energia per innescare $\ce{e^{+} + e- -> p + \bar{p}}$]{Calcolare l'energia di degli elettroni/positroni per innescare la reazione:
 \[
 	e^{+} \ + \ e^{-} \implies p \ + \ \overline{p}
 \] 
@@ -298,7 +325,7 @@ L'energia di soglia si ottinene studiando la funzione nelle due variabili sopra,
 	E_{\text{min}} = m_p
 .\] 
 
-\subsection[]{ Calcolare l’energia di soglia nel laboratorio per le seguenti reazioni (la seconda particella è inizialmente ferma):
+\subsection[\hspace{2mm} Energia di soglia per reazioni a due (in cui un reagente è fermo)]{Calcolare l’energia di soglia nel laboratorio per le seguenti reazioni (la seconda particella è inizialmente ferma):
 \begin{enumerate}
 	\item	$\gamma \ + \ {}^{16} O \implies e^{+} \ + \ e^{-} \ + \ {}^{16}O $
 	\item	$\gamma \ + \ e^{-} \implies e^{-} \ + \ e^{+} \ + \ e^{-}$
@@ -320,16 +347,16 @@ Adesso si può sfruttare il fatto che i reagenti sono soltanto due e che il seco
 .\]
 E adesso si tratta solo di infilare dentro i numeri.
 
-\subsection[]{ Calcolare la probabilità che un neutrino interagisca nell’attraversare la Terra lungo un diametro.\\
-Nota: sia assuma che l’energia del neutrino sia tale che la sezione d’urto totale su un singolo nucleone sia 1 fb. } 
+\subsection[\hspace{2mm} Probabilità che il neutrino interagisca attraversando la terra lungo il diametro]{Calcolare la probabilità che un neutrino interagisca nell’attraversare la Terra lungo un diametro.\\
+Nota: sia assuma che l’energia del neutrino sia tale che la sezione d’urto totale su un singolo nucleone sia 1 fb $= 10^{-15}\cdot 10^{-24}$ cm$^2$. } 
 Si assume per il calcolo $\rho_{\text{T}} \approx 5.5 \text{g}/\text{cm}^3$.\\
 Possiamo ipotizzare una bassa probabilità di interazione per il neutrino, è quindi possibile assumere la terra come una lamina sottile (con immenso piacere dei terrapiattisti) e calcolare la probabilità cercata come:
 \[
-P_{\text{int}} = n \sigma d \approx 4.2 \cdot 10^{-5} 
+P_{\text{int}} = n \sigma d \approx 4.2 \cdot 10^{-6} 
 .\] 
-Con $d \approx 12.76 \cdot 10^{3} \text{ km}$ raggio terrestre e $n \approx \rho_{\text{T}}\cdot N_A\cdot A / M_{\text{Si}} = \rho\cdot N_{\text{A}} / 1 \text{[g]} \approx 5.5\cdot 6 \cdot 10^{23} \text{cm}^{-3}$ densità media della terra (composta principalmente da Silicio).
+Con $d \approx 12.76 \cdot 10^{3} \text{ km}$ diametro terrestre e $n \approx = \rho_{\text{T}}\cdot N_{\text{A}} / 1 \text{[g]} \approx 5.5\cdot 6 \cdot 10^{23} \text{cm}^{-3}$ densità media di protoni sulla terra.
 
-\subsection[]{ Dimostrare che un elettrone (non relativistico) soggetto ad una forza elastica di richiamo, ad una forza di attrito viscoso ed alla forza di reazione radiativa, nel campo di un’onda e.m. piana polarizzata linearmente oscilla con la legge:
+\subsection[\hspace{2mm} Oscillazione dell'elettrone con forze di richiamo, viscosa, radiativa nel campo di un'onda E.M.]{Dimostrare che un elettrone (non relativistico) soggetto ad una forza elastica di richiamo, ad una forza di attrito viscoso ed alla forza di reazione radiativa, nel campo di un’onda e.m. piana polarizzata linearmente oscilla con la legge:
 \[
 	\boldsymbol{x} = \frac{e \boldsymbol{E_0}}{m_{e}} \frac{1}{\omega_0^2-\omega^2-i\omega\Gamma_{tot}} e^{-i \omega t} \quad \quad 
 	\text{ con }  \quad \quad
@@ -339,7 +366,7 @@ Con $d \approx 12.76 \cdot 10^{3} \text{ km}$ raggio terrestre e $n \approx \rho
 Facendo riferimento ai risultati delle Domande \hyperref[subsec: 2.a.15]{2.a.15}, \hyperref[subsec: 2.a.16]{2.a.16}  si prosegue con il calcolo.
 L'equazione di moto dell'elettrone in questo caso è (considerando anche la $F_{\text{rad}}$):
 \[
-m_e \ddot{\boldsymbol{x}} = q \boldsymbol{E_0}e^{-i \omega t} - m_e \tau \dddot{\boldsymbol{x}} - m_e \Gamma' \dot{\boldsymbol{x}}
+m_e \ddot{\boldsymbol{x}} = q \boldsymbol{E_0}e^{-i \omega t} - m_e \tau \dddot{\boldsymbol{x}} - m_e \Gamma' \dot{\boldsymbol{x}} - m_e\omega_0^2 \bs{x}
 .\] 
 Spostando l'incognita vettoriale a destra si ha:
 \[
@@ -358,7 +385,7 @@ Quindi:
 \boldsymbol{x} = \frac{q \boldsymbol{E}_0}{m_e} \frac{e^{-i \omega t}}{\omega _0^2 - \omega ^2 - i \omega \Gamma_{\text{tot}}} 
 .\] 
 
-\subsection[]{Dimostrare che la sezione d’urto differenziale elastica per un’onda e.m. piana e monocromatica su un elettrone legato elasticamente vale 
+\subsection[\hspace{2mm} Sezione d'urto differenziale elastica per onda monocromatica su elettrone legato elasticamente]{Dimostrare che la sezione d’urto differenziale elastica per un’onda e.m. piana e monocromatica su un elettrone legato elasticamente vale 
 \[
 	\frac{\mbox{d} \sigma_{el}}{\mbox{d} \Omega} = r_e^2 L\left( \omega \right) \sin^2\left( \alpha  \right)    
 \]
@@ -366,14 +393,14 @@ con $\alpha$ angolo fra la direzione di osservazione e direzione di polarizzazio
 La risposta al quesito è stata prematuramente scritta alla Domanda \hyperref[subsec: 2.a.16]{2.a.16} facendo uso del risultato ottenuto nella Domanda \ref{subsec: 2.b.12}.
 Si riaccenna solo al fatto che è stata definita $L\left( \omega  \right)$ come:
 \[ 
-	L \left( \omega \right) = \frac{\omega^4}{\left( \omega_{0}^2 - \omega^2 \right)^2 + \omega^2 \Gamma_{tot} } \quad \quad 
+	L \left( \omega \right) = \frac{\omega^4}{\left( \omega_{0}^2 - \omega^2 \right)^2 + \omega^2 \Gamma_{tot}^2 } \quad \quad 
 .\] 
 Vediamo di dimostrare quanto scritto, sopra abbiamo ottenuto:
 \[
 \boldsymbol{x} = \frac{q \boldsymbol{E}_0}{m_e} \frac{e^{-i \omega t}}{\omega _0^2 - \omega ^2 - i \omega \Gamma_{\text{tot}}} 
 .\] 
 Calcoliamo il vettore di Poynting (mediato nel tempo) associato alla potenza irraggiata dall'elettrone:
-Esplicitando l'espressione del .. in funzione della variabile $\alpha$ del problema si ha:
+Esplicitando l'espressione del campo di radiazione di dipolo elettrico in funzione della variabile $\alpha$ del problema si ha:
 \[
 	\boldsymbol{E_{\text{dip}}} =k_0 \frac{\left( e\ddot{\boldsymbol{x}} \wedge \hat{r}\right) \wedge \hat{r}}{\left| \boldsymbol{r} \right| c^2} 
 .\] 
@@ -402,7 +429,7 @@ Va da se che in MKSA:
 .\] 
 
 %2.b.14
-\subsection[]{Dimostrare che la sezione d’urto Thomson vale $\sigma_{Th} = \frac{8}{3}\pi r_{e}^2  = 0.66 \text{ barn}$.}
+\subsection[\hspace{2mm} Dimostrare il valore della sezione d'urto Thompson]{Dimostrare che la sezione d’urto Thomson vale $\sigma_{Th} = \frac{8}{3}\pi r_{e}^2  = 0.66 \text{ barn}$.}
 Si può arrivare allo Scattering Thompson riscrivendo l'equazione di moto dell'elettrone e trascurando la pressione di radiazione di cui si è invece fatto uso nelle precedenti domande:
 \[
 m_e \ddot{\boldsymbol{x}}= e \boldsymbol{E}_0 e^{-i \omega t}
@@ -418,7 +445,7 @@ Sviluppando i conti e ricordando la definizione di sezione d'urto si arriva bana
 Ricordando ancora che il \hyperref[eq: raggio classico]{Raggio classico dell'elettrone} è: $r_e = k_0 \frac{e^2}{m_e c^2} \approx 2.82$ fm.
 
 %2.b.15
-\subsection[]{Dimostrare che la sezione d’urto elastica per un’onda e.m. piana e monocromatica su un elettrone legato elasticamente vale:
+\subsection[\hspace{2mm} Sezione d'urto elastica per onda elettromagnetica piana su elettrone legato elasticamente]{Dimostrare che la sezione d’urto elastica per un’onda e.m. piana e monocromatica su un elettrone legato elasticamente vale:
 \[
 	\sigma_{el} = \sigma_{Th} L\left( \omega \right) 
 \] 
@@ -430,9 +457,9 @@ Ricordando ancora che il \hyperref[eq: raggio classico]{Raggio classico dell'ele
 Tutto il resto esce indisturbato dall'integrale sull'angolo solido, da cui la tesi.
 
 %2.b.16
-\subsection[]{Dimostrare che la sezione d’urto totale per un’onda e.m. piana e monocromatica su un elettrone legato elasticamente vale:
+\subsection[\hspace{2mm} Sezione d'urto totale per onda piana su elettrone legato elasticamente]{Dimostrare che la sezione d’urto totale per un’onda e.m. piana e monocromatica su un elettrone legato elasticamente vale:
 \[
-		\sigma_{\text{tot}} = 4 \pi r_{e} c L\left( \omega \right)
+	\sigma_{\text{tot}} = 4 \pi r_{e} c \frac{\omega^2 \Gamma_{\text{tot}}}{\left( \omega_0^2-\omega^2 \right)^2+\omega^2\Gamma_{\text{tot}}^2}
 \] 
 }
 Abbiamo gia risolto l'equazione del moto:
@@ -449,11 +476,11 @@ Quindi:
 .\] 
 Resta adesso da dividere per il vettore di Poynting incidente:
 \[
-\sigma_{\text{tot}} = \frac{P_{\text{tot}}}{\left<\left| \boldsymbol{S}_{\text{in}} \right|\right>} = 4 \pi r_{e} c L\left( \omega \right) 
+\sigma_{\text{tot}} = \frac{P_{\text{tot}}}{\left<\left| \boldsymbol{S}_{\text{in}} \right|\right>} = 4 \pi r_{e} c \frac{\omega^2 \Gamma_{\text{tot}}}{\left( \omega_0^2-\omega^2 \right)^2+\omega^2\Gamma_{\text{tot}}^2}
 .\] 
 Per completezza si scrive anche:
 \[
-\sigma_{\text{abs}} = \sigma_{\text{tot}} - \sigma_{\text{el}} = 4 \pi r_{e} \omega^2 L\left( \omega \right) \left[ e \Gamma_{\text{tot}} - \frac{2}{3}r_e \omega^2 \right]
+\sigma_{\text{abs}} = \sigma_{\text{tot}} - \sigma_{\text{el}} = 4 \pi r_{e} \omega^2 L\left( \omega \right) \left[ c \Gamma_{\text{tot}} - \frac{2}{3}r_e \omega^2 \right]
 .\] 
 \begin{figure}[H]
 	\centering
@@ -464,7 +491,7 @@ Per completezza si scrive anche:
 Nella figura si mostra come vanno le sezioni d'urto, è necessario notare che, per un rendering più fedele, sarebbero serviti più punti plottati (la funzione non ha raggiunto il massimo atteso). Per pigrizia è stato testato che arrivasse al massimo ma non è stata riportata l'immagine; insomma fidarsi o provare per credere.
 
 %2.b.17
-\subsection[]{Dimostrare che la sezione d’urto elastica per un’onda e.m. piana e monocromatica su un elettrone legato elasticamente in prossimità di una risonanza stretta (specificare il criterio) si può approssimare con una curva lorentziana
+\subsection[\hspace{2mm} Approssimare la Brieght-Wiegner con una Lorentziana]{Dimostrare che la sezione d’urto elastica per un’onda e.m. piana e monocromatica su un elettrone legato elasticamente in prossimità di una risonanza stretta (specificare il criterio) si può approssimare con una curva lorentziana
 \[
 	\sigma_{el} = \sigma_{Th} \frac{\omega_{0}^2 / 4}{ \left( \omega_0 - \omega \right)^2 + \frac{ \left( \Gamma' + \Gamma  \right)^2 }{4} }
 \] 
@@ -479,7 +506,7 @@ Passiamo alle approssimazioni allora:
 .\end{align*}
 
 % 2.b.18
-\subsection[]{Dimostrare che per un’onda e.m. piana e monocromatica su un elettrone legato elasticamente le sezioni d'urto al picco valgono:
+\subsection[\hspace{2mm} Valori nel picco per le sezioni d'urto di onda su elettrone legato elasticamente]{Dimostrare che per un’onda e.m. piana e monocromatica su un elettrone legato elasticamente le sezioni d'urto al picco valgono:
 \[
 	\sigma_{el} = \frac{3 \lambda_{0}^2}{2 \pi} \left( \frac{\Gamma}{\Gamma + \Gamma'} \right)^2 \quad \quad \quad \quad \quad \quad \text{ }
 \]
@@ -490,15 +517,25 @@ Passiamo alle approssimazioni allora:
 	\sigma_{inel} = \frac{3 \lambda_{0}^2}{2 \pi} \frac{\Gamma \Gamma'}{\left( \Gamma + \Gamma' \right)^2 } \quad \quad \quad \quad \quad \quad \text{ } 
 \]
 }
-Accettanto il fatto che tutte le tre sezioni d'urto hanno un massimo per $\omega = \omega_0$ basta prendere le sezioni d'urto e sbatterci dentro $\omega = \omega_0$.
+Le tre sezioni d'urto in questione sono:
+\begin{align*}
+	&\sigma_{\text{el}}= \frac{8}{3}\pi r_e^2 \frac{\omega^4}{\left( \omega_0^2-\omega^2 \right)^2+\omega^2\Gamma_{\text{tot}}^2} \\
+	&\sigma_{\text{inel}}= \frac{4\pi r_e\omega^2}{\left(\omega_0^2-\omega^2\right)^2-\omega^2\Gamma_{\text{tot}}^2}
+	\left(c\Gamma_{\text{tot}}-\frac{2}{3}\omega^2r_e\right)  \\
+	&\sigma_{\text{tot}}= 4\pi r_e c \frac{\omega^2\Gamma_{\text{tot}}}{\left( \omega_0^2-\omega^2 \right)^2-\omega^2\Gamma_{\text{tot}}^2}
+.\end{align*}
+Accettanto il fatto che tutte le tre sezioni d'urto hanno un massimo per $\omega = \omega_0$ basta prendere le sezioni d'urto e inserire $\omega = \omega_0$. Per ottenere la forma di sopra è necessario scrivere il raggio classico come nella derivazione della forza di radiazione:
+\[
+	r_e = \frac{3}{2}\tau c= \frac{3}{2} \frac{\Gamma}{\omega_0^2}
+.\] 
 
 %2.b.19
-\subsection[]{Dimostrare che un elettrone (moto non relativistico) soggetto ad una forza elastica di richiamo, ad una forza di attrito viscoso ed alla forza di reazione radiativa, se viene lasciato libero di oscillare da una posizione iniziale perde energia con una 1 legge esponenziale in cui la costante tempo vale $\frac{1}{\Gamma' + \Gamma}$. Come si chiama questa costante tempo? Quale sarebbe la costante tempo con cui, invece, si smorza l'ampiezza delle oscillazioni?}
+\subsection[\hspace{2mm} Legge di smorzamento di energia ed ampiezza per elettrone legato elasticamente]{Dimostrare che un elettrone (moto non relativistico) soggetto ad una forza elastica di richiamo, ad una forza di attrito viscoso ed alla forza di reazione radiativa, se viene lasciato libero di oscillare da una posizione iniziale perde energia con una 1 legge esponenziale in cui la costante tempo vale $\frac{1}{\Gamma' + \Gamma}$. Come si chiama questa costante tempo? Quale sarebbe la costante tempo con cui, invece, si smorza l'ampiezza delle oscillazioni?}
 Riprendiamo l'equazione di moto dell'elettrone, tuttavia adesso togliamo la forzante dovuta all'onda incidente.
 \[
 	- \tau \dddot{\boldsymbol{x}} + \ddot{\boldsymbol{x}} + \Gamma' \dot{\boldsymbol{x}} + \omega_0^2 \boldsymbol{x} = 0 
 .\]  
-Adesso è necessario ricordare le relazioni tra i vari parametri in gioco:
+Adesso è necessario ricordare le \hyperref[eq:relazione-parametri-elettrone]{relazioni} tra i vari parametri in gioco:
 \[
 	\Gamma' \ll \omega_0 \ll \frac{1}{\tau}, \quad \quad \quad  
 	\Gamma \ll \omega_0
@@ -525,7 +562,7 @@ Sempre sulla base delle approssimazioni sopra è possibile notare che i termini 
 .\] 
 Che ci porta alla conclusione:
 \[
-\gamma \approx \Gamma + \Gamma 
+\gamma \approx \Gamma + \Gamma' 
 .\]
 Quindi l'ampiezza delle oscilazioni è smorzata con una costante tempo data da:
 \[
@@ -539,7 +576,7 @@ E = E_0 e^{- \gamma t} \quad \implies \quad \tau_{\text{energia}} = \frac{1}{\ga
 In tutto questo macello il risultato importante è uno: la larghezza totale di uno stato risonante è il reciproco della sua vita media, risonanza stretta = particella longeva e viceversa.
 
 % 2.b.20
-\subsection[]{Calcolare la relazione tra parametro d'impatto (b) e angolo di scattering ($\theta$) nel caso di scattering di Rutherford (Coulombiano) e di scattering su sfera rigida.} 
+\subsection[\hspace{2mm} Relazione tra parametro di impatto (b) e angolo di scattering ($\theta$) nel caso Rutherford]{Calcolare la relazione tra parametro d'impatto (b) e angolo di scattering ($\theta$) nel caso di scattering di Rutherford (Coulombiano) e di scattering su sfera rigida.} 
 \label{sec:2.b.20}
 Prima di iniziare con questi argomenti è bene dare una rilucidatà ad alcune grandezze tipiche in esame: le dimensioni atomiche.
 \begin{figure}[H]
@@ -570,6 +607,13 @@ Si può trovare la variazione di impulso dopo interazione:
 \[
 d \sigma = b db d\mu
 .\] 
+\begin{figure}[H]
+    \centering
+    \incfig{elemento-infinitesimo-sez}
+    \caption{Elemento infinitesimo della sezione d'urto}
+    \label{fig:elemento-infinitesimo-sez}
+\end{figure}
+
 Essendoci qua una simmetria sotto rotazioni attorno all'asse $\hat{v}_0$ possiamo integrare sull'angolo $\mu$ della relazione:
 \[
 d\sigma = 2 \pi b db
@@ -582,7 +626,7 @@ La sezione d'urto differenziale si può scrivere allora in funzione di $b\left( 
 \[
 	\frac{\mbox{d} \sigma}{\mbox{d} \Omega} = \frac{\mbox{d} \sigma}{\mbox{d}\mu \mbox{d}\cos\left( \theta \right) } = \frac{ b \mbox{d}b}{\mbox{d}\cos\left( \theta \right)} = - \frac{b \text{d}b}{ \sin\left( \theta \right) d \theta }  
 .\]
-Consideriamo adesso la variabile $\varphi$ nella Figura \ref{fig:rutherford} indice della posizione angolare dell'oggetto durante l'interazione, è definita appunto tra:
+Consideriamo adesso la variabile $\varphi$ nella Figura \ref{fig:rutherford} indice della posizione angolare dell'oggetto durante l'interazione, è definita  tra:
 \[
 \varphi_{\text{min}} = -\frac{\pi - \theta}{2} \le \varphi \le \frac{\pi -\theta}{2} = \varphi_{\text{max}}
 .\] 
@@ -641,7 +685,7 @@ A fare la differenza qua è la semplice definizione di $\theta$:
 .\] 
 
 % 2.b.21
-\subsection[]{Calcolare la minima distanza fra le due particelle in uno scattering Rutherford.}
+\subsection[\hspace{2mm} ]{Calcolare la minima distanza fra le due particelle in uno scattering Rutherford.}
 Definiamo $v_m$ come la velocità del proiettile nell'istante in cui ha raggiunto la distanza minima $x$. Sfruttando la conservazione dell'energia e del momento angolare si ottiene:
 \[	
 	\frac{1}{2}m v_0^2 = \frac{1}{2} m v_f^2 + \frac{zZe^2}{4 \pi \epsilon_0 x}\\
@@ -654,7 +698,7 @@ Si ricava $v_m$ dalla seconda sostituendola nella prima, ne risulta una equazion
 	 x^2 - d \cdot x - b^2 = 0 \implies x = \frac{d}{2} \left( 1 + \frac{1}{\sin\left( \frac{\theta}{2} \right) } \right) 
 .\] 
 %2.b.22
-\subsection[]{Calcolare l'energia minima affinché un protone possa avere una interazione forte "toccando" un nucleo di ${}^{12}C$ o di ${}^{28} Si$.}
+\subsection[\hspace{2mm} ]{Calcolare l'energia minima affinché un protone possa avere una interazione forte "toccando" un nucleo di ${}^{12}C$ o di ${}^{28} Si$.}
 È inanzitutto necessario per risolvere il problema di minimo considerare l'urto centrale: $b = 0$.\\ 
 In tal caso l'angolo di scatternig è $\theta = \pi$ e $x = d$ dove $d$ è la distanza tra i nuclei aventi raggio:
 \[
@@ -675,11 +719,11 @@ E_{\text{Si}} = 11.2 \text{MeV}
 .\] 
 
 %2.b.23
-\subsection[]{Discutere le differenze tra lo scattering di Rutherford (particelle $\alpha$ su nuclei) e lo scattering di elettroni su bersaglio puntiforme.}
+\subsection[\hspace{2mm} ]{Discutere le differenze tra lo scattering di Rutherford (particelle $\alpha$ su nuclei) e lo scattering di elettroni su bersaglio puntiforme.}
 La differenza principale è che gli elettroni si muovono solitamente a velocità relativistiche, questo invalida i conti fatti prima. Nel caso discusso quindi è necessario tirare in ballo la sezione d'urto Mott.
 
 %2.b.24
-\subsection[]{Cercando i dati nelle apposite tabelle (reperibili sul web ) si indichino gli stati finali e si calcoli il Q-valore per i decadimenti delle seguenti specie instabili: ${}^8B, {}^{39}Ar, {}^{7}Be, {}^{64}Cu, {}^{76}Ge$. }
+\subsection[\hspace{2mm} ]{Cercando i dati nelle apposite tabelle (reperibili sul web ) si indichino gli stati finali e si calcoli il Q-valore per i decadimenti delle seguenti specie instabili: ${}^8B, {}^{39}Ar, {}^{7}Be, {}^{64}Cu, {}^{76}Ge$. }
 Per rispondere a questa domanda è necessario ricordarsi la natura dei \hyperref[sec:decadimenti]{Decadimenti} ed avere sottomano il Nuclear Wallet Card.
 \paragraph{Isotopo del Boro}
 \label{par:8B}
@@ -736,7 +780,7 @@ Al gran sasso si studia il decadimento $\beta^- \beta^-$ di Questo isotopo (nome
 \paragraph{Nota:} I conti della domanda sono stati fatti senza calcolatore per allenamento, siete fortemente invitati a fare lo stesso e riportare gli errori a chi ha accesso al source code.
 
 % 2.b.25
-\subsection[]{Cercando i dati nelle apposite tabelle (reperibili sul web) si trovino i Q-valori per le reazioni 
+\subsection[\hspace{2mm} ]{Cercando i dati nelle apposite tabelle (reperibili sul web) si trovino i Q-valori per le reazioni 
 \begin{enumerate}
 	\item $n + {}^{154}Gd \implies \gamma + {}^{155}Gd$ 
 	\item $n + {}^{155}Gd \implies \gamma + {}^{156}Gd$
@@ -750,7 +794,7 @@ Al gran sasso si studia il decadimento $\beta^- \beta^-$ di Questo isotopo (nome
 .\] 
 
 % 2.b.26
-\subsection[]{Dimostrare che $\frac{d^3 p  }{2E}$ è un invariante relativistico effettuando esplicitamente la trasformazione di Lorentz (si consideri il boost lungo un asse, per esempio l'asse x)}
+\subsection[\hspace{2mm} ]{Dimostrare che $\frac{d^3 p  }{2E}$ è un invariante relativistico effettuando esplicitamente la trasformazione di Lorentz (si consideri il boost lungo un asse, per esempio l'asse x)}
 Facciamo questo boot lungo x:
 \begin{align*}
 	\frac{\mbox{d}^3 \boldsymbol{P}'}{2E'}  =& \frac{dP'_x dP'_y dP'_z}{2Ex'} = \\
@@ -761,7 +805,7 @@ Facciamo questo boot lungo x:
 .\end{align*}
 
 % 2.b.27
-\subsection[]{Dimostrare che 
+\subsection[\hspace{2mm} ]{Dimostrare che 
 \[
 d^{4}P \delta\left( P^2-m^2 \right) \theta\left( P_0 \right) = \frac{d^3 \boldsymbol{P} }{2E}
 \]
@@ -781,7 +825,7 @@ Da inserire opportunamente nella espressione a sinistra dell'uguale nella richie
 Stiamo parlando di distribuzioni, la notazione leggera utilizzata nasconde significati matematici profondi e non scontati (vedi corso di metodi matematici per la fisica II).
 
 % 2.b.28
-\subsection[]{Dimostrare che nel centro di massa l’elemento infinitesimo dello spazio dei 4-impulsi, nel caso di 2 sole particelle nello stato finale, si scrive come $\frac{|\boldsymbol{p_{cm}}}{4\sqrt{s}} d\Omega_{cm}.$}
+\subsection[\hspace{2mm} ]{Dimostrare che nel centro di massa l’elemento infinitesimo dello spazio dei 4-impulsi, nel caso di 2 sole particelle nello stato finale, si scrive come $\frac{|\boldsymbol{p_{cm}}}{4\sqrt{s}} d\Omega_{cm}.$}
 Ricordiamo la forma dell'elemento infinitesimo dello spazio delle fasi:
 \[
 	dL_p = \left[ d^4P_1 \cdot \delta\left( P_{0,1}^2 - \boldsymbol{P}_1^2 - m_1^2 \right) \cdot \theta\left( P_{0,1} \right) \right] \cdot \ldots 
@@ -827,7 +871,7 @@ Noto l'impulso delle particelle nel centro di massa (o, se si vuole, $\sqrt{s}, 
 .\] 
 
 % 2.b.29
-\subsection[]{Nel caso di 3 particelle nello stato finale di una reazione, dimostrare che fra il quadrato della massa invariante di due di esse e l'energia della terza (nel centro di massa) sussite una relazione lineare.}
+\subsection[\hspace{2mm} ]{Nel caso di 3 particelle nello stato finale di una reazione, dimostrare che fra il quadrato della massa invariante di due di esse e l'energia della terza (nel centro di massa) sussite una relazione lineare.}
 Prendiamo la massa invariante citata $\sqrt{s_{12}}$ e l'energia della restante paticella come $E_3$, con ovvio significato dei simboli si ha (definizione di massa invariante):
 \[
 	s_{12} = \left( P_1 + P_2 \right)^2
@@ -839,7 +883,7 @@ Che per la conservazione dell'energia e dell'impulso si può scrivere come:
 Ecco la relazione lineare.
 
 % 2.b.30
-\subsection[]{Come si trasforma una funzione di distribuzione del 3-impulso 
+\subsection[\hspace{2mm} ]{Come si trasforma una funzione di distribuzione del 3-impulso 
 \[
 	f\left( \boldsymbol{p} \right)d^3 \boldsymbol{p}
 \]
@@ -859,7 +903,7 @@ Abbiamo dimostrato anche che
 .\] 
 
 % 2.b.31
-\subsection[]{Come si trasforma una funzione di distribuzione nello spazio delle fasi 
+\subsection[\hspace{2mm} ]{Come si trasforma una funzione di distribuzione nello spazio delle fasi 
 \[
 	f\left(\boldsymbol{p},\boldsymbol{r}\right)d^3 \boldsymbol{p} \ d^3 \boldsymbol{r} 
 \]
@@ -881,7 +925,7 @@ Quindi $Ed^3 \boldsymbol{r}$ è un invariante relativistico. Avendo trovato che 
 Dalle quali deriva l'invarianza di $f\left( \boldsymbol{P}, \boldsymbol{r} \right)$.
 
 % 2.b.32
-\subsection[]{Dimostrare che se la probabilità di decadimento di una particella per unità di tempo non dipende dal tempo, la probabilità di trovare la particella non decaduta al tempo t segue una legge esponenziale.}
+\subsection[\hspace{2mm} ]{Dimostrare che se la probabilità di decadimento di una particella per unità di tempo non dipende dal tempo, la probabilità di trovare la particella non decaduta al tempo t segue una legge esponenziale.}
 Sia $S\left( t \right) $ la probabilità di trovare la particella al tempo $t$, considerando la invece la probabilità $P\left( t \right)$ di decadere dopo l'unità di tempo $dt$ si ha (per ipotesi):
  \[
 	 \frac{P\left( dt \right)}{dt}= \frac{1}{\tau} \text{ (costante)} \implies  S\left( dt \right) = 1 - \frac{dt}{\tau}
@@ -896,11 +940,11 @@ Che ha come soluzione proprio un esponenziale (vedi \hyperref[sec:2.b.5]{Domanda
 .\] 
 
 % 2.b.33
-\subsection[]{ Dire quali fra le seguenti particelle sono soggette ad interazioni forti: $ p, \overline{p} $, $\pi^{+}, \pi^{-}, \mu^{+}, \mu^{-}, e^{+}$, $e^{-}$, $\alpha,$ Nucleo di Azoto, $\nu, \overline{\nu}$ }
+\subsection[\hspace{2mm} ]{Dire quali fra le seguenti particelle sono soggette ad interazioni forti: $ p, \overline{p} $, $\pi^{+}, \pi^{-}, \mu^{+}, \mu^{-}, e^{+}$, $e^{-}$, $\alpha,$ Nucleo di Azoto, $\nu, \overline{\nu}$ }
 \label{sec:2.b.33}
 Solo gli adroni (composti da Quark) possono fare interazione forte, quindi la risposta è: $p$ , $\overline{p}$ , $\pi^{+}$ , $\pi^{-}$ , $\alpha$ , Nucleo di Azoto.
 
-\subsection[]{Pioni neutri, di energia E nel sistema del laboratorio, decadono in due fotoni. La distribuzione è isotropa ne centro di massa. Si calcoli la distribuzione dell’energia di uno dei due fotoni nel laboratorio e gli angoli, rispetto alla direzione di volo del pione, dei due fotoni nel sistema del laboratorio in funzione dell’angolo nel sistema del centro di massa.}
+\subsection[\hspace{2mm} ]{Pioni neutri, di energia E nel sistema del laboratorio, decadono in due fotoni. La distribuzione è isotropa ne centro di massa. Si calcoli la distribuzione dell’energia di uno dei due fotoni nel laboratorio e gli angoli, rispetto alla direzione di volo del pione, dei due fotoni nel sistema del laboratorio in funzione dell’angolo nel sistema del centro di massa.}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.35\textwidth]{immagini/decadimento-pi1.png}
@@ -1000,7 +1044,7 @@ Infine possiamo dire qualcosa in più sulla differenza degli angoli nel laborato
 Questa funzione vista la dipendenza da $\beta$ fa cose diverse a seconda della velocità del $\pi^0$. 
 
 %2.b.35
-\subsection[]{ Calcolare la funzione di distribuzione in energia ed in angolo nel sistema del laboratorio di un fascio di neutrini o di muoni prodotto nel decadimento di pioni carichi di energia 14 GeV.}
+\subsection[\hspace{2mm} ]{Calcolare la funzione di distribuzione in energia ed in angolo nel sistema del laboratorio di un fascio di neutrini o di muoni prodotto nel decadimento di pioni carichi di energia 14 GeV.}
 \[
 	\ce{\ce{\pi^+} -> \ce{\mu^+} + \ce{\nu_{\mu}}}
 .\] 
@@ -1059,7 +1103,7 @@ Analogamente si può fare per il $\mu$:
 .\] 
 
 %2.b.36
-\subsection[]{ Qual e' l'andamento delle masse nucleari a parità di A in funzione di Z?}
+\subsection[\hspace{2mm} ]{Qual e' l'andamento delle masse nucleari a parità di A in funzione di Z?}
 I nuclei isobari (a parità di A) hanno una massa con andamento quadratico in Z:
 \begin{align*}
 	M_{A,Z}^{\text{atomo}} =& ZM_H^{\text{atomo}} + Nm_n - B_{A,Z} =\\
@@ -1067,7 +1111,7 @@ I nuclei isobari (a parità di A) hanno una massa con andamento quadratico in Z:
 .\end{align*}
 
 % 2.b.37
-\subsection[]{ Dimostrare che in un tipico decadimento $\alpha$, la particella $\alpha$ emerge con circa il 98\% dell'energia disponibile.}
+\subsection[\hspace{2mm} ]{Dimostrare che in un tipico decadimento $\alpha$, la particella $\alpha$ emerge con circa il 98\% dell'energia disponibile.}
 In un decadimento $\alpha$ si ha:
 \[
 \ce{\ce{^{A}_{Z}X_{N}} -> \ce{^{A-4}_{Z-2}Y_{N-2}} + \alpha}
@@ -1128,7 +1172,7 @@ E visto che $m_{\alpha} = 4 m_{u} + \Delta_{4.2} ]\sim$ 4 GeV e $M_{y}=\left(A-4
 Da cui si conclude come sopra.
 
 
-\subsection[]{ Dimostrare che in un decadimento $\beta$ la somma delle energie dell'elettrone e dell'antineutrino emessi é praticamente uguale al Q-valore della reazione.}
+\subsection[\hspace{2mm} ]{Dimostrare che in un decadimento $\beta$ la somma delle energie dell'elettrone e dell'antineutrino emessi é praticamente uguale al Q-valore della reazione.}
 Ricordando il decadimento $\beta^-$ :
 \[
 \ce{\ce{^{A}_{Z}X_{N}} -> \ce{^{A}_{Z+1}Y^+_{N-1}} + e^- + \overline{\nu}_e}
