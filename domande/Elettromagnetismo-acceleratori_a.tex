@@ -1,11 +1,11 @@
-\subsection[]{Dare la definizione di quadri-corrente e di quadri-potenziale del campo elettromagnetico.}
+\subsection[ Quadricorrente e quadripotenziale del campo E.M.]{Dare la definizione di quadri-corrente e di quadri-potenziale del campo elettromagnetico.}
 \label{sec:3.a.1}
 \[
 	j^{\mu}=\left( c \rho, \boldsymbol{j} \right) \quad \quad 
 	A^{\mu}=\left( \varphi, \boldsymbol{A}\right) 
 .\] 
 
-\subsection[]{Dare la definizione del tensore del campo elettromagnetico e scriverne le componenti.}
+\subsection[ Definizione del tensore dei campi E.M.]{Dare la definizione del tensore del campo elettromagnetico e scriverne le componenti.}
 \label{seq:3.a.2}
 Il tensore discusso è il tensore antisimmetrico di rango 2
 \[
@@ -25,7 +25,7 @@ F^{\mu \nu}=
 \right)
 .\] 
 
-\subsection[]{Dare la definizione della "densità di energia" del campo elettromagnetico, del "vettore di Poynting" e del "tensore degli sforzi di Maxwell"}
+\subsection[ Densità di energia del campo elettromagnetico, vettore di Poynting, tensore degli sforzi]{Dare la definizione della "densità di energia" del campo elettromagnetico, del "vettore di Poynting" e del "tensore degli sforzi di Maxwell"}
 Trattiamo qua di leggi di conservazione provenienti da equazioni di continuità:
 \label{sec:3.a.3}
 \[
@@ -43,16 +43,24 @@ Il tensore di Maxwell deriva invece da un'altra legge di conservazione: quella d
 \[
 	T_{i,j}=\left( \epsilon_0 \frac{E^2+c^2B^2}{2}\delta_{ij}-\epsilon_0\left( E_iE_j+c^2B_iB_j \right)  \right) 
 .\] 
-\subsection[]{Scrivere le equazioni di Maxwell (sia quelle non omogenee che quelle omogenee) in forma covariante.}
+\subsection[ Equazioni di Maxwell in forma covariante]{Scrivere le equazioni di Maxwell (sia quelle non omogenee che quelle omogenee) in forma covariante.}
 \label{sec:3.a.4}
 \[
 	\partial_{\mu}F^{\mu \nu} = \frac{j^{\mu}}{\epsilon_0c} \quad \quad \text{Disomogenee}
 .\]  
 \[
-	\partial_{\mu} \tilde{F}^{\mu \nu}= \frac{1}{2} \epsilon^{\mu\nu\alpha\beta}F_{\alpha\beta} = 0 \quad \quad \text{Omogenee}
+	\partial_{\mu} \tilde{F}^{\mu \nu}= \partial_{\mu}\frac{1}{2} \epsilon^{\mu\nu\alpha\beta}F_{\alpha\beta} = 0 \quad \quad \text{Omogenee}
 .\]  
+Dove è stato definito il tensore duale, per chi ancora si chiede come cavolo sia fatto si fa una piccola digressione:
+\begin{align*}
+	\tilde{F}^{0i}&= \frac{1}{2}\epsilon^{0i\alpha\beta}F_{\alpha\beta}=\frac{1}{2}\epsilon^{0ijk}F_{jk}=\frac{1}{2}\epsilon^{ijk}F_{jk}=
+	-\frac{1}{2}\epsilon^{ijk}\epsilon_{jkl}B^{L}= -B^{i}\\
+	\tilde{F}^{ij}&=\frac{1}{2}\epsilon^{ijkl}F_{kl}=\frac{1}{2}\epsilon^{ij0k}F_{0k}+ \frac{1}{2}\epsilon^{ijk 0}F_{k 0}=
+	-\epsilon^{ijk}F_{0k}= \epsilon^{ijk}E_{k}
+.\end{align*}
+Quindi questo tensore è lo stesso di quello dei campi se si manda $\ce{ E -> B}$ e $\ce{ B -> - E}$.
 
-\subsection[]{Scrivere l'equazione di continuità per la quadri-corrente in forma covariante (e verificarne la consistenza con le equazioni di Maxwell)}
+\subsection[ Equazione di continuità per la 4-corrente]{Scrivere l'equazione di continuità per la quadri-corrente in forma covariante (e verificarne la consistenza con le equazioni di Maxwell)}
 \label{sec:3.a.5}
 Prendiamo le equazioni di Maxwell disomogenee (in forma covariante) e sfruttiamo l'antisimmetricità del tensore elettromagnetico:
 \[
@@ -62,7 +70,7 @@ facendo la stesa operazione anche al di là dell'uguale si trova quindi l'equazi
 \[
 	\partial_{\mu}j^{\mu}= \frac{\partial \rho}{\partial t} + \nabla\cdot \boldsymbol{j}=0
 .\] 
-\subsection[]{Dare la definizione di "gauge di Lorenz" e di "gauge di Coulomb".}
+\subsection[ Gauge di Lorentz e di Coulomb]{Dare la definizione di "gauge di Lorenz" e di "gauge di Coulomb".}
 \label{sec:3.a.6}
 Nella Gauge di Lorenz è richiesto:
 \[
@@ -74,7 +82,7 @@ Mentre nella Gauge di Columb:
 .\] 
 Le due condizioni si equivalgono nel caso elettrostatico.
 
-\subsection[]{Scrivere la legge di trasformazione di Lorentz del campo elettrico e del campo magnetico (distinguendo fra componenti parallele e componenti perpendicolari al "boost").}
+\subsection[ Trasformazioni di Lorentz dei campi]{Scrivere la legge di trasformazione di Lorentz del campo elettrico e del campo magnetico (distinguendo fra componenti parallele e componenti perpendicolari al "boost").}
 \label{sec:3.a.7}
 \begin{align*}
 	&\boldsymbol{E}'_{\|} = \boldsymbol{E}_{\|}\\
@@ -83,7 +91,7 @@ Le due condizioni si equivalgono nel caso elettrostatico.
 	&\boldsymbol{B}'_{\bot}=\gamma\left( \boldsymbol{B}_{\bot}-\boldsymbol{\beta}\wedge \boldsymbol{E}  \right) 
 .\end{align*}
 
-\subsection[]{Dare la definizione del quadri-vettore "densità di forza di Lorentz" .}
+\subsection[ Quadrivettore densità di forza]{Dare la definizione del quadri-vettore "densità di forza di Lorentz" .}
 \label{sec:3.a.8}
 \[
 	f^{\mu}=\frac{\mbox{d} p^{\mu}}{\mbox{d} t \text{d}^3r} 
@@ -93,7 +101,7 @@ Il fatto che questo sia un quadrivettore deriva dal fatto che il denominatore è
 	f^{\mu}=\frac{1}{c}F^{\mu\nu}j_{\nu}=\left(\frac{\boldsymbol{j}\cdot\boldsymbol{E}}{c},\rho\boldsymbol{E}+\frac{1}{c}\boldsymbol{j}\wedge\boldsymbol{B}\right)
 .\] 
 
-\subsection[]{Ricavare le espressioni dell’effetto Doppler relativistico (calcolo della frequenza e dell’angolo misurati dal rivelatore nel caso di moto relativo fra sorgente e rivelatore stesso).}
+\subsection[ Effetto doppler relativistico]{Ricavare le espressioni dell’effetto Doppler relativistico (calcolo della frequenza e dell’angolo misurati dal rivelatore nel caso di moto relativo fra sorgente e rivelatore stesso).}
 \label{sec:3.a.9}
 Si sa che esiste il 4-vettore:
 \[
@@ -113,7 +121,7 @@ Legati dalla trasformazione di Lorentz tra i due sistemi:
 	\tan\theta_{R}&=\frac{\sin\theta}{\gamma\left( \cos\theta+\beta \right) }
 .\end{align*}
 
-\subsection[]{Scrivere l’espressione per i potenziali ritardati ( $\phi$ ed $A$ ) per una qualunque distribuzione di cariche ( $\rho$ ) e correnti ( $j$ ).}
+\subsection[\hspace{1mm} Potenziali ritardati]{Scrivere l’espressione per i potenziali ritardati ( $\phi$ ed $A$ ) per una qualunque distribuzione di cariche ( $\rho$ ) e correnti ( $j$ ).}
 \label{sec:3.b.10}
 Potenziale scalare:
 \[
@@ -126,7 +134,7 @@ Potenziale vettore:
 	\frac{\boldsymbol{j}\left( \boldsymbol{r}', t-\left| \boldsymbol{r}-\boldsymbol{r}' \right| /c  \right) }{\left| \boldsymbol{r}-\boldsymbol{r}' \right| }d^3r'
 .\] 
 
-\subsection[]{Spiegare tutti i termini dell’espressione 
+\subsection[\hspace{1mm} Campo elettrico generato da una carica puntiforme in moto arbitrario]{Spiegare tutti i termini dell’espressione 
 \label{sec:3.a.11}
 	\[
 	\boldsymbol{E} = \left[ \frac{q}{R^2}\frac{\hat{n}- \boldsymbol{\beta}}{\gamma^2 \left( 1 - \hat{n} \cdot \boldsymbol{\beta} \right)^3 } + \frac{q}{Rc} \frac{\hat{n} \wedge \left[ \left( \hat{n} -\boldsymbol{\beta}  \right) \wedge \dot{\boldsymbol{\beta}} \right] }{\left( 1 - \hat{n} \boldsymbol{\beta}\right)^3 } \right]_{t' = t - R/c}  
@@ -137,7 +145,7 @@ Sia $\boldsymbol{s}\left( t \right) $ la legge oraria della carica q e sia $\bol
 	\boldsymbol{R}=\boldsymbol{r}-\boldsymbol{s}\left( t' \right) \quad \quad \hat{n}=\boldsymbol{R}/R
 .\] 
 Il primo termine della equazione nella richiesta è il campo generato da una carica che si muove in moto rettilineo uniforme e non è un termine radiativo (va giu come $R^{-2}$), il secondo termine è invece radiativo e dipende dalla accelerazione della carica.
-\subsection[]{Dare la definizione di “solido di radiazione” e di “diagramma di radiazione” per una carica accelerata.}
+\subsection[\hspace{1mm} Solido di radiazion e diagramma di radiazione]{Dare la definizione di “solido di radiazione” e di “diagramma di radiazione” per una carica accelerata.}
 \label{sec:3.a.12}
 \paragraph{Solido di radiazione}
 \label{par:Solido di radiazione.}
@@ -147,13 +155,17 @@ Preso un oggetto che irraggia si dice solido di radiazione la figura tridimensio
 \label{par:Diagramma di radiazione.}
 Sezione planare del solido di radiazione in direzioni opportune a comprenderne la forma. 
 
-\subsection[]{Quanto vale il campo magnetico generato da una carica puntiforme in moto arbitrario se è noto il campo elettrico?}
+\subsection[\hspace{1mm} Campo magnetico in funzione del campo elettrico per carica puntiforme]{Quanto vale il campo magnetico generato da una carica puntiforme in moto arbitrario se è noto il campo elettrico?}
 \label{sec:3.a.13}
+Ragionando nel sistema istantaneamente a riposo della carica il campo magnetico è nullo, definiamo in questo sistema il campo elettrico come $\bs{E}$, allora il campo magnetico nel laboratorio istante per istante è ortogonale a $\bs{\beta}$ e vale:
 \[
-	\boldsymbol{B}= \frac{n}{c} \hat{n} \wedge \boldsymbol{E} 	
+	\bs{B}_{\bot}= - \gamma \left( \bs{\beta}\wedge \bs{E}  \right) 
 .\] 
-Con n indice di rifrazione del mezzo, $\hat{n}$ direzione dell'onda elettromagnetica, nel vuoto si ha $n=1$.
-\subsection[]{Spiegare tutti i termi della espressione 
+In realtò vale in generale che:
+\[
+	\bs{B}= \bs{\beta}\wedge \bs{E} 
+.\] 
+\subsection[\hspace{1mm} Distribuzione angolare di energia irraggiata per unità di frequenza]{Spiegare tutti i termi della espressione 
 \[
 	\frac{\mbox{d} I_{\omega}}{\mbox{d} \Omega} = \frac{q^2}{4 \pi^2 c} \left| \int{ \frac{\hat{n} \wedge \left[ \left( \hat{n}-\boldsymbol{\beta}\right) \wedge \dot{\boldsymbol{\beta}} \right]}{\left( 1- \hat{n} \boldsymbol{\beta}\right)^2} e^{i\omega \left( t' - \frac{\boldsymbol{r'} \cdot \hat{n}}{c} \right) }  } dt' \right|^2
 \] 
@@ -208,13 +220,13 @@ Con $x$ distanza del punto di osservazione dall'origine e $\boldsymbol{r}\left( 
 rimettendo tutto dentro si ottiene l'espressione nella richiesta (avendo cura di notare che all'esponenziale ci sarà una fase che proviene da R, quella è irrilevante essendoci un modulo quadro.).
 
 
-\subsection[]{Una carica elettrica Q si muove con velocità costante (relativistica) di modulo V su una retta, a distanza b da tale retta si trova un osservatore che misura il campo elettrico e magnetico generato dalla carica. Quanto è l'ordine di grandezza del tempo in cui l'osservatore misura un campo elettrico che sia almeno la metà del campo elettrico massimo misurato?}
+\subsection[\hspace{1mm} Tempo di interazione per carica in movimento con osservatore]{Una carica elettrica Q si muove con velocità costante (relativistica) di modulo V su una retta, a distanza b da tale retta si trova un osservatore che misura il campo elettrico e magnetico generato dalla carica. Quanto è l'ordine di grandezza del tempo in cui l'osservatore misura un campo elettrico che sia almeno la metà del campo elettrico massimo misurato?}
 \label{sec:3.a.15}
 È evidentemente necessario per rispondere alla domanda parametrizzare il campo elettrico in funzione del tempo nel riferimento dell'osservatore. Per far questo ci mettiamo da prima nel riferimento della carica (O') e poi con una trasformazione di Lorentz dei campi andiamo nel sistema dell'osservatore:
 \begin{align*}
 &									&&						&\boldsymbol{E}_{\|}=&\boldsymbol{E}'_{\|} \\
 & \bs{E}'= e \frac{\bs{R}'}{R'^3}, \quad \quad \quad \bs{B}'= \ 0	 &\ce{->[\quad \text{Lorentz}\quad]}&		&\bs{E}_{\bot}=&\gamma\bs{E}'_{\bot}\\ 
-&									&&						&\bs{B}\ =&\bs{\beta}\wedge \bs{E} 
+&									&&						&\bs{B}\ =&\gamma\bs{\beta}\wedge \bs{E} 
 .\end{align*}
 Tuttavia come è ben noto i campi sono espressi ancora in funzione delle variabili del sistema solidale alla carica (t',x',y',z'), sarà necessario un altro boost per cambiare parametrizzazione.
 \begin{align*}
@@ -238,7 +250,7 @@ Inseriamola nelle componenti dei campi:
 \begin{align*}
 	&E_x = e \frac{\gamma\left( x-vt \right) }{\gamma^3\left(R^{*}\right)^3} = e \frac{x-vt}{\gamma^2 \left(R^*\right)^3}\\
 	&E_y = e \gamma \frac{y}{\gamma^3\left(R^*\right)^3} = e \frac{y}{\gamma^2\left(R^*\right)^3} \\ 
-	&E_y = e \gamma \frac{z}{\gamma^3\left(R^*\right)^3} = e \frac{z}{\gamma^2 \left(R^*\right)^3} 
+	&E_z = e \gamma \frac{z}{\gamma^3\left(R^*\right)^3} = e \frac{z}{\gamma^2 \left(R^*\right)^3} 
 .\end{align*}
 In maniera più compatta si può scrivere:
 \[
@@ -255,11 +267,11 @@ Se si prova a graficare queste funzioni ci si rende conto che il contributo più
 \[
 	\gamma^2v^2t^2 \sim b^2 \implies t \sim \frac{b}{\gamma v}
 .\] 
-\subsection[]{Enunciare il principio di Babinet.}
+\subsection[\hspace{1mm} Principio di Babinet]{Enunciare il principio di Babinet.}
 \label{sec:3.a.16}
 La figura di diffrazione generata da un corpo opaco è la stessa che si ottiene con lo schermo complementare: ottenuto sostituendo il corpo con una apertura.
 
-\subsection[]{Definire il fattore di forma per un'onda che incide su su sistema.}
+\subsection[\hspace{1mm} Fattore di forma]{Definire il fattore di forma per un'onda che incide su su sistema.}
 \label{sec:3.a.17}
 Il fattore di forma per un sistema caratterizzato da una densità di carica $\rho$ è definito:
 \[
@@ -267,17 +279,17 @@ Il fattore di forma per un sistema caratterizzato da una densità di carica $\rh
 .\] 
 Dove $\bs{q}$ rappresenta la differenza tra il vettore d'onda entrante e uscente.\\
 Tale quantità può essere definita anche per sistemi discreti facendo un attento uso delle $\delta$
-\subsection[]{Spiegare qualitativamente il funzionamento di un acceleratore elettrostatico.}
+\subsection[\hspace{1mm} Funzionamento di un acceleratore elettrostatico]{Spiegare qualitativamente il funzionamento di un acceleratore elettrostatico.}
 \label{sec:3.a.18}
 In un acceleratore elettrostatico le particelle vengono accelerate da campi statici. Le particelle vengono fatte passare in un tubo a vuoto in cui è presente un campo elettrico costante.\\ 
 L'energia che viene fornita alla particella è modesta: 1-10 MeV. Questa energia è limitata dal fatto che le particelle passano nel tubo una sola volta. 
 
-\subsection[]{Quali sono, approssimativamente, le energie per unità di lunghezza che attualmente si ottengono nell’accelerazione di protoni con la tecnica dei "drift tube"? E delle cavità superconduttrici?}
+\subsection[\hspace{1mm} Energie per unità di lunghezza per drift tube e cavità superconduttrici]{Quali sono, approssimativamente, le energie per unità di lunghezza che attualmente si ottengono nell’accelerazione di protoni con la tecnica dei "drift tube"? E delle cavità superconduttrici?}
 \label{sec:3.a.19}
 Con i drift tube si riesce a fare $ 100 \frac{kV}{m}$, mentre con le cavità superconduttrici si arriva a $ 50 \frac{MV}{m}$. 
 
 
-\subsection[]{Spiegare qualitativamente il funzionamento di un acceleratore lineare, indicando le differenze importanti fra l’accelerazione di elettroni e di protoni.}
+\subsection[\hspace{1mm} Funzionamento di un acceleratore lineare]{Spiegare qualitativamente il funzionamento di un acceleratore lineare, indicando le differenze importanti fra l’accelerazione di elettroni e di protoni.}
 \label{sec:3.a.20}
 Un acceleratore lineare consiste in un tubo a vuoto in cui sono presenti degli elettroni in cascata tra i quali viene stabilita una d.d.p. oscillante. \\
 A differenza di un acceleratore elettrostatico si può sempre aggiungere uno stadio per accelerare le particelle. È quindi possibile raggiungere energie più elevate rispetto ai primi. \\
@@ -291,7 +303,7 @@ La potenza irraggiata è quindi (CGS):
 	P= \frac{2q^2}{3c^3}\gamma^{6}a^{6}=\frac{2q^4E^2}{3m^2c^3}	
 .\]
 In particolare la potenza irraggiata da un elettrone è circa $3 \cdot 10^{6} $ volte quella irraggiata da un protone.
-\subsection[]{Spiegare qualitativamente il funzionamento di un acceleratore circolare, indicando le differenze importanti fra l’accelerazione di elettroni e di protoni.}
+\subsection[\hspace{1mm} Funzionamento di acceleratore cicolare]{Spiegare qualitativamente il funzionamento di un acceleratore circolare, indicando le differenze importanti fra l’accelerazione di elettroni e di protoni.}
 \label{sec:3.a.21}
 Un acceleratore circolare moderno è solitamente il sincrotrone, quest'ultimo consiste nel tenere le particelle in moto circolare mediante l'ausilio di magneti e cavità superconduttrici che si alternano tra loro. I campi generati da questi due ultimi sono regolati in modo da tenere le particelle lungo la traiettoria prestabilita.
 Qui la grande differenza tra l'accelerazione di protoni ed elettroni consiste nella energia persa nell'irraggiamento, per arrivarci è necessario avvalersi della Formula di Larmor relativistica (MKSA):
@@ -321,7 +333,7 @@ La perdita di energia per irraggiamento è sostanzialmente dovuta alla velocità
 L'energia persa per irraggiamento è quindi un fattore che limita molto le energie ottenibili in acceleratori circolari se si studiano collisioni di elettroni o positroni. Nel caso dei protoni il fattore limitante principale è l'intensità del campo magnetico che siamo in grado di produrre per far sterzare le particelle.
 
 
-\subsection[]{Effettuare un disegno, qualitativo, del solido di radiazione per una carica in un acceleratore lineare o circolare.}
+\subsection[\hspace{1mm} Solido di radiaziome per carica in moto circolare]{Effettuare un disegno, qualitativo, del solido di radiazione per una carica in un acceleratore lineare o circolare.}
 Per l'acceleratore circolare si ha la distribuzione angolare (CGS):
 \[
 	\frac{\mbox{d} I}{\mbox{d} \Omega} = \frac{q^2a^2}{4\pi c^3\left( 1-\beta\cos\theta \right) ^3} \left[ 1-\frac{\sin^2\theta\sin^2\varphi}{\gamma^2\left(1-\beta\cos\theta \right) ^2} \right] 	

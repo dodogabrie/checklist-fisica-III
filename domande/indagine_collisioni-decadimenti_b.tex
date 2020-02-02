@@ -630,9 +630,9 @@ Consideriamo adesso la variabile $\varphi$ nella Figura \ref{fig:rutherford} ind
 \[
 \varphi_{\text{min}} = -\frac{\pi - \theta}{2} \le \varphi \le \frac{\pi -\theta}{2} = \varphi_{\text{max}}
 .\] 
-Possiaom giocarci la conservazione del momento angolare durante il processo sfruttando la variabile sopra definita come cordinata polare.
+Possiamo giocarci la conservazione del momento angolare durante il processo sfruttando la variabile sopra definita come cordinata polare.
 \[
-	L_z = m \left( \boldsymbol{r \wedge \boldsymbol{v}}\right)_z = m \left[ \boldsymbol{r} \left( \dot{r} \hat{r} + r \dot{\varphi} \hat{\varphi}\right)\right]=
+	L_z = m \left( \boldsymbol{r \wedge \boldsymbol{v}}\right)_z = m \left[ \boldsymbol{r} \wedge   \left( \dot{r} \hat{r} + r \dot{\varphi} \hat{\varphi}\right)\right]=
 	mr^2\dot{\varphi}
 .\] 
 Quindi considerando anche il momento angolare iniziale abbiamo una prima relazione per parametrizzare il differenziale nel tempo:
@@ -663,13 +663,13 @@ E le nostre fatiche vengono ripagate perche abbiamo la prima risposta:
 .\] 
 È quindi possibile definire anche una minima distanza di urto centrale $d$ quando la cotangente è unitaria:
 \[
-	d = \frac{zZe^2}{4 \pi \epsilon_0 m  v_0^2} = \frac{zZ\left( \alpha \hbar c \right)}{T} \approx zZ \frac{1.44[\text{MeV}]}{T[\text{MeV}]} [\text{fm}]
-	\quad \quad \implies \quad \quad b\left( \theta \right) = d \cot\left( \frac{\theta}{2} \right) 
+	d = \frac{zZe^2}{4 \pi \epsilon_0 m  v_0^2 /2} = \frac{zZ\left( \alpha \hbar c \right)}{T} \approx zZ \frac{1.44[\text{MeV}]}{T[\text{MeV}]} [\text{fm}]
+	\quad \quad \implies \quad \quad b\left( \theta \right) = \frac{d}{2} \cot\left( \frac{\theta}{2} \right) 
 .\] \label{eq:d-rutherford}
 Apprezziamo la grandezza del risultato, siamo in grado di prevedere, note la carica e la massa del proiettile, la distanza ortogonale ($b$) tra i centri incidenti dal momento che scegliamo l'angolo di osservazione $\theta_0$ (o meglio, tutto ciò che arriva all'osservatore è partito da una posizione con parametro di impatto noto).\\
 Si può infine trovare la sezione d'urto Rutherford differenziale come:
 \[
-	\frac{\mbox{d} \theta}{\mbox{d} \Omega} = -\frac{b db}{\sin\left( \theta \right) d \theta} =
+	\frac{\mbox{d} \sigma}{\mbox{d} \Omega} = -\frac{b db}{\sin\left( \theta \right) d \theta} =
 	-\frac{b}{2 \cos\left( \frac{\theta}{2} \right) \sin\left( \frac{\theta}{2} \right)} \cdot \frac{d}{2}\left( \frac{d \left( \cot\left( \frac{\theta}{2} \right)\right)}{d \theta} \right) = 
 	\ldots = \frac{d^2}{16 \sin^{4}\left( \frac{\theta}{2} \right) } 
 .\] 
@@ -683,22 +683,28 @@ A fare la differenza qua è la semplice definizione di $\theta$:
 \[
 	\frac{b}{R} = \sin\left( \frac{\pi - \theta}{2} \right) = \cos\left( \frac{\theta}{2} \right)  \implies b = R \cos\left( \frac{\theta}{2} \right) 
 .\] 
+\begin{figure}[H]
+    \centering
+    \incfig{scattering-su-sfera-rigida}
+    \caption{Scattering su sfera rigida}
+    \label{fig:scattering-su-sfera-rigida}
+\end{figure}
 
 % 2.b.21
-\subsection[\hspace{2mm} ]{Calcolare la minima distanza fra le due particelle in uno scattering Rutherford.}
+\subsection[\hspace{2mm} Minima distanza d tra particelle nello scattering Rutherford]{Calcolare la minima distanza fra le due particelle in uno scattering Rutherford.}
 Definiamo $v_m$ come la velocità del proiettile nell'istante in cui ha raggiunto la distanza minima $x$. Sfruttando la conservazione dell'energia e del momento angolare si ottiene:
-\[	
-	\frac{1}{2}m v_0^2 = \frac{1}{2} m v_f^2 + \frac{zZe^2}{4 \pi \epsilon_0 x}\\
-.\] 
 \[
-	mv_0b = m v_m x
+	\begin{cases}
+		&\frac{1}{2}m v_0^2 = \frac{1}{2} m v_m^2 + \frac{zZe^2}{4 \pi \epsilon_0 x}\\
+		&mv_0b = m v_m x
+	\end{cases}
 .\]
 Si ricava $v_m$ dalla seconda sostituendola nella prima, ne risulta una equazione del secondo grado per $x$:
  \[
 	 x^2 - d \cdot x - b^2 = 0 \implies x = \frac{d}{2} \left( 1 + \frac{1}{\sin\left( \frac{\theta}{2} \right) } \right) 
 .\] 
 %2.b.22
-\subsection[\hspace{2mm} ]{Calcolare l'energia minima affinché un protone possa avere una interazione forte "toccando" un nucleo di ${}^{12}C$ o di ${}^{28} Si$.}
+\subsection[\hspace{2mm} Esempi di energia minima per far fare l'interazione forte al protone]{Calcolare l'energia minima affinché un protone possa avere una interazione forte "toccando" un nucleo di ${}^{12}C$ o di ${}^{28} Si$.}
 È inanzitutto necessario per risolvere il problema di minimo considerare l'urto centrale: $b = 0$.\\ 
 In tal caso l'angolo di scatternig è $\theta = \pi$ e $x = d$ dove $d$ è la distanza tra i nuclei aventi raggio:
 \[
@@ -719,11 +725,11 @@ E_{\text{Si}} = 11.2 \text{MeV}
 .\] 
 
 %2.b.23
-\subsection[\hspace{2mm} ]{Discutere le differenze tra lo scattering di Rutherford (particelle $\alpha$ su nuclei) e lo scattering di elettroni su bersaglio puntiforme.}
-La differenza principale è che gli elettroni si muovono solitamente a velocità relativistiche, questo invalida i conti fatti prima. Nel caso discusso quindi è necessario tirare in ballo la sezione d'urto Mott.
+\subsection[\hspace{2mm} Differenze tra Scattering Rutherford e Mott]{Discutere le differenze tra lo scattering di Rutherford (particelle $\alpha$ su nuclei) e lo scattering di elettroni su bersaglio puntiforme.}
+La differenza principale è che gli elettroni si muovono solitamente a velocità relativistiche e hanno spin $1 /2$, questo invalida i conti fatti prima. Nel caso discusso quindi è necessario tirare in ballo la sezione d'urto Mott.
 
 %2.b.24
-\subsection[\hspace{2mm} ]{Cercando i dati nelle apposite tabelle (reperibili sul web ) si indichino gli stati finali e si calcoli il Q-valore per i decadimenti delle seguenti specie instabili: ${}^8B, {}^{39}Ar, {}^{7}Be, {}^{64}Cu, {}^{76}Ge$. }
+\subsection[\hspace{2mm} Stato finale di alcuni decadimenti a partire da particella antenato]{Cercando i dati nelle apposite tabelle (reperibili sul web ) si indichino gli stati finali e si calcoli il Q-valore per i decadimenti delle seguenti specie instabili: ${}^8B, {}^{39}Ar, {}^{7}Be, {}^{64}Cu, {}^{76}Ge$. }
 Per rispondere a questa domanda è necessario ricordarsi la natura dei \hyperref[sec:decadimenti]{Decadimenti} ed avere sottomano il Nuclear Wallet Card.
 \paragraph{Isotopo del Boro}
 \label{par:8B}
@@ -777,10 +783,9 @@ Senza essere ripetitivi (stesse cose viste sopra) si riportano i risultati:
 	\ce{^{76}_{32}\text{Ge}_{44}} \implies \tau_{1 /2} \sim 2 \cdot 10^{21} 
 .\]
 Al gran sasso si studia il decadimento $\beta^- \beta^-$ di Questo isotopo (nome in codice GERDA).
-\paragraph{Nota:} I conti della domanda sono stati fatti senza calcolatore per allenamento, siete fortemente invitati a fare lo stesso e riportare gli errori a chi ha accesso al source code.
 
 % 2.b.25
-\subsection[\hspace{2mm} ]{Cercando i dati nelle apposite tabelle (reperibili sul web) si trovino i Q-valori per le reazioni 
+\subsection[\hspace{2mm} Esempi di Q-valore per alcune reazioni]{Cercando i dati nelle apposite tabelle (reperibili sul web) si trovino i Q-valori per le reazioni 
 \begin{enumerate}
 	\item $n + {}^{154}Gd \implies \gamma + {}^{155}Gd$ 
 	\item $n + {}^{155}Gd \implies \gamma + {}^{156}Gd$
@@ -794,7 +799,7 @@ Al gran sasso si studia il decadimento $\beta^- \beta^-$ di Questo isotopo (nome
 .\] 
 
 % 2.b.26
-\subsection[\hspace{2mm} ]{Dimostrare che $\frac{d^3 p  }{2E}$ è un invariante relativistico effettuando esplicitamente la trasformazione di Lorentz (si consideri il boost lungo un asse, per esempio l'asse x)}
+\subsection[\hspace{2mm} Invarianza di $d^3p /2E$]{Dimostrare che $\frac{d^3 p  }{2E}$ è un invariante relativistico effettuando esplicitamente la trasformazione di Lorentz (si consideri il boost lungo un asse, per esempio l'asse x)}
 Facciamo questo boot lungo x:
 \begin{align*}
 	\frac{\mbox{d}^3 \boldsymbol{P}'}{2E'}  =& \frac{dP'_x dP'_y dP'_z}{2Ex'} = \\
@@ -805,7 +810,7 @@ Facciamo questo boot lungo x:
 .\end{align*}
 
 % 2.b.27
-\subsection[\hspace{2mm} ]{Dimostrare che 
+\subsection[\hspace{2mm} Semplificare l'elemento infinitesimo dello spazio dei 4-impulsi con le proprietà della $\delta$]{Dimostrare che 
 \[
 d^{4}P \delta\left( P^2-m^2 \right) \theta\left( P_0 \right) = \frac{d^3 \boldsymbol{P} }{2E}
 \]
@@ -821,11 +826,11 @@ Da inserire opportunamente nella espressione a sinistra dell'uguale nella richie
 		\frac{\delta\left( P_0 + E \right) }{\left| \left[ 2P_0 \right]_{P_0 = -E}  \right| } \right] =\\
 		=& d^4P \frac{\delta\left( P_0 - E \right)}{2E} = \frac{d^3 \boldsymbol{P}}{2E}   
 .\end{align*}
-\paragraph{Nota:}%
-Stiamo parlando di distribuzioni, la notazione leggera utilizzata nasconde significati matematici profondi e non scontati (vedi corso di metodi matematici per la fisica II).
+Alla seconda domanda si è accidentalmente risposto sotto nella 3.b.28.
+
 
 % 2.b.28
-\subsection[\hspace{2mm} ]{Dimostrare che nel centro di massa l’elemento infinitesimo dello spazio dei 4-impulsi, nel caso di 2 sole particelle nello stato finale, si scrive come $\frac{|\boldsymbol{p_{cm}}}{4\sqrt{s}} d\Omega_{cm}.$}
+\subsection[\hspace{2mm} Elemento infinitesimo nello spazio dei quadrimpulsi nel centro di massa (due particelle)]{Dimostrare che nel centro di massa l’elemento infinitesimo dello spazio dei 4-impulsi, nel caso di 2 sole particelle nello stato finale, si scrive come $\frac{|\boldsymbol{p_{cm}}}{4\sqrt{s}} d\Omega_{cm}.$}
 Ricordiamo la forma dell'elemento infinitesimo dello spazio delle fasi:
 \[
 	dL_p = \left[ d^4P_1 \cdot \delta\left( P_{0,1}^2 - \boldsymbol{P}_1^2 - m_1^2 \right) \cdot \theta\left( P_{0,1} \right) \right] \cdot \ldots 
@@ -836,7 +841,6 @@ Che utilizzando la risposta alla domanda precedente si riscrive come:
 \[
 dL_p = \frac{\mbox{d}^3 \boldsymbol{P}_1}{2E_1} \ldots \frac{\mbox{d}^3 \boldsymbol{P}_n}{2E_n} \delta^4\left( P_{in}-\sum_{i}P_i \right) 
 .\] 
-Decisamente più carino.\\
 Se si hanno due prodotti definiamo le loro masse come $m_1$ e  $m_2$, l'energia del centro di massa $\sqrt{s}$ e ricordiamo che il 3-impulso totale nel centro di massa è nullo. L'elemento infinitesimo $dL_p$ si scrive come:
 \begin{align*}
 	dL_p =& \frac{d^3 \boldsymbol{P}_1}{2E_1} \frac{d^3 \boldsymbol{P}_2}{2E_2} \cdot \delta^4\left(P_{\text{in}} - P_1 - P_2 \right) = \\ 
@@ -871,7 +875,7 @@ Noto l'impulso delle particelle nel centro di massa (o, se si vuole, $\sqrt{s}, 
 .\] 
 
 % 2.b.29
-\subsection[\hspace{2mm} ]{Nel caso di 3 particelle nello stato finale di una reazione, dimostrare che fra il quadrato della massa invariante di due di esse e l'energia della terza (nel centro di massa) sussite una relazione lineare.}
+\subsection[\hspace{2mm} Relazione lineare tra $s_{12}$ e $E_3$ nel centro di massa nel caso di 3 particelle finali]{Nel caso di 3 particelle nello stato finale di una reazione, dimostrare che fra il quadrato della massa invariante di due di esse e l'energia della terza (nel centro di massa) sussite una relazione lineare.}
 Prendiamo la massa invariante citata $\sqrt{s_{12}}$ e l'energia della restante paticella come $E_3$, con ovvio significato dei simboli si ha (definizione di massa invariante):
 \[
 	s_{12} = \left( P_1 + P_2 \right)^2
@@ -883,7 +887,7 @@ Che per la conservazione dell'energia e dell'impulso si può scrivere come:
 Ecco la relazione lineare.
 
 % 2.b.30
-\subsection[\hspace{2mm} ]{Come si trasforma una funzione di distribuzione del 3-impulso 
+\subsection[\hspace{2mm} Trasformazione di una funzione di distribuzione del 3-impulso di una particella]{Come si trasforma una funzione di distribuzione del 3-impulso 
 \[
 	f\left( \boldsymbol{p} \right)d^3 \boldsymbol{p}
 \]
@@ -903,7 +907,7 @@ Abbiamo dimostrato anche che
 .\] 
 
 % 2.b.31
-\subsection[\hspace{2mm} ]{Come si trasforma una funzione di distribuzione nello spazio delle fasi 
+\subsection[\hspace{2mm} Trasformazione di una funzione di distrib. del 3-impulso e dello spazio per una particella]{Come si trasforma una funzione di distribuzione nello spazio delle fasi 
 \[
 	f\left(\boldsymbol{p},\boldsymbol{r}\right)d^3 \boldsymbol{p} \ d^3 \boldsymbol{r} 
 \]
@@ -925,7 +929,7 @@ Quindi $Ed^3 \boldsymbol{r}$ è un invariante relativistico. Avendo trovato che 
 Dalle quali deriva l'invarianza di $f\left( \boldsymbol{P}, \boldsymbol{r} \right)$.
 
 % 2.b.32
-\subsection[\hspace{2mm} ]{Dimostrare che se la probabilità di decadimento di una particella per unità di tempo non dipende dal tempo, la probabilità di trovare la particella non decaduta al tempo t segue una legge esponenziale.}
+\subsection[\hspace{2mm} Probabilità di trovare la particella con probabilita di decadimento indip. dal tempo]{Dimostrare che se la probabilità di decadimento di una particella per unità di tempo non dipende dal tempo, la probabilità di trovare la particella non decaduta al tempo t segue una legge esponenziale.}
 Sia $S\left( t \right) $ la probabilità di trovare la particella al tempo $t$, considerando la invece la probabilità $P\left( t \right)$ di decadere dopo l'unità di tempo $dt$ si ha (per ipotesi):
  \[
 	 \frac{P\left( dt \right)}{dt}= \frac{1}{\tau} \text{ (costante)} \implies  S\left( dt \right) = 1 - \frac{dt}{\tau}
@@ -940,11 +944,11 @@ Che ha come soluzione proprio un esponenziale (vedi \hyperref[sec:2.b.5]{Domanda
 .\] 
 
 % 2.b.33
-\subsection[\hspace{2mm} ]{Dire quali fra le seguenti particelle sono soggette ad interazioni forti: $ p, \overline{p} $, $\pi^{+}, \pi^{-}, \mu^{+}, \mu^{-}, e^{+}$, $e^{-}$, $\alpha,$ Nucleo di Azoto, $\nu, \overline{\nu}$ }
+\subsection[\hspace{2mm} Protagonisti della interazione forte]{Dire quali fra le seguenti particelle sono soggette ad interazioni forti: $ p, \overline{p} $, $\pi^{+}, \pi^{-}, \mu^{+}, \mu^{-}, e^{+}$, $e^{-}$, $\alpha,$ Nucleo di Azoto, $\nu, \overline{\nu}$ }
 \label{sec:2.b.33}
 Solo gli adroni (composti da Quark) possono fare interazione forte, quindi la risposta è: $p$ , $\overline{p}$ , $\pi^{+}$ , $\pi^{-}$ , $\alpha$ , Nucleo di Azoto.
 
-\subsection[\hspace{2mm} ]{Pioni neutri, di energia E nel sistema del laboratorio, decadono in due fotoni. La distribuzione è isotropa ne centro di massa. Si calcoli la distribuzione dell’energia di uno dei due fotoni nel laboratorio e gli angoli, rispetto alla direzione di volo del pione, dei due fotoni nel sistema del laboratorio in funzione dell’angolo nel sistema del centro di massa.}
+\subsection[\hspace{2mm} Decadimento del Pione neutro in due fotoni]{Pioni neutri, di energia E nel sistema del laboratorio, decadono in due fotoni. La distribuzione è isotropa ne centro di massa. Si calcoli la distribuzione dell’energia di uno dei due fotoni nel laboratorio e gli angoli, rispetto alla direzione di volo del pione, dei due fotoni nel sistema del laboratorio in funzione dell’angolo nel sistema del centro di massa.}
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.35\textwidth]{immagini/decadimento-pi1.png}
@@ -1044,11 +1048,11 @@ Infine possiamo dire qualcosa in più sulla differenza degli angoli nel laborato
 Questa funzione vista la dipendenza da $\beta$ fa cose diverse a seconda della velocità del $\pi^0$. 
 
 %2.b.35
-\subsection[\hspace{2mm} ]{Calcolare la funzione di distribuzione in energia ed in angolo nel sistema del laboratorio di un fascio di neutrini o di muoni prodotto nel decadimento di pioni carichi di energia 14 GeV.}
+\subsection[\hspace{2mm} Decadimento del pione carico in muone e neutrino muonico]{Calcolare la funzione di distribuzione in energia ed in angolo nel sistema del laboratorio di un fascio di neutrini o di muoni prodotto nel decadimento di pioni carichi di energia 14 GeV.}
 \[
 	\ce{\ce{\pi^+} -> \ce{\mu^+} + \ce{\nu_{\mu}}}
 .\] 
-Con  $m_{\pi^+} = 139.57$, $m_{\mu}=105.66$ e $m_{\nu}=0$. Se il pione ha energia 14 GeV allora avrà
+Con  $m_{\pi^+} = 139.57$, $m_{\mu}=105.66$ MeV e $m_{\nu}=0$. Se il pione ha energia 14 GeV allora avrà
 \[
 \gamma = \frac{E}{mc^2} = 100 \implies \beta \approx 0.99994
 .\] 
@@ -1075,7 +1079,7 @@ Applichiamo la conservazione dell'energia nel centro di massa per esprimere $P_{
 	\sqrt{P_{\text{cm}}^2 + m_{\mu}^2} + P_{\text{cm}} \quad \implies
 	\quad P_{\text{cm}} = \frac{m_{\pi}^2 - m_{\mu}^2}{2m_{\pi}} \approx 30\text{ Mev}
 .\]
-Visto che il pione ha spin nullo si ha anche qua l'isotropia dei prodott, quindi il \hyperref[eq:isotropia]{risultato} della domanda precedente su $\frac{\text{d}\Gamma}{\text{d}\Omega}$.
+Visto che il pione ha spin nullo si ha anche qua l'isotropia dei prodotti, quindi il \hyperref[eq:isotropia]{risultato} della domanda precedente su $\frac{\text{d}\Gamma}{\text{d}\Omega}$.
 Trasformiamo allora per l'energia del neutrino nel laboratorio:
 \[
 	E_{\nu}^{\text{lab}}=\gamma P_{\text{cm}} \left(1-\beta\cos\left( \theta_{\text{cm}}\right)\right) 
@@ -1087,7 +1091,7 @@ In cui si trovano di nuovo limiti inferiori essendoci $\cos\left( \theta_{\text{
 Abbiamo tutte le carte per calcolare la distribuzione del neutrino:
 \[
 	\frac{\mbox{d} \Gamma}{\mbox{d} E_{\nu}^{lab}} = 
-	\frac{\mbox{d} \Gamma}{\text{d}\cos\left( \theta_{\text{cm}} \right) } \frac{\text{d}\cos\left( \theta_{\text{cm}} \right) }{\mbox{d} E_{\nu}^{lab}} =
+	\frac{\mbox{d} \Gamma}{\text{d}\cos\left( \theta_{\text{cm}} \right) } \frac{\text{d}\cos\left( \theta_{\text{cm}} \right) }{\mbox{d} E_{\nu}^{lab}} 
 	= \frac{\Gamma}{2}\frac{1}{P_{\text{cm}}\beta \gamma}
 .\] 
 Analogamente si può fare per il $\mu$:
@@ -1103,15 +1107,28 @@ Analogamente si può fare per il $\mu$:
 .\] 
 
 %2.b.36
-\subsection[\hspace{2mm} ]{Qual e' l'andamento delle masse nucleari a parità di A in funzione di Z?}
+\subsection[\hspace{2mm} Andamento masse nucleari a parità di A in funzione di Z]{Qual e' l'andamento delle masse nucleari a parità di A in funzione di Z?}
 I nuclei isobari (a parità di A) hanno una massa con andamento quadratico in Z:
 \begin{align*}
 	M_{A,Z}^{\text{atomo}} =& ZM_H^{\text{atomo}} + Nm_n - B_{A,Z} =\\
-	=&ZM_H^{\text{atomo}}+\left(A-Z\right)m_u-\text{cost}\left(A\right)-a_s\frac{Z^2}{A^{1/3}}-a_{\text{sym}}\frac{\left(Z-N\right)^2}{A}-\delta_{\text{pair}}
+	=&ZM_H^{\text{atomo}}+\left(A-Z\right)m_u+\text{cost}\left(A\right)+a_s\frac{Z^2}{A^{1/3}}+a_{\text{sym}}\frac{\left(Z-N\right)^2}{A}-\delta_{\text{pair}}
 .\end{align*}
+Quindi abbiamo una parabola in funzione di Z, tuttavia non dobbiamo sottovalutare l'importanza del termine $\delta_{\text{pair}}$:
+\[
+	\delta_{\text{pair}}= 
+	\begin{cases}
+		\delta_0 & \text{ se } A \text{ pari: } Z, \ N \text{ pari}  \\ 
+		-\delta_0 & \text{ se } A \text{ pari: } Z, \ N \text{ dispari}\\
+		0 & \text{ se } A \text{ dispari}
+	\end{cases}
+.\] 
+Per A dispari le masse dei nuclei si dispongono quindi su un'unica parabola al crescere di Z, per A dispari invece faranno uno "Zig Zag" dalla parabola inferiore a quella superiore formando così due parabole sovrapposte.\\
+La particella più stabile sarà quella con massa inferiore: quella sul fondo della parabola. Il modo in cui le particelle decadono è fortemente influenzato dal fatto che A sia pari o dispari: se è dispari c'è solo una strada per arrivare al nucleo più stabile seguendo l'unica parabola, altrimenti (A pari) i metodi di decadimento per il singolo isobaro possono essere molteplici.\\
+Se un isobaro si trova sulla parabola superiore potrà fare decadimento $\epsilon= \beta^{+}$ se si trovano nella parte sinistra della parabola oppure $\beta^{-}$ se si trovano nella parte destra di quest'ultima, entrambi i decadimenti portano verso un nucleo della parabola inferiore. \\
+Se un isobaro si trova nella parabola inferiore può fare decadimento $2\beta^{-}$ se si trova nella parte sinistra della parabola, altrimenti fa $2\beta^{-}$ ed in entrambi i casi restano nella parabola inferiore.
 
 % 2.b.37
-\subsection[\hspace{2mm} ]{Dimostrare che in un tipico decadimento $\alpha$, la particella $\alpha$ emerge con circa il 98\% dell'energia disponibile.}
+\subsection[\hspace{2mm} Considerazioni energetiche sul decadimento $\alpha$]{Dimostrare che in un tipico decadimento $\alpha$, la particella $\alpha$ emerge con circa il 98\% dell'energia disponibile.}
 In un decadimento $\alpha$ si ha:
 \[
 \ce{\ce{^{A}_{Z}X_{N}} -> \ce{^{A-4}_{Z-2}Y_{N-2}} + \alpha}
@@ -1165,14 +1182,14 @@ In realtà a noi interessa che:
 \[
 	\frac{T_{y}}{T_{\alpha}}= \frac{m_{\alpha}}{M_{y}}
 .\] 
-E visto che $m_{\alpha} = 4 m_{u} + \Delta_{4.2} ]\sim$ 4 GeV e $M_{y}=\left(A-4\right)m_{u}+ \Delta_{A-4, Z-2}\sim$ 200 GeV si ha:
+E visto che $m_{\alpha} = 4 m_{u} + \Delta_{4.2} \sim$ 4 GeV e $M_{y}=\left(A-4\right)m_{u}+ \Delta_{A-4, Z-2}\sim$ 200 GeV si ha:
 \[
 	T_{y} \approx 0.02 T_{\alpha}
 .\] 
 Da cui si conclude come sopra.
 
 
-\subsection[\hspace{2mm} ]{Dimostrare che in un decadimento $\beta$ la somma delle energie dell'elettrone e dell'antineutrino emessi é praticamente uguale al Q-valore della reazione.}
+\subsection[\hspace{2mm} Considerazione energetica sul decadimento $\beta$]{Dimostrare che in un decadimento $\beta$ la somma delle energie dell'elettrone e dell'antineutrino emessi é praticamente uguale al Q-valore della reazione.}
 Ricordando il decadimento $\beta^-$ :
 \[
 \ce{\ce{^{A}_{Z}X_{N}} -> \ce{^{A}_{Z+1}Y^+_{N-1}} + e^- + \overline{\nu}_e}
@@ -1196,3 +1213,4 @@ Come nel caso precedente si può dimostrare che $Q \sim \text{ MeV}$, quindi l'e
 	T_{Y} = \frac{\left| \boldsymbol{p}_Y \right|^2 }{2m_Y} < \frac{\left( Q + \sqrt{Q^2+2m_e Q}  \right) }{2m_Y}  \sim \frac{Q}{1000} \quad \implies
 	\quad Q \approx T_{e^-} + T_{\overline{\nu}_e} 
 .\] 
+Perchè la massa dell'elettrone (presente al numeratore) è dello stesso ordine del Q valore.
