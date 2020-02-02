@@ -356,7 +356,7 @@ Facendo scorrere gli indici e provando a combinarli si trova la forma matriciale
 	\end{array}
 	\right)
 .\] 
-\subsection[\hspace{1mm} ]{Scrivere esplicitamente il 4-tensore impulso-energia per un’onda elettromagnetica piana monocromatica che si propaga lungo l’asse x con densita’ di energia $u_{\text{em}}$.}
+\subsection[\hspace{1mm} Un esempio sul tensore energia impulso]{Scrivere esplicitamente il 4-tensore impulso-energia per un’onda elettromagnetica piana monocromatica che si propaga lungo l’asse x con densita’ di energia $u_{\text{em}}$.}
 \label{sec:3.b.12}
 Utilizzando i risultati della domanda 3.b.9 e 3.b.11 possiamo dire che:
 \[
@@ -386,7 +386,7 @@ Sia Q una carica che si muove con la legge oraria $\bs{s}\left( t \right) $, le 
 .\end{align*}
 Il tempo ritardato è definito come al solito:
 \[
-	c\left( t- t' \right) = \left| \bs{r}-\bs{s}\left( t \right)  \right| 
+	c\left( t- t' \right) = \left| \bs{r}-\bs{s}\left( t'\right)  \right| 
 .\] 
 Si procede quindi al calcolo del potenziale scalare, il calcolo del potenziale vettore è del tutto analogo.
 \[	
@@ -480,7 +480,7 @@ Che è un invariante di Lorentz e soprattutto coincide con la formula non relati
 .\end{align*}
 Da cui se ne conclude che la quantità provata è quella giusta.
 
-\subsection[\hspace{1mm} ]{Dimostrare che la radiazione di sincrotrone ha uno spettro di emissione con una frequenza “critica” $\omega_{u}\approx \omega_0\gamma^3$.}
+\subsection[\hspace{1mm} Frequenza critica della luce di Sincrotrone]{Dimostrare che la radiazione di sincrotrone ha uno spettro di emissione con una frequenza “critica” $\omega_{u}\approx \omega_0\gamma^3$.}
 \label{sec:3.b.16}
 Per arrivare al risultato costruiamo geometricamente la situazione di osservazione:
 \begin{figure}[H]
@@ -513,7 +513,7 @@ Logicamente se l'impulso dura $\Delta t$ significa che lo spettro angolare di ra
 	\omega_{c} \sim \frac{1}{\Delta t} = \frac{c\gamma^3}{\rho}= \omega_0\gamma^3
 .\] 
 
-\subsection[\hspace{1mm} ]{Calcolare il fattore di forma elettromagnetico per una sfera uniformente carica di raggio a.}
+\subsection[\hspace{1mm} Fattore di forma elettromagnetoco per sfera uniformemente carica]{Calcolare il fattore di forma elettromagnetico per una sfera uniformente carica di raggio a.}
 \label{sec:3.b.17}
 La sfera di raggio $a$ uniformemente carica avrà una distribusione di carica esprimibile come:
 \begin{align*}
@@ -523,7 +523,7 @@ La sfera di raggio $a$ uniformemente carica avrà una distribusione di carica es
 	\ 0  \quad  &\text{se} \quad \left| \bs{r} \right| > a \\
 	\end{cases} 
 .\end{align*}
-Per un dato valore di $q$ scegliamo delle coordinate polari aventi l'asse polare diretto lungo $q$ stesso, si calcola quindi il fattore di forma come:
+Per un dato valore di $q$ scegliamo delle coordinate sferiche aventi l'asse polare diretto lungo $q$ stesso, si calcola quindi il fattore di forma come:
 \begin{align*}
 	F\left( \bs{q} \right) 	&= \frac{\int \rho\left( \bs{r} \right) e^{-i \bs{q}\cdot \bs{r}}d^3r}{\int \rho\left( \bs{r} \right) d^3r} \\
 			       	&= \frac{1}{Q}\int_{0}^{a}dr\int_{0}^{\pi}d\theta \int_{0}^{2\pi} d\phi \rho\left( r \right) e^{-irq\cos\theta} r^2 \sin\theta \\
@@ -534,7 +534,7 @@ Per un dato valore di $q$ scegliamo delle coordinate polari aventi l'asse polare
 				&= 3\left( \frac{\sin\left( aq \right) }{\left( aq \right)^3 } -\frac{\cos\left( aq \right) }{\left( aq \right) ^2} \right)  
 .\end{align*}
 In quest'ultima si può notare che, grazie alla simmetria del sistema sotto rotazioni, $F\left( \bs{q} \right) = F\left( q \right) $
-\subsection[\hspace{1mm} ]{Calcolare il fattore di forma per una supeficie sferica uniformente carica di raggio a. [nota: l'interno è vuoto]}
+\subsection[\hspace{1mm} Fattore di forma per superficie sferica uniformemente carica]{Calcolare il fattore di forma per una supeficie sferica uniformente carica di raggio a. [nota: l'interno è vuoto]}
 \label{sec:3.b.18}
 In tal caso la densità di carica si può esprimere come:
 \begin{align*}
@@ -550,7 +550,7 @@ Procedendo come sopra senza interare su $r$ si ottiene:
 	F\left( \bs{q} \right) = \frac{3\sin\left( aq \right) }{a^2q}
 .\] 
 
-\subsection[\hspace{1mm} ]{Calcolare la velocità di un elettrone [e successivamente di un protone] posto in una struttura acceleratrice che abbia: \\
+\subsection[\hspace{1mm} Velocotà di un elettrone in diversi acceleratori lineari]{Calcolare la velocità di un elettrone [e successivamente di un protone] posto in una struttura acceleratrice che abbia: \\
 	1) Campo elettrico longitudinale costante.\\ 
 	2) Campo elettrico longitudinale oscillante.\\ 
 Inserendo valori numerici ragionevoli, calcolare il tempo affinché la particella, partendo da ferma, raggiunga una energia pari al doppio della sua massa a riposo.}
@@ -596,14 +596,14 @@ Prendiamo adesso un campo elettrico del tipo :
 .\] 
 Non possiamo più applicare il metodo utilizzato sopra, potremmo in qualche modo cercare di discretizzare il problema mediando l'equazione del moto su un semiperiodo (per i motivi spiegati all'inizio), la variabile diventa allora il tempo impiegato a fare un semiperiodo $\tau'$:
 \[
-	\Delta \left( \beta\gamma \right) = \frac{qE_0}{mc}\int_0^{\tau'} \sin \left( \frac{\pi t}{\tau} \right) dt = \frac{2qE_0\tau'}{\pi mc}
+	\Delta \left( \beta\gamma \right) = \frac{qE_0}{mc}\int_0^{\tau'} \sin \left( \frac{\pi t}{\tau'} \right) dt = \frac{2qE_0\tau'}{\pi mc}
 .\] 
 Quindi ogni volta che la particella attraversa un Drift tube subisce una variazione di $\gamma\beta$ come quella scritta sopra.
 Se parametrizziamo il modulo del campo elettrico iniziale come:
 \[
 	E_0 \rightarrow \frac{2E_0}{\pi} = E'_0
 .\] 
-ci si accorge che il risultato non è tanto differente da quello incontrato nel caso di campo costante (ipotizziamo sempre che la particella sia idealmente ferma nel momento dell'accenzione del campo).
+ci si accorge che il risultato non è tanto differente da quello incontrato nel caso di campo costante (ipotizziamo sempre che la particella sia idealmente ferma nel momento dell'accensione del campo).
 \[
 	\Delta \gamma\beta = \gamma_{\text{fin}}\beta_{\text{fin}}=\frac{qE'_0}{mc}\tau'=\frac{\tau'}{\hat{\tau}}
 .\] 
@@ -627,7 +627,7 @@ E chiamando $2\tau'= T$ il periodo di oscillazione si ha:
 .\] 
 I tempi in cui si riesce a raddoppiare l'energia hanno la stessa espressione  (fattore $\frac{2}{\pi}$ a parte), visto che le tensioni che si riesce a raggiungere nei due casi sono simili anche il valore numerico di tali tempi non differisce di molto.
 
-\subsection[\hspace{1mm} ]{A partire dai campi ritardati, dimostrare che 
+\subsection[\hspace{1mm} Potenza irraggiata da carica in moto rettilineo]{A partire dai campi ritardati, dimostrare che 
 \[
 	\frac{\mbox{d} P}{\mbox{d} \Omega} = \frac{q^2\left| \bs{a} \right|^2\sin^2\theta }{16\pi^2\epsilon_0c^3\left( 1-\beta\cos\theta \right)^5 }
 .\] è la potenza (MKSA) irraggiata da una carica accelerata in un moto rettilineo.}
@@ -681,7 +681,7 @@ Per concludere la dimostrazione manca adesso il sistema di riferimento in coordi
 
 
 
-\subsection[\hspace{1mm} ]{Calcolare l’energia persa in una rivoluzione per una carica in moto uniforme su una circonferenza (acceleratore circolare). Calcolare la frazione di energia persa
+\subsection[\hspace{1mm} Energia persa in una rivoluzione per protoni ed elettroni nell'acceleratore circolare]{Calcolare l’energia persa in una rivoluzione per una carica in moto uniforme su una circonferenza (acceleratore circolare). Calcolare la frazione di energia persa
 in un giro rispetto alla sua energia cinetica, effettuando una valutazione numerica, nel caso di elettroni a LEP (energia 50 GeV, raggio 4km) o protoni ad LHC (energia 7 TeV, raggio ~4km). Nota: utilizzare la formula di Larmor in GCS:
 \[
 	P=\frac{2q^2}{3c^3}\gamma^{6}\left( \left| \bs{a} \right| ^2 - \left| \bs{a}\wedge \bs{\beta}  \right| ^2 \right) 
@@ -735,7 +735,7 @@ Per l'energia quindi:
 .\end{align*}
 Da cui si deduce che la frazione di energia persa per irraggiamento nel caso di protoni è pressochè nulla.
 
-\subsection[\hspace{1mm} ]{Calcolare la potenza emessa in funzione dell’angolo per una carica oscillante armonicamente in linea retta (termine di dipolo elettrico)}
+\subsection[\hspace{1mm} Potenza angolare emessa per una carica oscillante in linea retta]{Calcolare la potenza emessa in funzione dell’angolo per una carica oscillante armonicamente in linea retta (termine di dipolo elettrico)}
 \label{sec:3.b.22}
 Potremmo riallacciarci al campo di radiazione del dipolo sempre passando per i campi di radiazione di Lineard-Wiechert nell'approssimazione non relativistica:
 \begin{align*}
@@ -753,11 +753,11 @@ Chiamando quindi $\theta$ l'angolo tra la direzione di oscillazione $\hat{x}$ e 
 	\frac{\mbox{d} P}{\mbox{d} \Omega} = \frac{\left| \bs{p} \right|^2 \omega^4}{4\pi c^3} \sin^2\theta
 .\] 
 
-\subsection[\hspace{1mm} ]{Calcolare, a partire dalla formula di Larmor relativistica, la potenza totale dissipata in un acceleratore lineare in funzione di $\frac{\mbox{d} \bs{p}}{\mbox{d} t}$ oppure di $\frac{\mbox{d} E}{\mbox{d} x}$ (energia fornita per unita’ di lunghezza). Dimostrare che la frazione di energia persa nell’accelerazione e’ trascurabile, fornendo adeguati valori numerici nel caso di accelerazione di elettroni o protoni.}
+\subsection[\hspace{1mm} Potenza dissipata in un acceleratore lineare in funzione di $\text{d}p /\text{d}t$ oppure di $\text{d}E /\text{d}x$]{Calcolare, a partire dalla formula di Larmor relativistica, la potenza totale dissipata in un acceleratore lineare in funzione di $\frac{\mbox{d} \bs{p}}{\mbox{d} t}$ oppure di $\frac{\mbox{d} E}{\mbox{d} x}$ (energia fornita per unita’ di lunghezza). Dimostrare che la frazione di energia persa nell’accelerazione e’ trascurabile, fornendo adeguati valori numerici nel caso di accelerazione di elettroni o protoni.}
 \label{sec:3.b.23}
 Come visto nella \hyperref[sec:3.a.21]{Domanda 3.a.21} la potenza dissipata per irraggiamento in un acceleratore lineare è:
 \[
-	P = \frac{q^2\gamma^6}{6\pi\epsilon_0}\left| \bs{a} \right|^2=\frac{q^2}{6\pi\epsilon_0m^2}\left| \frac{\mbox{d} \bs{p}}{\mbox{d} t}  \right|^2
+	P = \frac{q^2\gamma^6}{6\pi\epsilon_0 c^3}\left| \bs{a} \right|^2=\frac{q^2}{6\pi\epsilon_0 c^3m^2}\left| \frac{\mbox{d} \bs{p}}{\mbox{d} t}  \right|^2
 .\] 
 Infatti per la componente spaziale del quadrimpulso si ha:
 \begin{align*}
@@ -797,7 +797,7 @@ Introducendo questa nella potenza irraggiata:
 \[
 	P= \frac{q^4E^2_0}{6\pi\epsilon_0m^2c^3}
 .\] 
-Il calcolo da effettuare per ottenere $\hat{f}$ è:
+Il calcolo da effettuare per ottenere $\hat{f}$ è dato dalla Potenza irraggiata diviso la potenza totale necessaria a portare la particella ad una energia $E_{f}$ all'interno di un acceleratore lineare:
 \[
 	\hat{f}= \frac{P\cdot t_f}{E_f}
 .\] 
@@ -818,7 +818,7 @@ Quindi non c'è speranza, si raggiungono al massimo i MV/m: trascurabile.\\
 Nel caso di protoni invece non occorre nemmeno fare il conto: basta guardare l'espressione di $\hat{f}$, dipende inversamente dalla massa, se è trascurabile per gli elettroni lo è anche per i protoni.
 
 
-\subsection[\hspace{1mm} ]{Calcolare la lunghezza d’onda critica della radiazione di sincrotrone (elettroni) nei casi seguenti: \\
+\subsection[\hspace{1mm} Lunghezza d'onda critica di sincrotrone in alcuni casi]{Calcolare la lunghezza d’onda critica della radiazione di sincrotrone (elettroni) nei casi seguenti: \\
 i) energia=50GeV, raggio=4km; \\
 ii) energia=5GeV, raggio=30m}
 \label{sec:3.b.24}
@@ -831,7 +831,7 @@ con $\rho$ raggio dell'acceleratore.
 \paragraph{Caso ii)}	$\gamma\approx 10^4 \implies \lambda_{c}\approx 1.8 \text{ A}^o $
 
 
-\subsection[\hspace{1mm} ]{Enunciare il teorema ottico e spiegarne il significato fisico nel caso di radiazione elettromagnetica su un ostacolo opaco.}
+\subsection[\hspace{1mm} Enunciato del teorema ottico]{Enunciare il teorema ottico e spiegarne il significato fisico nel caso di radiazione elettromagnetica su un ostacolo opaco.}
 \label{sec:3.b.25}
 Si consideri un'onda elettromagnetica $\bs{E}_{in}= \bs{E}_{0}e^{-i\left( \omega t - kz \right) }$ incidente su un bersaglio opaco ortogonalmente. Tale "interazione" produce una onda sferica rifratta che può essere scritta come:
 \[
@@ -842,9 +842,10 @@ Si ha che la potenza dissipata in tutto il processo di scattering è:
 \[
 	P_{\text{diss}}= \frac{c}{2k} \text{Im}\left[ \bs{E}^*_{0}\cdot \bs{f}\left( k \hat{z} \right)   \right] 
 .\] 
-Che è l'enunciato del teorema ottico.
+Che è l'enunciato del teorema ottico.\\
+Alcune volte il teorema si trova enunciato anche utilizzando la sezione d'urto totale, il legame tra gli enunciati è ovviamente modulo mediato del vettore di Poynting che va a dividere la $P_{\text{tot}}$ pe ottenere $\sigma_{\text{tot}}$.
 
-\subsection[\hspace{1mm} ]{Come si ricava la sezione d'urto differenziale Rayleigh a partire dalla sezione d'urto Thomson ?}
+\subsection[\hspace{1mm} Sezione d'urto differenziale Rayleigh a partire dalla Thompson]{Come si ricava la sezione d'urto differenziale Rayleigh a partire dalla sezione d'urto Thomson ?}
 \label{sec:3.b.26}
 Nello scattering Thompson si ha che, per un fotone che incide su un elettrone:
 \[
