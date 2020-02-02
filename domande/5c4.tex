@@ -1,5 +1,6 @@
 \subsection[]{Dimostrare che il raggio nucleare si può ricavare tramite la misura del fattore di forma elettromagnetico di un nucleo utilizzando elettroni veloci. Indicare quali angoli di scattering devono essere coperti dalla strumentazione nel caso di elettroni di energia 1 GeV su un nucleo di Piombo.}%
 \label{sec:5.c.36}
+Tutti i grafici riportati in questa sezione fanno riferimento ai dati del problema.\\
 Partiamo dallo Scattering Mott:
 \[
 	\left.\frac{\mbox{d}\sigma }{\mbox{d} \Omega} \right|_{\text{Mott}} = 
@@ -11,6 +12,13 @@ In cui vi è una correzione allo scattering Rutherford, che ricordiamo essere:
 		\frac{1}{\sin^4\left( \frac{\theta}{2} \right) }
 .\] 
 Dove $T$ è l'energia cinetica della particella incidente, esprimibile anche come $T = pV /2$.
+L'andamento del Mott al variare di $\theta$ è:
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.6\textwidth]{immagini/Mott.png}
+	\caption{Sezione d'urto Mott differenziale}
+	\label{fig:immagini-Mott-png}
+\end{figure}
 Quello che vorremmo noi è essere in grado di dare una dimensione al centro scatterante, con le sole formule scritte sopra non potremmo farlo perchè entrambi gli scattering si riferiscono a nuclei puntiformi. Per poter correggere lo scattering Mott dobbiamo ipotizzare che il nucleo sia sferico, in tal modo il calcolo effettuato per ottenere la sezione d'urto Mott resta valido (per il teorema della media se si vuole) e quando si considera il campo generato dalla carica Q bersaglio dobbiamo considerare il campo di una carica puntiforme con la correzione: 
 \[
 	Q = F\left(\bs{q}\right)\int\rho\left(\bs{r}\right)d^3r = F\left(\bs{q}\right) Ze 
@@ -18,7 +26,7 @@ Quello che vorremmo noi è essere in grado di dare una dimensione al centro scat
 Dove si aggiunge il fattore di forma per tener di conto della interferenza di ogni elemento infinitesimo della carica Q vista da un osservatore lontano. A questo punto la sezione d'urto sul nucleo diventa:
 \[
 	\frac{\mbox{d} \sigma}{\mbox{d} \Omega} =
-		\left| F\left( \bs{q} \right)  \right|^2\left[ 1- \beta^2\sin^2\left( \frac{\theta}{2} \right)  \right]
+		\left|Z F\left( \bs{q} \right)  \right|^2\left[ 1- \beta^2\sin^2\left( \frac{\theta}{2} \right)  \right]
 		\cdot \left.\frac{\mbox{d} \sigma}{\mbox{d} \Omega} \right|_{\text{Rutherford}}
 .\] 
 Il significato fisico di $\bs{q}$ è il momento trasferito dall'elettrone (se moltiplicato per $\hbar$) durante lo scattering ed il suo modulo vale:
@@ -61,6 +69,12 @@ Ed inserita nel conto ci riporta a
 \[
 	F\left( q \right) = 3\left( \frac{\sin\left( Rq \right) }{\left( Rq \right)^3}- \frac{\cos\left( Rq \right) }{\left( Rq \right)^2} \right) 
 .\] 
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.5\textwidth]{immagini/Form-factor-sphere.png}
+	\caption{Fattore di forma per sfera uniformemente carica}
+	\label{fig:immagini-Form-factor-sphere-png}
+\end{figure}
 Studiando i punti in cui si annulla questo fattore di forma è possibile estrapolare informazioni sul raggio atomico, informazioni sulle quali si può fare esperimenti misurando la sezione d'urto differenziale e confrontando il primo minimo con quello atteso ottenuto numericamente (diverso dallo zero che corrisponde ad angolo nullo): 
 \[
 	Rq_{\text{min}} = a \approx 4.5
@@ -79,6 +93,12 @@ Con elettroni come nel testo, dobbiamo trovare l'impulso di tali elettroni:
 .\] 
 La costante di Plank ridotta in queste unità vale: $\hbar = 6.6 \cdot 10^{-16}$ eV$\cdot$s. Se ne conclude che per misurare il raggio nucleare del piombo dovremmo posizionare una strumentazione che sia sensibile ad angoli di scattering tali che:
 \[
-\frac{\theta}{2} = \arcsin \left(\frac{a \hbar}{2pR}\right) = \arcsin \left( \frac{4.5\cdot 6.6 \cdot 10^{-16}\cdot 3 \cdot 10^{8} }{2\cdot 1\cdot 10^{9}\cdot 9.4 \cdot 10^{-15}}\right) \approx 2.7^o
+\frac{\theta}{2} = \arcsin \left(\frac{a \hbar}{2pR}\right) = \arcsin \left( \frac{4.5\cdot 6.6 \cdot 10^{-16}\cdot 3 \cdot 10^{8} }{2\cdot 1\cdot 10^{9}\cdot 9.4 \cdot 10^{-15}}\right) \approx 0.3^o
  .\]
- Quindi dovremmo avere una strumentazione sensibile almeno a 6$^o$.
+ Quindi dovremmo avere una strumentazione sensibile almeno a 0.6$^o$. 
+ \begin{figure}[H]
+ 	\centering
+ 	\includegraphics[width=0.6\textwidth]{immagini/misura-raggio-piombo.png}
+	\caption{Sezione d'urto per un elettrone incidente su un atomo di piombo considerando $F\left( \bs{q} \right) $}
+ 	\label{fig:immagini-misura-raggio-piombo-png}
+ \end{figure}
