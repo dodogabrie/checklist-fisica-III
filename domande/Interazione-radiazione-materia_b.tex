@@ -397,6 +397,10 @@ Nel caso di Bhor le approssimazioni sono state spiegate nella domanda precedente
 	b_{\text{min}}= \sqrt{2z^2 \frac{m_e c^2}{\beta^2} \frac{r_e^2}{T_{\text{Max}}} } =
 	\frac{zr_e}{\beta^2 \gamma}
 .\] 	
+Per quanto riguarda il $b_{\text{Max}}$ si ha invece:
+\[
+	b_{\text{Max}} = \frac{\gamma V}{\omega_{e}}
+.\] 
 Sostituendo i due parametri di impatto limite si ha la soluzione.
 
 \subsection[\hspace{1mm} Valutazione del minimo dell'energia persa per collisioni in alcuni materiali]{Utilizzando la modellizzazione $I = ( 16 \text{ eV} )\cdot  Z^{0.9}$ , valutare il valore minimo dell’energia persa per collisioni, in MeV/g/cm$^2$, per i seguenti materiali:\\
@@ -582,7 +586,20 @@ Per far questo è necessario utilizzare \href{https://www.nist.gov/pml/stopping-
 	\item Determinare $E_{\text{out}}$ sulle $x$ in corrispondenza di $R\left( E_{\text{out}} \right)$,
 \end{itemize}
 Se l'energia trovata risulta graficamente prossima allo zero allora l'energia persa per collisioni è tutta l'energia incidente.\\
-Se si ha invece una energia persa per irraggiamento non trascurabile rispetto all'energia in ingresso allora si applica la formula di Tsai approssimata come nella \hyperref[sec:4.b.16]{Domanda 4.b.16}.
+Se si ha invece una energia persa per irraggiamento non trascurabile rispetto all'energia in ingresso allora si applica la formula:
+\[
+	\frac{1}{\rho} \frac{\mbox{d} E}{\mbox{d} x} = z^2\cdot \frac{4\pi m_{e}c^2r_{e}^2}{A\left( g \right)} \frac{N_{A}}{\beta^2} 
+	\left[\frac{1}{2}\ln\left(\frac{2m_{e}\beta^2c^2\gamma^2}{I^2}T_{Max}^2\right) -\beta^2 -\frac{\delta}{2} \right] 
+.\] 
+Approssimando allegramente per tutti $I \approx 10 \text{ [MeV]}\cdot Z$, $T_{\text{Max}}\approx 2m_{e}^2c^2\beta^2\gamma^2$, l'espressione diventa più facile:
+\[
+	E_{\text{coll}} \approx \rho z^2 \frac{K}{A\cdot \beta^2} \left[ \ln\left( \frac{2m_{e}c^2\beta^2\gamma^2}{I}\right) -\beta^2 \right] \cdot \Delta x = 
+\]
+Sostituendo il valore di $K$ (ottenuto raggruppando alcuni termini) si ha :
+\[
+	E_{\text{coll}}=  \frac{\rho z^2}{A\cdot \beta^2} \left[ 0.307\frac{\text{[MeV]}\cdot\text{[cm]}^2}{\text{[g]}} \right] \left[ \ln\left( \frac{2m_{e}c^2\beta^2\gamma^2}{I}\right) -\beta^2 \right] \cdot \Delta x 
+.\] 
+
 \paragraph{Probabilità di interazione forte}%
 Questa interazione avviene soltanto per adroni, quindi nel nostro caso il $\pi^{-}$ ed il $p$. Per queste particelle si calcola la sezione d'urto nucleare come l'area della circonferenza avente raggio la somma del raggio del proiettile e del raggio del nucleo bersagio:
 \[
