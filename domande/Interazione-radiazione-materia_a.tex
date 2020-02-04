@@ -282,7 +282,7 @@ Come minimo del parametro di impatto si può usare il principio di indeterminazi
 	b \gtrsim \frac{\hbar}{MV\gamma}
 .\] 
 Considerando la grandezza di $\gamma$ questa stima risulta decisamente inferiore del raggio nucleare, è quindi erronea.\\
-IL tempo di interazione è $\tau \approx b /\left( c\gamma \right)$, possiamo allora pensare che il campo elettrico agisce sul proiettile in una regione di estensione $\tau \cdot c = b /\gamma$. Se questa fosse più piccola di $\Delta x$ allora ci sarebbero regioni in cui il campo si annulla per interferenza, quindi poniamo:
+IL tempo di interazione è $\tau \approx b /\left( c\gamma \right)$, possiamo allora pensare che il campo elettrico agisce sul proiettile in una regione di estensione $\tau \cdot c = b /\gamma$. Se questa fosse più piccola di $\Delta x$ allora non avrebbe senso parlare di interazione e irraggiamento (si presenterebbero effetti di interferenza), quindi poniamo:
 \[
 	\Delta x \gtrsim \frac{b}{\gamma} \implies b_{\text{min}} = \frac{\hbar}{MV}
 .\] 
@@ -297,7 +297,7 @@ Considerando il limite dovuto al tempo di interazione, oppure
 .\] 
 Che corrisponde al raggio atomico con:
 \[
-a_0 = \frac{\hbar}{m_e c \alpha}
+	a_0 = \frac{\hbar}{m_e c \alpha}
 .\] 
 Per valutare quale dei due sia quello giusto consideriamo il fatto che, nel sistema del laboratorio, tutta la radiazione viene emessa in avanti con un angolo rispetto alla velocità iniziale della particella:
 \[
@@ -315,7 +315,7 @@ Siccome il fotone irraggiato nel laboratorio avrà sicuramente energia inferiore
 Questo ci aiuta a valutare chi tra i due parametri è più grande:
 \[
 	\frac{b^{\left( 1 \right)}_{\text{max}}}{b^{\left( 2 \right)}_{\text{max}}}=\frac{\gamma v /\omega'}{a}\gtrsim \frac{\gamma\hbar}{aMc}=
-	\gamma\frac{Z^{1 /3}e^2m_e}{1.4\hbar cM}\approx \gamma\frac{Z^{1 /3}}{192}\frac{m_e}{M}
+	=\gamma Z^{1 /3} \frac{m_e \alpha}{1.4 M}  \approx \gamma\frac{Z^{1 /3}}{192}\frac{m_e}{M}
 .\] 
 Vista la dipendenza diretta da $\gamma$ è facile vedere che, per elettroni ultrarelativistici si ha sempre $\gamma v /\omega' > a$, quindi il parametro giusto da scegliere è il secondo, ovvero il raggio atomico $a$.
 Il caso in cui lavoriamo è detto screening attivo, espresso graficamente come segue:
@@ -333,18 +333,24 @@ Inserendo tutto nella sezione d'urto si ottiene l'espressione:
 \[
 	\chi'_{\omega}=\frac{16}{3}z^4Z^2\alpha\hbar c^2 \left( \frac{m_e}{M} \right)^2  \frac{r^2_e}{c^2}\ln\left( \frac{192\cdot M}{Z^{1 /3}\cdot m_e} \right) 
 .\] 
-Adesso basta notare che, avendo $\omega = \gamma \omega'$ e anche $dE_{\text{irr}} = \gamma dE_{\text{irr}}'$ (questo è vero soltanto perchè l'energia irraggiata nel sistema primato non è associata ad un irraggiamento di impulso), dalla definizione di $\chi_{\omega}$:
+Adesso basta notare che, come visto sopra, $\omega = \gamma \omega'$. Inoltre $dE_{\text{irr}} = \gamma dE_{\text{irr}}'$ che viene dal fatto che questa quantità infinitesima trasforma come un tempo:
+\[
+\frac{\mbox{d} E}{\mbox{d} t} = -\frac{2}{3}\frac{e^2}{c^3}\frac{\mbox{d} u^{\mu}}{\mbox{d} \tau} \frac{\mbox{d} u_{\mu}}{\mbox{d} \tau}\implies
+\text{d}E \sim  G \text{d}t
+.\]
+Con G invariante di Lorentz.\\
+Prendiamo allora la definizione di $\chi_{\omega}$:
 \[
 	\chi_{\omega}=\int_{b_{\text{min}}}^{b_{\text{max}}}2\pi b \frac{\mbox{d} E}{\mbox{d} w} db
 .\] 
-e dal fatto che il parametro di impatto è invariante essendo ortogonale al boost ne segue che $\chi_{\omega}= \chi'_{\omega}$, quindi:
+Con tutte le considerazioni fatte sopra e considerando in più che il parametro di impatto è invariante (essendo ortogonale al boost) otteniamo $\chi_{\omega}= \chi'_{\omega}$, quindi:
 \[
 	\frac{\mbox{d} E^{\text{irr}}}{\mbox{d} x} = n_{\text{nuclei}} \int_{0}^{\omega_{\text{max}}} \chi_{\omega} d\omega = 
 	n_{\text{nuclei}} \int_{0}^{E /\hbar} d\omega \chi_{\omega} 
 	= n_{\text{nuclei}} \frac{E}{\hbar} \chi_{\omega}
 .\] 
 Che è proprio l'espressione cercata (E è l'energia cinetica della particella!!).
-\subsection[\hspace{1mm} ]{Descrivere la situazione in cui la legge
+\subsection[\hspace{1mm} Sezione d'urto di irraggiamento in funzione della sezione d'urto espressa in $m^2$]{Descrivere la situazione in cui la legge
 \[
 	\chi_{\omega} = \hbar \omega \frac{\text{d}\sigma_{y}}{\text{d}\omega}
 .\] 
@@ -362,7 +368,7 @@ Possiamo allora definire una corrente di particelle proiettili (l'inverso del se
 \[
 	\chi_{\omega}= \hbar \omega \frac{\mbox{d} }{\mbox{d} \omega} \left( \sigma_{y} \right) 
 .\] 
-\subsection[\hspace{1mm} ]{Dare la definizione di lunghezza di radiazione.
+\subsection[\hspace{1mm} Definizione di lunghezza di radiazione]{Dare la definizione di lunghezza di radiazione.
 }\label{sec:4.a.17}
 La lunghezza di radiazione $X_0$ è la distanza tipica che una particella percorre in un materiale. Tale distanza infatti subentra nella legge esponenziale con cui varia l'energia della particella:
 \[
@@ -373,20 +379,20 @@ Tale lunghezza è tipica del materiale che la particella percorre. Per lo Screen
 	X_0^{\text{attivo}} = \frac{1}{n_{\text{nuclei}}\frac{16}{3}z^4Z^2\alpha\left(\frac{m_e}{M}\right)^2r_e^2\ln\left(\frac{192}{Z^{1 /3}}\frac{M}{m_e}\right)} 
 .\] 
 
-\subsection[\hspace{1mm} ]{Dare la definizione di "Energia critica"
+\subsection[\hspace{1mm} Definizione di energia Critica]{Dare la definizione di "Energia critica"
 }\label{sec:4.a.18}
 L'energia critica è l'energia oltre il quale l'energia dell'elettrone si attenua per il solo effetto della Bremstrahlung.\\
 Nello screening attivo abbiamo visto esserci un limite inferiore a $\gamma$ per la particella incidente, questo implica che in tal caso l'energia della particella ha anc'essa un limite inferiore che corrisponde proprio alla sua energia critica:
 \[
 	E_{c} = Mc^2\gamma_{\text{lim}}= Mc^2 \frac{192}{Z^{1 /3}}
 .\] 
-\subsection[\hspace{1mm} ]{Descrivere la situazione in cui la legge \[
+\subsection[\hspace{1mm} Legge di attenuazione per irraggiamento dell'energia in un mezzo]{Descrivere la situazione in cui la legge \[
 	E = E_0 e^{-x /X_0}
 .\] 
 è applicabile e spiegare il significato e l'unità di misura di ogni grandezza ivi indicata.
 }\label{sec:4.a.19}
 La legge è applicabile nel caso di Bremstrahlung con particella incidente di energia $E_0$ superiore alla energia $E_{c}$ e descrive l'andamento dell'energia all'interno del materiale in cui tutta l'energia persa va in irraggiamento.
-\subsection[\hspace{1mm} ]{Descrivere la situazione in cui la legge
+\subsection[\hspace{1mm} Formula di Tsai]{Descrivere la situazione in cui la legge
 	\[
 		\frac{1}{\rho X_0} = 4 \alpha r^2_e\frac{Z^2}{A\left(g\right)}N_A\left[\ln\left(\frac{184}{Z^{1/3}}\right)-f\left(Z\right)+\frac{L'}{Z}\right] 
 	.\] 
@@ -402,7 +408,7 @@ Il termine $L'$ invece dipende dal tipo di materiale, tuttavia per i materiali c
 	L' = \ln\left( \frac{194}{Z^{2 /3}} \right) 
 .\] 
 Ricordiamo che $A\left( g \right) $ è la massa atomica del materiale attraversato in grammi e $N_A = 6.022 \cdot 10^{23} $ è il numero di avogadro.
-\subsection[\hspace{1mm} ]{Descrivere qualitativamente il meccanismo della perdita di energia per collisioni da parte di una particella carica nella materia.
+\subsection[\hspace{1mm} Perdita di energia per collisioni]{Descrivere qualitativamente il meccanismo della perdita di energia per collisioni da parte di una particella carica nella materia.
 }\label{sec:4.a.21}
 Una particella carica interagisce con gli elettroni atomici di un materiale cedendo loro energia tramite interazioni coulumbiane. Si ipotizza in queste interazioni che la variazione di impulso di ogni elettrone sia interamente ortogonale alla direzione di incidenza della particella facendo sostanzialmente uso di una approssimazione impulsiva. \\
 L'effetto che il passaggio della particella provoca sul materiale può essere di vari tipi:
@@ -413,7 +419,7 @@ L'effetto che il passaggio della particella provoca sul materiale può essere di
 \end{itemize}
 Tale processo trova applicazione nella misura simultanea della quantità di moto e della massa di una pariticella ed allo studio del percorso residuo di particelle cariche per uso medico (adroterapia) o protettivo per la schermatura di radiazione (degli acceleratori di particelle).
 
-\subsection[\hspace{1mm} ]{Spiegare il significato di ogni termine dell’espressione per la perdita di energia per collisioni (formula di Bethe-Bloch, non dimostrata):
+\subsection[\hspace{1mm} Formula di Bethe-Bloch]{Spiegare il significato di ogni termine dell’espressione per la perdita di energia per collisioni (formula di Bethe-Bloch, non dimostrata):
 	\[
 		\frac{1}{\rho}\frac{\mbox{d} E_{\text{coll}}}{\mbox{d} x} = 
 		z^2 \frac{Z}{A\left( g \right) }4\pi \frac{m_e c^2}{\beta^2} N_A r^2_e 
@@ -426,7 +432,7 @@ Abbiamo alcune quantità già viste nella formula di Tsai, in più c'è $I$ che 
 .\] 
 ed il fattore $\delta /2$ è il fattore di correzione della densità dovuto a fermi, quest'ultimo dipende da $\beta$ e dal tipo di materiale attraversato.
 
-\subsection[\hspace{1mm} ]{Disegnare qualitativamente la funzione di Bethe-Bloch indicando i valori dei punti significativi.
+\subsection[\hspace{1mm} Andamento della Bethe-Bloch]{Disegnare qualitativamente la funzione di Bethe-Bloch indicando i valori dei punti significativi.
 }\label{sec:4.a.23}
 \begin{figure}[H]
     \centering
@@ -441,14 +447,14 @@ Si  aggiunge soltanto che il minimo della funzione si ottiene per:
 .\] 
 Le particelle aventi impulso $\left| \bs{p} \right| \sim 3.5$ Mc si dicono al minimo di ionizzazione e sono importanti per l'effetto detto Picco di Brag.
 
-\subsection[\hspace{1mm} ]{Definire il "percorso residuo" ("range") per una particella carica in un materiale.
+\subsection[\hspace{1mm} Range o percorso residuo di una particella]{Definire il "percorso residuo" ("range") per una particella carica in un materiale.
 }\label{sec:4.a.24}
 Il percorso residuo $R$ (anche chiamato Range) è il percorso dopo il quale una particella attraversando un materiale esaurisce la sua energia e si ferma.\[
 	R\left( E_0 \right) = \int_0^{R} dx = \int_0^{E_0} dE \cdot \frac{\mbox{d} x}{\mbox{d} E} =
 	\int_0^{E_0}\frac{1}{\frac{\mbox{d} E}{\mbox{d} x} } dE
 .\] 
 Il calcolo precedente viene fatto numericamente poichè l'espressione per $\frac{\mbox{d} x}{\mbox{d} E}$ detto Stopping Range è complicata e soprattutto tiene conto non solo della energia persa in collisioni coulombiane ma anche quella persa in irraggiamento e in interazioni nucleari forti.
-\subsection[\hspace{1mm} ]{Definire gli "stopping power" totale, collision, radiative e nuclear; indicare per quali particelle ognuno di essi sia o meno rilevante.
+\subsection[\hspace{1mm} Stopping Power per i vari processi nella materia]{Definire gli "stopping power" totale, collision, radiative e nuclear; indicare per quali particelle ognuno di essi sia o meno rilevante.
 }\label{sec:4.a.25}
 Partiamo dal totale:
 \[
@@ -456,44 +462,49 @@ Partiamo dal totale:
 .\] 
 Il primo termine è l'inverso della formula di Bethe-Block, il secondo è l'inverso della formula di Tsai mentre il terzo è rilevante solo per interazioni forti, ovvero interessa gli adroni.
 
-\subsection[\hspace{1mm} ]{Come si calcola il "percorso residuo" ("range"), nota la curva $\frac{\mbox{d} E}{\mbox{d} x}$, in funzione dell'energia E della particella?
+\subsection[\hspace{1mm} Calcolo del percorso residuo nota la curva di stopping power.]{Come si calcola il "percorso residuo" ("range"), nota la curva $\frac{\mbox{d} E}{\mbox{d} x}$, in funzione dell'energia E della particella?
 }\label{sec:4.a.26}
-Si calcola con l'integrale numerico della \hyperref[sec:4.a.24]{Domanda 4.a.24}.
+Si calcola con l'integrale numerico della \hyperref[sec:4.a.24]{Domanda 4.a.24}. 
 
-\subsection[\hspace{1mm} ]{Spiegare qualitatativamente il cosiddetto "picco di Bragg"
+
+\subsection[\hspace{1mm} Picco di Brag]{Spiegare qualitatativamente il cosiddetto "picco di Bragg"
 }\label{sec:4.a.27}
 Quando una particella carica è rallentata da un materiale fino ad arrestarsi la distribuzione di energia depositata dipende in maniera marcata dalla forma dello stopping power $ST\left( E \right) = \left( \frac{\mbox{d} E}{\mbox{d} x}  \right)^{-1}$.\\
 Se la particella entra nel mezzo con una energia superiore a quella del minimo di ionizzazione $\beta \gamma > 3.5$ allora l'energia deposotata per unità di lunghezza decresce fino a raggiungere il minimo. Proseguendo oltre il minimo la particella continua a perdere energia per collisioni (quindi $\beta$ cala) ma la perdita per unità di lugnhezza in questa direzione sale come $1 /\beta^2$. In questo modo l'energia depositata avrà un massimo in corrispondenza del punto di arresto nel materiale della particella, tale massimo è chiamato Picco di Brag.
 
-\subsection[\hspace{1mm} ]{Descrivere qualitativamente il fenomeno dello scattering multiplo da parte di una particella carica in moto veloce nella materia.
+\subsection[\hspace{1mm} Scattering multiplo per particella in moto veloce nella materia]{Descrivere qualitativamente il fenomeno dello scattering multiplo da parte di una particella carica in moto veloce nella materia.
 }\label{sec:4.a.28}
 Nell'urto di una particella con un atomo bersaglio l'angolo di deflessione è, nel peggiore dei casi $\sim 10^{-3}$ rad, quindi trascurabile nella maggior parte dei contesti. Se invece la particella attraversa un materiale allora incontrerà diversi nuclei nel suo cammino, per ciascun nucleo avremo piccole deflessioni scatteranti.\\
 La discussione sul fenomeno dello scattering multiplo è appunto la valutazione dell'angolo di deflessione all'uscita del mezzo. Anticipiamo che facendo numerose interazioni l'angolo di deflessione sarà distribuito gaussianamente (teorema del limite centrale). 
 
-\subsection[\hspace{1mm} ]{Definire l'angolo di multiplo scattering (rispetto alla direzione iniziale della particella) e definire la sua proiezione su un piano (che contiene la direzione iniziale della particella). Indicare i limiti delle due variabili cosí definite.
+\subsection[\hspace{1mm} Definizione di angolo multiplo di scattering]{Definire l'angolo di multiplo scattering (rispetto alla direzione iniziale della particella) e definire la sua proiezione su un piano (che contiene la direzione iniziale della particella). Indicare i limiti delle due variabili cosí definite.
 }\label{sec:4.a.29}
 L'angolo multiplo di scattering $\theta$ è l'angolo formato tra la direzione iniziale e la direzione dopo lo scattering multiplo della particella che attraversa un mezzo. Possiamo ipotizzare questo angolo come $\theta \ll 1$ per una particella veloce.\\
-Ipotizzando che la particella fosse inizialmente diretta lungo l'asse $\hat{z}$, possiamo definire le proiezioni dell'angolo di deflessione sul piano ortogonale a questo asse: $\theta_{x}$ e $\theta_{y}$ con $\theta^2=\theta^2_{x}+\theta^2_{y}$.\\
+Ipotizzando che la particella fosse inizialmente diretta lungo l'asse $\hat{z}$, possiamo definire le proiezioni dell'angolo di deflessione sui due piani che contengonola direzione iniziale tra loro ortogonali: $\theta_{x}$ e $\theta_{y}$ con $\theta^2=\theta^2_{x}+\theta^2_{y}$.\\
 Come accennato sopra si impone una distribuzione gaussiana su questi angoli con r.m.s. pari a $\theta_0$ definita dal tipo di scattering preso come modello (per angoli piccoli l'ideale è lo scattering Rutherford).
-Anche allo scarto quadratico medio su queste due variabili si impone $\theta_0\ll 1$, inoltre sono entrambe variabili a media nulla.\\
-Non mi risulta possibile utilizzare il piano contenente la direzione iniziale della particella per descrivere il moto finale, sembra più sensato utilizzare il piano ortogonale $xy$, forse c'è una incomprensione.
-\subsection[\hspace{1mm} ]{Spiegare il significato di ogni termine dell'espressione per l’angolo quadratico medio di multiplo scattering (rispetto alla direzione iniziale della particella)
+Anche allo scarto quadratico medio su queste due variabili si impone $\theta_0\ll 1$, inoltre sono entrambe variabili a media nulla.
+
+\subsection[\hspace{1mm} Espressione per l'angolo quadratico medio di scattering]{Spiegare il significato di ogni termine dell'espressione per l’angolo quadratico medio di multiplo scattering (rispetto alla direzione iniziale della particella)
 \[
-\sqrt{\left<\theta^2_{\text{ms}}\right>}=\theta_0\sqrt{2}=z\frac{13.6\text{MeV}}{P\beta c}\sqrt{\frac{L}{X_0}}\left(1+0.0038\ln\left(\frac{L}{X_0}\right)  \right)  
+	\sqrt{\left<\theta^2_{\text{ms}}\right>}=\theta_0\sqrt{2}=z\frac{13.6\text{MeV}}{P\beta c}\sqrt{\frac{L}{X_0}}\left(1+0.0038\ln\left(\frac{L}{X_0}\right)  \right)  
 .\] 
 }\label{sec:4.a.30}
 $\theta_0$ è l'angolo r.m.s. per i due angoli definiti sopra, $P$ è l'impulso iniziale della particella, $L$ è lo spessore del materiale attraversato,  $X_0$ la lunghezza di radiazione del materiale. Si arriva a questo risultato sfruttando per lo scarto quadratico sul singolo urto la sezione Mott e moltiplicando per il numero di possibili urti sulla base della lunghezza e densità del materale.
 
-\subsection[\hspace{1mm} ]{Se non fosse sufficiente la approssimazione di piccoli angoli e distribuzione gaussiana, indicare quale fra le seguenti funzioni descriverebbe meglio il fenomeno del multiplo scattering: i) Bethe-Bloch, ii) Moliere, iii) Breit-Wigner, iv) Bohr.
+\subsection[\hspace{1mm} Distribuzione per il fenomeno di multiplo scattering]{Se non fosse sufficiente la approssimazione di piccoli angoli e distribuzione gaussiana, indicare quale fra le seguenti funzioni descriverebbe meglio il fenomeno del multiplo scattering:\\
+	i) Bethe-Bloch,\\ 
+	ii) Moliere,\\ 
+	iii) Breit-Wigner, \\
+	iv) Bohr.
 }\label{sec:4.a.31}
 La funzione sarebbe la Moliere.
 
-\subsection[\hspace{1mm} ]{Illustrare in modo qualitativo il metodo di produzione degli antiprotoni nell’esperimento di Segré et al.
+\subsection[\hspace{1mm} Metodo di produzione di antiprotoni nell'esperimento di Segre]{Illustrare in modo qualitativo il metodo di produzione degli antiprotoni nell’esperimento di Segré et al.
 }\label{sec:4.a.32}
-Tramite l'acceleratore Bevatron si invia un fascio di protoni su una lamina di rame, l'urto rompe l'atomo in questione, si liberano $p, \pi^+, \overline{p}, \pi^-$. Le due  impulso $p= 1.19$ MeV/c.
-Tali particelle possono essere antiprotoni o pioni e in media si ha circa 1 antiprotone ogni $10^{5}$ pioni. Con l'impulso di queste particelle si ha $\beta = 0.99$ per i pioni e $\beta=0.78$ per gli antiprotoni.
+Tramite l'acceleratore Bevatron si invia un fascio di protoni su una lamina di rame, l'urto rompe l'atomo in questione, si liberano $p, \pi^+, \overline{p}, \pi^-$. Gli antiprotoni liberati hanno impulso $p= 1.19$ MeV/c.
+Successivamente le particelle vengono deviate dal campo del Bevatron per entrare nel sistema di rilevazione ideato per l'esperimento. Tra le particelle positive si ha in media circa 1 antiprotone ogni $10^{5}$ pioni. Con l'impulso di queste particelle si ha $\beta = 0.99$ per i pioni e $\beta=0.78$ per gli antiprotoni.
 
-\subsection[\hspace{1mm} ]{Spiegare qualitativamente il metodo di separazione degli antiprotoni dal fondo di pioni nell’esperimento di Segré et al. tramite contatori Cerenkov
+\subsection[\hspace{1mm} Metodo di separazione degli antiprotoni dal fondo di pioni nell'esperimento di Segre]{Spiegare qualitativamente il metodo di separazione degli antiprotoni dal fondo di pioni nell’esperimento di Segré et al. tramite contatori Cerenkov
 }\label{sec:4.a.33}
 
 Le particelle uscenti sono deflesse di $21^o$ dal campo magnetico del Bevatron e successivamente di altri $34^o$ dal campo magnetico di M1. Dopo M1 le particelle passano attraverso un collimatore Q1: un magnete quadripolare che focalizza il fascio ed uno scintillatore S1. 
@@ -503,7 +514,7 @@ Le particelle uscenti sono deflesse di $21^o$ dal campo magnetico del Bevatron e
     \caption{segre}
     \label{fig:segre}
 \end{figure}
-Dopo le particelle incontrano un secondo collimatore Q2 seguito da un altro magnete M2 che le deflette di altri $34^o$. Infine le particelle attraversano il secondo scintillatore S2, un primo contatore Cherenkov C1 che rileva particelle con $\beta>0.78$, un secondo contatore Cherenkov C2 con $0.75< \beta<0.78$ ed un ultimo scintillatore per parare le particelle che uscenti da C2 con angoli di scattering troppo grandi.
+Dopo le particelle incontrano un secondo collimatore Q2 seguito da un altro magnete M2 che le deflette di altri $34^o$. Infine le particelle attraversano il secondo scintillatore S2, un primo contatore Cherenkov C1 che rileva particelle con $\beta>0.78$, un secondo contatore Cherenkov C2 con $0.75< \beta<0.78$ ed un ultimo scintillatore per rilevare le particelle che uscenti da C2 con angoli di scattering troppo grandi.
 Il sistema di magneti permette di selezionare le particelle con un certo impulso, la velocità della particella invece è misurata in due modi indipendenti: tempo di volo e contatori Cherenkov.\\
 Fare due misure indipendenti della velocità è indispensabile in quanto, utilizzando ad esempio il solo tempo di volo come controllo si otterrebbe una distribuzione di eventi del tipo:
 \begin{figure}[H]
@@ -512,8 +523,10 @@ Fare due misure indipendenti della velocità è indispensabile in quanto, utiliz
     \caption{Distribuzione pioni-antiprotoni}
     \label{fig:distribuzione-pioni-antiprotoni}
 \end{figure}
+
 È quindi richiesta la coincidenza di eventi $S_1 * S_2 * C_2$, se scatta anche lo scintillatore $S_3$ allora il conteggio è annullato perchè vuol dire che la particella aveva un grande angolo di scattering (si evitano errori dovuti a particelle che non erano ben collimate con il gruppo). Con questo metodo di controlli incrociati si riesce ad escludere quasi tutti i $\pi$ dal conteggio (il 3 \% di questi attiva C2), per i pochi pioni che attivano C2 si utilizza come controllo C1: se si attiva quest'ultimo il conteggio viene annullato. In questo modo è stato possibile ridurre il fondo di pioni e distinguere il segnale dell'antiprotone tramite oscilloscopi (presumibilmente attivati dalle scintillazioni della strumentazione).
-\subsection[\hspace{1mm} ]{Descrivere l’esperimento di Anderson sulla scoperta del positrone.
+
+\subsection[\hspace{1mm} Esperimento di Anderson sulla scoperta del positrone]{Descrivere l’esperimento di Anderson sulla scoperta del positrone.
 }\label{sec:4.a.34}
 Nell'esperimento venne utizzata una camera a nebbia: un dispositivo isolato contenente vapore saturo. \\ 
 Una particella carica e sufficientemente energetica che attraversa la camera ionizza il gas sulla sua traiettoria e gli atomi ionizzati formano dei nuclei di condensazione su cui si formano delle goccioline. Fotografando la camera è quindi possibile ricostruire la traiettoria della particella incidente. Se inoltre immergiamo il tutto in un campo magnetico possiamo misurare anche l'impulso a partire dal raggio di curvatura.
