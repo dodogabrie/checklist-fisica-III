@@ -383,7 +383,7 @@ Consideriamo un tratto $\Delta x$ di materia e cerchiamo di calcolare l'energia 
 \[
 	n_e =\rho \frac{Z}{M_A}N_A = \rho \frac{Z}{A\cdot 1\text{g}}N_A
 .\] 
-Integriamo sul volume cilindrico attorno gli scattering al variare di $b$ :
+L'energia media trasmessa in un tratto $\Delta x$ è data dalla media di collisioni nel volume cilindrico sotteso a $\Delta x$:
 \[
 	\Delta T_{\text{coll}} =T\left( b \right) 2 \pi b n_e \Delta x db
 .\] 
@@ -399,7 +399,7 @@ Nel caso di Bhor le approssimazioni sono state spiegate nella domanda precedente
 .\] 	
 Sostituendo i due parametri di impatto limite si ha la soluzione.
 
-\subsection[\hspace{1mm} ]{Utilizzando la modellizzazione $I = ( 16 \text{ eV} )\cdot  Z^{0.9}$ , valutare il valore minimo dell’energia persa per collisioni, in MeV/g/cm$^2$, per i seguenti materiali:\\
+\subsection[\hspace{1mm} Valutazione del minimo dell'energia persa per collisioni in alcuni materiali]{Utilizzando la modellizzazione $I = ( 16 \text{ eV} )\cdot  Z^{0.9}$ , valutare il valore minimo dell’energia persa per collisioni, in MeV/g/cm$^2$, per i seguenti materiali:\\
 i) Piombo \\
 ii) Silicio \\
 iii) aria a TPN.
@@ -432,7 +432,7 @@ Nel nostro caso si considerano gli urti su elettroni $z=1$. Possiamo inoltre tra
 	\end{tabular}
 \end{table}
 
-\subsection[\hspace{1mm} ]{Nell'approssimazione di piccoli angoli e distribuzione gaussiana di varianza nota, calcolare il valor medio, il valore quadratico medio e la sigma per:\\
+\subsection[\hspace{1mm} Proprietà della distribuzione dell'angolo quadratico medio nel multiplo scattering]{Nell'approssimazione di piccoli angoli e distribuzione gaussiana di varianza nota, calcolare il valor medio, il valore quadratico medio e la sigma per:\\
 i) l'angolo di multiplo scattering rispetto alla direzione iniziale della particella\\
 ii) la sua proiezione su un piano che contenga la direzione iniziale della particella.
 }
@@ -468,9 +468,9 @@ Possiamo quindi calcolare i valori richiesti anche per quest'ultima:
 	& \left<\theta^2 \right> = \int_{0}^{\infty}\frac{\theta^3}{\theta_0^2} e^{- \theta^2 /2\theta_0^2} d\theta = 2 \theta_0^2 \\
 	& \sigma_\theta = \sqrt{\left<\theta^2 \right>- \left< \theta \right>^2} =\theta_0 \sqrt{ \frac{4-\pi}{2}} 
 .\end{align*}
-Inoltre il massimo di $P\left( \theta \right)$ è prorpio $\theta_0$
+Inoltre il massimo di $P\left( \theta \right)$ è proprio $\theta_0$
 
-\subsection[\hspace{1mm} ]{Dimostrare l'espressione approssimata per l’angolo quadratico medio di multiplo scattering (proiezione su un piano):
+\subsection[\hspace{1mm} Dimostrare l'espressione approssimata per l'angolo quadratico medio (multiplo scattering)]{Dimostrare l'espressione approssimata per l’angolo quadratico medio di multiplo scattering (proiezione su un piano):
 \[
 	\theta_0 = z \frac{\text{costante}}{P \beta c} \sqrt{\frac{L}{X_0}} 
 .\] 
@@ -519,12 +519,12 @@ L'angolo quadratico medio totale si ottiene quindi sommando in quadratura su tut
 .\] 
 Ricordando adesso che la lunghezza di radiazione dalla formula di Tsai approssimata è:
 \[
-	X_0 \approx \frac{1}{4Z^2 n \alpha \hbar r_e^2 \ln \frac{184}{Z^{1 /3}}}
+	X_0 \approx \frac{1}{4Z^2 n \alpha r_e^2 \ln \frac{184}{Z^{1 /3}}}
 .\] 
 si può concludere che :
 \begin{align*}
 	\sqrt{\left<\theta^2 \right>} &= \sqrt{\frac{X_0}{X_0} 4\pi nL l^2 \ln \frac{205}{Z^{1 /3}}} =\\
-	&=  \sqrt{\frac{L}{X_0}} \sqrt{ \frac{4\pi n \ln \frac{205}{Z^{1 /3}} }{4Z^2 n \alpha \hbar r_e^2 \ln \frac{184}{Z^{1 /3}}} } \approx \\ 
+	&= l \sqrt{\frac{L}{X_0}} \sqrt{ \frac{4\pi n \ln \frac{205}{Z^{1 /3}} }{4Z^2 n \alpha r_e^2 \ln \frac{184}{Z^{1 /3}}} } \approx \\ 
 	&\approx l \sqrt{\frac{L}{X_0}} \sqrt{\frac{\pi}{Z^2\alpha r_e^2}}=\\
 	&= \frac{2zZ \alpha \hbar c}{PV}\frac{1}{r_e}\sqrt{\frac{L}{X_0}} \sqrt{\frac{\pi}{Z^2 \alpha}}=\\
 	&= \frac{\sqrt{2} z m_e c^2}{PV} \sqrt{\frac{L}{X_0}} \sqrt{\frac{2\pi}{\alpha}} \approx \\
@@ -533,7 +533,7 @@ si può concludere che :
 Da confrontare con la costante del PDG che vale invece $13.6$ MeV.\\
 Per ottenere $\theta_0$ basta dividere la precedente per la radice di 2.
 
-\subsection[\hspace{1mm} ]{Utilizzando le opportune tabelle, anche reperibili su web, per le seguenti particelle: \\
+\subsection[\hspace{1mm} Indagine di interazione con la materia per alcune particelle]{Utilizzando le opportune tabelle, anche reperibili su web, per le seguenti particelle: \\
 i) elettrone 3.5MeV \\
 ii) elettrone 100MeV \\
 iii) pione di 1GeV \\
@@ -595,7 +595,7 @@ successivamente il conto da fare è:
 \paragraph{Angolo quadratico medio di multiplo scattering}%
 Se la particella riesce ad uscire il conto da effettuare è quello della \hyperref[sec:4.b.18]{Domanda 4.b.18}
 
-\subsection[\hspace{1mm} ]{Per un muone che attraversi, incidendo perpendicolarmente, una lastra di Ferro di 5cm di spessore in cui e' presente un campo magnetico di intensita' nota, calcolare il valore numerico del rapporto fra la deflessione angolare dovuta al campo magnetico e la dispersione quadratica media dovuta al multiplo scattering. Come sara’ la funzione di distribuzione dell’angolo in uscita? Quale e’ la dipendenza dall’energia del muone incidente?
+\subsection[\hspace{1mm} Angolo di flessione di un Muone in materiale con campo magnetico ]{Per un muone che attraversi, incidendo perpendicolarmente, una lastra di Ferro di 5cm di spessore in cui e' presente un campo magnetico di intensita' nota, calcolare il valore numerico del rapporto fra la deflessione angolare dovuta al campo magnetico e la dispersione quadratica media dovuta al multiplo scattering. Come sara’ la funzione di distribuzione dell’angolo in uscita? Quale e’ la dipendenza dall’energia del muone incidente?
 }
 \label{sec:4.b.20}
 Ipotizziamo che l'energia del muone sia tale da garantire che oltrepasserà la lastra (possiamo tornarci dopo) e che la frazione di energia persa nella lastra sia molto inferiore dell'energia iniziale in modo da considerare la curvatura magnetica uniforme.\\
@@ -617,16 +617,16 @@ Per l'angolo quadratico medio di multiplo scattering si ha invece:
 .\] 
 Nel ferro si ha $X_0 = 1.76$ cm, inoltre possiamo assumere $\beta \sim 1$ per la nostra stima, quindi:
 \[
-	\theta_0 \approx \frac{13.6 \cdot 10^{-3} \text{ [eV]}}{P \text{ [GeV/c] [m/s]}} \sqrt{ \frac{5 \cdot 10^{-3}\text{ [m]} }{1.76 \cdot 10^{-2}\text{ [m]}}}
-	\approx 7.24 \text{ mrad} \cdot \frac{\text{[eV]}}{P\text{ [GeV/c] [m/s]} }
+	\theta_0 \approx \frac{13.6 \cdot 10^{-3} \text{ [GeV]}}{P \text{ [GeV/c] [m/s]}} \sqrt{ \frac{5 \cdot 10^{-3}\text{ [m]} }{1.76 \cdot 10^{-2}\text{ [m]}}}
+	\approx 7.24 \text{ mrad} \cdot \frac{\text{[GeV]}}{P\text{ [GeV/c] [m/s]} }
 .\] 
 Quindi il rapporto cercato (sempre per impulsi sufficienti a garantire l'uscita del muone e angoli di deflessione piccoli) è indipentente dall'impulso:
 \[
-	\frac{\theta_{m}}{\theta_0 \sqrt{2}} \approx 0.3\cdot B \text{ [T]}
+	\frac{\theta_{m}}{\theta_0 \sqrt{2}} \approx 1.5 \cdot B \text{ [T]}
 .\]
 La distribuzione angolare sarà in tal caso una Moliere centrata in $\theta_{m}$.
 
-\subsection[\hspace{1mm} ]{Cercando i dati nelle apposite figure o tabelle si calcolino il valore (o i limiti) dell'energia degli elettroni emessi nello stato finale della reazione $\gamma$+C per energie del fotone incidente pari a: 1keV, 10keV, 100keV, 1MeV, 10MeV.
+\subsection[\hspace{1mm} Fotoni incidenti su carbonio: energia degli elettroni prodotti]{Cercando i dati nelle apposite figure o tabelle si calcolino il valore (o i limiti) dell'energia degli elettroni emessi nello stato finale della reazione $\gamma$+C per energie del fotone incidente pari a: 1keV, 10keV, 100keV, 1MeV, 10MeV.
 }
 \label{sec:4.b.21}
 La sezione d'urto di un fotone sull'atomo di carbonio segue questi andamenti:
@@ -655,7 +655,7 @@ Per differenza (conservazione dell'energia) si ottiene che l'elettrone può aver
 A 100 keV ed a 1 MeV il dominante è il Compton mentre a 10 MeV inizia ad essere importante la produzione di coppie.
 Per la produzione di coppie trascurando il rinculo del nucleo ci si aspetta che ciascuno dei prodotti abbia energia di circa 5 MeV.
 
-\subsection[\hspace{1mm} ]{Ricavare la relazione tra angolo di scattering e cambio di frequenza nell'effetto Compton
+\subsection[\hspace{1mm} Ricavare la lunghezza d'onda Compton]{Ricavare la relazione tra angolo di scattering e cambio di frequenza nell'effetto Compton
 }
 \label{sec:4.b.22}
 Definiamo k e k' i vettori d'onda del fotone prima e dopo l'urto e p, p' il 4-impulso dell'elettrone prima e dopo l'urto. Dalla comservazione del quadrimpulso si deve avere che:
@@ -668,17 +668,16 @@ Facendo la norma quadra a destra e sinistra e ricordando che l'elettrone è coms
 .\] 
 In cui $\theta$ è l'angolo di scattering. Adesso sfruttiamo la conservazione dell'energia ($E' = \hbar\omega + m - \hbar\omega'$) per ottenere:
 \[
-	\frac{2\hbar\omega\omega'}{c}\left( 1-\cos\theta \right) = 2m_{e}c^2\hbar\left( \omega-\omega' \right) 
+	2\hbar^2\omega\omega'\left( 1-\cos\theta \right) = 2m_{e}\hbar\left( \omega-\omega' \right) \implies 
+	\hbar \left( 1-\cos\theta \right) = m_{e}\left( \frac{1}{\omega'}-\frac{1}{\omega} \right) 
 .\] 
 Se passiamo alle lunghezze d'onda otteniamo la relazione cercata:
 \[
 	\Delta \lambda = \lambda_{c}\left( 1-\cos\theta \right) 
 .\] 
-Dove $\lambda_{c}= \frac{h}{m_{e}c}$ 
+Dove $\lambda_{c}= \frac{h}{m_{e}c} = 2.43$ pm.
 
-
-
-\subsection[\hspace{1mm} ]{Cercando i dati delle sezioni d’urto totali nelle apposite figure o tabelle (reperibili anche nella compilazione Particle Data Group http://pdg.lbl.gov ) si calcoli la probabilità di interazione di:\\
+\subsection[\hspace{1mm} Probabilità di interazione di fotoni nel Piombo]{Cercando i dati delle sezioni d’urto totali nelle apposite figure o tabelle (reperibili anche nella compilazione Particle Data Group http://pdg.lbl.gov ) si calcoli la probabilità di interazione di:\\
 • un fotone da 100 eV che incida su 1 $\mu$m di grafite\\
 • un fotone da 1 MeV che incida su 1 mm di grafite\\
 • un fotone da 10 MeV che incida su 1 mm di Piombo\\
@@ -694,7 +693,7 @@ Partiamo dal metodo da adottare: la probabilità cercata è data da
 \[
 	P = \frac{\rho}{A \text{[g]}}N_{A}L\sigma
 .\] 
-\subsection[\hspace{1mm} ]{Esprimere la sezione d'urto Rayleigh in funzione della sezione d'urto differenziale Thomson e del fattore di forma atomico F($\theta$).
+\subsection[\hspace{1mm} Sezione d'urto Rayleigh in funzione della sezione d'urto differenziale Thompson e di $F\left( \bs{q} \right) $]{Esprimere la sezione d'urto Rayleigh in funzione della sezione d'urto differenziale Thomson e del fattore di forma atomico F($\theta$).
 }
 \label{sec:4.b.24}
 La sezione d'urto Rayleigh differenziale vale
@@ -703,12 +702,11 @@ La sezione d'urto Rayleigh differenziale vale
 		\text{ con }
 	\quad
 	\left.\frac{\mbox{d} \sigma_{el }}{\mbox{d} \Omega} \right|_{e}= 
-		\frac{r_e^2\omega^4}{\left( \omega_0^2-\omega^2 \right)^2 + \omega^2\Gamma_{tot}^2\left( \omega \right)} \frac{1+\cos^2\theta}{2}
+		\frac{r_e^2\omega^4}{\left( \omega_0^2-\omega^2 \right)^2 + \omega^2\Gamma_{tot}^2\left( \omega \right)} \sin^2\theta 
 .\] 
-
 Per ottenere quanto richiesto dal testo è necessario integrare sull'angolo solido e conoscere il fattore di forma dipendente dall'angolo di scattering $\theta$.
 
-\subsection[\hspace{1mm} ]{Dimostrare, utilizzando il materiale distribuito, perchè nell’esperimento di Anderson sulla scoperta del positrone alcune tracce positive osservate non
+\subsection[\hspace{1mm} Confutazione dell'ipotesi di protone nell'esperimento di Anderson]{Dimostrare, utilizzando il materiale distribuito, perchè nell’esperimento di Anderson sulla scoperta del positrone alcune tracce positive osservate non
 possono essere nessuna delle particelle positive conosciute nel 1932.
 }
 \label{sec:4.b.25}
@@ -719,7 +717,7 @@ Riprendendo la trattazione della \hyperref[sec:4.a.34]{Domanda 4.a.34} l'impulso
 Un protone con quella energia ha un range in aria di circa $7$ mm, la traccia della foto di Anderson è lunga almeno $30$ cm, per questo non poteva essere un protone.
 
 
-\subsection[\hspace{1mm} ]{Calcolare la velocità media dei pioni e antiprotoni nell'esperimento di Segrè (quantità di moto 1.19 Gev/c) dopo che hanno attraversato il contatore Cherenkov a quarzo (spessore 2.5", densità relativa 2.2).
+\subsection[\hspace{1mm} Considerazioni sulla velocità delle particelle nell'esperimento di Segrè]{Calcolare la velocità media dei pioni e antiprotoni nell'esperimento di Segrè (quantità di moto 1.19 Gev/c) dopo che hanno attraversato il contatore Cherenkov a quarzo (spessore 2.5", densità relativa 2.2).
 }
 \label{sec:4.b.26}
 Per il calcolo possiamo utilizzare lo spessore relativo del materiale: 
