@@ -157,14 +157,11 @@ Sezione planare del solido di radiazione in direzioni opportune a comprenderne l
 
 \subsection[\hspace{1mm} Campo magnetico in funzione del campo elettrico per carica puntiforme]{Quanto vale il campo magnetico generato da una carica puntiforme in moto arbitrario se è noto il campo elettrico?}
 \label{sec:3.a.13}
-Ragionando nel sistema istantaneamente a riposo della carica il campo magnetico è nullo, definiamo in questo sistema il campo elettrico come $\bs{E}$, allora il campo magnetico nel laboratorio istante per istante è ortogonale a $\bs{\beta}$ e vale:
+Vale in generale che (in CGS):
 \[
-	\bs{B}_{\bot}= - \gamma \left( \bs{\beta}\wedge \bs{E}  \right) 
-.\] 
-In realtò vale in generale che:
-\[
-	\bs{B}= \bs{\beta}\wedge \bs{E} 
-.\] 
+	\bs{B}= \hat{n} \wedge \bs{E} 
+.\]
+in MKSA basta dividere per c.
 \subsection[\hspace{1mm} Distribuzione angolare di energia irraggiata per unità di frequenza]{Spiegare tutti i termi della espressione 
 \[
 	\frac{\mbox{d} I_{\omega}}{\mbox{d} \Omega} = \frac{q^2}{4 \pi^2 c} \left| \int{ \frac{\hat{n} \wedge \left[ \left( \hat{n}-\boldsymbol{\beta}\right) \wedge \dot{\boldsymbol{\beta}} \right]}{\left( 1- \hat{n} \boldsymbol{\beta}\right)^2} e^{i\omega \left( t' - \frac{\boldsymbol{r'} \cdot \hat{n}}{c} \right) }  } dt' \right|^2
@@ -191,7 +188,7 @@ ricordiamo che $\boldsymbol{B}=\hat{n}\wedge \boldsymbol{E}$, e che come consegu
 \[
 	\int_{-\infty}^{\infty} \left| x\left( t \right)  \right|^2 dt = 2\pi \int_{-\infty}^{\infty} \left| \hat{x}\left( \omega \right)\right|^2d\omega 
 .\] 
-Portiamo allora l'integranda nel dominio delle frequenze:
+Portiamo allora l'integranda nel dominio delle frequenze (si moltiplica per $2\pi$ per ottenere l'dentità sopra, quindi nella seguente dobbiamo dividere per $2\pi$):
 \[
 	\frac{\mbox{d} \varepsilon}{\mbox{d} \Omega} = \frac{1}{2\pi}  \frac{q^2}{4\pi c} 2 \cdot\int_0^{\infty} \left| \hat{f}\left( \omega \right) \right|^2 d \omega 
 .\] 
